@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
+
+@theme {
+  --color-nodal-blue: #1E3F57;
+  --color-nodal-green: #4EBFA6;
+  --color-nodal-violet: #7B6EF6;
+  --color-nodal-graphite: #4A4F55;
+  --color-nodal-graphite-soft: #8C9298;
+  --color-nodal-grey: #E6E8EB;
+  --color-nodal-white: #F9FAFB;
+  
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui;
+}
+
+:root {
+  --nodal-blue: #1E3F57;
+  --nodal-green: #4EBFA6;
+  --nodal-white: #F9FAFB;
+  --nodal-graphite: #4A4F55;
+}
+
+body {
+  margin: 0;
+  background-color: var(--nodal-white);
+  color: var(--nodal-graphite);
+  font-family: 'IBM Plex Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nodal-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nodal-blue);
+}
+
+.clinical-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+}
+
+.text-precision {
+  letter-spacing: -0.01em;
+  font-weight: 500;
+}
