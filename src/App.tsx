@@ -5,6 +5,7 @@ import { NodesBackground } from './animations/NodesBackground';
 import { Workflow } from './sections/Workflow';
 import { Features } from './sections/Features';
 import { ProblemSection } from './sections/ProblemSection';
+import { SolutionSection } from './sections/SolutionSection';
 import { TrustSection } from './sections/TrustSection';
 import { Footer } from './sections/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
@@ -22,6 +23,7 @@ function App() {
       <div className="relative z-10">
         <Hero />
         <ProblemSection />
+        <SolutionSection />
         <Workflow />
         <Features />
         <TrustSection />

@@ -32,7 +32,7 @@ export const ProblemSection = () => {
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 md:flex-1">
             <div className="memory-text translate-y-8 opacity-0">
-              <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue mb-6 md:min-w-[150%] relative z-10">
+              <h2 className="text-5xl md:text-6xl font-bold text-nodal-blue mb-12 md:min-w-[200%] relative z-10">
                 Should clinical work be scattered across <br className="hidden md:block" /> fragmented systems?
               </h2>
               <p className="text-nodal-graphite text-xl md:text-2xl font-light leading-relaxed mb-10 max-w-2xl">
