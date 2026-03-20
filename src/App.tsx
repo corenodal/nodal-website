@@ -1,35 +1,32 @@
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
-import { Hero } from './sections/Hero';
+import { ScrollToTop } from './components/ScrollToTop';
 import { NodesBackground } from './animations/NodesBackground';
-import { Workflow } from './sections/Workflow';
-import { Features } from './sections/Features';
-import { ProblemSection } from './sections/ProblemSection';
-import { SolutionSection } from './sections/SolutionSection';
-import { TrustSection } from './sections/TrustSection';
-import { Footer } from './sections/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
+import { Home } from './pages/Home';
+import { Product } from './pages/Product';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <main className="relative min-h-screen bg-nodal-white text-nodal-graphite overflow-x-hidden font-sans">
-      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
-      
-      <NodesBackground />
-      <Navbar />
-      
-      <div className="relative z-10">
-        <Hero />
-        <ProblemSection />
-        <SolutionSection />
-        <Workflow />
-        <Features />
-        <TrustSection />
-        <Footer />
-      </div>
-    </main>
+    <BrowserRouter>
+      <ScrollToTop />
+      <main className="relative min-h-screen bg-nodal-white text-nodal-graphite overflow-x-hidden font-sans">
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+
+        <NodesBackground />
+        <Navbar />
+
+        <div className="relative z-10">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product" element={<Product />} />
+          </Routes>
+        </div>
+      </main>
+    </BrowserRouter>
   );
 }
 

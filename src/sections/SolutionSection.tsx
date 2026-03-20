@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { ArrowRight, Mic, FileText, ClipboardCheck, Check, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 
 const LiveDashboard = () => {
@@ -181,13 +182,13 @@ export const SolutionSection = () => {
 
         {/* CTA Link */}
         <div className="solution-cta translate-y-8 opacity-0 mt-8">
-          <a
-            href="#workflow"
+          <Link
+            to="/product"
             className="inline-flex items-center gap-2 text-nodal-green font-semibold text-lg hover:gap-3 transition-all"
           >
             Explore the Product
             <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
