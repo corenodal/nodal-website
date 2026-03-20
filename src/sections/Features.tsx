@@ -51,7 +51,7 @@ export const Features = () => {
   }, []);
 
   return (
-    <section id="features" className="py-24 px-6 md:px-24 bg-white relative z-10">
+    <section id="features" className="py-24 px-6 md:px-24 bg-transparent relative z-10">
       <div className="max-w-7xl mx-auto" ref={containerRef}>
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue mb-6">
