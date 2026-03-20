@@ -2,7 +2,7 @@ import { Brain, AlertTriangle, Files, Flame, User, Database, MessageSquare, Clip
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-export const MemorySection = () => {
+export const ProblemSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ export const MemorySection = () => {
   }, []);
 
   return (
-    <section id="memory" className="py-24 px-6 md:px-24 bg-nodal-white relative z-10">
+    <section id="problem" className="pt-12 pb-32 px-6 md:px-24 bg-gradient-to-b from-transparent to-nodal-white relative z-10">
       <div className="max-w-7xl mx-auto" ref={containerRef}>
         <div className="flex flex-col md:flex-row items-center gap-16">
           <div className="flex-1 md:flex-1">

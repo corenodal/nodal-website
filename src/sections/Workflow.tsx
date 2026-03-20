@@ -222,7 +222,7 @@ export const Workflow = () => {
     <section
       id="workflow"
       ref={containerRef}
-      className="h-screen w-full bg-white overflow-hidden border-t border-slate-100 flex items-center relative z-20"
+      className="h-screen w-full bg-white overflow-hidden flex items-center relative z-20"
     >
       {/* Subtle overlay to maintain the requested violet tint without transparency */}
       <div className="absolute inset-0 bg-gradient-to-b from-white via-nodal-violet/5 to-white pointer-events-none" />

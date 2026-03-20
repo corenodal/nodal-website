@@ -4,7 +4,7 @@ import { Hero } from './sections/Hero';
 import { NodesBackground } from './animations/NodesBackground';
 import { Workflow } from './sections/Workflow';
 import { Features } from './sections/Features';
-import { MemorySection } from './sections/MemorySection';
+import { ProblemSection } from './sections/ProblemSection';
 import { TrustSection } from './sections/TrustSection';
 import { Footer } from './sections/Footer';
 import { LoadingScreen } from './components/LoadingScreen';
@@ -21,9 +21,9 @@ function App() {
       
       <div className="relative z-10">
         <Hero />
+        <ProblemSection />
         <Workflow />
         <Features />
-        <MemorySection />
         <TrustSection />
         <Footer />
       </div>
