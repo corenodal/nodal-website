@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
 
 export const Navbar = () => {
@@ -15,7 +15,17 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navigate = useNavigate();
   const location = useLocation();
+
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate('/');
+    }
+  };
 
   const navLinks = [
     { name: 'Product', href: '/product', isRoute: true },
@@ -32,7 +42,7 @@ export const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" className="flex items-center space-x-2">
+        <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2">
           <div className="w-8 h-8 rounded-lg bg-nodal-blue flex items-center justify-center">
             <div className="w-4 h-4 rounded-full bg-nodal-white" />
           </div>

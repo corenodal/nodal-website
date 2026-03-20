@@ -110,7 +110,7 @@ export const TargetSection = () => {
       });
 
       // Cards slide up and overlap with scroll
-      cardsRef.current.forEach((card, i) => {
+      cardsRef.current.forEach((card) => {
         if (!card) return;
         gsap.fromTo(
           card,
