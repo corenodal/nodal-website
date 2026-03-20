@@ -58,10 +58,10 @@ export const Hero = () => {
 
         <h1 className="text-6xl md:text-8xl font-semibold tracking-tight leading-[1.1] mb-10 text-nodal-blue">
           <div className="overflow-hidden">
-            <span className="hero-word block">Personalised AI </span>
+            <span className="hero-word block">Personalised AI Assistant </span>
           </div>
           <div className="overflow-hidden mt-3">
-            <span className="hero-word block">Clinical Assistant</span>
+            <span className="hero-word block">for Healthcare Professionals</span>
           </div>
         </h1>
 
@@ -69,7 +69,8 @@ export const Hero = () => {
           ref={subheadlineRef}
           className="text-xl md:text-2xl text-nodal-graphite font-light leading-relaxed mb-14 max-w-3xl mx-auto"
         >
-          Nodal converts clinical sessions into structured, verifiable documentation—reducing cognitive load and restoring administrative clarity.
+          Nodal is an AI-powered system that centralizes insights, context, and follow-through - reducing cognitive fragmentation across care delivery so healthcare professionals can focus on patients
+
         </p>
 
         {/* Decorative Line as requested by user */}
