@@ -33,8 +33,8 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
         .fromTo(
           imageRef.current,
           { y: 40, opacity: 0 },
-          { y: 0, opacity: 1, duration: 0.8 },
-          '-=0.4'
+          { y: 0, opacity: 1, duration: 1 },
+          '-=0.6'
         );
     }, containerRef);
 
@@ -42,38 +42,34 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   }, [isLoading]);
 
   return (
-    <section ref={containerRef} className="relative z-10 pt-28 md:pt-32 min-h-screen">
+    <section ref={containerRef} className="relative z-10 pt-20 md:pt-24 min-h-screen">
       <div className="relative">
         {/* Purple background — stops short so image overflows */}
-        <div className="absolute inset-x-0 top-0 h-[80%] bg-nodal-violet/90" />
+        <div className="absolute inset-x-0 top-0 h-[75%] bg-nodal-violet/90" />
 
         {/* Content */}
-        <div className="relative max-w-screen-2xl mx-auto px-6 md:px-24 pt-10 md:pt-16">
-          {/* Line 1 of title — spans full width */}
-          <div ref={titleRef}>
+        <div className="relative max-w-screen-2xl mx-auto px-6 md:px-24 pt-6 md:pt-10">
+          {/* Title + subtitle */}
+          <div ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.1] text-white whitespace-nowrap">
               <div className="overflow-hidden">
-                <span className="product-hero-word block">A Centralized Clinical Node</span>
+                <span className="product-hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>A Centralized Clinical Node</span>
               </div>
             </h1>
           </div>
+          <p
+            ref={descRef}
+            className="text-xl md:text-2xl text-white/80 font-light whitespace-nowrap mt-2 md:mt-3"
+            style={{ opacity: 0, transform: 'translateY(20px)' }}
+          >
+            Designed using research on cognitive load, structured thinking, and clinical decision pathways.
+          </p>
 
-          {/* Line 2 + image side by side */}
-          <div className="flex flex-col md:flex-row md:items-start gap-8 md:gap-12 mt-2 md:mt-3">
-            {/* Left column: description aligned with image top */}
-            <div className="flex-shrink-0 md:w-[20%] flex flex-col justify-start">
-              <p
-                ref={descRef}
-                className="text-xl md:text-2xl text-white/80 font-light leading-relaxed max-w-sm"
-              >
-                Designed using research on cognitive load, structured thinking, and clinical decision pathways.
-              </p>
-            </div>
-
-            {/* Right column: image overflowing purple into white */}
+          {/* Image — right-aligned, overflowing purple into white */}
+          <div className="mt-5 md:mt-8 md:ml-[15%] md:max-w-[80%]">
             <div
               ref={imageRef}
-              className="flex-1 min-w-0"
+              style={{ opacity: 0, transform: 'translateY(40px)' }}
             >
               <div className="rounded-2xl overflow-hidden shadow-[0_25px_60px_-12px_rgba(0,0,0,0.25)] border border-slate-100 bg-white">
                 <img
@@ -102,7 +98,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
       </div>
 
       {/* Bottom spacing — transparent, lets app bg show through like main page */}
-      <div className="h-16 md:h-24" />
+      <div className="h-10 md:h-16" />
     </section>
   );
 };

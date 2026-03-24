@@ -145,7 +145,7 @@ export const Workflow = () => {
   const visualItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
+    const ctx = gsap.context(() => {
       // 1. Setup initial states
       steps.forEach((_, i) => {
         if (i !== 0) {

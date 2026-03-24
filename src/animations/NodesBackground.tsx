@@ -2,31 +2,37 @@ import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 
+// Seeded random to keep render pure
+function seededRandom(seed: number) {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+}
+
 function NeuralNetwork() {
   const pointsRef = useRef<THREE.Points>(null!);
   const linesRef = useRef<THREE.LineSegments>(null!);
-  
+
   const particleCount = 200;
-  
+
   const { positions, linePositions, colors } = useMemo(() => {
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
     const pts = [];
-    
+
     // Nodal Blue #1E3F57 -> [30/255, 63/255, 87/255]
     // Violet #7B6EF6 -> [123/255, 110/255, 246/255]
-    
+
     for (let i = 0; i < particleCount; i++) {
-      const x = (Math.random() - 0.5) * 40;
-      const y = (Math.random() - 0.5) * 40;
-      const z = (Math.random() - 0.5) * 40;
+      const x = (seededRandom(i * 3 + 1) - 0.5) * 40;
+      const y = (seededRandom(i * 3 + 2) - 0.5) * 40;
+      const z = (seededRandom(i * 3 + 3) - 0.5) * 40;
       positions[i * 3] = x;
       positions[i * 3 + 1] = y;
       positions[i * 3 + 2] = z;
       pts.push(new THREE.Vector3(x, y, z));
       
       // Mix blue and violet randomly (15% violet for AI insight)
-      if (Math.random() > 0.85) {
+      if (seededRandom(i * 3 + 4) > 0.85) {
         colors[i * 3] = 123/255;
         colors[i * 3 + 1] = 110/255;
         colors[i * 3 + 2] = 246/255;
@@ -84,16 +90,16 @@ function NeuralNetwork() {
     <group>
       <points ref={pointsRef}>
         <bufferGeometry>
-          {/* @ts-ignore */}
+          {/* @ts-expect-error R3F bufferAttribute typing */}
           <bufferAttribute attach="attributes-position" count={positions.length / 3} array={positions} itemSize={3} />
-          {/* @ts-ignore */}
+          {/* @ts-expect-error R3F bufferAttribute typing */}
           <bufferAttribute attach="attributes-color" count={colors.length / 3} array={colors} itemSize={3} />
         </bufferGeometry>
         <pointsMaterial size={0.15} vertexColors transparent opacity={0.6} sizeAttenuation />
       </points>
       <lineSegments ref={linesRef}>
         <bufferGeometry>
-          {/* @ts-ignore */}
+          {/* @ts-expect-error R3F bufferAttribute typing */}
           <bufferAttribute attach="attributes-position" count={linePositions.length / 3} array={linePositions} itemSize={3} />
         </bufferGeometry>
         <lineBasicMaterial color="#1E3F57" transparent opacity={0.08} />
