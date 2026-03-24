@@ -19,10 +19,10 @@ function App() {
         <NodesBackground />
         <Navbar />
 
-        <div className="relative z-10">
+        <div className="relative">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product" element={<Product />} />
+            <Route path="/" element={<Home isLoading={isLoading} />} />
+            <Route path="/product" element={<Product isLoading={isLoading} />} />
           </Routes>
         </div>
       </main>

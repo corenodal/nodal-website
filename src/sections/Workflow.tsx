@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Check, Network, Activity, FileText } from 'lucide-react';
@@ -144,7 +144,7 @@ export const Workflow = () => {
   const textItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const visualItemsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       // 1. Setup initial states
       steps.forEach((_, i) => {
@@ -242,13 +242,13 @@ export const Workflow = () => {
                 <div className="flex flex-col items-center mr-6 mt-1">
                   <div className={`w-4 h-4 shrink-0 rounded-full ${step.color === 'nodal-violet' ? 'bg-nodal-violet shadow-[0_0_10px_rgba(123,110,246,0.6)]' : 'bg-nodal-green shadow-[0_0_10px_rgba(78,191,166,0.6)]'}`} />
                   {index !== steps.length - 1 && (
-                    <div className="w-0.5 h-12 md:h-20 bg-slate-200 my-3 rounded-full" />
+                    <div className="w-0.5 h-16 md:h-28 bg-slate-200 my-3 rounded-full" />
                   )}
                 </div>
 
                 <div className="pb-4 md:pb-8">
                   <h3 className="text-xl md:text-3xl font-bold text-nodal-blue mb-2">{step.title}</h3>
-                  <p className="text-base md:text-xl text-nodal-graphite font-light max-w-sm">{step.desc}</p>
+                  <p className="text-lg md:text-xl text-nodal-graphite font-light max-w-sm">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -265,7 +265,7 @@ export const Workflow = () => {
             >
               <div className="w-full max-w-[400px] md:max-w-[500px] aspect-square flex items-center justify-center relative">
                 {/* Massive soft ambient glow replacing the hard glass box - blur with translate-z-0 to fix Safari clip bug */}
-                <div className={`absolute inset-0 opacity-20 blur-[80px] rounded-full scale-[1.75] md:scale-[2] transition-colors duration-1000 transform-gpu translate-z-0 ${step.color === 'nodal-violet' ? 'bg-nodal-violet' : 'bg-nodal-green'}`} />
+                <div className={`absolute inset-0 opacity-20 blur-[50px] rounded-full scale-[1] md:scale-[1.15] transition-colors duration-1000 transform-gpu translate-z-0 ${step.color === 'nodal-violet' ? 'bg-nodal-violet' : 'bg-nodal-green'}`} />
 
                 <div className="relative z-10 w-full h-full flex items-center justify-center">
                   {visuals[index]}

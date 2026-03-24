@@ -25,7 +25,7 @@ export const CTASection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-16 md:py-24 px-6 md:px-24 bg-transparent relative z-10"
     >
       <div className="max-w-7xl mx-auto">
         <div className="cta-content translate-y-8 opacity-0 bg-nodal-blue rounded-3xl p-16 text-center text-white relative overflow-hidden shadow-2xl">

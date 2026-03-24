@@ -25,10 +25,10 @@ export const ProblemSection = () => {
 
       // Beat 1: Heading fade in
       gsap.to('.problem-heading', {
-        scrollTrigger: { trigger: '.problem-heading', start: 'top 80%' },
+        scrollTrigger: { trigger: '.problem-heading', start: 'top 85%' },
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.8,
         ease: 'power3.out',
       });
 
@@ -70,12 +70,12 @@ export const ProblemSection = () => {
       gsap.to('.pain-card', {
         scrollTrigger: {
           trigger: '.pain-cards-wrap',
-          start: 'top 75%',
+          start: 'top 85%',
         },
         y: 0,
         opacity: 1,
         scale: 1,
-        duration: 0.6,
+        duration: 0.8,
         stagger: 0.15,
         ease: 'power3.out',
       });
@@ -88,7 +88,7 @@ export const ProblemSection = () => {
         },
         y: 0,
         opacity: 1,
-        duration: 1,
+        duration: 0.8,
         ease: 'power3.out',
       });
 
@@ -101,13 +101,13 @@ export const ProblemSection = () => {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative z-10 bg-transparent overflow-visible"
+      className="relative z-10 bg-transparent overflow-visible py-16 md:py-24"
     >
 
       {/* ── Beat 1: The Question ── */}
-      <div className="min-h-[50vh] flex flex-col items-center justify-center px-6 md:px-24 text-center">
+      <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mb-12">
         <div className="problem-heading translate-y-12 opacity-0 max-w-5xl">
-          <h2 className="text-5xl md:text-7xl font-bold text-nodal-blue leading-tight">
+          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue leading-tight">
             Clinical work is scattered across fragmented systems.
           </h2>
         </div>
@@ -156,7 +156,7 @@ export const ProblemSection = () => {
         </div>
 
         {/* Closing statement — on top of fragments */}
-        <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-20 md:pt-28 pb-12 text-center">
+        <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-12 md:pt-16 text-center">
           <p className="text-3xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
             <span className="text-nodal-blue block">This is not a productivity failure.</span>
             <span className="text-nodal-violet block mt-2">This is a systems design failure.</span>

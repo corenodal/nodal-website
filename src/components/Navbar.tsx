@@ -19,18 +19,15 @@ export const Navbar = () => {
   const location = useLocation();
 
   const handleLogoClick = (e: React.MouseEvent) => {
-    e.preventDefault();
     if (location.pathname === '/') {
+      e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      navigate('/');
     }
+    // When on other pages, let the <Link to="/"> handle navigation naturally
   };
 
   const navLinks = [
     { name: 'Product', href: '/product', isRoute: true },
-    { name: 'How It Works', href: '#how-it-works', isRoute: false },
-    { name: 'Solutions', href: '#solutions', isRoute: false },
     { name: 'About', href: '#about', isRoute: false },
   ];
 

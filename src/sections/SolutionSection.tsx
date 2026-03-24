@@ -160,13 +160,13 @@ export const SolutionSection = () => {
   return (
     <section
       id="solution"
-      className="py-24 md:py-32 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-16 md:py-24 px-6 md:px-24 bg-transparent relative z-10"
       ref={sectionRef}
     >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <div className="solution-text translate-y-8 opacity-0 mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold text-nodal-blue mb-4">
+          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue mb-4">
             One system. One workflow.
           </h2>
         </div>

@@ -4,10 +4,10 @@ import { Features } from '../sections/Features';
 import { TrustSection } from '../sections/TrustSection';
 import { Footer } from '../sections/Footer';
 
-export const Product = () => {
+export const Product = ({ isLoading = false }: { isLoading?: boolean }) => {
   return (
     <>
-      <ProductHero />
+      <ProductHero isLoading={isLoading} />
       <Workflow />
       <Features />
       <TrustSection />

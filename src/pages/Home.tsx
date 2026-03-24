@@ -5,10 +5,10 @@ import { TargetSection } from '../sections/TargetSection';
 import { CTASection } from '../sections/CTASection';
 import { Footer } from '../sections/Footer';
 
-export const Home = () => {
+export const Home = ({ isLoading = false }: { isLoading?: boolean }) => {
   return (
     <>
-      <Hero />
+      <Hero isLoading={isLoading} />
       <ProblemSection />
       <SolutionSection />
       <TargetSection />

@@ -2,13 +2,15 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 
-export const Hero = () => {
+export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
   const subheadlineRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (isLoading) return;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
@@ -38,7 +40,7 @@ export const Hero = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isLoading]);
 
   return (
     <section

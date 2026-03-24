@@ -118,9 +118,9 @@ export const TargetSection = () => {
           {
             scrollTrigger: {
               trigger: card,
-              start: 'top 90%',
-              end: 'top 40%',
-              scrub: 0.5,
+              start: 'top 95%',
+              end: 'top 65%',
+              scrub: 0.3,
             },
             y: 0,
             opacity: 1,
@@ -137,11 +137,11 @@ export const TargetSection = () => {
     <section
       id="target"
       ref={sectionRef}
-      className="py-24 md:py-32 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-16 md:py-24 px-6 md:px-24 bg-transparent relative z-10"
     >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
-        <h2 className="target-heading translate-y-8 opacity-0 text-5xl md:text-6xl font-bold text-nodal-blue mb-20 max-w-4xl">
+        <h2 className="target-heading translate-y-8 opacity-0 text-4xl md:text-5xl font-semibold text-nodal-blue mb-12 max-w-4xl">
           Designed for the realities of modern care delivery.
         </h2>
 
@@ -165,7 +165,7 @@ export const TargetSection = () => {
                   <h3 className="text-2xl md:text-3xl font-bold text-nodal-blue mb-3">
                     {card.title}
                   </h3>
-                  <p className="text-lg text-nodal-graphite font-light leading-relaxed">
+                  <p className="text-lg md:text-xl text-nodal-graphite font-light leading-relaxed">
                     {card.desc}
                   </p>
                 </div>

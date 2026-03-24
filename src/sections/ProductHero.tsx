@@ -1,50 +1,60 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-export const ProductHero = () => {
+export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const descRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
+    if (isLoading) return;
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
       tl.fromTo(
         titleRef.current,
-        { y: 30, opacity: 0 },
+        { y: 20, opacity: 0 },
         { y: 0, opacity: 1, duration: 1, delay: 0.2 }
       )
         .fromTo(
-          imageRef.current,
-          { x: 40, opacity: 0 },
-          { x: 0, opacity: 1, duration: 1 },
-          '-=0.6'
+          ".product-hero-word",
+          { y: "100%", opacity: 0 },
+          { y: "0%", opacity: 1, duration: 1, stagger: 0.15, ease: 'power4.out' },
+          "-=0.6"
         )
         .fromTo(
           descRef.current,
           { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1 },
+          '-=0.6'
+        )
+        .fromTo(
+          imageRef.current,
+          { y: 40, opacity: 0 },
           { y: 0, opacity: 1, duration: 0.8 },
           '-=0.4'
         );
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [isLoading]);
 
   return (
     <section ref={containerRef} className="relative z-10 pt-28 md:pt-32 min-h-screen">
       <div className="relative">
         {/* Purple background — stops short so image overflows */}
-        <div className="absolute inset-x-0 top-0 h-[80%] bg-nodal-violet" />
+        <div className="absolute inset-x-0 top-0 h-[80%] bg-nodal-violet/90" />
 
         {/* Content */}
         <div className="relative max-w-screen-2xl mx-auto px-6 md:px-24 pt-10 md:pt-16">
           {/* Line 1 of title — spans full width */}
           <div ref={titleRef}>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.1] text-white whitespace-nowrap">
-              A Centralized Clinical Node
+              <div className="overflow-hidden">
+                <span className="product-hero-word block">A Centralized Clinical Node</span>
+              </div>
             </h1>
           </div>
 
