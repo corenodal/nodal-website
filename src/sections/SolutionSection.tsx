@@ -160,7 +160,7 @@ export const SolutionSection = () => {
   return (
     <section
       id="solution"
-      className="py-16 md:py-24 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
       ref={sectionRef}
     >
       <div className="max-w-6xl mx-auto">

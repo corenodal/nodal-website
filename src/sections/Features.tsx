@@ -63,7 +63,7 @@ export const Features = () => {
   }, []);
 
   return (
-    <section id="features" className="py-16 md:py-24 px-6 md:px-24 bg-transparent relative z-10 flex items-center">
+    <section id="features" className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10 flex items-center">
       <div className="max-w-7xl mx-auto w-full" ref={containerRef}>
         <div className="text-center mb-10">
           <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue">

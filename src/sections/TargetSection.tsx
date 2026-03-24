@@ -137,7 +137,7 @@ export const TargetSection = () => {
     <section
       id="target"
       ref={sectionRef}
-      className="py-16 md:py-24 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
     >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}

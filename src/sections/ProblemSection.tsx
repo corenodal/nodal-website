@@ -101,7 +101,7 @@ export const ProblemSection = () => {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative z-10 bg-transparent overflow-visible py-16 md:py-24"
+      className="relative z-10 bg-transparent overflow-visible py-12 md:py-16"
     >
 
       {/* ── Beat 1: The Question ── */}
