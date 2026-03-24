@@ -42,16 +42,16 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   }, [isLoading]);
 
   return (
-    <section ref={containerRef} className="relative z-10 pt-20 md:pt-24 min-h-screen">
+    <section ref={containerRef} className="relative z-10 pt-16 md:pt-20 min-h-screen">
       <div className="relative">
         {/* Purple background — fixed height so it doesn't shift during animation */}
         <div className="absolute inset-x-0 top-0 h-[60vh] bg-nodal-violet/90" />
 
         {/* Content */}
-        <div className="relative max-w-screen-2xl mx-auto px-6 md:px-24 pt-6 md:pt-10">
+        <div className="relative max-w-screen-xl mx-auto px-6 md:px-20 pt-6 md:pt-10">
           {/* Title + subtitle */}
           <div ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[1.1] text-white whitespace-nowrap">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white whitespace-nowrap">
               <div className="overflow-hidden">
                 <span className="product-hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>A Centralized Clinical Node</span>
               </div>
@@ -59,7 +59,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
           </div>
           <p
             ref={descRef}
-            className="text-xl md:text-2xl text-white/80 font-light whitespace-nowrap mt-2 md:mt-3"
+            className="text-base md:text-lg text-white/80 font-light whitespace-nowrap mt-2 md:mt-3"
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
             Designed using research on cognitive load, structured thinking, and clinical decision pathways.

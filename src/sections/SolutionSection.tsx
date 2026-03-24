@@ -48,7 +48,7 @@ const LiveDashboard = () => {
   }, []);
 
   return (
-    <div ref={dashRef} className="w-full p-6 md:p-10">
+    <div ref={dashRef} className="w-full p-5 md:p-8">
       {/* Mock browser chrome */}
       <div className="bg-slate-50 rounded-t-xl px-4 py-3 flex items-center gap-2 border-b border-slate-100">
         <div className="w-3 h-3 rounded-full bg-rose-400/60" />
@@ -58,7 +58,7 @@ const LiveDashboard = () => {
       </div>
 
       {/* Dashboard body */}
-      <div className="bg-white rounded-b-xl border border-t-0 border-slate-100 p-5 md:p-8">
+      <div className="bg-white rounded-b-xl border border-t-0 border-slate-100 p-4 md:p-6">
         <div className="grid grid-cols-12 gap-4 md:gap-6">
 
           {/* Left panel — Live Session */}
@@ -160,13 +160,13 @@ export const SolutionSection = () => {
   return (
     <section
       id="solution"
-      className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-10 md:py-14 px-6 md:px-20 bg-transparent relative z-10"
       ref={sectionRef}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Heading */}
-        <div className="solution-text translate-y-8 opacity-0 mb-12">
-          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue mb-4">
+        <div className="solution-text translate-y-8 opacity-0 mb-8">
+          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue mb-3">
             One system. One workflow.
           </h2>
         </div>
@@ -181,10 +181,10 @@ export const SolutionSection = () => {
         </div>
 
         {/* CTA Link */}
-        <div className="solution-cta translate-y-8 opacity-0 mt-8">
+        <div className="solution-cta translate-y-8 opacity-0 mt-6">
           <Link
             to="/product"
-            className="inline-flex items-center gap-2 text-nodal-green font-semibold text-lg hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-nodal-green font-semibold text-base hover:gap-3 transition-all"
           >
             Explore the Product
             <ArrowRight className="w-5 h-5" />

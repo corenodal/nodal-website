@@ -51,7 +51,7 @@ const AudioWaveform = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center space-x-3 md:space-x-5 h-80 w-full scale-110 md:scale-125 origin-center">
+    <div className="flex items-center justify-center space-x-2 md:space-x-4 h-64 w-full scale-100 md:scale-110 origin-center">
       {[...Array(10)].map((_, i) => (
         <div
           key={i}
@@ -66,7 +66,7 @@ const AudioWaveform = () => {
 
 const NeuralNodes = () => {
   return (
-    <div className="relative w-full h-full flex items-center justify-center scale-110 md:scale-125 origin-center">
+    <div className="relative w-full h-full flex items-center justify-center scale-100 md:scale-110 origin-center">
       {/* Outer rotating ring */}
       <div className="absolute w-64 h-64 md:w-80 md:h-80 border border-dashed border-nodal-violet/40 rounded-full animate-[spin_20s_linear_infinite]" />
 
@@ -101,40 +101,40 @@ const NeuralNodes = () => {
 };
 
 const UICard = () => (
-  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-10 shadow-2xl max-w-md w-full border border-slate-100 flex flex-col scale-110 md:scale-125 origin-center">
-    <div className="h-5 w-1/3 bg-slate-200 rounded mb-10" />
-    <div className="space-y-5">
-      <div className="h-3 w-full bg-nodal-green/30 rounded" />
-      <div className="h-3 w-5/6 bg-nodal-green/30 rounded" />
-      <div className="h-3 w-full bg-nodal-green/30 rounded" />
-      <div className="h-3 w-4/6 bg-nodal-green/30 rounded" />
+  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl max-w-sm w-full border border-slate-100 flex flex-col scale-100 md:scale-110 origin-center">
+    <div className="h-4 w-1/3 bg-slate-200 rounded mb-6" />
+    <div className="space-y-3">
+      <div className="h-2.5 w-full bg-nodal-green/30 rounded" />
+      <div className="h-2.5 w-5/6 bg-nodal-green/30 rounded" />
+      <div className="h-2.5 w-full bg-nodal-green/30 rounded" />
+      <div className="h-2.5 w-4/6 bg-nodal-green/30 rounded" />
     </div>
-    <div className="mt-10 pt-8 border-t border-slate-100 flex justify-between">
-      <div className="h-10 w-28 bg-nodal-green/10 rounded-lg border border-nodal-green/20" />
-      <div className="h-10 w-28 bg-nodal-green text-white rounded-lg flex items-center justify-center text-sm font-semibold shadow-sm">Review</div>
+    <div className="mt-6 pt-5 border-t border-slate-100 flex justify-between">
+      <div className="h-8 w-24 bg-nodal-green/10 rounded-lg border border-nodal-green/20" />
+      <div className="h-8 w-24 bg-nodal-green text-white rounded-lg flex items-center justify-center text-xs font-semibold shadow-sm">Review</div>
     </div>
   </div>
 );
 
 const FollowUpCard = () => (
-  <div className="w-full max-w-md space-y-5 scale-110 md:scale-125 origin-center">
-    <div className="flex items-center space-x-5 p-5 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105">
-      <div className="w-10 h-10 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
-        <Check className="w-5 h-5" />
+  <div className="w-full max-w-sm space-y-4 scale-100 md:scale-110 origin-center">
+    <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105">
+      <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
+        <Check className="w-4 h-4" />
       </div>
-      <div className="text-lg font-semibold text-nodal-blue">Prescription Sent</div>
+      <div className="text-sm font-semibold text-nodal-blue">Prescription Sent</div>
     </div>
-    <div className="flex items-center space-x-5 p-5 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.1s' }}>
-      <div className="w-10 h-10 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
-        <Check className="w-5 h-5" />
+    <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.1s' }}>
+      <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
+        <Check className="w-4 h-4" />
       </div>
-      <div className="text-lg font-semibold text-nodal-blue">Billing Coded</div>
+      <div className="text-sm font-semibold text-nodal-blue">Billing Coded</div>
     </div>
-    <div className="flex items-center space-x-5 p-5 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.2s' }}>
-      <div className="w-10 h-10 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
-        <Check className="w-5 h-5" />
+    <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.2s' }}>
+      <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
+        <Check className="w-4 h-4" />
       </div>
-      <div className="text-lg font-semibold text-nodal-blue">Follow-up Scheduled</div>
+      <div className="text-sm font-semibold text-nodal-blue">Follow-up Scheduled</div>
     </div>
   </div>
 );
@@ -224,11 +224,11 @@ export const Workflow = () => {
       ref={containerRef}
       className="h-screen w-full bg-transparent overflow-hidden flex items-center relative z-20"
     >
-      <div className="max-w-7xl mx-auto w-full px-6 md:px-24 flex flex-col md:flex-row items-center h-full relative z-10">
+      <div className="max-w-6xl mx-auto w-full px-6 md:px-20 flex flex-col md:flex-row items-center h-full relative z-10">
 
         {/* Left Side: Sticky Text Narrative */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center h-[40%] md:h-full pt-20 md:pt-0 z-20">
-          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue mb-10 md:mb-16">
+        <div className="w-full md:w-1/2 flex flex-col justify-center h-[40%] md:h-full pt-16 md:pt-0 z-20">
+          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue mb-8 md:mb-12">
             The Complete Workflow
           </h2>
 
@@ -240,15 +240,15 @@ export const Workflow = () => {
                 className="flex items-start"
               >
                 <div className="flex flex-col items-center mr-6 mt-1">
-                  <div className={`w-4 h-4 shrink-0 rounded-full ${step.color === 'nodal-violet' ? 'bg-nodal-violet shadow-[0_0_10px_rgba(123,110,246,0.6)]' : 'bg-nodal-green shadow-[0_0_10px_rgba(78,191,166,0.6)]'}`} />
+                  <div className={`w-3 h-3 shrink-0 rounded-full ${step.color === 'nodal-violet' ? 'bg-nodal-violet shadow-[0_0_10px_rgba(123,110,246,0.6)]' : 'bg-nodal-green shadow-[0_0_10px_rgba(78,191,166,0.6)]'}`} />
                   {index !== steps.length - 1 && (
-                    <div className="w-0.5 h-16 md:h-28 bg-slate-200 my-3 rounded-full" />
+                    <div className="w-0.5 h-12 md:h-20 bg-slate-200 my-2 rounded-full" />
                   )}
                 </div>
 
-                <div className="pb-4 md:pb-8">
-                  <h3 className="text-xl md:text-3xl font-bold text-nodal-blue mb-2">{step.title}</h3>
-                  <p className="text-lg md:text-xl text-nodal-graphite font-light max-w-sm">{step.desc}</p>
+                <div className="pb-3 md:pb-6">
+                  <h3 className="text-lg md:text-2xl font-bold text-nodal-blue mb-1.5">{step.title}</h3>
+                  <p className="text-sm md:text-base text-nodal-graphite font-light max-w-sm">{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -263,7 +263,7 @@ export const Workflow = () => {
               ref={el => { visualItemsRef.current[index] = el; }}
               className="absolute inset-x-0 mx-auto flex items-center justify-center top-1/2 -translate-y-1/2"
             >
-              <div className="w-full max-w-[400px] md:max-w-[500px] aspect-square flex items-center justify-center relative">
+              <div className="w-full max-w-[320px] md:max-w-[400px] aspect-square flex items-center justify-center relative">
                 {/* Massive soft ambient glow replacing the hard glass box - blur with translate-z-0 to fix Safari clip bug */}
                 <div className={`absolute inset-0 opacity-20 blur-[50px] rounded-full scale-[1] md:scale-[1.15] transition-colors duration-1000 transform-gpu translate-z-0 ${step.color === 'nodal-violet' ? 'bg-nodal-violet' : 'bg-nodal-green'}`} />
 

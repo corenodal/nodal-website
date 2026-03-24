@@ -101,20 +101,20 @@ export const ProblemSection = () => {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative z-10 bg-transparent overflow-visible py-12 md:py-16"
+      className="relative z-10 bg-transparent overflow-visible py-10 md:py-14"
     >
 
       {/* ── Beat 1: The Question ── */}
-      <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mb-12">
-        <div className="problem-heading translate-y-12 opacity-0 max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue leading-tight">
+      <div className="flex flex-col items-center justify-center px-6 md:px-20 text-center mb-10">
+        <div className="problem-heading translate-y-12 opacity-0 max-w-4xl">
+          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue leading-tight">
             Clinical work is scattered across fragmented systems.
           </h2>
         </div>
       </div>
 
       {/* ── Beat 2+3 merged: Cards over scattered fragments ── */}
-      <div className="problem-content relative px-6 md:px-24 pt-6 md:pt-8 pb-10 md:pb-16">
+      <div className="problem-content relative px-6 md:px-20 pt-4 md:pt-6 pb-8 md:pb-12">
 
         {/* Background layer: scattering fragments — spans full section, no clipping */}
         <div className="absolute -inset-40 flex items-center justify-center pointer-events-none">
@@ -136,7 +136,7 @@ export const ProblemSection = () => {
 
         {/* Foreground: stat cards */}
         <div className="pain-cards-wrap relative z-10">
-          <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+          <div className="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-5">
             {[
               { label: 'Decision fatigue', stat: '300+', sub: 'decisions per day' },
               { label: 'Error risk', stat: '2.6×', sub: 'higher with fragmentation' },
@@ -145,19 +145,19 @@ export const ProblemSection = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="pain-card translate-y-8 opacity-0 scale-95 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow text-center"
+                className="pain-card translate-y-8 opacity-0 scale-95 bg-white/90 backdrop-blur-sm rounded-xl p-5 md:p-6 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold text-rose-500 mb-2">{item.stat}</div>
-                <div className="text-base md:text-lg font-semibold text-nodal-blue mb-1">{item.label}</div>
-                <div className="text-xs md:text-sm text-nodal-graphite font-light">{item.sub}</div>
+                <div className="text-2xl md:text-3xl font-bold text-rose-500 mb-1.5">{item.stat}</div>
+                <div className="text-sm md:text-base font-semibold text-nodal-blue mb-1">{item.label}</div>
+                <div className="text-xs text-nodal-graphite font-light">{item.sub}</div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Closing statement — on top of fragments */}
-        <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-12 md:pt-16 text-center">
-          <p className="text-3xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
+        <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-10 md:pt-12 text-center">
+          <p className="text-2xl md:text-4xl font-bold leading-tight max-w-2xl mx-auto">
             <span className="text-nodal-blue block">This is not a productivity failure.</span>
             <span className="text-nodal-violet block mt-2">This is a systems design failure.</span>
           </p>

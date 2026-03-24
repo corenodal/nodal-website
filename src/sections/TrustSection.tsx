@@ -97,32 +97,32 @@ export const TrustSection = () => {
     <div
       key={feature}
       ref={(el) => { rowsRef.current[globalIndex] = el; }}
-      className="flex items-center gap-4 py-4 px-5 rounded-xl transition-colors"
+      className="flex items-center gap-3 py-3 px-4 rounded-xl transition-colors"
     >
       <div
         ref={(el) => { checksRef.current[globalIndex] = el; }}
-        className="w-7 h-7 rounded-lg bg-nodal-green flex items-center justify-center flex-shrink-0 shadow-sm"
+        className="w-6 h-6 rounded-md bg-nodal-green flex items-center justify-center flex-shrink-0 shadow-sm"
       >
-        <Check className="w-4 h-4 text-white" strokeWidth={3} />
+        <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
       </div>
-      <span className="text-lg md:text-xl text-nodal-blue font-medium">{feature}</span>
+      <span className="text-sm md:text-base text-nodal-blue font-medium">{feature}</span>
     </div>
   );
 
   return (
-    <section id="trust" className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10">
-      <div className="max-w-7xl mx-auto" ref={sectionRef}>
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue mb-6">
+    <section id="trust" className="py-10 md:py-14 px-6 md:px-20 bg-transparent relative z-10">
+      <div className="max-w-6xl mx-auto" ref={sectionRef}>
+        <div className="text-center mb-10">
+          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue mb-4">
             Designed for Clinical Accountability
           </h2>
-          <p className="text-xl md:text-2xl text-nodal-graphite max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-base md:text-lg text-nodal-graphite max-w-2xl mx-auto font-light leading-relaxed">
             Healthcare requires absolute transparency. Nodal is built on foundations of verifiable output and ethical intelligence.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-1 bg-nodal-white rounded-2xl border border-slate-100 p-8 md:p-12 shadow-sm">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-0 bg-nodal-white rounded-2xl border border-slate-100 p-6 md:p-10 shadow-sm">
             <div className="flex flex-col">
               {leftColumn.map((feature, i) => renderItem(feature, i))}
             </div>

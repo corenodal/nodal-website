@@ -35,13 +35,13 @@ const Person = ({ size = 'md', delay = 0, color = 'nodal-green' }: { size?: 'sm'
 
 /* ── People Illustrations ── */
 const SoloPerson = () => (
-  <div className="flex items-end justify-center h-40 md:h-48">
+  <div className="flex items-end justify-center h-32 md:h-40">
     <Person size="lg" color="nodal-green" />
   </div>
 );
 
 const GroupPeople = () => (
-  <div className="flex items-end justify-center gap-4 md:gap-6 h-40 md:h-48">
+  <div className="flex items-end justify-center gap-3 md:gap-5 h-32 md:h-40">
     <Person size="md" delay={0.2} color="nodal-violet" />
     <Person size="lg" delay={0} color="nodal-green" />
     <Person size="md" delay={0.4} color="nodal-violet" />
@@ -50,7 +50,7 @@ const GroupPeople = () => (
 );
 
 const OrgPeople = () => (
-  <div className="flex flex-col items-center justify-end gap-2 h-40 md:h-48">
+  <div className="flex flex-col items-center justify-end gap-2 h-32 md:h-40">
     {/* Back row */}
     <div className="flex items-end gap-2 md:gap-3">
       <Person size="sm" delay={0.5} color="nodal-violet" />
@@ -137,11 +137,11 @@ export const TargetSection = () => {
     <section
       id="target"
       ref={sectionRef}
-      className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-10 md:py-14 px-6 md:px-20 bg-transparent relative z-10"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Heading */}
-        <h2 className="target-heading translate-y-8 opacity-0 text-4xl md:text-5xl font-semibold text-nodal-blue mb-12 max-w-4xl">
+        <h2 className="target-heading translate-y-8 opacity-0 text-3xl md:text-4xl font-semibold text-nodal-blue mb-10 max-w-3xl">
           Designed for the realities of modern care delivery.
         </h2>
 
@@ -151,27 +151,27 @@ export const TargetSection = () => {
             <div
               key={i}
               ref={el => { cardsRef.current[i] = el; }}
-              className="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-8 md:p-12 transition-shadow hover:shadow-2xl"
+              className="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-10 transition-shadow hover:shadow-2xl"
               style={{
                 zIndex: i + 1,
                 marginLeft: `${i * 1.5}rem`,
                 marginRight: `${(2 - i) * 1.5}rem`,
               }}
             >
-              <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
                 {/* Text */}
                 <div className="flex-1 order-2 md:order-1">
-                  <div className={`w-12 h-1 rounded-full ${accentBar[card.accent] || accentBar['nodal-green']} mb-4`} />
-                  <h3 className="text-2xl md:text-3xl font-bold text-nodal-blue mb-3">
+                  <div className={`w-10 h-1 rounded-full ${accentBar[card.accent] || accentBar['nodal-green']} mb-3`} />
+                  <h3 className="text-xl md:text-2xl font-bold text-nodal-blue mb-2">
                     {card.title}
                   </h3>
-                  <p className="text-lg md:text-xl text-nodal-graphite font-light leading-relaxed">
+                  <p className="text-base md:text-lg text-nodal-graphite font-light leading-relaxed">
                     {card.desc}
                   </p>
                 </div>
 
                 {/* Illustration */}
-                <div className="flex-shrink-0 order-1 md:order-2 w-48 md:w-56">
+                <div className="flex-shrink-0 order-1 md:order-2 w-40 md:w-48">
                   {card.visual}
                 </div>
               </div>
