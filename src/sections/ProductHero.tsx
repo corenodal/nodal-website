@@ -44,8 +44,8 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   return (
     <section ref={containerRef} className="relative z-10 pt-20 md:pt-24 min-h-screen">
       <div className="relative">
-        {/* Purple background — stops short so image overflows */}
-        <div className="absolute inset-x-0 top-0 h-[75%] bg-nodal-violet/90" />
+        {/* Purple background — fixed height so it doesn't shift during animation */}
+        <div className="absolute inset-x-0 top-0 h-[60vh] bg-nodal-violet/90" />
 
         {/* Content */}
         <div className="relative max-w-screen-2xl mx-auto px-6 md:px-24 pt-6 md:pt-10">
