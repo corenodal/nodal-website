@@ -13,6 +13,12 @@
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui;
 }
 
+html {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 :root {
   --nodal-blue: #1E3F57;
   --nodal-green: #4EBFA6;
