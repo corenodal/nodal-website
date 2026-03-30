@@ -52,7 +52,7 @@ export const TheShift = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center px-6 md:px-24 py-12 md:py-16 bg-transparent relative z-10"
+      className="min-h-screen flex flex-col justify-center px-6 md:px-24 py-24 bg-transparent relative z-10"
     >
       <div className="max-w-6xl w-full mx-auto">
         <p className="shift-label opacity-0 text-xs font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-16">
