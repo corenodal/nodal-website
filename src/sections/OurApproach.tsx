@@ -110,7 +110,7 @@ export const OurApproach = () => {
 
               {/* Body */}
               <div className="col-span-12 md:col-span-6 md:col-start-7">
-                <p className="text-xl text-nodal-graphite font-light leading-relaxed">
+                <p className="text-base text-nodal-graphite font-light leading-relaxed">
                   {p.body}
                 </p>
               </div>

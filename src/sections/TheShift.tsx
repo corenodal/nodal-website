@@ -55,7 +55,7 @@ export const TheShift = () => {
       className="min-h-screen flex flex-col justify-center px-6 md:px-24 py-24 bg-transparent relative z-10"
     >
       <div className="max-w-6xl w-full mx-auto">
-        <p className="shift-label opacity-0 text-sm font-semibold text-nodal-violet uppercase tracking-widest mb-16">
+        <p className="shift-label opacity-0 text-xs font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-16">
           The shift we&apos;re responding to
         </p>
 
@@ -85,7 +85,7 @@ export const TheShift = () => {
               <span className="font-semibold text-nodal-blue">sustainability challenge.</span>
             </p>
           </div>
-          <p className="text-xl md:text-2xl text-nodal-graphite font-light leading-relaxed">
+          <p className="text-base text-nodal-graphite-soft font-light leading-relaxed">
             We believe the next generation of healthcare infrastructure must reduce invisible strain,
             not add to it. That belief shapes every decision we make.
           </p>
