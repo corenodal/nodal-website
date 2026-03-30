@@ -43,14 +43,14 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
         </div>
 
         {/* Right — stacked context blocks */}
-        <div className="ah-right opacity-0 flex flex-col gap-10 max-w-sm">
-          <div className="border-l-2 border-nodal-green pl-6">
+        <div className="ah-right opacity-0 flex flex-col gap-8 max-w-xs">
+          <div className="border-l-2 border-nodal-green pl-5">
             <p className="text-sm font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1">Mission</p>
             <p className="text-base text-nodal-graphite font-light leading-relaxed">
               Reduce cognitive fragmentation so clinicians can be fully present with patients.
             </p>
           </div>
-          <div className="border-l-2 border-nodal-violet/40 pl-6">
+          <div className="border-l-2 border-nodal-violet/40 pl-5">
             <p className="text-sm font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1">Belief</p>
             <p className="text-base text-nodal-graphite font-light leading-relaxed">
               Healthcare cannot scale sustainably if systems demand more than they give back.
