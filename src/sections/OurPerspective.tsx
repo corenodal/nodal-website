@@ -49,9 +49,9 @@ export const OurPerspective = () => {
         WHY
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-24 py-24 md:py-32">
+      <div className="max-w-6xl mx-auto px-6 md:px-24 py-12 md:py-16">
         {/* Intro */}
-        <div className="persp-intro opacity-0 flex flex-col md:flex-row md:items-end gap-6 md:gap-16 mb-16 md:mb-20">
+        <div className="persp-intro opacity-0 flex flex-col md:flex-row md:items-end gap-6 md:gap-16 mb-10 md:mb-12">
           <div>
             <p className="text-xs font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3">
               Our Perspective
@@ -70,7 +70,7 @@ export const OurPerspective = () => {
           {questions.map((q, i) => (
             <div
               key={i}
-              className="persp-q opacity-0 border-b border-white/10 py-10 md:py-12 group flex items-start gap-6 md:gap-10 cursor-default"
+              className="persp-q opacity-0 border-b border-white/10 py-6 md:py-8 group flex items-start gap-6 md:gap-10 cursor-default"
             >
               <span className="text-[2.5rem] md:text-[3.5rem] font-bold text-white/10 leading-none flex-shrink-0 select-none group-hover:text-nodal-green/30 transition-colors duration-300">
                 {String(i + 1).padStart(2, '0')}
