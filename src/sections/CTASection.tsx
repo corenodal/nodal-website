@@ -29,10 +29,6 @@ export const CTASection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="cta-content translate-y-8 opacity-0 bg-nodal-blue rounded-3xl p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <div className="w-full h-full border-[40px] border-white/20 rounded-full scale-150 -translate-y-1/2" />
-          </div>
-
           <h3 className="text-4xl md:text-5xl font-semibold mb-6 relative z-10">
             Precision Intelligence for Clinical Care
           </h3>
