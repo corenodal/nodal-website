@@ -33,26 +33,26 @@ export const Navbar = () => {
   return (
     <nav 
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-20 py-4",
-        isScrolled ? "bg-nodal-white/90 backdrop-blur-md border-b border-slate-200 py-3 shadow-sm" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-24 py-6",
+        isScrolled ? "bg-nodal-white/90 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm" : "bg-transparent"
       )}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2">
-          <div className="w-7 h-7 rounded-lg bg-nodal-blue flex items-center justify-center">
-            <div className="w-3.5 h-3.5 rounded-full bg-nodal-white" />
+          <div className="w-8 h-8 rounded-lg bg-nodal-blue flex items-center justify-center">
+            <div className="w-4 h-4 rounded-full bg-nodal-white" />
           </div>
-          <span className="text-xl font-bold tracking-tighter text-nodal-blue">NODAL</span>
+          <span className="text-2xl font-bold tracking-tighter text-nodal-blue">NODAL</span>
         </Link>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden md:flex items-center space-x-10">
           {navLinks.map((link) =>
             link.isRoute ? (
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-sm font-medium text-nodal-graphite hover:text-nodal-blue transition-colors"
+                className="text-base font-medium text-nodal-graphite hover:text-nodal-blue transition-colors"
               >
                 {link.name}
               </Link>
@@ -60,13 +60,13 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-nodal-graphite hover:text-nodal-blue transition-colors"
+                className="text-base font-medium text-nodal-graphite hover:text-nodal-blue transition-colors"
               >
                 {link.name}
               </a>
             )
           )}
-          <button className="px-5 py-2.5 bg-nodal-blue text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+          <button className="px-6 py-3 bg-nodal-blue text-white text-base font-semibold rounded-lg hover:bg-slate-800 transition-colors">
             Request Access
           </button>
         </div>
