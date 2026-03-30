@@ -14,6 +14,6 @@ export const About = ({ isLoading }: { isLoading: boolean }) => (
     <OurPerspective />
     <WhoWeAre />
     <AboutCTA />
-    <Footer dark />
+    <Footer />
   </>
 );

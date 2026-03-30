@@ -54,10 +54,10 @@ export const AboutCTA = () => {
           <p className="acta-sub opacity-0 text-base md:text-lg text-white/60 font-light max-w-sm leading-relaxed">
             Nodal is building that infrastructure. Join us as a pilot partner and help shape what comes next.
           </p>
-          <button className="acta-btn opacity-0 flex items-center gap-3 px-8 py-4 bg-white text-nodal-violet text-base font-semibold rounded-xl hover:bg-nodal-green hover:text-white transition-all duration-300 group self-start">
+          <a href="mailto:core.nodal@gmail.com" className="acta-btn opacity-0 flex items-center gap-3 px-8 py-4 bg-white text-nodal-violet text-base font-semibold rounded-xl hover:bg-nodal-green hover:text-white transition-all duration-300 group self-start">
             Join as a Pilot Partner
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </button>
+          </a>
         </div>
       </div>
     </section>

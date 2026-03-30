@@ -39,9 +39,9 @@ export const CTASection = () => {
           <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-10 font-light relative z-10 leading-relaxed">
             Join the clinical pilot program and experience the next generation of administrative clarity.
           </p>
-          <button className="px-10 py-5 bg-nodal-green text-white text-lg font-semibold rounded-xl hover:brightness-105 transition-all relative z-10 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+          <a href="mailto:core.nodal@gmail.com" className="px-10 py-5 bg-nodal-green text-white text-lg font-semibold rounded-xl hover:brightness-105 transition-all relative z-10 shadow-lg hover:shadow-xl hover:-translate-y-0.5">
             Request Access
-          </button>
+          </a>
         </div>
       </div>
     </section>

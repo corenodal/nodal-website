@@ -66,9 +66,9 @@ export const Navbar = () => {
               </a>
             )
           )}
-          <button className="px-6 py-3 bg-nodal-blue text-white text-base font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+          <a href="mailto:core.nodal@gmail.com" className="px-6 py-3 bg-nodal-blue text-white text-base font-semibold rounded-lg hover:bg-slate-800 transition-colors">
             Request Access
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -104,9 +104,9 @@ export const Navbar = () => {
               </a>
             )
           )}
-          <button className="w-full py-4 bg-nodal-blue text-white text-lg font-semibold rounded-lg">
+          <a href="mailto:core.nodal@gmail.com" className="w-full py-4 bg-nodal-blue text-white text-lg font-semibold rounded-lg text-center">
             Request Access
-          </button>
+          </a>
         </div>
       )}
     </nav>
