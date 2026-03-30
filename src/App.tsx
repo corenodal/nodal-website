@@ -6,6 +6,7 @@ import { NodesBackground } from './animations/NodesBackground';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Home } from './pages/Home';
 import { Product } from './pages/Product';
+import { About } from './pages/About';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,6 +24,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home isLoading={isLoading} />} />
             <Route path="/product" element={<Product isLoading={isLoading} />} />
+            <Route path="/about" element={<About isLoading={isLoading} />} />
           </Routes>
         </div>
       </main>
