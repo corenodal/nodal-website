@@ -60,7 +60,7 @@ export const WhoWeAre = () => {
           <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue leading-tight mb-8">
             Built by people<br />who understand<br />the problem.
           </h2>
-          <p className="text-base text-nodal-graphite font-light leading-relaxed max-w-sm mb-10">
+          <p className="text-xl text-nodal-graphite font-light leading-relaxed max-w-sm mb-10">
             We work directly with clinicians at every stage. Our solutions reflect real-world
             practice, not theoretical models or optimistic assumptions.
           </p>
@@ -81,11 +81,11 @@ export const WhoWeAre = () => {
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-nodal-green group-hover:scale-150 transition-transform" />
-                <span className="text-sm font-semibold text-nodal-blue tracking-wide">
+                <span className="text-base font-semibold text-nodal-blue tracking-wide">
                   {p.tag}
                 </span>
               </div>
-              <p className="text-sm text-nodal-graphite font-light leading-relaxed pl-5">
+              <p className="text-base text-nodal-graphite font-light leading-relaxed pl-5">
                 {p.desc}
               </p>
             </div>

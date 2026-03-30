@@ -9,24 +9,24 @@ const principles = [
   {
     num: '01',
     icon: Brain,
-    color: 'text-nodal-violet',
-    accentBg: 'bg-nodal-violet',
+    iconClass: 'text-nodal-violet group-hover:text-white',
+    wrapperClass: 'group-hover:bg-nodal-violet group-hover:border-transparent',
     title: 'Behavioral Science Foundation',
     body: "We design around research on cognitive load, decision fatigue, and structured thinking, not around what's technically possible. Workflows are reshaped to match how clinicians actually reason.",
   },
   {
     num: '02',
     icon: Network,
-    color: 'text-nodal-green',
-    accentBg: 'bg-nodal-green',
+    iconClass: 'text-nodal-green group-hover:text-white',
+    wrapperClass: 'group-hover:bg-nodal-green group-hover:border-transparent',
     title: 'Systems Thinking',
     body: "The problem isn't individual tools. It's fragmented infrastructure. Nodal acts as a single clinical node, collapsing the number of places clinicians must hold attention simultaneously.",
   },
   {
     num: '03',
     icon: ShieldCheck,
-    color: 'text-nodal-blue',
-    accentBg: 'bg-nodal-blue',
+    iconClass: 'text-nodal-blue group-hover:text-white',
+    wrapperClass: 'group-hover:bg-nodal-blue group-hover:border-transparent',
     title: 'Clinical Accountability',
     body: 'Every output requires clinician review. Oversight is not a compliance checkbox. It is structural. AI amplifies judgment; it does not replace it.',
   },
@@ -96,8 +96,8 @@ export const OurApproach = () => {
 
               {/* Icon */}
               <div className="col-span-2 md:col-span-1">
-                <div className={`w-10 h-10 rounded-lg border border-slate-100 flex items-center justify-center transition-colors duration-300 group-hover:${p.accentBg} group-hover:border-transparent`}>
-                  <p.icon className={`w-5 h-5 ${p.color} group-hover:text-white transition-colors duration-300`} />
+                <div className={`w-10 h-10 rounded-lg border border-slate-100 flex items-center justify-center transition-colors duration-300 ${p.wrapperClass}`}>
+                  <p.icon className={`w-5 h-5 transition-colors duration-300 ${p.iconClass}`} />
                 </div>
               </div>
 
