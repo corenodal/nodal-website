@@ -25,13 +25,13 @@ export const AboutCTA = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-0 bg-nodal-violet relative overflow-hidden z-10"
+      className="py-24 md:py-36 px-6 md:px-24 bg-nodal-violet relative overflow-hidden z-10"
     >
       {/* Decorative rings */}
       <div aria-hidden className="absolute -top-32 -left-32 w-96 h-96 rounded-full border-[1px] border-white/10 pointer-events-none" />
       <div aria-hidden className="absolute -bottom-48 -right-24 w-[600px] h-[600px] rounded-full border-[1px] border-white/10 pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto px-6 md:px-24 py-12 md:py-16 relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Left-aligned headline */}
         <h2 className="text-[clamp(2rem,5.5vw,5rem)] font-bold text-white leading-[1.05] tracking-tight max-w-4xl mb-8">
           <div className="overflow-hidden">
