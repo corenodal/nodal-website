@@ -48,7 +48,7 @@ export const WhoWeAre = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 md:py-32 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-start">
 

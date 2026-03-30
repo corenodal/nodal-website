@@ -62,11 +62,11 @@ export const OurApproach = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 md:py-32 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
     >
       <div className="max-w-6xl mx-auto">
         {/* Heading row */}
-        <div className="approach-heading opacity-0 flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-16 md:mb-20">
+        <div className="approach-heading opacity-0 flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
           <div>
             <p className="text-xs font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-3">
               Our Approach
@@ -85,7 +85,7 @@ export const OurApproach = () => {
           {principles.map((p, i) => (
             <div
               key={i}
-              className="approach-item opacity-0 border-b border-slate-200 py-10 md:py-12 group grid grid-cols-12 gap-6 md:gap-10 items-start"
+              className="approach-item opacity-0 border-b border-slate-200 py-6 md:py-8 group grid grid-cols-12 gap-6 md:gap-10 items-start"
             >
               {/* Number */}
               <div className="col-span-1">
