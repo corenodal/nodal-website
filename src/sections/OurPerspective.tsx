@@ -49,7 +49,7 @@ export const OurPerspective = () => {
         WHY
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-24 py-16 md:py-20">
+      <div className="max-w-6xl mx-auto px-6 md:px-24 py-12 md:py-16">
         {/* Intro */}
         <div className="persp-intro opacity-0 flex flex-col md:flex-row md:items-end gap-6 md:gap-16 mb-12 md:mb-14">
           <div>
