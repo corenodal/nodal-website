@@ -166,7 +166,7 @@ export const SolutionSection = () => {
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <div className="solution-text translate-y-8 opacity-0 mb-8">
-          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue mb-3">
+          <h2 className="text-2xl md:text-3xl font-semibold text-nodal-blue mb-3">
             One system. One workflow.
           </h2>
         </div>
@@ -184,7 +184,7 @@ export const SolutionSection = () => {
         <div className="solution-cta translate-y-8 opacity-0 mt-6">
           <Link
             to="/product"
-            className="inline-flex items-center gap-2 text-nodal-green font-semibold text-base hover:gap-3 transition-all"
+            className="inline-flex items-center gap-2 text-nodal-green font-semibold text-sm hover:gap-3 transition-all"
           >
             Explore the Product
             <ArrowRight className="w-5 h-5" />
