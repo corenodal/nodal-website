@@ -1,10 +1,10 @@
-import { Mic, CheckSquare, Zap } from 'lucide-react';
+import { Stethoscope, Users, Building2 } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 const features = [
   {
-    icon: Mic,
+    icon: Stethoscope,
     title: "Solo Practitioners",
     bullets: [
       "Reduces time spent on documentation, follow-ups, and record-keeping.",
@@ -14,7 +14,7 @@ const features = [
     color: "nodal-green"
   },
   {
-    icon: CheckSquare,
+    icon: Users,
     title: "Group Practices",
     bullets: [
       "Improves consistency in actionable insights across providers.",
@@ -24,7 +24,7 @@ const features = [
     color: "nodal-green"
   },
   {
-    icon: Zap,
+    icon: Building2,
     title: "Healthcare Organizations",
     bullets: [
       "Strengthens consistency of clinical data across departments.",
@@ -75,12 +75,12 @@ export const Features = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`feature-card translate-y-8 opacity-0 p-14 rounded-2xl bg-nodal-white border border-slate-100 transition-all hover:shadow-lg group ${feature.color === 'nodal-violet' ? 'hover:border-nodal-violet/30 outline-nodal-violet' : 'hover:border-nodal-green/30 outline-nodal-green'}`}
+              className={`feature-card translate-y-8 opacity-0 p-8 rounded-2xl bg-nodal-white border border-slate-100 transition-all hover:shadow-lg group ${feature.color === 'nodal-violet' ? 'hover:border-nodal-violet/30 outline-nodal-violet' : 'hover:border-nodal-green/30 outline-nodal-green'}`}
             >
-              <div className={`w-16 h-16 rounded-xl bg-white flex items-center justify-center mb-10 border border-slate-100 shadow-sm transition-all ${feature.color === 'nodal-violet' ? 'group-hover:bg-nodal-violet' : 'group-hover:bg-nodal-green'} group-hover:text-white`}>
-                <feature.icon className={`w-8 h-8 transition-colors ${feature.color === 'nodal-violet' ? 'text-nodal-violet group-hover:text-white' : 'text-nodal-green group-hover:text-white'}`} />
+              <div className={`w-12 h-12 rounded-xl bg-white flex items-center justify-center mb-6 border border-slate-100 shadow-sm transition-all ${feature.color === 'nodal-violet' ? 'group-hover:bg-nodal-violet' : 'group-hover:bg-nodal-green'} group-hover:text-white`}>
+                <feature.icon className={`w-5 h-5 transition-colors ${feature.color === 'nodal-violet' ? 'text-nodal-violet group-hover:text-white' : 'text-nodal-green group-hover:text-white'}`} />
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold text-nodal-blue mb-5">{feature.title}</h3>
+              <h3 className="text-lg md:text-xl font-semibold text-nodal-blue mb-4">{feature.title}</h3>
               <ul className="space-y-3">
                 {feature.bullets.map((bullet, i) => (
                   <li key={i} className="flex items-start gap-3 text-base md:text-lg text-nodal-graphite leading-relaxed font-light">

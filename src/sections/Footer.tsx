@@ -12,7 +12,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
       }`}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-8">
               <div className="w-8 h-8 rounded-lg bg-nodal-blue flex items-center justify-center">
@@ -25,7 +25,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 col-span-1 md:col-span-3 gap-8">
+          <div className="grid grid-cols-2 col-span-1 md:col-span-2 gap-8">
             <div>
               <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nodal-blue'}`}>Product</h4>
               <ul className={`space-y-4 text-sm font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
