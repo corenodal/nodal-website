@@ -6,8 +6,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const lines = [
   { num: '01', text: 'Clinical complexity is increasing.' },
-  { num: '02', text: 'Documentation requirements are expanding.' },
-  { num: '03', text: 'Clinicians are being asked to carry more.' },
+  { num: '02', text: 'AI capabilities have reached a point where contextual, assistive systems are feasible.' },
+  { num: '03', text: 'The cost of inaction is no longer abstract - it is measurable in access gaps and clinician attrition.' },
 ];
 
 export const TheShift = () => {
@@ -81,8 +81,8 @@ export const TheShift = () => {
           <div>
             <div className="w-8 h-0.5 bg-nodal-green mb-6" />
             <p className="text-xl md:text-2xl text-nodal-graphite font-light leading-relaxed">
-              This is not an efficiency challenge. It is a{' '}
-              <span className="font-semibold text-nodal-blue">sustainability challenge.</span>
+              Care is human.{' '}
+              <span className="font-semibold text-nodal-blue">Systems should support it.</span>
             </p>
           </div>
           <p className="text-base text-nodal-graphite-soft font-light leading-relaxed">

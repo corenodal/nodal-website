@@ -138,21 +138,24 @@ export const ProblemSection = () => {
         <div className="pain-cards-wrap relative z-10">
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              { label: 'Decision fatigue', stat: '300+', sub: 'decisions per day' },
-              { label: 'Error risk', stat: '2.6×', sub: 'higher with fragmentation' },
-              { label: 'Admin burden', stat: '49%', sub: 'of clinician time' },
-              { label: 'Burnout', stat: '63%', sub: 'of physicians report it' },
+              { label: 'Decision Fatigue', stat: '102+', sub: 'decisions per day' },
+              { label: 'Error Risk', stat: '>3X', sub: 'higher with fragmentation' },
+              { label: 'Admin Burden', stat: '49%', sub: 'of clinician time' },
+              { label: 'Burnout', stat: '>45%', sub: 'of physicians report it' },
             ].map((item, i) => (
               <div
                 key={i}
                 className="pain-card translate-y-8 opacity-0 scale-95 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow text-center"
               >
+                <div className="text-base md:text-lg font-semibold text-nodal-blue mb-2">{item.label}</div>
                 <div className="text-3xl md:text-4xl font-bold text-rose-500 mb-2">{item.stat}</div>
-                <div className="text-base md:text-lg font-semibold text-nodal-blue mb-1">{item.label}</div>
                 <div className="text-xs md:text-sm text-nodal-graphite font-light">{item.sub}</div>
               </div>
             ))}
           </div>
+          <p className="text-center text-xs text-nodal-graphite-soft font-light mt-6">
+            Metrics based on last-decade reports of practicing U.S. physicians
+          </p>
         </div>
 
         {/* Closing statement — on top of fragments */}

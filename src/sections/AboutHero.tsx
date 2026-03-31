@@ -47,7 +47,7 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
           <div className="border-l-2 border-nodal-green pl-5">
             <p className="text-sm font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1">Mission</p>
             <p className="text-base text-nodal-graphite font-light leading-relaxed">
-              Reduce cognitive fragmentation so clinicians can be fully present with patients.
+              Enable high-quality care to be delivered sustainably.
             </p>
           </div>
           <div className="border-l-2 border-nodal-violet/40 pl-5">

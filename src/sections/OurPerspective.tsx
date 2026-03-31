@@ -60,7 +60,7 @@ export const OurPerspective = () => {
               We ask different questions.
             </h2>
           </div>
-          <p className="text-sm text-white/40 font-light max-w-xs leading-relaxed">
+          <p className="text-base text-white/70 font-medium max-w-xs leading-relaxed">
             The questions that drive our work aren&apos;t about features. They&apos;re about first principles.
           </p>
         </div>
@@ -82,7 +82,7 @@ export const OurPerspective = () => {
           ))}
         </div>
 
-        <p className="mt-14 text-sm text-white/30 font-light italic text-right">
+        <p className="mt-14 text-base text-white/60 font-medium italic text-right">
           Our work begins from these questions.
         </p>
       </div>

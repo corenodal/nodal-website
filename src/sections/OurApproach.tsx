@@ -19,7 +19,7 @@ const principles = [
     icon: Network,
     iconClass: 'text-nodal-green group-hover:text-white',
     wrapperClass: 'group-hover:bg-nodal-green group-hover:border-transparent',
-    title: 'Systems Thinking',
+    title: 'Systems Design',
     body: "The problem isn't individual tools. It's fragmented infrastructure. Nodal acts as a single clinical node, collapsing the number of places clinicians must hold attention simultaneously.",
   },
   {
@@ -28,7 +28,7 @@ const principles = [
     iconClass: 'text-nodal-blue group-hover:text-white',
     wrapperClass: 'group-hover:bg-nodal-blue group-hover:border-transparent',
     title: 'Clinical Accountability',
-    body: 'Every output requires clinician review. Oversight is not a compliance checkbox. It is structural. AI amplifies judgment; it does not replace it.',
+    body: 'Every output requires clinician review. Oversight is not a compliance checkbox. It is structural. AI augments judgement, it does not replace it.',
   },
 ];
 

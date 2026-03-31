@@ -6,16 +6,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 const pillars = [
   {
-    tag: 'Behavioral Science',
-    desc: 'We root every design decision in how humans actually think and make decisions under pressure.',
+    tag: 'Clinician-first',
+    desc: 'Built around how clinicians think, decide, and practice, not how data is stored.',
   },
   {
-    tag: 'Systems Design',
-    desc: 'We design for the whole, not for isolated tasks. Infrastructure thinking over feature thinking.',
+    tag: 'Workflow-focused',
+    desc: 'We address burnout, fragmentation, and cognitive overload as structural problems, not individual productivity failures.',
   },
   {
-    tag: 'Healthcare Technology',
-    desc: 'We build alongside clinicians, not for an imagined version of them.',
+    tag: 'Augmentation-driven',
+    desc: 'Our AI supports clinical reasoning, memory, and prioritization while preserving clinician control and accountability.',
   },
 ];
 
@@ -62,8 +62,7 @@ export const WhoWeAre = () => {
             Built by people<br />who understand<br />the problem.
           </h2>
           <p className="text-xl text-nodal-graphite font-light leading-relaxed max-w-sm mb-10">
-            We work directly with clinicians at every stage. Our solutions reflect real-world
-            practice, not theoretical models or optimistic assumptions.
+            Nodal is built by a team with backgrounds in behavioral science, systems design, and AI technology. We work directly with clinicians to ensure our solutions reflect real-world practice, not theoretical models or optimistic assumptions.
           </p>
           <div className="inline-flex items-center gap-2.5 border border-nodal-green/30 bg-nodal-green/5 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-nodal-green animate-pulse" />
