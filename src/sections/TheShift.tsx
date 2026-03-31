@@ -77,7 +77,7 @@ export const TheShift = () => {
         </div>
 
         {/* Conclusion block */}
-        <div className="shift-conclusion opacity-0 mt-16 md:mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <div className="shift-conclusion opacity-0 mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <div>
             <div className="w-8 h-0.5 bg-nodal-green mb-6" />
             <p className="text-xl md:text-2xl text-nodal-graphite font-light leading-relaxed">
