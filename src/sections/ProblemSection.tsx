@@ -140,7 +140,7 @@ export const ProblemSection = () => {
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
               { label: 'Decision Fatigue', stat: '102+', sub: 'decisions per day' },
-              { label: 'Error Risk', stat: '>3X', sub: 'higher with fragmentation' },
+              { label: 'Error Risk', stat: '>3X', sub: 'higher with scattered systems' },
               { label: 'Admin Burden', stat: '49%', sub: 'of clinician time' },
               { label: 'Burnout', stat: '>45%', sub: 'of physicians report it' },
             ].map((item, i) => (
