@@ -70,7 +70,7 @@ export const TheShift = () => {
               <span className={`${type.ui} font-semibold text-nodal-violet/40 tracking-widest flex-shrink-0 w-6`}>
                 {line.num}
               </span>
-              <p className={`${type.heading} font-semibold text-nodal-blue leading-snug`}>
+              <p className={`${type.subheading} font-semibold text-nodal-blue leading-snug`}>
                 {line.text}
               </p>
             </div>

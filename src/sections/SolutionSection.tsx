@@ -167,7 +167,7 @@ export const SolutionSection = () => {
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <div className="solution-text translate-y-8 opacity-0 mb-8">
-          <h2 className={`${type.subheading} font-semibold text-nodal-blue mb-3`}>
+          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-3`}>
             One system. One workflow.
           </h2>
         </div>
