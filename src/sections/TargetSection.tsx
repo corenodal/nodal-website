@@ -154,8 +154,6 @@ export const TargetSection = () => {
               className="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-10 transition-shadow hover:shadow-2xl"
               style={{
                 zIndex: i + 1,
-                marginLeft: `${i * 1.5}rem`,
-                marginRight: `${(2 - i) * 1.5}rem`,
               }}
             >
               <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">

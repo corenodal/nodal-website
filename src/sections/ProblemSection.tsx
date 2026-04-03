@@ -145,7 +145,7 @@ export const ProblemSection = () => {
             ].map((item, i) => (
               <div
                 key={i}
-                className="pain-card translate-y-8 opacity-0 scale-95 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm hover:shadow-lg transition-shadow text-center"
+                className="pain-card translate-y-8 opacity-0 scale-95 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm text-center"
               >
                 <div className="text-base md:text-lg font-semibold text-nodal-blue mb-2">{item.label}</div>
                 <div className="text-3xl md:text-4xl font-bold text-rose-500 mb-2">{item.stat}</div>
