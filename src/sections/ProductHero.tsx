@@ -67,7 +67,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
           </p>
 
           {/* Image — right-aligned, overflowing purple into white */}
-          <div className="mt-5 md:mt-8 md:ml-[15%] md:max-w-[80%]">
+          <div className="mt-5 md:mt-8 md:ml-[15%] md:max-w-[72%]">
             <div
               ref={imageRef}
               style={{ opacity: 0, transform: 'translateY(40px)' }}
