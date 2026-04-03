@@ -34,12 +34,15 @@ export const AboutCTA = () => {
 
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Left-aligned headline */}
-        <h2 className={`${type.display} font-bold text-white leading-[1.05] tracking-tight max-w-4xl mb-8`}>
+        <h2 className={`${type.display} font-semibold text-white leading-[1.02] tracking-tight max-w-4xl mb-8`}>
           <div className="overflow-hidden">
-            <span className="acta-line block" style={{ transform: 'translateY(110%)' }}>
-              The future of healthcare needs systems that support{' '}
-              <span className="text-nodal-green">focus and presence.</span>
-            </span>
+            <span className="acta-line block" style={{ transform: 'translateY(110%)' }}>The future of healthcare</span>
+          </div>
+          <div className="overflow-hidden">
+            <span className="acta-line block" style={{ transform: 'translateY(110%)' }}>needs systems that support</span>
+          </div>
+          <div className="overflow-hidden">
+            <span className="acta-line block text-nodal-green" style={{ transform: 'translateY(110%)' }}>focus and presence.</span>
           </div>
         </h2>
 
