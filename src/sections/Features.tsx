@@ -24,7 +24,7 @@ const features = [
     ],
     color: "nodal-green"
   },
-  {
+{
     icon: Building2,
     title: "Healthcare Organizations",
     bullets: [

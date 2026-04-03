@@ -73,7 +73,7 @@ export const OurApproach = () => {
               Our Approach
             </p>
             <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
-              Designed around research,<br className="hidden md:block" /> not convention.
+              Designed around research, not convention.
             </h2>
           </div>
           <p className={`${type.ui} text-nodal-graphite-soft font-light max-w-xs leading-relaxed`}>

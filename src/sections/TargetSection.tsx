@@ -142,7 +142,7 @@ export const TargetSection = () => {
     >
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
-        <h2 className={`target-heading translate-y-8 opacity-0 ${type.heading} font-semibold text-nodal-blue mb-10 max-w-3xl`}>
+        <h2 className={`target-heading translate-y-8 opacity-0 ${type.heading} font-semibold text-nodal-blue mb-10`}>
           Designed for the realities of modern care delivery.
         </h2>
 
