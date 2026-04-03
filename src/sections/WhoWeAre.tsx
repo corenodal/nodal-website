@@ -8,15 +8,15 @@ gsap.registerPlugin(ScrollTrigger);
 const pillars = [
   {
     tag: 'Clinician-first',
-    desc: 'Built around how clinicians think, decide, and practice, not how data is stored.',
+    desc: 'Designed around how clinicians think and work',
   },
   {
     tag: 'Workflow-focused',
-    desc: 'We address burnout, fragmentation, and cognitive overload as structural problems, not individual productivity failures.',
+    desc: 'Solves burnout and scattered workflows at the system level',
   },
   {
-    tag: 'Augmentation-driven',
-    desc: 'Our AI supports clinical reasoning, memory, and prioritization while preserving clinician control and accountability.',
+    tag: 'AI-assisted',
+    desc: 'Supports memory, reasoning, and prioritization while keeping clinicians in control',
   },
 ];
 
@@ -62,9 +62,10 @@ export const WhoWeAre = () => {
           <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight mb-8`}>
             Built by people who<br />understand the problem.
           </h2>
-          <p className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10`}>
-            Nodal is built by a team with backgrounds in behavioral science, systems design, and AI technology. We work directly with clinicians to ensure our solutions reflect real-world practice, not theoretical models or optimistic assumptions.
-          </p>
+          <div className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10 space-y-4`}>
+            <p>We are a team with experience in behavioral science, system design, and AI.</p>
+            <p>We work closely with clinicians to build tools that reflect real-world care, not assumptions.</p>
+          </div>
           <div className="inline-flex items-center gap-2.5 border border-nodal-green/30 bg-nodal-green/5 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-nodal-green animate-pulse" />
             <span className={`${type.ui} font-semibold text-nodal-graphite tracking-wide`}>

@@ -4,17 +4,17 @@ import gsap from 'gsap';
 import { type } from '../styles/typography';
 
 const features = [
-  "Live Session Capture",
-  "Transcription",
-  "Structured Notes",
-  "Contextual Insights",
-  "Collated Notes Across Sessions",
-  "Custom Templates",
-  "Editable Outputs",
-  "Follow-Up Generation",
-  "Patient Communication Notes & Letters",
-  "Patient Tracking",
-  "Workflow Integration",
+  'Analyze reports',
+  'Combine notes across sessions',
+  'Create custom templates',
+  'Customize your AI assistant',
+  'Draft and manage patient communication',
+  'Edit AI-generated notes',
+  'Get clear, context-based insights',
+  'Record and transcribe patient sessions',
+  'Refine templates and documents with AI',
+  'Set reminders and prepare for sessions',
+  'Track patient history',
 ];
 
 export const TrustSection = () => {
@@ -115,10 +115,10 @@ export const TrustSection = () => {
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
         <div className="text-center mb-10">
           <h2 className={`${type.heading} font-semibold text-nodal-blue mb-4`}>
-            Designed for Clinical Accountability
+            Built for Trust and Transparency
           </h2>
           <p className={`${type.body} text-nodal-graphite max-w-2xl mx-auto font-light leading-relaxed`}>
-            Healthcare requires absolute transparency. Nodal is built on foundations of verifiable output and ethical intelligence.
+            Healthcare requires clarity at every step. Nodal is designed so everything is visible, reviewable, and easy to verify.
           </p>
         </div>
 

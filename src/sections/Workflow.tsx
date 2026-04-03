@@ -8,26 +8,26 @@ gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
-    title: "Session",
-    desc: "Secure audio capture during patient encounter",
+    title: "1. Capture",
+    desc: "Securely records patient conversations during visits.",
     color: "nodal-violet",
     icon: Activity
   },
   {
-    title: "Context Modeling",
-    desc: "Real-time structuring based on clinical reasoning",
+    title: "2. Organize",
+    desc: "Turns conversations into structured clinical information in real time.",
     color: "nodal-violet",
     icon: Network
   },
   {
-    title: "Structured Output",
-    desc: "Editable insights requiring minimal review",
+    title: "3. Review",
+    desc: "Creates clear, editable documentation that is ready with minimal review.",
     color: "nodal-green",
     icon: FileText
   },
   {
-    title: "Follow-Up",
-    desc: "Auto-generated tasks and care coordination",
+    title: "4. Act",
+    desc: "Generates follow-ups, care plans, and manages tasks automatically.",
     color: "nodal-green",
     icon: Check
   }
@@ -230,7 +230,7 @@ export const Workflow = () => {
         {/* Left Side: Sticky Text Narrative */}
         <div className="w-full md:w-1/2 flex flex-col justify-center h-[40%] md:h-full pt-16 md:pt-0 z-20">
           <h2 className={`${type.heading} font-semibold text-nodal-blue mb-8 md:mb-12`}>
-            The Complete Workflow
+            How It Works
           </h2>
 
           <div className="flex flex-col">

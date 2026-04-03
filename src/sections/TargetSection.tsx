@@ -74,19 +74,19 @@ const OrgPeople = () => (
 const cards = [
   {
     title: 'Solo Practitioners',
-    desc: 'Streamlined workflows built for independent clinicians managing every aspect of patient care.',
+    desc: 'Simple workflows that help you manage patients, notes, and follow-ups in one place.',
     visual: <SoloPerson />,
     accent: 'nodal-green',
   },
   {
     title: 'Group Practices',
-    desc: 'Shared intelligence and coordinated task management across multi-provider teams.',
+    desc: 'Keep teams aligned with shared insights and coordinated tasks across providers.',
     visual: <GroupPeople />,
     accent: 'nodal-violet',
   },
   {
     title: 'Healthcare Organizations',
-    desc: 'Enterprise-grade infrastructure that scales clinical decision support across departments.',
+    desc: 'A scalable system that supports consistent, high-quality care across departments.',
     visual: <OrgPeople />,
     accent: 'nodal-blue',
   },
@@ -143,7 +143,7 @@ export const TargetSection = () => {
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <h2 className={`target-heading translate-y-8 opacity-0 ${type.heading} font-semibold text-nodal-blue mb-10`}>
-          Designed for the realities of modern care delivery.
+          Healthcare Is Complex. Your Workflow Should Not Be.
         </h2>
 
         {/* Overlapping Cards */}

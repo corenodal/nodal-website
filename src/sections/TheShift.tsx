@@ -6,9 +6,9 @@ import { type } from '../styles/typography';
 gsap.registerPlugin(ScrollTrigger);
 
 const lines = [
-  { num: '01', text: 'Clinical complexity is increasing.' },
-  { num: '02', text: 'AI capabilities have reached a point where contextual, assistive systems are feasible.' },
-  { num: '03', text: 'The cost of inaction is no longer abstract - it is measurable in access gaps and clinician attrition.' },
+  { num: '01', text: 'Care is getting more complex.' },
+  { num: '02', text: 'AI is now capable of providing meaningful support.' },
+  { num: '03', text: 'The cost of inaction is clear - burnout, staff shortages, and gaps in care.' },
 ];
 
 export const TheShift = () => {

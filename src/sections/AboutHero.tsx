@@ -48,7 +48,7 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
           <div className="border-l-2 border-nodal-green pl-5">
             <p className={`${type.ui} font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1`}>Mission</p>
             <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
-              Enable high-quality care to be delivered sustainably.
+              Help clinicians deliver high-quality care in a way that is sustainable.
             </p>
           </div>
           <div className="border-l-2 border-nodal-violet/40 pl-5">

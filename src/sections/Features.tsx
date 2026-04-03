@@ -8,9 +8,9 @@ const features = [
     icon: Stethoscope,
     title: "Solo Practitioners",
     bullets: [
-      "Reduces time spent on documentation, follow-ups, and record-keeping.",
-      "Improves clarity and completeness of clinical records with less effort.",
-      "Minimizes mental overload and reduces the need to revisit sessions later.",
+      "Spend less time on notes and admin work",
+      "Keep clear, complete records with less effort",
+      "Reduce mental overload and rework",
     ],
     color: "nodal-green"
   },
@@ -18,19 +18,19 @@ const features = [
     icon: Users,
     title: "Group Practices",
     bullets: [
-      "Improves consistency in actionable insights across providers.",
-      "Reduces duplicated administrative effort across teams.",
-      "Enhances visibility into patient care without adding oversight friction.",
+      "Keep documentation consistent across providers",
+      "Reduce duplicate work across teams",
+      "Improve visibility into patient care",
     ],
     color: "nodal-green"
   },
-{
+  {
     icon: Building2,
     title: "Healthcare Organizations",
     bullets: [
-      "Strengthens consistency of clinical data across departments.",
-      "Reduces system-wide inefficiencies tied to administrative processes.",
-      "Supports scale by lowering burden while maintaining accountability and compliance readiness.",
+      "Standardize clinical data across departments",
+      "Reduce inefficiencies in administrative work",
+      "Scale operations without increasing burden",
     ],
     color: "nodal-violet"
   },
@@ -68,7 +68,7 @@ export const Features = () => {
       <div className="max-w-7xl mx-auto w-full" ref={containerRef}>
         <div className="text-center mb-10">
           <h2 className={`${type.heading} font-semibold text-nodal-blue`}>
-            Workflow Support Across Care Settings
+            Built for Every Care Setting
           </h2>
         </div>
 

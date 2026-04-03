@@ -109,7 +109,7 @@ export const ProblemSection = () => {
       <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mb-12">
         <div className="problem-heading translate-y-12 opacity-0 max-w-5xl">
           <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
-            Clinical work is scattered across fragmented systems.
+            Clinical work today is spread across too many systems.
           </h2>
         </div>
       </div>
@@ -163,7 +163,7 @@ export const ProblemSection = () => {
         <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-12 md:pt-16 text-center">
           <p className={`${type.heading} font-bold leading-tight max-w-3xl mx-auto`}>
             <span className="text-nodal-blue block">This is not a productivity failure.</span>
-            <span className="text-nodal-violet block mt-2">This is a systems design failure.</span>
+            <span className="text-nodal-violet block mt-2">This is a systems failure.</span>
           </p>
         </div>
 

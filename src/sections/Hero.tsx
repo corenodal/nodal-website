@@ -55,8 +55,8 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
           style={{ opacity: 0, transform: 'translateY(20px)' }}
         >
           <span className="w-2.5 h-2.5 rounded-full bg-nodal-violet animate-pulse shadow-[0_0_10px_rgba(123,110,246,0.6)]" />
-          <span className={`${type.ui} font-semibold text-nodal-violet tracking-wider uppercase`}>
-            Cognitive Medical Intelligence
+          <span className={`${type.ui} font-semibold text-nodal-violet tracking-wider`}>
+            Less Admin. More Care.
           </span>
         </div>
 
@@ -74,7 +74,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
           className={`${type.subheading} text-nodal-graphite font-light leading-relaxed mb-14 max-w-3xl mx-auto`}
           style={{ opacity: 0, transform: 'translateY(20px)' }}
         >
-          Nodal is an AI-powered system that centralizes insights, context, and follow-through - reducing cognitive fragmentation across care delivery so healthcare professionals can focus on patients
+          Nodal is an AI system that brings everything about a patient into one place, including insights, context, and next steps, so healthcare professionals can focus on care instead of coordination.
 
         </p>
 

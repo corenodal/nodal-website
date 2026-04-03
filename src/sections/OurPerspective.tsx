@@ -6,9 +6,9 @@ import { type } from '../styles/typography';
 gsap.registerPlugin(ScrollTrigger);
 
 const questions = [
-  "What would systems look like if they were designed around cognitive sustainability?",
-  "What if documentation tools were aligned with how professionals actually synthesize information?",
-  "What if intelligence served as quiet support rather than visible disruption?",
+  'What would healthcare look like if systems reduced mental strain?',
+  'What if documentation matched how clinicians actually think?',
+  'What if technology worked quietly in the background?',
 ];
 
 export const OurPerspective = () => {
@@ -52,18 +52,13 @@ export const OurPerspective = () => {
 
       <div className="max-w-6xl mx-auto px-6 md:px-24 py-12 md:py-16">
         {/* Intro */}
-        <div className="persp-intro opacity-0 flex flex-col md:flex-row md:items-end gap-6 md:gap-16 mb-12 md:mb-14">
-          <div>
-            <p className={`${type.ui} font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3`}>
-              Our Perspective
-            </p>
-            <h2 className={`${type.heading} font-semibold text-white leading-snug`}>
-              We ask different questions.
-            </h2>
-          </div>
-          <p className={`${type.body} text-white/70 font-medium max-w-xs leading-relaxed`}>
-            The questions that drive our work aren&apos;t about features. They&apos;re about first principles.
+        <div className="persp-intro opacity-0 mb-12 md:mb-14">
+          <p className={`${type.ui} font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3`}>
+            Our Perspective
           </p>
+          <h2 className={`${type.heading} font-semibold text-white leading-snug`}>
+            We ask different questions.
+          </h2>
         </div>
 
         {/* Questions */}
@@ -83,7 +78,7 @@ export const OurPerspective = () => {
           ))}
         </div>
 
-        <p className={`mt-14 ${type.body} text-white/60 font-medium italic text-right`}>
+        <p className={`mt-14 ${type.body} text-white/60 font-medium text-right`}>
           Our work begins from these questions.
         </p>
       </div>
