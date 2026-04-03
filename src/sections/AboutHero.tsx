@@ -24,7 +24,7 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
       className="relative min-h-screen flex flex-col justify-center px-6 md:px-24 pt-32 pb-20 z-10"
     >
       {/* Main split row */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-12 md:gap-0">
+      <div className="max-w-screen-xl mx-auto w-full flex flex-col md:flex-row md:items-end md:justify-between gap-12 md:gap-0">
         {/* Left — Giant heading */}
         <div className="flex-1 max-w-3xl">
           <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nodal-blue`}>
