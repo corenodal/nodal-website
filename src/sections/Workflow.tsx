@@ -249,7 +249,7 @@ export const Workflow = () => {
 
                 <div className="pb-3 md:pb-6">
                   <h3 className={`${type.subheading} font-bold text-nodal-blue mb-1.5`}>{step.title}</h3>
-                  <p className={`${type.ui} text-nodal-graphite font-light max-w-sm`}>{step.desc}</p>
+                  <p className={`${type.body} text-nodal-graphite font-light max-w-sm`}>{step.desc}</p>
                 </div>
               </div>
             ))}

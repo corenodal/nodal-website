@@ -59,10 +59,10 @@ export const WhoWeAre = () => {
           <p className={`${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-5`}>
             Who We Are
           </p>
-          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight mb-8`}>
+          <h2 className={`${type.display} font-semibold text-nodal-blue leading-tight mb-8`}>
             Built by people<br />who understand<br />the problem.
           </h2>
-          <p className={`${type.subheading} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10`}>
+          <p className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10`}>
             Nodal is built by a team with backgrounds in behavioral science, systems design, and AI technology. We work directly with clinicians to ensure our solutions reflect real-world practice, not theoretical models or optimistic assumptions.
           </p>
           <div className="inline-flex items-center gap-2.5 border border-nodal-green/30 bg-nodal-green/5 rounded-full px-5 py-2.5">

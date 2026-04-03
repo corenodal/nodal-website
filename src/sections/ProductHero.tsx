@@ -60,7 +60,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
           </div>
           <p
             ref={descRef}
-            className={`${type.body} text-white/80 font-light mt-2 md:mt-3`}
+            className={`${type.subheading} text-white/80 font-light mt-2 md:mt-3`}
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
             Designed using research on cognitive load, structured thinking, and clinical decision pathways.

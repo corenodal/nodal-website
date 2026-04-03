@@ -106,7 +106,7 @@ export const TrustSection = () => {
       >
         <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
       </div>
-      <span className={`${type.ui} text-nodal-blue font-medium`}>{feature}</span>
+      <span className={`${type.body} text-nodal-blue font-medium`}>{feature}</span>
     </div>
   );
 
