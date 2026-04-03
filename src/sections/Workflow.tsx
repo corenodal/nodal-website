@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Check, Network, Activity, FileText } from 'lucide-react';
+import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -93,9 +94,9 @@ const NeuralNodes = () => {
       </div>
 
       {/* Abstract clinical tags streaming in */}
-      <div className="absolute top-8 left-0 md:left-4 bg-white text-nodal-blue text-sm font-bold px-4 py-2 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.2s' }}>Symptoms</div>
-      <div className="absolute bottom-10 right-0 md:right-4 bg-white text-nodal-blue text-sm font-bold px-4 py-2 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.7s' }}>History</div>
-      <div className="absolute top-1/4 -right-4 md:right-0 bg-nodal-violet text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg animate-pulse" style={{ animationDelay: '0.5s' }}>Vitals</div>
+      <div className={`absolute top-8 left-0 md:left-4 bg-white text-nodal-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.2s' }}>Symptoms</div>
+      <div className={`absolute bottom-10 right-0 md:right-4 bg-white text-nodal-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.7s' }}>History</div>
+      <div className={`absolute top-1/4 -right-4 md:right-0 bg-nodal-violet text-white ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.5s' }}>Vitals</div>
     </div>
   );
 };
@@ -111,7 +112,7 @@ const UICard = () => (
     </div>
     <div className="mt-6 pt-5 border-t border-slate-100 flex justify-between">
       <div className="h-8 w-24 bg-nodal-green/10 rounded-lg border border-nodal-green/20" />
-      <div className="h-8 w-24 bg-nodal-green text-white rounded-lg flex items-center justify-center text-xs font-semibold shadow-sm">Review</div>
+      <div className={`h-8 w-24 bg-nodal-green text-white rounded-lg flex items-center justify-center ${type.ui} font-semibold shadow-sm`}>Review</div>
     </div>
   </div>
 );
@@ -122,19 +123,19 @@ const FollowUpCard = () => (
       <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className="text-sm font-semibold text-nodal-blue">Prescription Sent</div>
+      <div className={`${type.ui} font-semibold text-nodal-blue`}>Prescription Sent</div>
     </div>
     <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.1s' }}>
       <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className="text-sm font-semibold text-nodal-blue">Billing Coded</div>
+      <div className={`${type.ui} font-semibold text-nodal-blue`}>Billing Coded</div>
     </div>
     <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.2s' }}>
       <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className="text-sm font-semibold text-nodal-blue">Follow-up Scheduled</div>
+      <div className={`${type.ui} font-semibold text-nodal-blue`}>Follow-up Scheduled</div>
     </div>
   </div>
 );
@@ -228,7 +229,7 @@ export const Workflow = () => {
 
         {/* Left Side: Sticky Text Narrative */}
         <div className="w-full md:w-1/2 flex flex-col justify-center h-[40%] md:h-full pt-16 md:pt-0 z-20">
-          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue mb-8 md:mb-12">
+          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-8 md:mb-12`}>
             The Complete Workflow
           </h2>
 
@@ -247,8 +248,8 @@ export const Workflow = () => {
                 </div>
 
                 <div className="pb-3 md:pb-6">
-                  <h3 className="text-lg md:text-2xl font-bold text-nodal-blue mb-1.5">{step.title}</h3>
-                  <p className="text-sm md:text-base text-nodal-graphite font-light max-w-sm">{step.desc}</p>
+                  <h3 className={`${type.subheading} font-bold text-nodal-blue mb-1.5`}>{step.title}</h3>
+                  <p className={`${type.ui} text-nodal-graphite font-light max-w-sm`}>{step.desc}</p>
                 </div>
               </div>
             ))}

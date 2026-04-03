@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { ArrowRight, Mic, FileText, ClipboardCheck, Check, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
+import { type } from '../styles/typography';
 
 const LiveDashboard = () => {
   const barsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -67,7 +68,7 @@ const LiveDashboard = () => {
               <div className="w-8 h-8 rounded-lg bg-nodal-green/10 flex items-center justify-center">
                 <Mic className="w-4 h-4 text-nodal-green" />
               </div>
-              <span className="text-sm font-semibold text-nodal-blue">Live Session</span>
+              <span className={`${type.ui} font-semibold text-nodal-blue`}>Live Session</span>
               <span className="ml-auto w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
             </div>
             {/* Waveform */}
@@ -83,7 +84,7 @@ const LiveDashboard = () => {
             </div>
             <div className="mt-4 flex items-center gap-2">
               <Activity className="w-3.5 h-3.5 text-nodal-green" />
-              <span className="text-xs text-nodal-graphite">Patient encounter in progress</span>
+              <span className={`${type.ui} text-nodal-graphite`}>Patient encounter in progress</span>
             </div>
           </div>
 
@@ -96,8 +97,8 @@ const LiveDashboard = () => {
                 <div className="w-8 h-8 rounded-lg bg-nodal-violet/10 flex items-center justify-center">
                   <FileText className="w-4 h-4 text-nodal-violet" />
                 </div>
-                <span className="text-sm font-semibold text-nodal-blue">Clinical Notes</span>
-                <span className="ml-auto text-xs text-nodal-green font-medium bg-nodal-green/10 px-2 py-0.5 rounded-full">Auto-generating</span>
+                <span className={`${type.ui} font-semibold text-nodal-blue`}>Clinical Notes</span>
+                <span className={`ml-auto ${type.ui} text-nodal-green font-medium bg-nodal-green/10 px-2 py-0.5 rounded-full`}>Auto-generating</span>
               </div>
               <div className="space-y-2.5">
                 <div className="note-line h-2.5 bg-nodal-violet/15 rounded-full" />
@@ -113,7 +114,7 @@ const LiveDashboard = () => {
                 <div className="w-8 h-8 rounded-lg bg-nodal-green/10 flex items-center justify-center">
                   <ClipboardCheck className="w-4 h-4 text-nodal-green" />
                 </div>
-                <span className="text-sm font-semibold text-nodal-blue">Follow-up Tasks</span>
+                <span className={`${type.ui} font-semibold text-nodal-blue`}>Follow-up Tasks</span>
               </div>
               <div className="space-y-3">
                 {['Lab order — CBC panel', 'Referral — Cardiology', 'Rx renewal — Metformin'].map((task, i) => (
@@ -121,7 +122,7 @@ const LiveDashboard = () => {
                     <div className="task-check w-5 h-5 rounded-md bg-nodal-green flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-sm text-nodal-graphite">{task}</span>
+                    <span className={`${type.ui} text-nodal-graphite`}>{task}</span>
                   </div>
                 ))}
               </div>
@@ -166,7 +167,7 @@ export const SolutionSection = () => {
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <div className="solution-text translate-y-8 opacity-0 mb-8">
-          <h2 className="text-2xl md:text-3xl font-semibold text-nodal-blue mb-3">
+          <h2 className={`${type.subheading} font-semibold text-nodal-blue mb-3`}>
             One system. One workflow.
           </h2>
         </div>
@@ -184,7 +185,7 @@ export const SolutionSection = () => {
         <div className="solution-cta translate-y-8 opacity-0 mt-6">
           <Link
             to="/product"
-            className="inline-flex items-center gap-2 text-nodal-green font-semibold text-sm hover:gap-3 transition-all"
+            className={`inline-flex items-center gap-2 text-nodal-green font-semibold ${type.ui} hover:gap-3 transition-all`}
           >
             Explore the Product
             <ArrowRight className="w-5 h-5" />

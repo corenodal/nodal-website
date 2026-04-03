@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Brain, Network, ShieldCheck } from 'lucide-react';
+import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,14 +69,14 @@ export const OurApproach = () => {
         {/* Heading row */}
         <div className="approach-heading opacity-0 flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
           <div>
-            <p className="text-xs font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-3">
+            <p className={`${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-3`}>
               Our Approach
             </p>
-            <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue leading-tight">
+            <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
               Designed around research,<br className="hidden md:block" /> not convention.
             </h2>
           </div>
-          <p className="text-sm text-nodal-graphite-soft font-light max-w-xs leading-relaxed">
+          <p className={`${type.ui} text-nodal-graphite-soft font-light max-w-xs leading-relaxed`}>
             Three foundations that distinguish how we build clinical infrastructure.
           </p>
         </div>
@@ -89,7 +90,7 @@ export const OurApproach = () => {
             >
               {/* Number */}
               <div className="col-span-1">
-                <span className="text-xs font-semibold text-nodal-graphite-soft/50 tracking-widest">
+                <span className={`${type.ui} font-semibold text-nodal-graphite-soft/50 tracking-widest`}>
                   {p.num}
                 </span>
               </div>
@@ -103,14 +104,14 @@ export const OurApproach = () => {
 
               {/* Title */}
               <div className="col-span-9 md:col-span-4">
-                <h3 className="text-xl md:text-2xl font-semibold text-nodal-blue leading-snug">
+                <h3 className={`${type.subheading} font-semibold text-nodal-blue leading-snug`}>
                   {p.title}
                 </h3>
               </div>
 
               {/* Body */}
               <div className="col-span-12 md:col-span-6 md:col-start-7">
-                <p className="text-base text-nodal-graphite font-light leading-relaxed">
+                <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
                   {p.body}
                 </p>
               </div>

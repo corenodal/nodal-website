@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -141,7 +142,7 @@ export const TargetSection = () => {
     >
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
-        <h2 className="target-heading translate-y-8 opacity-0 text-3xl md:text-4xl font-semibold text-nodal-blue mb-10 max-w-3xl">
+        <h2 className={`target-heading translate-y-8 opacity-0 ${type.heading} font-semibold text-nodal-blue mb-10 max-w-3xl`}>
           Designed for the realities of modern care delivery.
         </h2>
 
@@ -160,10 +161,10 @@ export const TargetSection = () => {
                 {/* Text */}
                 <div className="flex-1 order-2 md:order-1">
                   <div className={`w-10 h-1 rounded-full ${accentBar[card.accent] || accentBar['nodal-green']} mb-3`} />
-                  <h3 className="text-xl md:text-2xl font-bold text-nodal-blue mb-2">
+                  <h3 className={`${type.subheading} font-bold text-nodal-blue mb-2`}>
                     {card.title}
                   </h3>
-                  <p className="text-base md:text-lg text-nodal-graphite font-light leading-relaxed">
+                  <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
                     {card.desc}
                   </p>
                 </div>

@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
+import { type } from '../styles/typography';
 
 export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
@@ -25,14 +26,14 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
           <div className="w-10 h-10 rounded-xl bg-nodal-blue flex items-center justify-center">
             <div className="w-5 h-5 rounded-full bg-white" />
           </div>
-          <span className="text-3xl font-bold tracking-tighter text-nodal-blue">NODAL</span>
+          <span className={`${type.heading} font-bold tracking-tighter text-nodal-blue`}>NODAL</span>
         </div>
         
         <div className="relative h-1 w-full bg-slate-200 rounded-full overflow-hidden mb-4">
           <div className="progress-bar absolute top-0 left-0 h-full w-0 bg-nodal-blue" />
         </div>
         
-        <p className="text-sm font-semibold text-nodal-blue/40 tracking-widest uppercase">
+        <p className={`${type.ui} font-semibold text-nodal-blue/40 tracking-widest uppercase`}>
           Initializing Clinical System
         </p>
       </div>

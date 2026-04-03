@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,14 +54,14 @@ export const OurPerspective = () => {
         {/* Intro */}
         <div className="persp-intro opacity-0 flex flex-col md:flex-row md:items-end gap-6 md:gap-16 mb-12 md:mb-14">
           <div>
-            <p className="text-xs font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3">
+            <p className={`${type.ui} font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3`}>
               Our Perspective
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-white leading-snug">
+            <h2 className={`${type.heading} font-semibold text-white leading-snug`}>
               We ask different questions.
             </h2>
           </div>
-          <p className="text-base text-white/70 font-medium max-w-xs leading-relaxed">
+          <p className={`${type.body} text-white/70 font-medium max-w-xs leading-relaxed`}>
             The questions that drive our work aren&apos;t about features. They&apos;re about first principles.
           </p>
         </div>
@@ -72,17 +73,17 @@ export const OurPerspective = () => {
               key={i}
               className="persp-q opacity-0 border-b border-white/10 py-8 md:py-10 group flex items-start gap-6 md:gap-10 cursor-default"
             >
-              <span className="text-[2.5rem] md:text-[3.5rem] font-bold text-white/10 leading-none flex-shrink-0 select-none group-hover:text-nodal-green/30 transition-colors duration-300">
+              <span className={`${type.heading} font-bold text-white/10 leading-none flex-shrink-0 select-none group-hover:text-nodal-green/30 transition-colors duration-300`}>
                 {String(i + 1).padStart(2, '0')}
               </span>
-              <p className="text-xl md:text-2xl font-semibold text-white/80 leading-snug pt-2 group-hover:text-white transition-colors duration-300">
+              <p className={`${type.subheading} font-semibold text-white/80 leading-snug pt-2 group-hover:text-white transition-colors duration-300`}>
                 {q}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="mt-14 text-base text-white/60 font-medium italic text-right">
+        <p className={`mt-14 ${type.body} text-white/60 font-medium italic text-right`}>
           Our work begins from these questions.
         </p>
       </div>

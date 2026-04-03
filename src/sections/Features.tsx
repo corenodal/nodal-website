@@ -1,6 +1,7 @@
 import { Stethoscope, Users, Building2 } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { type } from '../styles/typography';
 
 const features = [
   {
@@ -66,7 +67,7 @@ export const Features = () => {
     <section id="features" className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10 flex items-center">
       <div className="max-w-7xl mx-auto w-full" ref={containerRef}>
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue">
+          <h2 className={`${type.heading} font-semibold text-nodal-blue`}>
             Workflow Support Across Care Settings
           </h2>
         </div>
@@ -80,10 +81,10 @@ export const Features = () => {
               <div className={`w-16 h-16 rounded-xl bg-white flex items-center justify-center mb-10 border border-slate-100 shadow-sm transition-all ${feature.color === 'nodal-violet' ? 'group-hover:bg-nodal-violet' : 'group-hover:bg-nodal-green'} group-hover:text-white`}>
                 <feature.icon className={`w-8 h-8 transition-colors ${feature.color === 'nodal-violet' ? 'text-nodal-violet group-hover:text-white' : 'text-nodal-green group-hover:text-white'}`} />
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold text-nodal-blue mb-5">{feature.title}</h3>
+              <h3 className={`${type.subheading} font-semibold text-nodal-blue mb-5`}>{feature.title}</h3>
               <ul className="space-y-3">
                 {feature.bullets.map((bullet, i) => (
-                  <li key={i} className="flex items-start gap-3 text-base md:text-lg text-nodal-graphite leading-relaxed font-light">
+                  <li key={i} className={`flex items-start gap-3 ${type.body} text-nodal-graphite leading-relaxed font-light`}>
                     <span className={`mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0 ${feature.color === 'nodal-violet' ? 'bg-nodal-violet' : 'bg-nodal-green'}`} />
                     {bullet}
                   </li>

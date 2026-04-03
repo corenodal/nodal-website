@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { type } from '../styles/typography';
 
 export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,7 +27,7 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-12 md:gap-0">
         {/* Left — Giant heading */}
         <div className="flex-1 max-w-3xl">
-          <h1 className="text-[clamp(3rem,8vw,7rem)] font-semibold tracking-tight leading-[1.02] text-nodal-blue">
+          <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nodal-blue`}>
             <div className="overflow-hidden">
               <span className="ah-line block">We exist</span>
             </div>
@@ -45,14 +46,14 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
         {/* Right — stacked context blocks */}
         <div className="ah-right opacity-0 flex flex-col gap-8 max-w-xs">
           <div className="border-l-2 border-nodal-green pl-5">
-            <p className="text-sm font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1">Mission</p>
-            <p className="text-base text-nodal-graphite font-light leading-relaxed">
+            <p className={`${type.ui} font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1`}>Mission</p>
+            <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
               Enable high-quality care to be delivered sustainably.
             </p>
           </div>
           <div className="border-l-2 border-nodal-violet/40 pl-5">
-            <p className="text-sm font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1">Belief</p>
-            <p className="text-base text-nodal-graphite font-light leading-relaxed">
+            <p className={`${type.ui} font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1`}>Belief</p>
+            <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
               Healthcare cannot scale sustainably if systems demand more than they give back.
             </p>
           </div>

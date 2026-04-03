@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { Check } from 'lucide-react';
 import gsap from 'gsap';
+import { type } from '../styles/typography';
 
 const features = [
   "Live Session Capture",
@@ -105,7 +106,7 @@ export const TrustSection = () => {
       >
         <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
       </div>
-      <span className="text-sm md:text-base text-nodal-blue font-medium">{feature}</span>
+      <span className={`${type.ui} text-nodal-blue font-medium`}>{feature}</span>
     </div>
   );
 
@@ -113,10 +114,10 @@ export const TrustSection = () => {
     <section id="trust" className="py-10 md:py-14 px-6 md:px-20 bg-transparent relative z-10">
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-semibold text-nodal-blue mb-4">
+          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-4`}>
             Designed for Clinical Accountability
           </h2>
-          <p className="text-base md:text-lg text-nodal-graphite max-w-2xl mx-auto font-light leading-relaxed">
+          <p className={`${type.body} text-nodal-graphite max-w-2xl mx-auto font-light leading-relaxed`}>
             Healthcare requires absolute transparency. Nodal is built on foundations of verifiable output and ethical intelligence.
           </p>
         </div>

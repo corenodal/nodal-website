@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { type } from '../styles/typography';
 
 export const CTASection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -29,13 +30,13 @@ export const CTASection = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className="cta-content translate-y-8 opacity-0 bg-nodal-blue rounded-3xl p-16 text-center text-white relative overflow-hidden shadow-2xl">
-          <h3 className="text-4xl md:text-5xl font-semibold mb-6 relative z-10">
+          <h3 className={`${type.heading} font-semibold mb-6 relative z-10`}>
             Precision Intelligence for Clinical Care
           </h3>
-          <p className="text-xl md:text-2xl text-white/80 max-w-3xl mx-auto mb-10 font-light relative z-10 leading-relaxed">
+          <p className={`${type.subheading} text-white/80 max-w-3xl mx-auto mb-10 font-light relative z-10 leading-relaxed`}>
             Join the clinical pilot program and experience the next generation of administrative clarity.
           </p>
-          <a href="mailto:core.nodal@gmail.com" className="px-10 py-5 bg-nodal-green text-white text-lg font-semibold rounded-xl hover:brightness-105 transition-all relative z-10 hover:-translate-y-0.5">
+          <a href="mailto:core.nodal@gmail.com" className={`px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all relative z-10 hover:-translate-y-0.5`}>
             Request Access
           </a>
         </div>

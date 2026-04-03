@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Database, MessageSquare, CreditCard, PenTool, Mail, Pill, Clipboard, FileSearch } from 'lucide-react';
+import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -107,7 +108,7 @@ export const ProblemSection = () => {
       {/* ── Beat 1: The Question ── */}
       <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mb-12">
         <div className="problem-heading translate-y-12 opacity-0 max-w-5xl">
-          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue leading-tight">
+          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
             Clinical work is scattered across fragmented systems.
           </h2>
         </div>
@@ -127,7 +128,7 @@ export const ProblemSection = () => {
               >
                 <div className={`${frag.bg} backdrop-blur-[2px] rounded-2xl px-5 py-4 border border-white/40 flex items-center gap-3`}>
                   <frag.icon className={`w-5 h-5 ${frag.color} shrink-0`} />
-                  <span className="text-sm font-medium text-nodal-blue/50 whitespace-nowrap">{frag.label}</span>
+                  <span className={`${type.ui} font-medium text-nodal-blue/50 whitespace-nowrap`}>{frag.label}</span>
                 </div>
               </div>
             ))}
@@ -147,20 +148,20 @@ export const ProblemSection = () => {
                 key={i}
                 className="pain-card translate-y-8 opacity-0 scale-95 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm text-center"
               >
-                <div className="text-base md:text-lg font-semibold text-nodal-blue mb-2">{item.label}</div>
-                <div className="text-3xl md:text-4xl font-bold text-rose-500 mb-2">{item.stat}</div>
-                <div className="text-xs md:text-sm text-nodal-graphite font-light">{item.sub}</div>
+                <div className={`${type.body} font-semibold text-nodal-blue mb-2`}>{item.label}</div>
+                <div className={`${type.heading} font-bold text-rose-500 mb-2`}>{item.stat}</div>
+                <div className={`${type.ui} text-nodal-graphite font-light`}>{item.sub}</div>
               </div>
             ))}
           </div>
-          <p className="text-center text-xs text-nodal-graphite-soft font-light mt-6">
+          <p className={`text-center ${type.ui} text-nodal-graphite-soft font-light mt-6`}>
             Metrics based on last-decade reports of practicing U.S. physicians
           </p>
         </div>
 
         {/* Closing statement — on top of fragments */}
         <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-12 md:pt-16 text-center">
-          <p className="text-3xl md:text-5xl font-bold leading-tight max-w-3xl mx-auto">
+          <p className={`${type.heading} font-bold leading-tight max-w-3xl mx-auto`}>
             <span className="text-nodal-blue block">This is not a productivity failure.</span>
             <span className="text-nodal-violet block mt-2">This is a systems design failure.</span>
           </p>

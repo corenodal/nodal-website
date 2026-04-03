@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { type } from '../styles/typography';
 
 export const Footer = ({ dark = false }: { dark?: boolean }) => {
   const linkClass = `transition-colors ${dark ? 'hover:text-nodal-green' : 'hover:text-nodal-blue'}`;
@@ -18,9 +19,9 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
               <div className="w-8 h-8 rounded-lg bg-nodal-blue flex items-center justify-center">
                 <div className="w-4 h-4 rounded-full bg-nodal-white" />
               </div>
-              <span className={`text-2xl font-bold tracking-tighter ${dark ? 'text-white' : 'text-nodal-blue'}`}>NODAL</span>
+              <span className={`${type.subheading} font-bold tracking-tighter ${dark ? 'text-white' : 'text-nodal-blue'}`}>NODAL</span>
             </div>
-            <p className={`text-sm font-light leading-relaxed mb-8 ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
+            <p className={`${type.ui} font-light leading-relaxed mb-8 ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
               Personalised AI Assistant for Healthcare Professionals
             </p>
           </div>
@@ -28,7 +29,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
           <div className="grid grid-cols-2 col-span-1 md:col-span-2 gap-4 md:gap-6">
             <div>
               <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nodal-blue'}`}>Product</h4>
-              <ul className={`space-y-4 text-sm font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
+              <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
                 <li>
                   <Link to="/product" className={linkClass}>Overview</Link>
                 </li>
@@ -42,7 +43,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
             </div>
             <div>
               <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nodal-blue'}`}>Company</h4>
-              <ul className={`space-y-4 text-sm font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
+              <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
                 <li>
                   <Link to="/about" className={linkClass}>About Us</Link>
                 </li>
@@ -58,7 +59,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
           </div>
         </div>
 
-        <div className={`pt-8 border-t flex flex-col md:flex-row justify-between items-center text-xs font-light ${dark ? 'border-slate-700/50 text-slate-500' : 'border-slate-100 text-nodal-graphite-soft'}`}>
+        <div className={`pt-8 border-t flex flex-col md:flex-row justify-between items-center ${type.ui} font-light ${dark ? 'border-slate-700/50 text-slate-500' : 'border-slate-100 text-nodal-graphite-soft'}`}>
           <p>© 2026 Nodal Intelligence. All rights reserved. Clinical data processed securely.</p>
         </div>
       </div>

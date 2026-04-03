@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
+import { type } from '../styles/typography';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -42,7 +43,7 @@ export const Navbar = () => {
           <div className="w-8 h-8 rounded-lg bg-nodal-blue flex items-center justify-center">
             <div className="w-4 h-4 rounded-full bg-nodal-white" />
           </div>
-          <span className="text-2xl font-bold tracking-tighter text-nodal-blue">NODAL</span>
+          <span className={`${type.subheading} font-bold tracking-tighter text-nodal-blue`}>NODAL</span>
         </Link>
 
         {/* Desktop Links */}
@@ -52,7 +53,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-base font-medium text-nodal-graphite hover:text-nodal-blue transition-colors"
+                className={`${type.body} font-medium text-nodal-graphite hover:text-nodal-blue transition-colors`}
               >
                 {link.name}
               </Link>
@@ -60,13 +61,13 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-base font-medium text-nodal-graphite hover:text-nodal-blue transition-colors"
+                className={`${type.body} font-medium text-nodal-graphite hover:text-nodal-blue transition-colors`}
               >
                 {link.name}
               </a>
             )
           )}
-          <a href="mailto:core.nodal@gmail.com" className="px-6 py-3 bg-nodal-blue text-white text-base font-semibold rounded-lg hover:bg-slate-800 transition-colors">
+          <a href="mailto:core.nodal@gmail.com" className={`px-6 py-3 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg hover:bg-slate-800 transition-colors`}>
             Request Access
           </a>
         </div>
@@ -88,7 +89,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-xl font-medium text-nodal-graphite"
+                className={`${type.subheading} font-medium text-nodal-graphite`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -97,14 +98,14 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xl font-medium text-nodal-graphite"
+                className={`${type.subheading} font-medium text-nodal-graphite`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
               </a>
             )
           )}
-          <a href="mailto:core.nodal@gmail.com" className="w-full py-4 bg-nodal-blue text-white text-lg font-semibold rounded-lg text-center">
+          <a href="mailto:core.nodal@gmail.com" className={`w-full py-4 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg text-center`}>
             Request Access
           </a>
         </div>

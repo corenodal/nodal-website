@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,18 +56,18 @@ export const WhoWeAre = () => {
 
         {/* Left — heading + statement */}
         <div className="who-left opacity-0">
-          <p className="text-xs font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-5">
+          <p className={`${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-5`}>
             Who We Are
           </p>
-          <h2 className="text-4xl md:text-5xl font-semibold text-nodal-blue leading-tight mb-8">
+          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight mb-8`}>
             Built by people<br />who understand<br />the problem.
           </h2>
-          <p className="text-xl text-nodal-graphite font-light leading-relaxed max-w-sm mb-10">
+          <p className={`${type.subheading} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10`}>
             Nodal is built by a team with backgrounds in behavioral science, systems design, and AI technology. We work directly with clinicians to ensure our solutions reflect real-world practice, not theoretical models or optimistic assumptions.
           </p>
           <div className="inline-flex items-center gap-2.5 border border-nodal-green/30 bg-nodal-green/5 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-nodal-green animate-pulse" />
-            <span className="text-xs font-semibold text-nodal-graphite tracking-wide">
+            <span className={`${type.ui} font-semibold text-nodal-graphite tracking-wide`}>
               Currently in pilot, onboarding partners
             </span>
           </div>
@@ -81,11 +82,11 @@ export const WhoWeAre = () => {
             >
               <div className="flex items-center gap-3 mb-3">
                 <div className="w-1.5 h-1.5 rounded-full bg-nodal-green group-hover:scale-150 transition-transform" />
-                <span className="text-base font-semibold text-nodal-blue tracking-wide">
+                <span className={`${type.body} font-semibold text-nodal-blue tracking-wide`}>
                   {p.tag}
                 </span>
               </div>
-              <p className="text-base text-nodal-graphite font-light leading-relaxed pl-5">
+              <p className={`${type.body} text-nodal-graphite font-light leading-relaxed pl-5`}>
                 {p.desc}
               </p>
             </div>

@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { type } from '../styles/typography';
 
 export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,7 +52,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
         <div className="relative max-w-screen-xl mx-auto px-6 md:px-20 pt-6 md:pt-10">
           {/* Title + subtitle */}
           <div ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] text-white">
+            <h1 className={`${type.display} font-semibold tracking-tight leading-[1.1] text-white`}>
               <div className="overflow-hidden">
                 <span className="product-hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>A Centralized Clinical Node</span>
               </div>
@@ -59,7 +60,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
           </div>
           <p
             ref={descRef}
-            className="text-base md:text-lg text-white/80 font-light mt-2 md:mt-3"
+            className={`${type.body} text-white/80 font-light mt-2 md:mt-3`}
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
             Designed using research on cognitive load, structured thinking, and clinical decision pathways.

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,7 +56,7 @@ export const TheShift = () => {
       className="min-h-screen flex flex-col justify-center px-6 md:px-24 py-24 bg-transparent relative z-10"
     >
       <div className="max-w-6xl w-full mx-auto">
-        <p className="shift-label opacity-0 text-xs font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-16">
+        <p className={`shift-label opacity-0 ${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-16`}>
           The shift we&apos;re responding to
         </p>
 
@@ -66,10 +67,10 @@ export const TheShift = () => {
               key={line.num}
               className="shift-row border-b border-slate-200 py-8 md:py-10 flex items-baseline gap-6 md:gap-10 group"
             >
-              <span className="text-xs font-semibold text-nodal-violet/40 tracking-widest flex-shrink-0 w-6">
+              <span className={`${type.ui} font-semibold text-nodal-violet/40 tracking-widest flex-shrink-0 w-6`}>
                 {line.num}
               </span>
-              <p className="text-2xl md:text-4xl font-semibold text-nodal-blue leading-snug">
+              <p className={`${type.heading} font-semibold text-nodal-blue leading-snug`}>
                 {line.text}
               </p>
             </div>
@@ -80,12 +81,12 @@ export const TheShift = () => {
         <div className="shift-conclusion opacity-0 mt-8 md:mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           <div>
             <div className="w-8 h-0.5 bg-nodal-green mb-6" />
-            <p className="text-xl md:text-2xl text-nodal-graphite font-light leading-relaxed">
+            <p className={`${type.subheading} text-nodal-graphite font-light leading-relaxed`}>
               Care is human.{' '}
               <span className="font-semibold text-nodal-blue">Systems should support it.</span>
             </p>
           </div>
-          <p className="text-base text-nodal-graphite-soft font-light leading-relaxed">
+          <p className={`${type.body} text-nodal-graphite-soft font-light leading-relaxed`}>
             We believe the next generation of healthcare infrastructure must reduce invisible strain,
             not add to it. That belief shapes every decision we make.
           </p>

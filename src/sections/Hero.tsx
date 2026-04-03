@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
+import { type } from '../styles/typography';
 
 export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -54,12 +55,12 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
           style={{ opacity: 0, transform: 'translateY(20px)' }}
         >
           <span className="w-2.5 h-2.5 rounded-full bg-nodal-violet animate-pulse shadow-[0_0_10px_rgba(123,110,246,0.6)]" />
-          <span className="text-sm font-semibold text-nodal-violet tracking-wider uppercase">
+          <span className={`${type.ui} font-semibold text-nodal-violet tracking-wider uppercase`}>
             Cognitive Medical Intelligence
           </span>
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-semibold tracking-tight leading-[1.1] mb-10 text-nodal-blue">
+        <h1 className={`${type.display} font-semibold tracking-tight leading-[1.1] mb-10 text-nodal-blue`}>
           <div className="overflow-hidden">
             <span className="hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>Personalised AI Assistant </span>
           </div>
@@ -70,7 +71,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
 
         <p
           ref={subheadlineRef}
-          className="text-xl md:text-2xl text-nodal-graphite font-light leading-relaxed mb-14 max-w-3xl mx-auto"
+          className={`${type.subheading} text-nodal-graphite font-light leading-relaxed mb-14 max-w-3xl mx-auto`}
           style={{ opacity: 0, transform: 'translateY(20px)' }}
         >
           Nodal is an AI-powered system that centralizes insights, context, and follow-through - reducing cognitive fragmentation across care delivery so healthcare professionals can focus on patients
@@ -81,7 +82,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
         <div className="w-48 h-px bg-gradient-to-r from-transparent via-nodal-violet/30 to-transparent mx-auto mb-10" />
 
         <div ref={ctaRef} className="flex items-center justify-center" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-          <a href="mailto:core.nodal@gmail.com" className="w-full sm:w-auto px-10 py-5 bg-nodal-green text-white text-lg font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5">
+          <a href="mailto:core.nodal@gmail.com" className={`w-full sm:w-auto px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}>
             Request Access
             <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </a>
