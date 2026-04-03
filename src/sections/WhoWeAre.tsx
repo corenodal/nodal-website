@@ -59,7 +59,7 @@ export const WhoWeAre = () => {
           <p className={`${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-5`}>
             Who We Are
           </p>
-          <h2 className={`${type.display} font-semibold text-nodal-blue leading-tight mb-8`}>
+          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight mb-8`}>
             Built by people<br />who understand<br />the problem.
           </h2>
           <p className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10`}>

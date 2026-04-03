@@ -21,7 +21,7 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col justify-center px-6 md:px-24 pt-32 pb-20 z-10"
+      className="relative min-h-screen flex flex-col justify-center items-center px-6 md:px-24 pt-32 pb-20 z-10"
     >
       {/* Main split row */}
       <div className="max-w-screen-xl mx-auto w-full flex flex-col md:flex-row md:items-end md:justify-between gap-12 md:gap-0">
