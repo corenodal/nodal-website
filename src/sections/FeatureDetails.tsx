@@ -32,7 +32,7 @@ const features = [
     image: '/img.png',
     accent: 'nodal-violet' as const,
     imageFirst: false,
-    imageAnchor: 'bottom-right' as const,
+    imageAnchor: 'top-left' as const,
   },
   {
     title: 'Feature 2',
@@ -140,7 +140,7 @@ const features = [
     image: '/img.png',
     accent: 'nodal-violet' as const,
     imageFirst: false,
-    imageAnchor: 'bottom-right' as const,
+    imageAnchor: 'top-left' as const,
   },
   {
     title: 'Feature 6',
