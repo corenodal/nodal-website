@@ -34,7 +34,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
                   <Link to="/product" className={linkClass}>Overview</Link>
                 </li>
                 <li>
-                  <Link to="/product#trust" className={linkClass}>Features</Link>
+                  <Link to="/features" className={linkClass}>Features</Link>
                 </li>
                 <li>
                   <Link to="/product#workflow" className={linkClass}>Workflow</Link>
