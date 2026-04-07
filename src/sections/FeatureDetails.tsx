@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Zap, Sparkles, Link2, Brain, Network, ShieldCheck, ClipboardList, BarChart3, Bell } from 'lucide-react';
+import { Zap, Sparkles, Link2, Brain, Network, ShieldCheck, ClipboardList, BarChart3, Bell, FileText, RefreshCw, Lock, Activity, Layers, Settings, Workflow, Search, MessageSquare } from 'lucide-react';
 import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -32,6 +32,7 @@ const features = [
     image: '/img.png',
     accent: 'nodal-violet' as const,
     imageFirst: false,
+    imageAnchor: 'bottom-right' as const,
   },
   {
     title: 'Feature 2',
@@ -58,6 +59,7 @@ const features = [
     image: '/img.png',
     accent: 'nodal-green' as const,
     imageFirst: true,
+    imageAnchor: 'top-left' as const,
   },
   {
     title: 'Feature 3',
@@ -84,6 +86,88 @@ const features = [
     image: '/img.png',
     accent: 'nodal-violet' as const,
     imageFirst: false,
+    imageAnchor: 'bottom-left' as const,
+  },
+  {
+    title: 'Feature 4',
+    subtitle: 'Subtitle for feature four',
+    description:
+      'A detailed description of this feature and how it enhances documentation quality. It ensures accuracy and completeness across every encounter.',
+    bullets: [
+      {
+        icon: FileText,
+        label: 'Bullet point one',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+      {
+        icon: RefreshCw,
+        label: 'Bullet point two',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+      {
+        icon: Lock,
+        label: 'Bullet point three',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+    ],
+    image: '/img.png',
+    accent: 'nodal-green' as const,
+    imageFirst: true,
+    imageAnchor: 'top-right' as const,
+  },
+  {
+    title: 'Feature 5',
+    subtitle: 'Subtitle for feature five',
+    description:
+      'A detailed description of this feature and how it supports clinical oversight. It gives teams visibility into patterns and outcomes.',
+    bullets: [
+      {
+        icon: Activity,
+        label: 'Bullet point one',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+      {
+        icon: Layers,
+        label: 'Bullet point two',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+      {
+        icon: Settings,
+        label: 'Bullet point three',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+    ],
+    image: '/img.png',
+    accent: 'nodal-violet' as const,
+    imageFirst: false,
+    imageAnchor: 'bottom-right' as const,
+  },
+  {
+    title: 'Feature 6',
+    subtitle: 'Subtitle for feature six',
+    description:
+      'A detailed description of this feature and how it connects clinical workflows end to end. It closes gaps between systems and teams.',
+    bullets: [
+      {
+        icon: Workflow,
+        label: 'Bullet point one',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+      {
+        icon: Search,
+        label: 'Bullet point two',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+      {
+        icon: MessageSquare,
+        label: 'Bullet point three',
+        detail: 'A short description of this capability and what it does for clinicians.',
+      },
+    ],
+    image: '/img.png',
+    accent: 'nodal-green' as const,
+    imageFirst: true,
+    imageAnchor: 'top-left' as const,
   },
 ];
 
@@ -117,8 +201,27 @@ export const FeatureDetails = () => {
   const accentColor = (accent: 'nodal-violet' | 'nodal-green') =>
     accent === 'nodal-violet' ? 'bg-nodal-violet/10 text-nodal-violet' : 'bg-nodal-green/10 text-nodal-green';
 
-  const borderColor = (accent: 'nodal-violet' | 'nodal-green') =>
-    accent === 'nodal-violet' ? 'border-nodal-violet/20' : 'border-nodal-green/20';
+  const anchorStyles = (anchor: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right') => {
+    const pad = {
+      'top-left':     'pb-0 pr-0 pt-6 pl-6 md:pt-8 md:pl-8',
+      'top-right':    'pb-0 pl-0 pt-6 pr-6 md:pt-8 md:pr-8',
+      'bottom-left':  'pt-0 pr-0 pb-6 pl-6 md:pb-8 md:pl-8',
+      'bottom-right': 'pt-0 pl-0 pb-6 pr-6 md:pb-8 md:pr-8',
+    };
+    const rounded = {
+      'top-left':     'rounded-tl-xl',
+      'top-right':    'rounded-tr-xl',
+      'bottom-left':  'rounded-bl-xl',
+      'bottom-right': 'rounded-br-xl',
+    };
+    const objectPos = {
+      'top-left':     'object-left-top',
+      'top-right':    'object-right-top',
+      'bottom-left':  'object-left-bottom',
+      'bottom-right': 'object-right-bottom',
+    };
+    return { pad: pad[anchor], rounded: rounded[anchor], objectPos: objectPos[anchor] };
+  };
 
   return (
     <section
@@ -159,13 +262,20 @@ export const FeatureDetails = () => {
             </div>
           );
 
+          const anchor = anchorStyles(feature.imageAnchor);
           const imageBlock = (
             <div key={`img-${i}`} className="flex-1 flex items-end justify-center mt-8 md:mt-16">
-              <div className={`rounded-2xl border-2 ${borderColor(feature.accent)} overflow-hidden shadow-lg w-full`}>
+              <div
+                className={`rounded-2xl w-full aspect-[4/3] ${anchor.pad} overflow-hidden ${
+                  feature.accent === 'nodal-violet'
+                    ? 'bg-nodal-violet/8'
+                    : 'bg-nodal-green/8'
+                }`}
+              >
                 <img
                   src={feature.image}
                   alt={feature.title}
-                  className="w-full h-auto object-cover"
+                  className={`w-full h-full object-cover ${anchor.objectPos} ${anchor.rounded} shadow-lg`}
                 />
               </div>
             </div>
