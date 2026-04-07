@@ -1,7 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { type } from '../styles/typography';
 
 export const Footer = ({ dark = false }: { dark?: boolean }) => {
+  const location = useLocation();
+
+  const handleNavClick = (path: string) => (e: React.MouseEvent) => {
+    if (location.pathname === path && !path.includes('#')) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
   const linkClass = `transition-colors ${dark ? 'hover:text-nodal-green' : 'hover:text-nodal-blue'}`;
 
   return (
@@ -31,10 +39,10 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
               <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nodal-blue'}`}>Product</h4>
               <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
                 <li>
-                  <Link to="/product" className={linkClass}>Overview</Link>
+                  <Link to="/product" onClick={handleNavClick('/product')} className={linkClass}>Overview</Link>
                 </li>
                 <li>
-                  <Link to="/features" className={linkClass}>Features</Link>
+                  <Link to="/features" onClick={handleNavClick('/features')} className={linkClass}>Features</Link>
                 </li>
                 <li>
                   <Link to="/product#workflow" className={linkClass}>Workflow</Link>
@@ -45,7 +53,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
               <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nodal-blue'}`}>Company</h4>
               <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
                 <li>
-                  <Link to="/about" className={linkClass}>About Us</Link>
+                  <Link to="/about" onClick={handleNavClick('/about')} className={linkClass}>About Us</Link>
                 </li>
                 <li>
                   <Link to="/about#who-we-are" className={linkClass}>Who We Are</Link>
