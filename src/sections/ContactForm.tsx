@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
-import { Send } from 'lucide-react';
+import { Send, Loader2 } from 'lucide-react';
+import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../config/emailjs';
 
 interface FormData {
   firstName: string;
@@ -28,6 +30,8 @@ const initialForm: FormData = {
 export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
   const [form, setForm] = useState<FormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState('');
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -62,10 +66,33 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    setSubmitted(true);
+
+    setSending(true);
+    setSendError('');
+
+    const fullName = [form.firstName, form.middleName, form.lastName].filter(Boolean).join(' ');
+
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        name: fullName,
+        email: form.email,
+        phone: form.phone || 'Not provided',
+        company: form.company || 'Not provided',
+        job_role: form.jobRole || 'Not provided',
+        message: form.message || 'No message',
+        time: new Date().toLocaleString(),
+      }, EMAILJS_PUBLIC_KEY);
+
+      setSubmitted(true);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setSendError('Something went wrong. Please try again or email us directly.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const inputBase =
@@ -239,14 +266,29 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                 />
               </div>
 
+              {/* Error */}
+              {sendError && (
+                <p className="text-red-500 text-sm">{sendError}</p>
+              )}
+
               {/* Submit */}
               <div className="pt-1">
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-10 py-4 bg-nodal-green text-white rounded-xl font-semibold hover:brightness-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"
+                  disabled={sending}
+                  className="w-full sm:w-auto px-10 py-4 bg-nodal-green text-white rounded-xl font-semibold hover:brightness-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none"
                 >
-                  Send message
-                  <Send className="w-4 h-4" />
+                  {sending ? (
+                    <>
+                      Sending
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send message
+                      <Send className="w-4 h-4" />
+                    </>
+                  )}
                 </button>
               </div>
             </form>
