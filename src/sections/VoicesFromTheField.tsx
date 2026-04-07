@@ -15,9 +15,8 @@ const gridQuotes = [
   { text: 'Notes take 20–25 mins each; five notes = 2.5 hours.', accent: 'nodal-violet' as const, span: 'col-span-1' },
   { text: 'If you didn\'t document it, it didn\'t happen.', accent: 'nodal-green' as const, span: 'col-span-1' },
   { text: 'Therapists start private practice to escape system fatigue.', accent: 'nodal-violet' as const, span: 'col-span-2' },
-  { text: 'An app that could auto-complete based on my writing style.', accent: 'nodal-green' as const, span: 'col-span-1' },
+  { text: 'Impacts me being able to see more patients.', accent: 'nodal-green' as const, span: 'col-span-1' },
   { text: 'System-required documentation is exhausting but necessary.', accent: 'nodal-violet' as const, span: 'col-span-1' },
-  { text: 'Impacts me being able to see more patients.', accent: 'nodal-green' as const, span: 'col-span-2' },
 ];
 
 export const VoicesFromTheField = () => {
@@ -76,7 +75,7 @@ export const VoicesFromTheField = () => {
 
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left — Featured rotating quote */}
-          <div className="vf-card opacity-0 md:w-5/12 p-10 rounded-2xl bg-white/70 backdrop-blur-sm border border-nodal-violet/15 flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="vf-card opacity-0 md:w-5/12 p-8 rounded-2xl bg-white/70 backdrop-blur-sm border border-nodal-violet/15 flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div>
               <span className="text-5xl font-serif leading-none block mb-6 text-nodal-violet/40">
                 &ldquo;&ldquo;
@@ -88,7 +87,7 @@ export const VoicesFromTheField = () => {
                 {featuredQuotes[activeQuote]}
               </p>
             </div>
-            <div className="flex items-center gap-3 mt-10">
+            <div className="flex items-center gap-3 mt-8">
               {featuredQuotes.map((_, i) => (
                 <button
                   key={i}
