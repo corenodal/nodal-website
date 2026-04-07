@@ -22,7 +22,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
               <span className={`${type.subheading} font-bold tracking-tighter ${dark ? 'text-white' : 'text-nodal-blue'}`}>NODAL</span>
             </div>
             <p className={`${type.ui} font-light leading-relaxed mb-8 ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
-              Personalised AI Assistant for Healthcare Professionals
+              Personalised AI Assistant for Mental Health Professionals
             </p>
           </div>
 

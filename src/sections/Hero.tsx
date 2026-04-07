@@ -65,7 +65,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
             <span className="hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>Personalised AI Assistant </span>
           </div>
           <div className="overflow-hidden mt-3">
-            <span className="hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>for Healthcare Professionals</span>
+            <span className="hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>for Mental Health Professionals</span>
           </div>
         </h1>
 

@@ -84,12 +84,6 @@ const cards = [
     visual: <GroupPeople />,
     accent: 'nodal-violet',
   },
-  {
-    title: 'Healthcare Organizations',
-    desc: 'A scalable system that supports consistent, high-quality care across departments.',
-    visual: <OrgPeople />,
-    accent: 'nodal-blue',
-  },
 ];
 
 export const TargetSection = () => {
@@ -146,32 +140,29 @@ export const TargetSection = () => {
           Healthcare Is Complex. Your Workflow Should Not Be.
         </h2>
 
-        {/* Overlapping Cards */}
-        <div className="relative space-y-[-3rem] md:space-y-[-4rem]">
+        {/* Cards */}
+        <div className="flex flex-col md:flex-row gap-8">
           {cards.map((card, i) => (
             <div
               key={i}
               ref={el => { cardsRef.current[i] = el; }}
-              className="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-10 transition-shadow hover:shadow-2xl"
-              style={{
-                zIndex: i + 1,
-              }}
+              className="flex-1 bg-white rounded-2xl shadow-xl border border-slate-100 p-6 md:p-10 transition-shadow hover:shadow-2xl"
             >
-              <div className="flex flex-col md:flex-row items-center gap-6 md:gap-10">
+              <div className="flex flex-col items-center text-center gap-6">
+                {/* Illustration */}
+                <div className="w-40 md:w-48">
+                  {card.visual}
+                </div>
+
                 {/* Text */}
-                <div className="flex-1 order-2 md:order-1">
-                  <div className={`w-10 h-1 rounded-full ${accentBar[card.accent] || accentBar['nodal-green']} mb-3`} />
+                <div>
+                  <div className={`w-10 h-1 rounded-full ${accentBar[card.accent] || accentBar['nodal-green']} mb-3 mx-auto`} />
                   <h3 className={`${type.subheading} font-bold text-nodal-blue mb-2`}>
                     {card.title}
                   </h3>
                   <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
                     {card.desc}
                   </p>
-                </div>
-
-                {/* Illustration */}
-                <div className="flex-shrink-0 order-1 md:order-2 w-40 md:w-48">
-                  {card.visual}
                 </div>
               </div>
             </div>
