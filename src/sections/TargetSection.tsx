@@ -50,26 +50,6 @@ const GroupPeople = () => (
   </div>
 );
 
-const OrgPeople = () => (
-  <div className="flex flex-col items-center justify-end gap-2 h-32 md:h-40">
-    {/* Back row */}
-    <div className="flex items-end gap-2 md:gap-3">
-      <Person size="sm" delay={0.5} color="nodal-violet" />
-      <Person size="sm" delay={0.3} color="nodal-green" />
-      <Person size="sm" delay={0.7} color="nodal-violet" />
-      <Person size="sm" delay={0.1} color="nodal-green" />
-      <Person size="sm" delay={0.9} color="nodal-violet" />
-    </div>
-    {/* Front row */}
-    <div className="flex items-end gap-3 md:gap-4">
-      <Person size="md" delay={0.2} color="nodal-green" />
-      <Person size="lg" delay={0} color="nodal-violet" />
-      <Person size="md" delay={0.4} color="nodal-green" />
-      <Person size="lg" delay={0.6} color="nodal-violet" />
-      <Person size="md" delay={0.8} color="nodal-green" />
-    </div>
-  </div>
-);
 
 const cards = [
   {
