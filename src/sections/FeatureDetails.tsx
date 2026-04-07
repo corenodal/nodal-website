@@ -1,32 +1,31 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Zap, Sparkles, Link2, Brain, Network, ShieldCheck, ClipboardList, BarChart3, Bell, FileText, RefreshCw, Lock, Activity, Layers, Settings, Workflow, Search, MessageSquare } from 'lucide-react';
+import { BookOpen, IdCard, TrendingUp, Sparkles, Lightbulb, ListChecks, Brain, MessageCircle, Wrench, FileText, PenLine, Download, Layers, ClipboardList, CheckSquare } from 'lucide-react';
 import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
-    title: 'Feature 1',
-    subtitle: 'Subtitle for feature one',
+    title: 'Session Prep',
     description:
-      'A detailed description of this feature and how it helps clinicians in their daily workflow. This feature streamlines a key part of the clinical process.',
+      'Nodal helps practitioners prepare for each session by bringing forward relevant patient context and insights from previous visits.',
     bullets: [
       {
-        icon: Zap,
-        label: 'Bullet point one',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: BookOpen,
+        label: 'Session & patient context',
+        detail: 'Maintains session-level and patient-level context through short summaries of past sessions.',
       },
       {
-        icon: Sparkles,
-        label: 'Bullet point two',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: IdCard,
+        label: 'Patient flashcards',
+        detail: 'Surfaces key historical information through patient flashcards for quick review.',
       },
       {
-        icon: Link2,
-        label: 'Bullet point three',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: TrendingUp,
+        label: 'Progress tracking',
+        detail: 'Helps track patient progress over time.',
       },
     ],
     image: '/img.png',
@@ -35,25 +34,24 @@ const features = [
     imageAnchor: 'top-left' as const,
   },
   {
-    title: 'Feature 2',
-    subtitle: 'Subtitle for feature two',
+    title: 'Note Customization',
     description:
-      'A detailed description of this feature and how it supports care coordination. It reduces manual effort and keeps everything organized.',
+      'Nodal makes it easy to generate and tailor clinical notes based on how you document care.',
     bullets: [
       {
-        icon: Brain,
-        label: 'Bullet point one',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: Sparkles,
+        label: 'Auto-generated notes',
+        detail: 'Generates structured notes directly from patient sessions.',
       },
       {
-        icon: Network,
-        label: 'Bullet point two',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: Lightbulb,
+        label: 'Flexible formats',
+        detail: 'Supports standard formats as well as custom templates created by clinicians.',
       },
       {
-        icon: ShieldCheck,
-        label: 'Bullet point three',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: ListChecks,
+        label: 'Ready to review',
+        detail: 'Produces ready-to-review notes to reduce manual writing.',
       },
     ],
     image: '/img.png',
@@ -62,25 +60,24 @@ const features = [
     imageAnchor: 'top-left' as const,
   },
   {
-    title: 'Feature 3',
-    subtitle: 'Subtitle for feature three',
+    title: 'Clinical Insights',
     description:
-      'A detailed description of this feature and how it improves clinical decision-making. It brings the right information forward at the right time.',
+      'Nodal highlights what matters most so nothing important is missed after a session.',
     bullets: [
       {
-        icon: ClipboardList,
-        label: 'Bullet point one',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: Brain,
+        label: 'Key themes extracted',
+        detail: 'Extracts key themes and clinically relevant signals.',
       },
       {
-        icon: BarChart3,
-        label: 'Bullet point two',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: MessageCircle,
+        label: 'Discussion highlights',
+        detail: 'Highlights important discussion points.',
       },
       {
-        icon: Bell,
-        label: 'Bullet point three',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: ListChecks,
+        label: 'Automatic next steps',
+        detail: 'Generates next steps automatically to support follow-through.',
       },
     ],
     image: '/img.png',
@@ -89,25 +86,24 @@ const features = [
     imageAnchor: 'bottom-left' as const,
   },
   {
-    title: 'Feature 4',
-    subtitle: 'Subtitle for feature four',
+    title: 'Clinical Assistant',
     description:
-      'A detailed description of this feature and how it enhances documentation quality. It ensures accuracy and completeness across every encounter.',
+      'Nodal acts as a customizable assistant that adapts to your workflow and preferences.',
     bullets: [
       {
-        icon: FileText,
-        label: 'Bullet point one',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: Wrench,
+        label: 'Learns your style',
+        detail: 'Learns your workflow, language, and documentation style.',
       },
       {
-        icon: RefreshCw,
-        label: 'Bullet point two',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: MessageCircle,
+        label: 'Ask anything',
+        detail: 'Answers questions about patients, treatments, or tasks.',
       },
       {
-        icon: Lock,
-        label: 'Bullet point three',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: PenLine,
+        label: 'Editing support',
+        detail: 'Helps edit notes, letters, and drafts as needed.',
       },
     ],
     image: '/img.png',
@@ -116,25 +112,24 @@ const features = [
     imageAnchor: 'top-right' as const,
   },
   {
-    title: 'Feature 5',
-    subtitle: 'Subtitle for feature five',
+    title: 'Patient Communication',
     description:
-      'A detailed description of this feature and how it supports clinical oversight. It gives teams visibility into patterns and outcomes.',
+      'Nodal helps streamline how you communicate with patients after a session.',
     bullets: [
       {
-        icon: Activity,
-        label: 'Bullet point one',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: FileText,
+        label: 'Patient-ready outputs',
+        detail: 'Generates patient-ready summaries and letters.',
       },
       {
-        icon: Layers,
-        label: 'Bullet point two',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: PenLine,
+        label: 'Review before sharing',
+        detail: 'Allows review and edits before sharing.',
       },
       {
-        icon: Settings,
-        label: 'Bullet point three',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: Download,
+        label: 'Copy or download',
+        detail: 'Produces structured outputs that can be copied or downloaded.',
       },
     ],
     image: '/img.png',
@@ -143,25 +138,24 @@ const features = [
     imageAnchor: 'top-left' as const,
   },
   {
-    title: 'Feature 6',
-    subtitle: 'Subtitle for feature six',
+    title: 'Collated Notes',
     description:
-      'A detailed description of this feature and how it connects clinical workflows end to end. It closes gaps between systems and teams.',
+      'Nodal brings together information across sessions to support continuity of care.',
     bullets: [
       {
-        icon: Workflow,
-        label: 'Bullet point one',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: Layers,
+        label: 'Combined session view',
+        detail: 'Combines notes from multiple sessions into one view.',
       },
       {
-        icon: Search,
-        label: 'Bullet point two',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: ClipboardList,
+        label: 'Consolidated history',
+        detail: 'Helps review patient history in a clear, consolidated format.',
       },
       {
-        icon: MessageSquare,
-        label: 'Bullet point three',
-        detail: 'A short description of this capability and what it does for clinicians.',
+        icon: CheckSquare,
+        label: 'Task tracking',
+        detail: 'Tracks progress along with pending and completed tasks.',
       },
     ],
     image: '/img.png',
@@ -233,12 +227,9 @@ export const FeatureDetails = () => {
         {features.map((feature, i) => {
           const textBlock = (
             <div key={`text-${i}`} className="flex-1 flex flex-col justify-start">
-              <h2 className={`${type.heading} font-semibold text-nodal-blue mb-3`}>
+              <h2 className={`${type.heading} font-semibold text-nodal-blue mb-6`}>
                 {feature.title}
               </h2>
-              <p className={`${type.subheading} font-medium text-nodal-graphite mb-6`}>
-                {feature.subtitle}
-              </p>
               <p className={`${type.body} text-nodal-graphite font-light leading-relaxed mb-10`}>
                 {feature.description}
               </p>
