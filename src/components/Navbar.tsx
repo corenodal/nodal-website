@@ -68,9 +68,9 @@ export const Navbar = () => {
               </a>
             )
           )}
-          <a href="mailto:core.nodal@gmail.com" className={`px-6 py-3 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg hover:bg-slate-800 transition-colors`}>
+          <Link to="/contact" className={`px-6 py-3 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg hover:bg-slate-800 transition-colors`}>
             Request Access
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -106,9 +106,9 @@ export const Navbar = () => {
               </a>
             )
           )}
-          <a href="mailto:core.nodal@gmail.com" className={`w-full py-4 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg text-center`}>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`w-full py-4 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg text-center`}>
             Request Access
-          </a>
+          </Link>
         </div>
       )}
     </nav>

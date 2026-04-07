@@ -60,7 +60,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
                 </li>
 
                 <li>
-                  <a href="mailto:hello@nodal.ai" className={linkClass}>Contact</a>
+                  <Link to="/contact" onClick={handleNavClick('/contact')} className={linkClass}>Contact</Link>
                 </li>
               </ul>
             </div>

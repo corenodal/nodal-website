@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
 
@@ -36,9 +37,9 @@ export const CTASection = () => {
           <p className={`${type.subheading} text-nodal-graphite max-w-3xl mx-auto mb-10 font-light relative z-10 leading-relaxed`}>
             Join our pilot program to experience a simpler, clearer way to manage clinical work.
           </p>
-          <a href="mailto:core.nodal@gmail.com" className={`px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all relative z-10 hover:-translate-y-0.5`}>
+          <Link to="/contact" className={`px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all relative z-10 hover:-translate-y-0.5`}>
             Request Access
-          </a>
+          </Link>
         </div>
       </div>
     </section>

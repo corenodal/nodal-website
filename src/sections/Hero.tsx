@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import { type } from '../styles/typography';
@@ -82,10 +83,10 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
         <div className="w-48 h-px bg-gradient-to-r from-transparent via-nodal-violet/30 to-transparent mx-auto mb-10" />
 
         <div ref={ctaRef} className="flex items-center justify-center" style={{ opacity: 0, transform: 'translateY(20px)' }}>
-          <a href="mailto:core.nodal@gmail.com" className={`w-full sm:w-auto px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}>
+          <Link to="/contact" className={`w-full sm:w-auto px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}>
             Request Access
             <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
