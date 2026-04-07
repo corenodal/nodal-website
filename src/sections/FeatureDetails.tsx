@@ -201,12 +201,13 @@ export const FeatureDetails = () => {
   const accentColor = (accent: 'nodal-violet' | 'nodal-green') =>
     accent === 'nodal-violet' ? 'bg-nodal-violet/10 text-nodal-violet' : 'bg-nodal-green/10 text-nodal-green';
 
+  // anchor = the corner where padding is applied (2 sides), image overflows the other 2
   const anchorStyles = (anchor: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right') => {
     const pad = {
-      'top-left':     'pb-0 pr-0 pt-6 pl-6 md:pt-8 md:pl-8',
-      'top-right':    'pb-0 pl-0 pt-6 pr-6 md:pt-8 md:pr-8',
-      'bottom-left':  'pt-0 pr-0 pb-6 pl-6 md:pb-8 md:pl-8',
-      'bottom-right': 'pt-0 pl-0 pb-6 pr-6 md:pb-8 md:pr-8',
+      'top-left':     'pt-6 pl-6 md:pt-8 md:pl-8 pb-0 pr-0',
+      'top-right':    'pt-6 pr-6 md:pt-8 md:pr-8 pb-0 pl-0',
+      'bottom-left':  'pb-6 pl-6 md:pb-8 md:pl-8 pt-0 pr-0',
+      'bottom-right': 'pb-6 pr-6 md:pb-8 md:pr-8 pt-0 pl-0',
     };
     const rounded = {
       'top-left':     'rounded-tl-xl',
@@ -215,10 +216,10 @@ export const FeatureDetails = () => {
       'bottom-right': 'rounded-br-xl',
     };
     const objectPos = {
-      'top-left':     'object-left-top',
-      'top-right':    'object-right-top',
-      'bottom-left':  'object-left-bottom',
-      'bottom-right': 'object-right-bottom',
+      'top-left':     'object-right-bottom',
+      'top-right':    'object-left-bottom',
+      'bottom-left':  'object-right-top',
+      'bottom-right': 'object-left-top',
     };
     return { pad: pad[anchor], rounded: rounded[anchor], objectPos: objectPos[anchor] };
   };
