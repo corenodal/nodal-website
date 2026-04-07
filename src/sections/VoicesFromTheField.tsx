@@ -47,12 +47,12 @@ export const VoicesFromTheField = () => {
       gsap.fromTo(
         '.vf-heading',
         { opacity: 0, y: 20 },
-        { opacity: 1, y: 0, duration: 0.7, scrollTrigger: { trigger: sectionRef.current, start: 'top 70%' } }
+        { opacity: 1, y: 0, duration: 0.6, scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' } }
       );
       gsap.fromTo(
         '.vf-card',
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.7, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 55%' } }
+        { opacity: 0, y: 25 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: sectionRef.current, start: 'top 65%' } }
       );
     }, sectionRef);
     return () => ctx.revert();
