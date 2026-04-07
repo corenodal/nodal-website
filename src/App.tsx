@@ -6,6 +6,7 @@ import { NodesBackground } from './animations/NodesBackground';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Home } from './pages/Home';
 import { Product } from './pages/Product';
+import { Features } from './pages/Features';
 import { About } from './pages/About';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <div className="relative">
           <Routes>
             <Route path="/" element={<Home isLoading={isLoading} />} />
+            <Route path="/features" element={<Features isLoading={isLoading} />} />
             <Route path="/product" element={<Product isLoading={isLoading} />} />
             <Route path="/about" element={<About isLoading={isLoading} />} />
           </Routes>

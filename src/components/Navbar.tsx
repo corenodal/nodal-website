@@ -27,6 +27,7 @@ export const Navbar = () => {
   };
 
   const navLinks = [
+    { name: 'Features', href: '/features', isRoute: true },
     { name: 'Product', href: '/product', isRoute: true },
     { name: 'About', href: '/about', isRoute: true },
   ];
