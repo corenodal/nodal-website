@@ -34,7 +34,7 @@ export const StorySection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-0 bg-nodal-blue relative z-10 overflow-hidden"
+      className="min-h-[75vh] flex items-center bg-nodal-blue relative z-10 overflow-hidden"
     >
       {/* Decorative background text */}
       <div
@@ -44,7 +44,7 @@ export const StorySection = () => {
         STORY
       </div>
 
-      <div className="max-w-6xl mx-auto px-6 md:px-24 py-12 md:py-16">
+      <div className="max-w-6xl mx-auto px-6 md:px-24 py-24 md:py-32 w-full">
         {/* Intro */}
         <div className="story-intro mb-12 md:mb-14" style={{ opacity: 0 }}>
           <p className={`${type.ui} font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3`}>
@@ -58,16 +58,16 @@ export const StorySection = () => {
         {/* Story paragraphs */}
         <div className="space-y-6 max-w-3xl">
           <p className={`story-para ${type.body} text-white/80 font-light leading-relaxed`}>
-            The idea for Nodal began with lived experience. Years on the field meant frequent injuries and regular visits to clinics—each one filled with important advice, recovery instructions, and care plans. But by the time the visit ended, much of it had already begun to fade.
+            The idea for Nodal began with lived experience. Years on the field meant frequent injuries and regular visits to clinics,each one filled with important advice, recovery instructions, and care plans. But by the time the visit ended, much of it had already begun to fade.
           </p>
           <p className={`story-para ${type.body} text-white/80 font-light leading-relaxed`}>
-            Small but critical details were easy to forget—what to avoid, how to recover, even the right questions to ask. It raised a simple question: why should something this important rely on memory alone?
+            Small but critical details were easy to forget,what to avoid, how to recover, even the right questions to ask. It raised a simple question: why should something this important rely on memory alone?
           </p>
           <p className={`story-para ${type.body} text-white/80 font-light leading-relaxed`}>
-            That question quickly grew beyond a personal experience. Clinicians are expected to capture, recall, and communicate everything clearly in every session, often across fragmented systems—where important details can slip through.
+            That question quickly grew beyond a personal experience. Clinicians are expected to capture, recall, and communicate everything clearly in every session, often across fragmented systems,where important details can slip through.
           </p>
           <p className={`story-para ${type.body} text-white font-medium leading-relaxed`}>
-            Nodal was built to bring focus, clarity, and connection back to care—helping clinicians stay present and ensuring nothing important is lost.
+            Nodal was built to bring focus, clarity, and connection back to care,helping clinicians stay present and ensuring nothing important is lost.
           </p>
         </div>
       </div>
