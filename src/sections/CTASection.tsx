@@ -29,7 +29,7 @@ export const CTASection = () => {
       className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
     >
       <div className="max-w-7xl mx-auto">
-        <div className="cta-content translate-y-8 opacity-0 p-16 text-center relative overflow-hidden">
+        <div className="cta-content translate-y-8 opacity-0 bg-gradient-to-b from-nodal-blue/[0.03] via-nodal-violet/[0.06] to-nodal-blue/[0.03] rounded-3xl p-16 text-center relative overflow-hidden">
           <h3 className={`${type.heading} font-semibold text-nodal-blue mb-6 relative z-10`}>
             The Simpler Way to Manage Care
           </h3>
