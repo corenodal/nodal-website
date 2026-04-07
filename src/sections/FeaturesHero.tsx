@@ -34,7 +34,7 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
       <div className="max-w-5xl mx-auto w-full">
         <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nodal-blue mb-10`}>
           <div className="overflow-hidden pb-2">
-            <span className="fh-line block">Everything You Need</span>
+            <span className="fh-line block text-nodal-violet">Everything You Need</span>
           </div>
           <div className="overflow-hidden pb-2">
             <span className="fh-line block">for Patient Care</span>
