@@ -204,10 +204,10 @@ export const FeatureDetails = () => {
       'bottom-right': 'pb-6 pr-6 md:pb-8 md:pr-8 pt-0 pl-0',
     };
     const rounded = {
-      'top-left':     'rounded-tl-xl',
-      'top-right':    'rounded-tr-xl',
-      'bottom-left':  'rounded-bl-xl',
-      'bottom-right': 'rounded-br-xl',
+      'top-left':     'rounded-tl-2xl',
+      'top-right':    'rounded-tr-2xl',
+      'bottom-left':  'rounded-bl-2xl',
+      'bottom-right': 'rounded-br-2xl',
     };
     const objectPos = {
       'top-left':     'object-right-bottom',
@@ -225,8 +225,18 @@ export const FeatureDetails = () => {
     >
       <div className="max-w-6xl mx-auto w-full flex flex-col gap-40">
         {features.map((feature, i) => {
+          const numberAlignClass = feature.imageFirst ? 'right-0 md:-right-10' : 'left-0 md:-left-10';
+          const numberColorClass = feature.accent === 'nodal-violet' ? 'text-nodal-violet/[0.04]' : 'text-nodal-green/[0.05]';
+
           const textBlock = (
-            <div key={`text-${i}`} className="flex-1 flex flex-col justify-start">
+            <div key={`text-${i}`} className="flex-1 flex flex-col justify-start relative z-0">
+              <div 
+                aria-hidden
+                className={`absolute -top-16 md:-top-32 ${numberAlignClass} text-[240px] md:text-[450px] font-medium leading-none tracking-tighter select-none pointer-events-none -z-10 ${numberColorClass}`}
+              >
+                {String(i + 1).padStart(2, '0')}
+              </div>
+              
               <h2 className={`${type.heading} font-semibold text-nodal-blue mb-6`}>
                 {feature.title}
               </h2>
@@ -255,20 +265,22 @@ export const FeatureDetails = () => {
           );
 
           const anchor = anchorStyles(feature.imageAnchor);
+          const bgClassName = feature.accent === 'nodal-violet'
+            ? 'bg-gradient-to-br from-nodal-violet/20 via-nodal-violet/5 to-transparent'
+            : 'bg-gradient-to-br from-nodal-green/20 via-nodal-green/5 to-transparent';
+
           const imageBlock = (
-            <div key={`img-${i}`} className="flex-1 flex items-end justify-center mt-8 md:mt-16">
+            <div key={`img-${i}`} className="flex-1 flex items-end justify-center mt-8 md:mt-16 group">
               <div
-                className={`rounded-2xl w-full aspect-[4/3] ${anchor.pad} overflow-hidden ${
-                  feature.accent === 'nodal-violet'
-                    ? 'bg-nodal-violet/8'
-                    : 'bg-nodal-green/8'
-                }`}
+                className={`rounded-3xl w-full aspect-[4/3] ${anchor.pad} overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 ${bgClassName} transition-all duration-300`}
               >
-                <img
-                  src={feature.image}
-                  alt={feature.title}
-                  className={`w-full h-full object-cover ${anchor.objectPos} ${anchor.rounded} shadow-lg`}
-                />
+                <div className={`w-full h-full overflow-hidden ${anchor.rounded} ring-1 ring-white/40 ring-inset bg-black/5`}>
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className={`w-full h-full object-cover ${anchor.objectPos} transition-transform duration-700 ease-out group-hover:scale-105`}
+                  />
+                </div>
               </div>
             </div>
           );
