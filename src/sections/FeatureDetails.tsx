@@ -28,7 +28,7 @@ const features = [
         detail: 'Helps track patient progress over time.',
       },
     ],
-    image: '/img.png',
+    image: '/session_prep.png',
     accent: 'nodal-violet' as const,
     imageFirst: false,
     imageAnchor: 'top-left' as const,
@@ -197,25 +197,17 @@ export const FeatureDetails = () => {
 
   // anchor = the corner where padding is applied (2 sides), image overflows the other 2
   const anchorStyles = (anchor: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right') => {
-    const pad = {
-      'top-left':     'pt-6 pl-6 md:pt-8 md:pl-8 pb-0 pr-0',
-      'top-right':    'pt-6 pr-6 md:pt-8 md:pr-8 pb-0 pl-0',
-      'bottom-left':  'pb-6 pl-6 md:pb-8 md:pl-8 pt-0 pr-0',
-      'bottom-right': 'pb-6 pr-6 md:pb-8 md:pr-8 pt-0 pl-0',
-    };
-    const rounded = {
-      'top-left':     'rounded-tl-2xl',
-      'top-right':    'rounded-tr-2xl',
-      'bottom-left':  'rounded-bl-2xl',
-      'bottom-right': 'rounded-br-2xl',
-    };
-    const objectPos = {
-      'top-left':     'object-right-bottom',
-      'top-right':    'object-left-bottom',
-      'bottom-left':  'object-right-top',
-      'bottom-right': 'object-left-top',
-    };
-    return { pad: pad[anchor], rounded: rounded[anchor], objectPos: objectPos[anchor] };
+    // Making it flush left as requested, with padding on the right side ("going in")
+    const isTop = anchor.startsWith('top');
+    const pad = isTop 
+      ? 'pt-6 pr-10 md:pt-10 md:pr-14 pb-0 pl-0' // Top-Right offset, Flush Left-Bottom
+      : 'pb-6 pr-10 md:pb-10 md:pr-14 pt-0 pl-0'; // Bottom-Right offset, Flush Left-Top
+    
+    // The inner rounding should be for the corner that sits away from the flush edges
+    const rounded = isTop ? 'rounded-tr-2xl' : 'rounded-br-2xl';
+    const objectPos = isTop ? 'object-left-bottom' : 'object-left-top';
+    
+    return { pad, rounded, objectPos };
   };
 
   return (
