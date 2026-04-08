@@ -54,10 +54,11 @@ const features = [
         detail: 'Produces ready-to-review notes to reduce manual writing.',
       },
     ],
-    image: '/img.png',
+    image: '/note_customization.png',
     accent: 'nodal-green' as const,
     imageFirst: true,
-    imageAnchor: 'top-left' as const,
+    imageAnchor: 'top-full' as any, // Specific anchor for full width
+    imageFit: 'cover' as const,
   },
   {
     title: 'Clinical Insights',
@@ -80,10 +81,10 @@ const features = [
         detail: 'Generates next steps automatically to support follow-through.',
       },
     ],
-    image: '/img.png',
+    image: '/clinical_insights.png',
     accent: 'nodal-violet' as const,
     imageFirst: false,
-    imageAnchor: 'bottom-left' as const,
+    imageAnchor: 'top-left' as const,
   },
   {
     title: 'Clinical Assistant',
@@ -106,7 +107,7 @@ const features = [
         detail: 'Helps edit notes, letters, and drafts as needed.',
       },
     ],
-    image: '/img.png',
+    image: '/clinical_assistant.png',
     accent: 'nodal-green' as const,
     imageFirst: true,
     imageAnchor: 'top-right' as const,
@@ -132,7 +133,7 @@ const features = [
         detail: 'Produces structured outputs that can be copied or downloaded.',
       },
     ],
-    image: '/img.png',
+    image: '/patient_communication.png',
     accent: 'nodal-violet' as const,
     imageFirst: false,
     imageAnchor: 'top-left' as const,
@@ -158,10 +159,10 @@ const features = [
         detail: 'Tracks progress along with pending and completed tasks.',
       },
     ],
-    image: '/img.png',
+    image: '/collate.png',
     accent: 'nodal-green' as const,
     imageFirst: true,
-    imageAnchor: 'top-left' as const,
+    imageAnchor: 'top-right-left' as any,
   },
 ];
 
@@ -196,18 +197,51 @@ export const FeatureDetails = () => {
     accent === 'nodal-violet' ? 'bg-nodal-violet/10 text-nodal-violet' : 'bg-nodal-green/10 text-nodal-green';
 
   // anchor = the corner where padding is applied (2 sides), image overflows the other 2
-  const anchorStyles = (anchor: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right') => {
-    // Making it flush left as requested, with padding on the right side ("going in")
-    const isTop = anchor.startsWith('top');
-    const pad = isTop 
-      ? 'pt-6 pr-10 md:pt-10 md:pr-14 pb-0 pl-0' // Top-Right offset, Flush Left-Bottom
-      : 'pb-6 pr-10 md:pb-10 md:pr-14 pt-0 pl-0'; // Bottom-Right offset, Flush Left-Top
-    
-    // The inner rounding should be for the corner that sits away from the flush edges
-    const rounded = isTop ? 'rounded-tr-2xl' : 'rounded-br-2xl';
-    const objectPos = isTop ? 'object-left-bottom' : 'object-left-top';
-    
-    return { pad, rounded, objectPos };
+  const anchorStyles = (anchor: 'top-left' | 'top-right' | 'top-right-left' | 'bottom-left' | 'bottom-right' | 'top-full') => {
+    switch (anchor) {
+      case 'top-left': // Padding Top/Left, Flush Bottom/Right
+        return {
+          pad: 'pt-6 pl-10 md:pt-10 md:pl-14 pb-0 pr-0',
+          rounded: 'rounded-tl-2xl',
+          objectPos: 'object-left-bottom'
+        };
+      case 'top-right': // Padding Top/Right, Flush Bottom/Left
+        return {
+          pad: 'pt-6 pr-10 md:pt-10 md:pr-14 pb-0 pl-0',
+          rounded: 'rounded-tr-2xl',
+          objectPos: 'object-right-bottom'
+        };
+      case 'top-right-left': // Padding Top/Right, Flush Bottom/Left, Left Important
+        return {
+          pad: 'pt-6 pr-10 md:pt-10 md:pr-14 pb-0 pl-0',
+          rounded: 'rounded-tr-2xl',
+          objectPos: 'object-left-bottom'
+        };
+      case 'top-full': // Full width (flush left), top aligned
+        return {
+          pad: 'pt-6 pr-10 md:pt-10 md:pr-14 pb-0 pl-0',
+          rounded: 'rounded-tr-2xl',
+          objectPos: 'object-top'
+        };
+      case 'bottom-left': // Padding Bottom/Left, Flush Top/Right
+        return {
+          pad: 'pb-6 pl-10 md:pb-10 md:pl-14 pt-0 pr-0',
+          rounded: 'rounded-bl-2xl',
+          objectPos: 'object-right-top'
+        };
+      case 'bottom-right': // Padding Bottom/Right, Flush Top/Left
+        return {
+          pad: 'pb-6 pr-10 md:pb-10 md:pr-14 pt-0 pl-0',
+          rounded: 'rounded-br-2xl',
+          objectPos: 'object-left-top'
+        };
+      default:
+        return {
+          pad: 'pt-6 pr-10 md:pt-10 md:pr-14 pb-0 pl-0',
+          rounded: 'rounded-tr-2xl',
+          objectPos: 'object-left-bottom'
+        };
+    }
   };
 
   return (
@@ -270,7 +304,7 @@ export const FeatureDetails = () => {
                   <img
                     src={feature.image}
                     alt={feature.title}
-                    className={`w-full h-full object-cover ${anchor.objectPos} transition-transform duration-700 ease-out group-hover:scale-105`}
+                    className={`w-full h-full ${(feature as any).imageFit === 'contain' ? 'object-contain' : 'object-cover'} ${anchor.objectPos} transition-transform duration-700 ease-out group-hover:scale-105`}
                   />
                 </div>
               </div>
