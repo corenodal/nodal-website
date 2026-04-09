@@ -279,15 +279,6 @@ export const Docs = () => {
           <div className="pl-0 lg:pl-10 py-8 md:py-12">
             {/* Feature title */}
             <div className="mb-8">
-              <div className="flex items-center gap-3 mb-3">
-                <span className={`text-xs font-mono px-2 py-1 rounded-md ${
-                  activeFeature.accent === 'nodal-violet'
-                    ? 'bg-nodal-violet/10 text-nodal-violet'
-                    : 'bg-nodal-green/10 text-nodal-green'
-                }`}>
-                  Feature {activeFeature.number}
-                </span>
-              </div>
               <h1 className={`${t.heading} font-semibold text-nodal-blue mb-3`}>
                 {activeFeature.title}
               </h1>
