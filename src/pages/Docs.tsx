@@ -277,15 +277,6 @@ export const Docs = () => {
         {/* Main content */}
         <main className="flex-1 min-w-0">
           <div className="pl-0 lg:pl-10 py-8 md:py-12">
-            {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-sm text-nodal-graphite-soft mb-8">
-              <span>Docs</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <span>Features</span>
-              <ChevronRight className="w-3.5 h-3.5" />
-              <span className="text-nodal-blue font-medium">{activeFeature.title}</span>
-            </div>
-
             {/* Feature title */}
             <div className="mb-8">
               <div className="flex items-center gap-3 mb-3">
