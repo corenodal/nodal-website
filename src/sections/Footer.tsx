@@ -47,6 +47,9 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
                 <li>
                   <Link to="/product#workflow" className={linkClass}>Workflow</Link>
                 </li>
+                <li>
+                  <Link to="/docs" onClick={handleNavClick('/docs')} className={linkClass}>Docs</Link>
+                </li>
               </ul>
             </div>
             <div>
