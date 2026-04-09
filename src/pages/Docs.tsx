@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { BookOpen, IdCard, TrendingUp, Sparkles, Lightbulb, ListChecks, Brain, MessageCircle, Wrench, FileText, PenLine, Download, Layers, ClipboardList, CheckSquare, ChevronRight, Play } from 'lucide-react';
+import { BookOpen, IdCard, TrendingUp, Sparkles, Lightbulb, ListChecks, Brain, MessageCircle, Wrench, FileText, PenLine, Download, Layers, ClipboardList, CheckSquare, ChevronRight } from 'lucide-react';
 import { type as t } from '../styles/typography';
+import type { LucideIcon } from 'lucide-react';
 
 interface FeatureBullet {
-  icon: React.ElementType;
+  icon: LucideIcon;
   label: string;
   detail: string;
 }
