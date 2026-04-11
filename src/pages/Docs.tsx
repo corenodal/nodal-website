@@ -77,11 +77,11 @@ const features: Feature[] = [
     accent: 'nodal-violet',
   },
   {
-    id: 'clinical-assistant',
+    id: 'audio-and-manual-notes',
     number: '04',
-    title: 'Clinical Assistant',
+    title: 'Audio and Manual Notes',
     description: 'Nodal acts as a customizable assistant that adapts to your workflow and preferences.',
-    loomEmbedId: '221578de6e184e98ae636ed004939aba',
+    loomEmbedId: '971f61062d454acb8333ecb37e696845',
     bullets: [
       { icon: Wrench, label: 'Learns your style', detail: 'Learns your workflow, language, and documentation style.' },
       { icon: MessageCircle, label: 'Ask anything', detail: 'Answers questions about patients, treatments, or tasks.' },
