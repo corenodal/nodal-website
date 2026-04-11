@@ -113,11 +113,11 @@ const features: Feature[] = [
     accent: 'nodal-violet',
   },
   {
-    id: 'collated-notes',
+    id: 'collate-multiple-insights',
     number: '06',
-    title: 'Collated Notes',
+    title: 'Collate multiple insights',
     description: 'Nodal brings together information across sessions to support continuity of care.',
-    loomEmbedId: '221578de6e184e98ae636ed004939aba',
+    loomEmbedId: '2b20b9185ae642acb1365fecc92981c2',
     bullets: [
       { icon: Layers, label: 'Combined session view', detail: 'Combines notes from multiple sessions into one view.' },
       { icon: ClipboardList, label: 'Consolidated history', detail: 'Helps review patient history in a clear, consolidated format.' },
