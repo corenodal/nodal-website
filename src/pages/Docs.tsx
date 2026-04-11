@@ -59,11 +59,11 @@ const features: Feature[] = [
     accent: 'nodal-green',
   },
   {
-    id: 'clinical-insights',
+    id: 'create-custom-templates',
     number: '03',
-    title: 'Clinical Insights',
+    title: 'Create custom templates',
     description: 'Nodal highlights what matters most so nothing important is missed after a session.',
-    loomEmbedId: '221578de6e184e98ae636ed004939aba',
+    loomEmbedId: 'a35853794a494f6c9330a947fb84fa66',
     bullets: [
       { icon: Brain, label: 'Key themes extracted', detail: 'Extracts key themes and clinically relevant signals.' },
       { icon: MessageCircle, label: 'Discussion highlights', detail: 'Highlights important discussion points.' },
