@@ -95,11 +95,11 @@ const features: Feature[] = [
     accent: 'nodal-green',
   },
   {
-    id: 'patient-communication',
+    id: 'clinical-insights',
     number: '05',
-    title: 'Patient Communication',
+    title: 'Clinical Insights',
     description: 'Nodal helps streamline how you communicate with patients after a session.',
-    loomEmbedId: '221578de6e184e98ae636ed004939aba',
+    loomEmbedId: '7c6f877f2a8546669f5701958b588372',
     bullets: [
       { icon: FileText, label: 'Patient-ready outputs', detail: 'Generates patient-ready summaries and letters.' },
       { icon: PenLine, label: 'Review before sharing', detail: 'Allows review and edits before sharing.' },
