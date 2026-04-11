@@ -285,7 +285,7 @@ export const Docs = () => {
               <h1 className={`${t.heading} font-semibold text-nodal-blue mb-3`}>
                 {activeFeature.title}
               </h1>
-              <p className={`${t.body} text-nodal-graphite-soft font-light leading-relaxed`}>
+              <p className={`${t.body} text-nodal-graphite leading-relaxed`}>
                 {activeFeature.description}
               </p>
             </div>
@@ -307,68 +307,103 @@ export const Docs = () => {
             <div className="space-y-12">
               {/* Overview section */}
               <section>
-                <h2 className={`${t.subheading} font-semibold text-nodal-blue mb-6`}>
-                  Overview
-                </h2>
-                <div className="space-y-8">
-                  {activeFeature.sections?.map((section, i) => (
-                    <div key={i}>
-                      {section.title && (
-                        <h3 className={`${t.body} font-semibold text-nodal-blue mb-3`}>
-                          {section.title}
-                        </h3>
-                      )}
-                      <ol className="space-y-3">
-                        {section.steps.map((step, j) => (
-                          <li key={j} className="flex gap-3">
-                            <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono mt-0.5 ${
-                              activeFeature.accent === 'nodal-violet'
-                                ? 'bg-nodal-violet/10 text-nodal-violet'
-                                : 'bg-nodal-green/10 text-nodal-green'
-                            }`}>
-                              {j + 1}
-                            </span>
-                            <p className={`${t.body} text-nodal-graphite font-light leading-relaxed`}>
-                              {step}
-                            </p>
-                          </li>
-                        ))}
-                      </ol>
+                <div className="flex items-center gap-3 mb-6">
+                  <h2 className={`${t.subheading} font-semibold text-nodal-blue`}>
+                    How it works
+                  </h2>
+                  <div className={`flex-1 h-px ${
+                    activeFeature.accent === 'nodal-violet'
+                      ? 'bg-gradient-to-r from-nodal-violet/40 to-transparent'
+                      : 'bg-gradient-to-r from-nodal-green/40 to-transparent'
+                  }`} />
+                </div>
+                <div className="space-y-6">
+                  {activeFeature.sections?.map((section, i) => {
+                    const accentBg = activeFeature.accent === 'nodal-violet' ? 'bg-nodal-violet' : 'bg-nodal-green';
+                    const accentBorder = activeFeature.accent === 'nodal-violet' ? 'border-nodal-violet/30' : 'border-nodal-green/30';
+                    const accentSoft = activeFeature.accent === 'nodal-violet' ? 'bg-nodal-violet/5' : 'bg-nodal-green/5';
+                    return (
+                      <div
+                        key={i}
+                        className={`relative rounded-2xl border-2 ${accentBorder} ${accentSoft} p-6 md:p-8 shadow-sm`}
+                      >
+                        {section.title && (
+                          <h3 className={`${t.body} font-bold text-nodal-blue mb-6`}>
+                            {section.title}
+                          </h3>
+                        )}
+                        <ol className="relative space-y-4">
+                          {/* Connecting line */}
+                          <div
+                            className={`absolute left-[17px] top-8 bottom-8 w-0.5 ${
+                              activeFeature.accent === 'nodal-violet' ? 'bg-nodal-violet/20' : 'bg-nodal-green/20'
+                            }`}
+                            aria-hidden
+                          />
+                          {section.steps.map((step, j) => (
+                            <li key={j} className="relative flex gap-4 items-start">
+                              <span className={`relative z-10 flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold ${accentBg} text-white shadow-md ring-4 ring-white`}>
+                                {j + 1}
+                              </span>
+                              <p className={`${t.body} text-nodal-blue leading-relaxed pt-1.5`}>
+                                {step}
+                              </p>
+                            </li>
+                          ))}
+                        </ol>
+                      </div>
+                    );
+                  })}
+                  {activeFeature.details && activeFeature.details.length > 0 && (
+                    <div className={`rounded-2xl border-l-4 ${
+                      activeFeature.accent === 'nodal-violet' ? 'border-nodal-violet' : 'border-nodal-green'
+                    } bg-white p-6 md:p-8 shadow-sm space-y-3`}>
+                      {activeFeature.details.map((detail, i) => (
+                        <p key={i} className={`${t.body} text-nodal-blue leading-relaxed`}>
+                          {detail}
+                        </p>
+                      ))}
                     </div>
-                  ))}
-                  {activeFeature.details?.map((detail, i) => (
-                    <p key={i} className={`${t.body} text-nodal-graphite font-light leading-relaxed`}>
-                      {detail}
-                    </p>
-                  ))}
+                  )}
                 </div>
               </section>
 
               {/* Key capabilities */}
               <section>
-                <h2 className={`${t.subheading} font-semibold text-nodal-blue mb-6`}>
-                  Key Capabilities
-                </h2>
-                <div className="grid gap-4">
+                <div className="flex items-center gap-3 mb-6">
+                  <h2 className={`${t.subheading} font-semibold text-nodal-blue`}>
+                    Key Capabilities
+                  </h2>
+                  <div className={`flex-1 h-px ${
+                    activeFeature.accent === 'nodal-violet'
+                      ? 'bg-gradient-to-r from-nodal-violet/40 to-transparent'
+                      : 'bg-gradient-to-r from-nodal-green/40 to-transparent'
+                  }`} />
+                </div>
+                <div className="grid gap-4 md:grid-cols-2">
                   {activeFeature.bullets.map((bullet, i) => {
                     const Icon = bullet.icon;
                     return (
                       <div
                         key={i}
-                        className="flex items-start gap-4 p-4 rounded-xl bg-white border border-nodal-grey/50 hover:border-nodal-grey transition-colors"
-                      >
-                        <div className={`w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 ${
+                        className={`flex items-start gap-4 p-5 rounded-xl bg-white border-2 transition-all hover:shadow-md ${
                           activeFeature.accent === 'nodal-violet'
-                            ? 'bg-nodal-violet/10 text-nodal-violet'
-                            : 'bg-nodal-green/10 text-nodal-green'
+                            ? 'border-nodal-violet/20 hover:border-nodal-violet/50'
+                            : 'border-nodal-green/20 hover:border-nodal-green/50'
+                        }`}
+                      >
+                        <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm ${
+                          activeFeature.accent === 'nodal-violet'
+                            ? 'bg-nodal-violet text-white'
+                            : 'bg-nodal-green text-white'
                         }`}>
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className={`${t.body} font-semibold text-nodal-blue mb-1`}>
+                          <p className={`${t.body} font-bold text-nodal-blue mb-1`}>
                             {bullet.label}
                           </p>
-                          <p className={`${t.ui} text-nodal-graphite-soft font-light leading-relaxed`}>
+                          <p className={`${t.ui} text-nodal-graphite leading-relaxed`}>
                             {bullet.detail}
                           </p>
                         </div>
