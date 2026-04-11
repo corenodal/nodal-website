@@ -23,11 +23,11 @@ interface Feature {
 
 const features: Feature[] = [
   {
-    id: 'session-prep',
+    id: 'personalise-your-ai-assistant',
     number: '01',
-    title: 'Session Prep',
+    title: 'Personalise your AI Assistant',
     description: 'Nodal helps practitioners prepare for each session by bringing forward relevant patient context and insights from previous visits.',
-    loomEmbedId: '221578de6e184e98ae636ed004939aba',
+    loomEmbedId: '7d086b67286142d7ab86c284000d833f',
     bullets: [
       { icon: BookOpen, label: 'Session & patient context', detail: 'Maintains session-level and patient-level context through short summaries of past sessions.' },
       { icon: IdCard, label: 'Patient flashcards', detail: 'Surfaces key historical information through patient flashcards for quick review.' },
