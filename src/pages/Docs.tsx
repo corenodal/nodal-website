@@ -41,9 +41,9 @@ const features: Feature[] = [
     accent: 'nodal-violet',
   },
   {
-    id: 'edit-ai-generated-notes',
+    id: 'edit-ai-generated-insights',
     number: '02',
-    title: 'Edit AI-generated notes',
+    title: 'Edit AI-generated insights',
     description: 'Nodal makes it easy to generate and tailor clinical notes based on how you document care.',
     loomEmbedId: '9f9809ca8fd144cd98b056a72b0dc652',
     bullets: [
