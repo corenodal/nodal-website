@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import gsap from 'gsap';
 import { BookOpen, IdCard, FileText, PenLine, Layers, CheckSquare, ChevronRight, Settings, Save, MessageCircle, Mic, RefreshCw } from 'lucide-react';
 import { type as t } from '../styles/typography';
 import type { LucideIcon } from 'lucide-react';
@@ -244,11 +245,40 @@ export const DemoVideos = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeId = searchParams.get('feature') || features[0].id;
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   const activeFeature = features.find((f) => f.id === activeId) || features[0];
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeId]);
+
+  // Page-load intro animation (timing matches FeaturesHero)
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.set('.dv-intro', { opacity: 0, y: 24 });
+      gsap.set('.dv-sidebar', { opacity: 0, x: -20 });
+      const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+      tl.to('.dv-sidebar', { opacity: 1, x: 0, duration: 1, delay: 0.3 })
+        .to(
+          '.dv-intro',
+          { opacity: 1, y: 0, duration: 1.1, stagger: 0.12 },
+          '-=0.6'
+        );
+    }, contentRef);
+    return () => ctx.revert();
+  }, []);
+
+  // Replay content animation when switching features
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        '.dv-feature',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out', stagger: 0.08 }
+      );
+    }, contentRef);
+    return () => ctx.revert();
   }, [activeId]);
 
   const handleFeatureClick = (id: string) => {
@@ -257,7 +287,7 @@ export const DemoVideos = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20 bg-nodal-white relative z-10">
+    <div ref={contentRef} className="min-h-screen pt-20 bg-nodal-white relative z-10">
       {/* Mobile sidebar toggle */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
@@ -274,7 +304,7 @@ export const DemoVideos = () => {
             sidebarOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
-          <div className="py-8 pr-6 lg:sticky lg:top-20">
+          <div className="dv-sidebar py-8 pr-6 lg:sticky lg:top-20">
             <h2 className="text-xs font-semibold uppercase tracking-wider text-nodal-graphite-soft mb-4">
               Demo Videos
             </h2>
@@ -314,7 +344,7 @@ export const DemoVideos = () => {
         <main className="flex-1 min-w-0">
           <div className="pl-0 lg:pl-10 py-8 md:py-12">
             {/* Feature title */}
-            <div className="mb-8">
+            <div className="dv-intro dv-feature mb-8">
               <h1 className={`${t.heading} font-semibold text-nodal-blue mb-3`}>
                 {activeFeature.title}
               </h1>
@@ -324,7 +354,7 @@ export const DemoVideos = () => {
             </div>
 
             {/* Video embed */}
-            <div className="mb-12 rounded-xl overflow-hidden border border-nodal-grey/60 shadow-sm bg-black/5">
+            <div className="dv-intro dv-feature mb-12 rounded-xl overflow-hidden border border-nodal-grey/60 shadow-sm bg-black/5">
               <div className="relative w-full" style={{ paddingBottom: '65.06%' }}>
                 <iframe
                   src={`https://www.loom.com/embed/${activeFeature.loomEmbedId}`}
@@ -337,7 +367,7 @@ export const DemoVideos = () => {
             </div>
 
             {/* Feature content */}
-            <div className="space-y-12">
+            <div className="dv-intro dv-feature space-y-12">
               {/* Overview section */}
               <section>
                 <div className="flex items-center gap-3 mb-6">
