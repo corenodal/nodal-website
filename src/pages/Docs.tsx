@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { BookOpen, IdCard, TrendingUp, Sparkles, Lightbulb, ListChecks, Brain, MessageCircle, Wrench, FileText, PenLine, Download, Layers, ClipboardList, CheckSquare, ChevronRight } from 'lucide-react';
+import { BookOpen, IdCard, FileText, PenLine, Download, Layers, ClipboardList, CheckSquare, ChevronRight, Settings, Save, MessageCircle, Mic, RefreshCw } from 'lucide-react';
 import { type as t } from '../styles/typography';
 import type { LucideIcon } from 'lucide-react';
 
@@ -10,6 +10,11 @@ interface FeatureBullet {
   detail: string;
 }
 
+interface FeatureSection {
+  title?: string;
+  steps: string[];
+}
+
 interface Feature {
   id: string;
   number: string;
@@ -17,7 +22,8 @@ interface Feature {
   description: string;
   loomEmbedId: string;
   bullets: FeatureBullet[];
-  details: string[];
+  sections?: FeatureSection[];
+  details?: string[];
   accent: 'nodal-violet' | 'nodal-green';
 }
 
@@ -26,17 +32,22 @@ const features: Feature[] = [
     id: 'personalise-your-ai-assistant',
     number: '01',
     title: 'Personalise your AI Assistant',
-    description: 'Nodal helps practitioners prepare for each session by bringing forward relevant patient context and insights from previous visits.',
+    description: 'Customize Node, your AI assistant, to match your preferences for tone, language, formatting, and level of detail.',
     loomEmbedId: '7d086b67286142d7ab86c284000d833f',
     bullets: [
-      { icon: BookOpen, label: 'Session & patient context', detail: 'Maintains session-level and patient-level context through short summaries of past sessions.' },
-      { icon: IdCard, label: 'Patient flashcards', detail: 'Surfaces key historical information through patient flashcards for quick review.' },
-      { icon: TrendingUp, label: 'Progress tracking', detail: 'Helps track patient progress over time.' },
+      { icon: Settings, label: 'Preferences tab', detail: 'Customize level of detail, language, date formats, and response structure.' },
+      { icon: Save, label: 'Save preferences', detail: 'One click to apply your customizations across the assistant.' },
+      { icon: MessageCircle, label: 'Confirm in Node', detail: 'Chat with your AI assistant to verify the changes are saved.' },
     ],
-    details: [
-      'Before each session, Nodal automatically compiles a brief of the patient\'s history, previous notes, and outstanding action items. This means you walk into every appointment already up to speed.',
-      'Patient flashcards provide a snapshot of critical information — diagnoses, medications, key dates, and treatment milestones — so you never have to dig through old records.',
-      'Progress tracking visualizes patient outcomes across sessions, making it easy to identify trends and adjust treatment plans accordingly.',
+    sections: [
+      {
+        steps: [
+          'Go to Settings on the left pane.',
+          'In the Preferences tab, select your customizations for level of detail for notes and responses, language for terminology and spellings, date formats, and whether to structure responses as bullets or paragraphs.',
+          'After finalizing the details, click on Save Preferences.',
+          'Go to Node, your AI assistant, and chat with it to confirm the changes have been saved.',
+        ],
+      },
     ],
     accent: 'nodal-violet',
   },
@@ -44,17 +55,46 @@ const features: Feature[] = [
     id: 'edit-ai-generated-insights',
     number: '02',
     title: 'Edit AI-generated insights',
-    description: 'Nodal makes it easy to generate and tailor clinical notes based on how you document care.',
+    description: 'Refine AI-generated insights directly in the template, through the AI chatbot, or by regenerating with a different template.',
     loomEmbedId: '9f9809ca8fd144cd98b056a72b0dc652',
     bullets: [
-      { icon: Sparkles, label: 'Auto-generated notes', detail: 'Generates structured notes directly from patient sessions.' },
-      { icon: Lightbulb, label: 'Flexible formats', detail: 'Supports standard formats as well as custom templates created by clinicians.' },
-      { icon: ListChecks, label: 'Ready to review', detail: 'Produces ready-to-review notes to reduce manual writing.' },
+      { icon: PenLine, label: 'Direct edits', detail: 'Edit text and formatting in the patient template with the pencil icon.' },
+      { icon: MessageCircle, label: 'AI chatbot edits', detail: 'Paste template content and prompt the chatbot for refinements.' },
+      { icon: RefreshCw, label: 'Regenerate with template', detail: 'Swap templates to regenerate the session content in a new format.' },
     ],
-    details: [
-      'Nodal listens to your session and automatically generates structured clinical notes in your preferred format — whether that\'s SOAP, DAP, or a custom template you\'ve created.',
-      'Templates are fully customizable. Define your own sections, prompts, and formatting rules so that every note matches your documentation style.',
-      'Generated notes are ready to review immediately after the session, cutting documentation time significantly while maintaining clinical accuracy.',
+    sections: [
+      {
+        title: 'Edit AI-generated insights',
+        steps: [
+          'Go to Patients on the left pane.',
+          'Select a patient of your choice.',
+          'Select a session to edit its insights.',
+          'Go to the template and click on the edit button (pencil icon).',
+          'Make the relevant edits to the text or format.',
+          'Click Save to confirm the edits.',
+          'You now have the option to copy the text or download it as a Word document.',
+          'Open the Word document to make any additional changes, if required.',
+          'Copy and paste the edited content from the Word document back into your patient template.',
+        ],
+      },
+      {
+        title: 'Edit using the AI chatbot',
+        steps: [
+          'Copy the patient template from the left side and paste it into the AI chat box.',
+          'Add a prompt detailing the required edits.',
+          'Copy the generated content and paste it back on the left side to update the template, or download it directly as a Word document.',
+        ],
+      },
+      {
+        title: 'Generate a new template for an existing session',
+        steps: [
+          'Click on "Regenerate with Template".',
+          'Your existing and default templates will be displayed.',
+          'Select the template of your choice.',
+          'The existing information from the session will be regenerated using the selected template.',
+          'Use the result by copying the template or downloading it directly.',
+        ],
+      },
     ],
     accent: 'nodal-green',
   },
@@ -62,17 +102,25 @@ const features: Feature[] = [
     id: 'create-custom-templates',
     number: '03',
     title: 'Create custom templates',
-    description: 'Nodal highlights what matters most so nothing important is missed after a session.',
+    description: 'Design and save your own templates so Nodal generates notes and insights in exactly the format you need.',
     loomEmbedId: 'a35853794a494f6c9330a947fb84fa66',
     bullets: [
-      { icon: Brain, label: 'Key themes extracted', detail: 'Extracts key themes and clinically relevant signals.' },
-      { icon: MessageCircle, label: 'Discussion highlights', detail: 'Highlights important discussion points.' },
-      { icon: ListChecks, label: 'Automatic next steps', detail: 'Generates next steps automatically to support follow-through.' },
+      { icon: BookOpen, label: 'Default templates', detail: 'Start from Initial Assessment or Follow-up Review.' },
+      { icon: FileText, label: 'Template builder', detail: 'Add a name, then type or paste in the content of your template.' },
+      { icon: CheckSquare, label: 'Save and reuse', detail: 'Saved templates appear alongside defaults and can be used immediately.' },
     ],
-    details: [
-      'After each session, Nodal identifies and surfaces the key clinical themes discussed — emotional patterns, behavioral changes, risk factors, and treatment responses.',
-      'Important discussion points are highlighted so you can quickly review what was covered without re-reading the entire transcript.',
-      'Next steps are automatically suggested based on the session content, ensuring continuity of care and reducing the chance of missed follow-ups.',
+    sections: [
+      {
+        steps: [
+          'Go to Templates on the left pane.',
+          'View the default templates (Initial Assessment and Follow-up Review).',
+          'Click the Add Template button in the top right corner.',
+          'Start by adding a name for your template.',
+          'Manually type in the details of your template or copy and paste it from another source.',
+          'Click Create Template to save your custom template.',
+          'Once saved, your template appears alongside existing ones and can be used to generate patient notes and insights.',
+        ],
+      },
     ],
     accent: 'nodal-violet',
   },
@@ -80,17 +128,44 @@ const features: Feature[] = [
     id: 'audio-and-manual-notes',
     number: '04',
     title: 'Audio and Manual Notes',
-    description: 'Nodal acts as a customizable assistant that adapts to your workflow and preferences.',
+    description: 'Capture sessions by recording audio or adding manual notes, all tied back to the right patient and session.',
     loomEmbedId: '971f61062d454acb8333ecb37e696845',
     bullets: [
-      { icon: Wrench, label: 'Learns your style', detail: 'Learns your workflow, language, and documentation style.' },
-      { icon: MessageCircle, label: 'Ask anything', detail: 'Answers questions about patients, treatments, or tasks.' },
-      { icon: PenLine, label: 'Editing support', detail: 'Helps edit notes, letters, and drafts as needed.' },
+      { icon: Mic, label: 'Start Recording', detail: 'Capture session audio from Quick Actions on the Home Page.' },
+      { icon: PenLine, label: 'Manual notes', detail: 'Type, paste, or upload an audio file for a manual note.' },
+      { icon: IdCard, label: 'Linked to patient', detail: 'Save to a new or existing session under the right patient.' },
+    ],
+    sections: [
+      {
+        title: 'Record an audio',
+        steps: [
+          'On the Home Page, find the Start Recording button below Quick Actions.',
+          'Click Start Recording to begin capturing the audio.',
+          'Pause the recording or stop it once you are done with the session.',
+          'Select the patient for that session.',
+          'Choose to save the recording to a previous session or add a new session.',
+          'If you add it to a previous session, it will be saved under the notes for that session.',
+          'If you create a new session, add a title for your note.',
+          'Click Continue and select the template you want to use to save this recording.',
+          'The recording is saved in the selected template in the patient\'s session tab.',
+        ],
+      },
+      {
+        title: 'Add a manual note',
+        steps: [
+          'On the Home Page, find the Start New Note button below Quick Actions.',
+          'Select a patient for that note.',
+          'Choose to save the note to a previous session or add a new session.',
+          'Once the session is selected, add a name for your note and select the relevant template.',
+          'Type in your note or copy and paste it in.',
+          'You can also upload an audio file of a session recorded previously or on a different device.',
+          'Click Save Note to add it to the linked patient and session.',
+        ],
+      },
     ],
     details: [
-      'The clinical assistant learns how you work — your preferred terminology, note structure, and common workflows — and adapts over time to become more useful.',
-      'Ask questions about a patient\'s history, treatment protocols, or pending tasks and get instant, context-aware answers drawn from your session data.',
-      'Need to adjust a note or draft a letter? The assistant can help edit, reformat, or rewrite clinical documents while maintaining your voice and style.',
+      'You can also use both of these features by navigating to the Patients page on the left pane and selecting the appropriate patient.',
+      'From there, you can either record an audio or add a note for the selected patient under an existing or new session.',
     ],
     accent: 'nodal-green',
   },
@@ -235,8 +310,33 @@ export const Docs = () => {
                 <h2 className={`${t.subheading} font-semibold text-nodal-blue mb-6`}>
                   Overview
                 </h2>
-                <div className="space-y-4">
-                  {activeFeature.details.map((detail, i) => (
+                <div className="space-y-8">
+                  {activeFeature.sections?.map((section, i) => (
+                    <div key={i}>
+                      {section.title && (
+                        <h3 className={`${t.body} font-semibold text-nodal-blue mb-3`}>
+                          {section.title}
+                        </h3>
+                      )}
+                      <ol className="space-y-3">
+                        {section.steps.map((step, j) => (
+                          <li key={j} className="flex gap-3">
+                            <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-mono mt-0.5 ${
+                              activeFeature.accent === 'nodal-violet'
+                                ? 'bg-nodal-violet/10 text-nodal-violet'
+                                : 'bg-nodal-green/10 text-nodal-green'
+                            }`}>
+                              {j + 1}
+                            </span>
+                            <p className={`${t.body} text-nodal-graphite font-light leading-relaxed`}>
+                              {step}
+                            </p>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  ))}
+                  {activeFeature.details?.map((detail, i) => (
                     <p key={i} className={`${t.body} text-nodal-graphite font-light leading-relaxed`}>
                       {detail}
                     </p>
