@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { BookOpen, IdCard, FileText, PenLine, Download, Layers, ClipboardList, CheckSquare, ChevronRight, Settings, Save, MessageCircle, Mic, RefreshCw } from 'lucide-react';
+import { BookOpen, IdCard, FileText, PenLine, Layers, CheckSquare, ChevronRight, Settings, Save, MessageCircle, Mic, RefreshCw } from 'lucide-react';
 import { type as t } from '../styles/typography';
 import type { LucideIcon } from 'lucide-react';
 
@@ -173,17 +173,39 @@ const features: Feature[] = [
     id: 'clinical-insights',
     number: '05',
     title: 'Clinical insights',
-    description: 'Nodal helps streamline how you communicate with patients after a session.',
+    description: 'Explore the summary, action items, template, and transcript generated for each session — and manage session attachments.',
     loomEmbedId: '7c6f877f2a8546669f5701958b588372',
     bullets: [
-      { icon: FileText, label: 'Patient-ready outputs', detail: 'Generates patient-ready summaries and letters.' },
-      { icon: PenLine, label: 'Review before sharing', detail: 'Allows review and edits before sharing.' },
-      { icon: Download, label: 'Copy or download', detail: 'Produces structured outputs that can be copied or downloaded.' },
+      { icon: FileText, label: 'Summary & key themes', detail: 'See a quick overview of the session along with the key themes discussed.' },
+      { icon: CheckSquare, label: 'Action items', detail: 'View all tasks for the patient and clinician derived from the session.' },
+      { icon: BookOpen, label: 'Template & transcript', detail: 'Access detailed notes in your template and the full session transcript.' },
+      { icon: Layers, label: 'Session attachments', detail: 'Upload, view, and summarize attachments tied to each session.' },
     ],
-    details: [
-      'Nodal generates patient-friendly summaries of sessions that are written in clear, accessible language — ready to share with patients or their families.',
-      'Every generated communication goes through a review step, giving you full control over what\'s shared before it reaches the patient.',
-      'Outputs can be copied to your clipboard or downloaded as formatted documents, making it easy to integrate with your existing communication workflows.',
+    sections: [
+      {
+        title: 'View clinical insights generated after a session',
+        steps: [
+          'Go to Patients on the left pane and select a patient.',
+          'Select a session of your choice.',
+          'For each session, you will find Summary, Action Items, and Template.',
+          'Pick the relevant option based on your requirement.',
+          'Click Summary to find an overview of the session and the key themes discussed.',
+          'Click Action Items to see all tasks for both the patient and the clinician based on the session.',
+          'Click Template to see detailed notes from the session in the previously selected template format.',
+          'Click Transcript to look at the exact conversation between the clinician and patient during the session.',
+          'Navigate back to the sessions page to view the attachments under the appropriate session.',
+        ],
+      },
+      {
+        title: 'View or add attachments',
+        steps: [
+          'Click on Attachment to view what was added for a particular session.',
+          'You also have the option to view a Summary of the attachment.',
+          'At the top of the page, below the patient details, you have the option to Upload an Attachment.',
+          'Select an existing session or add a new one and upload attachments in a wide range of formats.',
+          'The attachment will be saved under the relevant patient and session.',
+        ],
+      },
     ],
     accent: 'nodal-violet',
   },
@@ -191,17 +213,28 @@ const features: Feature[] = [
     id: 'collate-multiple-insights',
     number: '06',
     title: 'Collate multiple insights',
-    description: 'Nodal brings together information across sessions to support continuity of care.',
+    description: 'Combine insights across multiple sessions into a single collated document you can share, save, or refine.',
     loomEmbedId: '2b20b9185ae642acb1365fecc92981c2',
     bullets: [
-      { icon: Layers, label: 'Combined session view', detail: 'Combines notes from multiple sessions into one view.' },
-      { icon: ClipboardList, label: 'Consolidated history', detail: 'Helps review patient history in a clear, consolidated format.' },
-      { icon: CheckSquare, label: 'Task tracking', detail: 'Tracks progress along with pending and completed tasks.' },
+      { icon: Layers, label: 'Multi-session selection', detail: 'Pick two or more sessions, or specific insights within them.' },
+      { icon: RefreshCw, label: 'Generate collated document', detail: 'Produces a single document combining the selected insights.' },
+      { icon: PenLine, label: 'Edit and share', detail: 'Send directly to the patient or refine before sharing.' },
+      { icon: Save, label: 'Save for later', detail: 'Store collated documents under the patient for future access.' },
     ],
-    details: [
-      'View notes from multiple sessions side by side or merged into a single consolidated document, making it easy to see the full picture of a patient\'s care journey.',
-      'Patient history is organized chronologically with key events, diagnoses, and treatment changes highlighted for quick scanning.',
-      'Tasks and action items are tracked across sessions, so you always know what\'s been completed and what\'s still pending.',
+    sections: [
+      {
+        steps: [
+          'Go to Patients on the left pane and select a patient.',
+          'Click the Collate button below the patient details.',
+          'Select two or more sessions, or pick multiple insights across different sessions.',
+          'Choose the relevant insights across sessions and click Generate.',
+          'A collated document is generated on the right side of the screen.',
+          'Send this collated document directly to the patient or make further edits.',
+          'Once satisfied, copy, download, or save the collated document.',
+          'If you click Save, add a name to your collated document and save it.',
+          'Once saved, view it under Collated Documents on the Patients page, with options to copy, download, or edit.',
+        ],
+      },
     ],
     accent: 'nodal-green',
   },
