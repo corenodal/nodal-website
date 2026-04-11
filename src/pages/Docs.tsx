@@ -318,7 +318,7 @@ export const Docs = () => {
               <h1 className={`${t.heading} font-semibold text-nodal-blue mb-3`}>
                 {activeFeature.title}
               </h1>
-              <p className={`${t.body} text-nodal-graphite leading-relaxed`}>
+              <p className={`${t.content} text-nodal-graphite leading-relaxed`}>
                 {activeFeature.description}
               </p>
             </div>
@@ -378,7 +378,7 @@ export const Docs = () => {
                               <span className={`relative z-10 flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold ${accentBg} text-white shadow-md ring-4 ring-white`}>
                                 {j + 1}
                               </span>
-                              <p className={`${t.body} text-nodal-blue leading-relaxed pt-1.5`}>
+                              <p className={`${t.content} text-nodal-blue leading-relaxed pt-2`}>
                                 {step}
                               </p>
                             </li>
@@ -392,7 +392,7 @@ export const Docs = () => {
                       activeFeature.accent === 'nodal-violet' ? 'border-nodal-violet' : 'border-nodal-green'
                     } bg-white p-6 md:p-8 shadow-sm space-y-3`}>
                       {activeFeature.details.map((detail, i) => (
-                        <p key={i} className={`${t.body} text-nodal-blue leading-relaxed`}>
+                        <p key={i} className={`${t.content} text-nodal-blue leading-relaxed`}>
                           {detail}
                         </p>
                       ))}
