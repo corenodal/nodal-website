@@ -57,7 +57,7 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
 
         <div className="fh-cta mt-10 flex" style={{ opacity: 0, transform: 'translateY(20px)' }}>
           <Link
-            to="/docs"
+            to="/demo-videos"
             className={`px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
           >
             Demo Videos

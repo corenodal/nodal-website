@@ -240,7 +240,7 @@ const features: Feature[] = [
   },
 ];
 
-export const Docs = () => {
+export const DemoVideos = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeId = searchParams.get('feature') || features[0].id;
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -276,7 +276,7 @@ export const Docs = () => {
         >
           <div className="py-8 pr-6 lg:sticky lg:top-20">
             <h2 className="text-xs font-semibold uppercase tracking-wider text-nodal-graphite-soft mb-4">
-              Features Guide
+              Demo Videos
             </h2>
             <nav className="flex flex-col gap-1">
               {features.map((feature) => {

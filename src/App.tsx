@@ -9,7 +9,7 @@ import { Product } from './pages/Product';
 import { Features } from './pages/Features';
 import { About } from './pages/About';
 import { Contact } from './pages/Contact';
-import { Docs } from './pages/Docs';
+import { DemoVideos } from './pages/DemoVideos';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -30,7 +30,7 @@ function App() {
             <Route path="/product" element={<Product isLoading={isLoading} />} />
             <Route path="/about" element={<About isLoading={isLoading} />} />
             <Route path="/contact" element={<Contact isLoading={isLoading} />} />
-            <Route path="/docs" element={<Docs />} />
+            <Route path="/demo-videos" element={<DemoVideos />} />
           </Routes>
         </div>
       </main>
