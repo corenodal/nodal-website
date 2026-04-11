@@ -41,11 +41,11 @@ const features: Feature[] = [
     accent: 'nodal-violet',
   },
   {
-    id: 'note-customization',
+    id: 'edit-ai-generated-notes',
     number: '02',
-    title: 'Note Customization',
+    title: 'Edit AI-generated notes',
     description: 'Nodal makes it easy to generate and tailor clinical notes based on how you document care.',
-    loomEmbedId: '221578de6e184e98ae636ed004939aba',
+    loomEmbedId: '9f9809ca8fd144cd98b056a72b0dc652',
     bullets: [
       { icon: Sparkles, label: 'Auto-generated notes', detail: 'Generates structured notes directly from patient sessions.' },
       { icon: Lightbulb, label: 'Flexible formats', detail: 'Supports standard formats as well as custom templates created by clinicians.' },
