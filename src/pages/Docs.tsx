@@ -31,7 +31,7 @@ const features: Feature[] = [
   {
     id: 'personalise-your-ai-assistant',
     number: '01',
-    title: 'Personalise your AI Assistant',
+    title: 'Personalise your AI assistant',
     description: 'Customize Node, your AI assistant, to match your preferences for tone, language, formatting, and level of detail.',
     loomEmbedId: '7d086b67286142d7ab86c284000d833f',
     bullets: [
@@ -127,7 +127,7 @@ const features: Feature[] = [
   {
     id: 'audio-and-manual-notes',
     number: '04',
-    title: 'Audio and Manual Notes',
+    title: 'Audio and manual notes',
     description: 'Capture sessions by recording audio or adding manual notes, all tied back to the right patient and session.',
     loomEmbedId: '971f61062d454acb8333ecb37e696845',
     bullets: [
@@ -172,7 +172,7 @@ const features: Feature[] = [
   {
     id: 'clinical-insights',
     number: '05',
-    title: 'Clinical Insights',
+    title: 'Clinical insights',
     description: 'Nodal helps streamline how you communicate with patients after a session.',
     loomEmbedId: '7c6f877f2a8546669f5701958b588372',
     bullets: [
