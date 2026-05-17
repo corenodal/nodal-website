@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
 import { type } from '../styles/typography';
+import NodalLogo from '../assets/nodal-logo.svg';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,11 +42,8 @@ export const Navbar = () => {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link to="/" onClick={handleLogoClick} className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-lg bg-nodal-blue flex items-center justify-center">
-            <div className="w-4 h-4 rounded-full bg-nodal-white" />
-          </div>
-          <span className={`${type.subheading} font-bold tracking-tighter text-nodal-blue`}>NODAL</span>
+        <Link to="/" onClick={handleLogoClick} className="flex items-center">
+          <img src={NodalLogo} alt="Nodal" className="h-16" />
         </Link>
 
         {/* Desktop Links */}

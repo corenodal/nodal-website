@@ -3,6 +3,7 @@ import { ArrowRight, Mic, FileText, ClipboardCheck, Check, Activity } from 'luci
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
+import NodalIcon from '../assets/nodal-icon.svg';
 
 const LiveDashboard = () => {
   const barsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -56,9 +57,7 @@ const LiveDashboard = () => {
         <div className="w-3 h-3 rounded-full bg-amber-400/60" />
         <div className="w-3 h-3 rounded-full bg-green-400/60" />
         <div className="ml-4 flex items-center gap-1.5">
-          <div className="w-5 h-5 rounded-md bg-nodal-blue flex items-center justify-center">
-            <div className="w-2.5 h-2.5 rounded-full bg-white" />
-          </div>
+          <img src={NodalIcon} alt="Nodal" className="h-5" />
           <span className="text-xs font-bold tracking-tighter text-nodal-blue">NODAL</span>
         </div>
       </div>
