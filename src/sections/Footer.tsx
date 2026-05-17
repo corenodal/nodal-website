@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { type } from '../styles/typography';
+import NodalLogo from '../assets/nodal-logo.svg';
 
 export const Footer = ({ dark = false }: { dark?: boolean }) => {
   const location = useLocation();
@@ -23,11 +24,8 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-8">
-              <div className="w-8 h-8 rounded-lg bg-nodal-blue flex items-center justify-center">
-                <div className="w-4 h-4 rounded-full bg-nodal-white" />
-              </div>
-              <span className={`${type.subheading} font-bold tracking-tighter ${dark ? 'text-white' : 'text-nodal-blue'}`}>NODAL</span>
+            <div className="mb-6">
+              <img src={NodalLogo} alt="Nodal" className={`h-16 ${dark ? 'brightness-0 invert' : ''}`} />
             </div>
             <p className={`${type.ui} font-light leading-relaxed mb-8 ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
               Personalised AI Assistant for Mental Health Professionals
