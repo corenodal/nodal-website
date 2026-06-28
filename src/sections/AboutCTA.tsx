@@ -43,16 +43,14 @@ export const AboutCTA = () => {
           </div>
         </h2>
 
-        {/* Sub + CTA row */}
-        <div className="flex flex-col md:flex-row md:items-end gap-8 md:gap-16">
-          <p className={`acta-sub opacity-0 ${type.body} text-nodal-graphite font-light max-w-sm leading-relaxed`}>
-            Nodal is building that infrastructure. Join us as a pilot partner and help shape what comes next.
-          </p>
-          <Link to="/contact" className={`acta-btn opacity-0 flex items-center gap-3 px-8 py-4 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all duration-300 group self-start shadow-md hover:shadow-xl`}>
-            Join the pilot →
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+        <p className={`acta-sub opacity-0 ${type.body} text-nodal-graphite font-light max-w-sm leading-relaxed mb-10`}>
+          Nodal is building that infrastructure. Join us as a pilot partner and help shape what comes next.
+        </p>
+
+        <Link to="/contact" className={`acta-btn opacity-0 inline-flex items-center gap-3 px-8 py-4 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all duration-300 group shadow-md hover:shadow-xl`}>
+          Join the pilot →
+          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+        </Link>
       </div>
     </section>
   );

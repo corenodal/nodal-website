@@ -53,7 +53,7 @@ export const TrustVerify = () => {
           </h2>
         </div>
         <p className="tv-heading opacity-0 text-center text-nodal-graphite font-light leading-relaxed max-w-3xl mx-auto mb-14">
-          Every output is reviewable before it's used. And compliance is built into the foundation from day one.
+          Every output is reviewable before it is used. And compliance is built into the foundation from day one.
         </p>
 
         <div className="tv-grid max-w-5xl mx-auto bg-nodal-white rounded-2xl border border-slate-100 p-6 md:p-10 shadow-sm">

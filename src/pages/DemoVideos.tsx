@@ -350,7 +350,7 @@ export const DemoVideos = () => {
                 See Nodal in action.
               </h1>
               <p className={`${t.body} text-nodal-graphite font-light leading-relaxed max-w-2xl`}>
-                Short walkthroughs of each core feature. Watch in sequence, or jump to what's relevant for your practice.
+                Short walkthroughs of each core feature. Watch in sequence, or jump to what is relevant for your practice.
               </p>
             </div>
 
@@ -368,7 +368,7 @@ export const DemoVideos = () => {
             <div className="dv-intro dv-feature mb-12 rounded-xl overflow-hidden border border-nodal-grey/60 shadow-sm bg-black/5">
               <div className="relative w-full" style={{ paddingBottom: '65.06%' }}>
                 <iframe
-                  src={`https://www.loom.com/embed/${activeFeature.loomEmbedId}`}
+                  src={`https://www.loom.com/embed/${activeFeature.loomEmbedId}?hide_share=true&hide_title=true&hide_owner=true`}
                   frameBorder="0"
                   allowFullScreen
                   className="absolute top-0 left-0 w-full h-full"
