@@ -110,7 +110,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
         >
           <Link
             to="/demo-videos"
-            className={`w-full sm:w-auto px-10 py-4 border-2 border-nodal-blue/20 text-nodal-blue ${type.body} font-semibold rounded-xl hover:border-nodal-blue/40 transition-all flex items-center justify-center group`}
+            className={`w-full sm:w-auto px-10 py-4 bg-nodal-violet text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
           >
             See how it works
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
