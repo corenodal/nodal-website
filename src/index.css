@@ -9,8 +9,15 @@
   --color-nodal-graphite-soft: #8C9298;
   --color-nodal-grey: #E6E8EB;
   --color-nodal-white: #F9FAFB;
-  
+
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui;
+
+  --animate-spin-slow: spin-slow 45s linear infinite;
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
 }
 
 html {
@@ -60,4 +67,15 @@ body {
 .text-precision {
   letter-spacing: -0.01em;
   font-weight: 500;
+}
+
+/* Hero background logo — faint and respects motion preferences */
+.hero-bg-logo svg {
+  opacity: 0.05;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-logo svg {
+    animation: none;
+  }
 }
