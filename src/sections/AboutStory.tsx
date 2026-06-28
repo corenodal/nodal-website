@@ -67,7 +67,7 @@ export const AboutStory = () => {
             That gap, between what clinicians experience in session and what the system demands afterward, is where Nodal begins.
           </p>
           <p className={`story-para ${type.body} text-white font-medium leading-relaxed`}>
-            Nodal was built to close that gap. It removes the overhead. The clinical judgment stays with you, so you can be fully present in the session and leave when it's over.
+            Nodal was built to close that gap. It removes the overhead. The clinical judgment stays with you, so you can be fully present in the session and leave when it is over.
           </p>
         </div>
       </div>

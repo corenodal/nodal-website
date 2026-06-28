@@ -124,7 +124,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
             </div>
           </h1>
           <p className={`cf-subtitle opacity-0 ${type.body} text-nodal-graphite font-light leading-relaxed mb-10`}>
-            We're working with a small group of therapists, psychologists, and psychiatrists to refine Nodal before broader launch. Pilots are free. We'll set up a 20 minute call to understand how your practice works before you start.
+            We are working with a small group of therapists, psychologists, and psychiatrists to refine Nodal before broader launch. Pilots are free. We will set up a 20 minute call to understand how your practice works before you start.
           </p>
 
           <div className="cf-subtitle opacity-0 space-y-6">

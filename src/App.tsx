@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { ScrollToTop } from './components/ScrollToTop';
-import { NodesBackground } from './animations/NodesBackground';
 import { LoadingScreen } from './components/LoadingScreen';
 import { Home } from './pages/Home';
 import { Product } from './pages/Product';
@@ -20,7 +19,6 @@ function App() {
       <main className="relative min-h-screen bg-nodal-white text-nodal-graphite overflow-x-hidden font-sans">
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
-        <NodesBackground />
         <Navbar />
 
         <div className="relative">

@@ -57,7 +57,7 @@ export const TheShift = () => {
     >
       <div className="max-w-6xl w-full mx-auto">
         <p className={`shift-label opacity-0 ${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-16`}>
-          The shift we&apos;re responding to
+          The shift we are responding to
         </p>
 
         {/* Large statement rows */}

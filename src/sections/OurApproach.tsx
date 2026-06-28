@@ -19,7 +19,7 @@ const principles = [
     iconClass: 'text-nodal-green group-hover:text-white',
     wrapperClass: 'group-hover:bg-nodal-green group-hover:border-transparent',
     title: 'Fixing the System, Not Adding Tools',
-    body: 'Mental health practitioners don\'t need more software. They need fewer systems demanding more from them. Nodal replaces disconnected tools with a single workflow that works the way clinicians think.',
+    body: 'Mental health practitioners do not need more software. They need fewer systems demanding more from them. Nodal replaces disconnected tools with a single workflow that works the way clinicians think.',
   },
   {
     icon: ShieldCheck,
@@ -74,7 +74,7 @@ export const OurApproach = () => {
             </h2>
           </div>
           <p className={`${type.body} text-nodal-graphite-soft font-light max-w-sm md:max-w-md leading-relaxed`}>
-            We bring together behavioral science, clinical workflow research, and AI to fix the system that's wearing practitioners down.
+            We bring together behavioral science, clinical workflow research, and AI to fix the system that is wearing practitioners down.
           </p>
         </div>
 
