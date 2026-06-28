@@ -17,7 +17,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
     <footer
       className={`pt-24 pb-12 px-6 md:px-24 border-t relative z-10 ${
         dark
-          ? 'bg-[#1C2333] border-slate-700/50'
+          ? 'bg-nodal-blue border-white/10'
           : 'bg-transparent border-slate-100/50'
       }`}
     >
