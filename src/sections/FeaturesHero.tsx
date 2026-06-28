@@ -67,6 +67,16 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
             <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
+
+        <p className="fh-cta mt-8 text-xs text-nodal-graphite-soft font-light tracking-wide" style={{ opacity: 0, transform: 'translateY(20px)' }}>
+          HIPAA aligned
+          <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+          BAA available
+          <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+          Your data is never used to train AI models
+          <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+          Outputs reviewed by a clinician
+        </p>
       </div>
     </section>
   );

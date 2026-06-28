@@ -100,7 +100,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
           className={`hero-subtext ${type.subheading} text-nodal-graphite font-light leading-relaxed mb-12 max-w-3xl mx-auto`}
           style={{ opacity: 0 }}
         >
-          Nodal captures your sessions, writes your notes, and keeps everything about a patient in one place — so you can stop carrying the work home.
+          Nodal captures your sessions, writes your notes, and keeps everything about a patient in one place so you can stop carrying the work home.
         </p>
 
         {/* CTAs */}
