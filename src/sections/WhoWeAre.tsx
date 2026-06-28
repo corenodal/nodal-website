@@ -7,15 +7,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const pillars = [
   {
-    tag: 'Clinician-first',
+    tag: 'Clinician first',
     desc: 'Designed around how clinicians think and work',
   },
   {
-    tag: 'Workflow-focused',
+    tag: 'Workflow focused',
     desc: 'Solves burnout and scattered workflows at the system level',
   },
   {
-    tag: 'AI-assisted',
+    tag: 'AI assisted',
     desc: 'Supports memory, reasoning, and prioritization while keeping clinicians in control',
   },
 ];
@@ -63,8 +63,7 @@ export const WhoWeAre = () => {
             Built by people who<br />understand the problem.
           </h2>
           <div className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10 space-y-4`}>
-            <p>We are a team with experience in behavioral science, system design, and AI.</p>
-            <p>We work closely with clinicians to build tools that reflect real-world care, not assumptions.</p>
+            <p>We bring together backgrounds in behavioral science, system design, and AI, with research experience across international health institutions and a founding team that has spent real time understanding how clinicians work. We build in close collaboration with practitioners, at their pace.</p>
           </div>
           <div className="inline-flex items-center gap-2.5 border border-nodal-green/30 bg-nodal-green/5 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-nodal-green animate-pulse" />

@@ -8,28 +8,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 const steps = [
   {
-    title: "1. Capture",
-    desc: "Securely records patient conversations during visits.",
+    title: "Record.",
+    desc: "Start a session recording with one tap. Nodal listens securely in the background, so you stay present with your patient.",
     color: "nodal-violet",
     icon: Activity
   },
   {
-    title: "2. Organize",
-    desc: "Turns conversations into structured clinical information in real time.",
-    color: "nodal-violet",
-    icon: Network
-  },
-  {
-    title: "3. Review",
-    desc: "Creates clear, editable documentation that is ready with minimal review.",
+    title: "Review.",
+    desc: "Clinical notes are generated in your format, ready to edit in minutes.",
     color: "nodal-green",
     icon: FileText
   },
   {
-    title: "4. Act",
-    desc: "Generates follow-ups, care plans, and manages tasks automatically.",
+    title: "Act.",
+    desc: "Action items, patient summaries, and the tasks that come after a session are surfaced automatically.",
     color: "nodal-green",
     icon: Check
+  },
+  {
+    title: "Build.",
+    desc: "Every session adds to a patient record that builds across sessions and gets richer over time.",
+    color: "nodal-violet",
+    icon: Network
   }
 ];
 
@@ -123,19 +123,19 @@ const FollowUpCard = () => (
       <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className={`${type.ui} font-semibold text-nodal-blue`}>Prescription Sent</div>
+      <div className={`${type.ui} font-semibold text-nodal-blue`}>Treatment plan updated</div>
     </div>
     <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.1s' }}>
       <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className={`${type.ui} font-semibold text-nodal-blue`}>Billing Coded</div>
+      <div className={`${type.ui} font-semibold text-nodal-blue`}>Session homework sent to patient</div>
     </div>
     <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.2s' }}>
       <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className={`${type.ui} font-semibold text-nodal-blue`}>Follow-up Scheduled</div>
+      <div className={`${type.ui} font-semibold text-nodal-blue`}>Next session scheduled</div>
     </div>
   </div>
 );
@@ -214,9 +214,9 @@ export const Workflow = () => {
 
   const visuals = [
     <AudioWaveform />,
-    <NeuralNodes />,
     <UICard />,
-    <FollowUpCard />
+    <FollowUpCard />,
+    <NeuralNodes />
   ];
 
   return (
@@ -230,7 +230,7 @@ export const Workflow = () => {
         {/* Left Side: Sticky Text Narrative */}
         <div className="w-full md:w-1/2 flex flex-col justify-center h-[40%] md:h-full pt-16 md:pt-0 z-20">
           <h2 className={`${type.heading} font-semibold text-nodal-blue mb-8 md:mb-12`}>
-            How It Works
+            How a session works
           </h2>
 
           <div className="flex flex-col">

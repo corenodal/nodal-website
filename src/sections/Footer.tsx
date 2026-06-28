@@ -28,7 +28,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
               <img src={NodalLogo} alt="Nodal" className={`h-16 ${dark ? 'brightness-0 invert' : ''}`} />
             </div>
             <p className={`${type.ui} font-light leading-relaxed mb-8 ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
-              Personalised AI Assistant for Mental Health Professionals
+              Built for the clinicians who carry the most.
             </p>
           </div>
 

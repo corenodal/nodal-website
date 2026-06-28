@@ -57,6 +57,12 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
               Healthcare cannot scale sustainably if systems demand more than they give back.
             </p>
           </div>
+          <div className="border-l-2 border-nodal-blue/30 pl-5">
+            <p className={`${type.ui} font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1`}>Approach</p>
+            <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
+              We design around how clinicians think, not how systems were built.
+            </p>
+          </div>
         </div>
       </div>
     </section>

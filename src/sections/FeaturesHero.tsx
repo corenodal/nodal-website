@@ -41,10 +41,13 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
       <div className="max-w-5xl mx-auto w-full">
         <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nodal-blue mb-10`}>
           <div className="overflow-hidden pb-2">
-            <span className="fh-line block text-nodal-violet">Everything You Need</span>
+            <span className="fh-line block">Every part of the</span>
           </div>
           <div className="overflow-hidden pb-2">
-            <span className="fh-line block">for Patient Care</span>
+            <span className="fh-line block text-nodal-violet">clinical workflow.</span>
+          </div>
+          <div className="overflow-hidden pb-2">
+            <span className="fh-line block">In one place.</span>
           </div>
         </h1>
 
@@ -52,7 +55,7 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
           className={`fh-sub ${type.subheading} text-nodal-graphite font-light leading-relaxed max-w-3xl`}
           style={{ opacity: 0, transform: 'translateY(20px)' }}
         >
-          Our key features help clinicians organize information and decisions into their daily workflow.
+          Nodal holds session context, generates documentation, surfaces insights, and supports patient communication across your practice.
         </p>
 
         <div className="fh-cta mt-10 flex" style={{ opacity: 0, transform: 'translateY(20px)' }}>
@@ -60,7 +63,7 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
             to="/demo-videos"
             className={`px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
           >
-            Demo Videos
+            Watch the demos
             <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

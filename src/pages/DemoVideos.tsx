@@ -33,7 +33,7 @@ const features: Feature[] = [
     id: 'personalise-your-ai-assistant',
     number: '01',
     title: 'Personalise your AI assistant',
-    description: 'Customize Node, your AI assistant, to match your preferences for tone, language, formatting, and level of detail.',
+    description: 'Set up Node to match your documentation style, clinical language, and preferred note format once, and it applies across every session.',
     loomEmbedId: '7d086b67286142d7ab86c284000d833f',
     bullets: [
       { icon: Settings, label: 'Preferences tab', detail: 'Customize level of detail, language, date formats, and response structure.' },
@@ -56,7 +56,7 @@ const features: Feature[] = [
     id: 'edit-ai-generated-insights',
     number: '02',
     title: 'Edit AI-generated insights',
-    description: 'Refine AI-generated insights directly in the template, through the AI chatbot, or by regenerating with a different template.',
+    description: 'Every output Nodal generates is yours to review and refine, directly in the template, through Node, or by regenerating with a different format.',
     loomEmbedId: '9f9809ca8fd144cd98b056a72b0dc652',
     bullets: [
       { icon: PenLine, label: 'Direct edits', detail: 'Edit text and formatting in the patient template with the pencil icon.' },
@@ -75,7 +75,6 @@ const features: Feature[] = [
           'Click Save to confirm the edits.',
           'You now have the option to copy the text or download it as a Word document.',
           'Open the Word document to make any additional changes, if required.',
-          'Copy and paste the edited content from the Word document back into your patient template.',
         ],
       },
       {
@@ -103,7 +102,7 @@ const features: Feature[] = [
     id: 'create-custom-templates',
     number: '03',
     title: 'Create custom templates',
-    description: 'Design and save your own templates so Nodal generates notes and insights in exactly the format you need.',
+    description: 'Bring your existing documentation structure into Nodal, or build new templates from scratch: Initial Assessment, Follow-up, Discharge, or anything in between.',
     loomEmbedId: 'a35853794a494f6c9330a947fb84fa66',
     bullets: [
       { icon: BookOpen, label: 'Default templates', detail: 'Start from Initial Assessment or Follow-up Review.' },
@@ -129,7 +128,7 @@ const features: Feature[] = [
     id: 'audio-and-manual-notes',
     number: '04',
     title: 'Audio and manual notes',
-    description: 'Capture sessions by recording audio or adding manual notes, all tied back to the right patient and session.',
+    description: 'Record session audio directly in Nodal, or add typed notes. Everything stays linked to the right patient and session.',
     loomEmbedId: '971f61062d454acb8333ecb37e696845',
     bullets: [
       { icon: Mic, label: 'Start Recording', detail: 'Capture session audio from Quick Actions on the Home Page.' },
@@ -174,7 +173,7 @@ const features: Feature[] = [
     id: 'collate-multiple-insights',
     number: '05',
     title: 'Collate multiple insights',
-    description: 'Combine insights across multiple sessions into a single collated document you can share, save, or refine.',
+    description: 'Select insights across two or more sessions and generate a single collated document for referrals, supervision, or review across sessions.',
     loomEmbedId: '2b20b9185ae642acb1365fecc92981c2',
     bullets: [
       { icon: Layers, label: 'Multi-session selection', detail: 'Pick two or more sessions, or specific insights within them.' },
@@ -203,7 +202,7 @@ const features: Feature[] = [
     id: 'clinical-insights',
     number: '06',
     title: 'Clinical insights',
-    description: 'Explore the summary, action items, template, and transcript generated for each session — and manage session attachments.',
+    description: 'After each session, Nodal generates a summary, action items, a full template note, and a transcript, all reviewable, editable, and downloadable.',
     loomEmbedId: '7c6f877f2a8546669f5701958b588372',
     bullets: [
       { icon: FileText, label: 'Summary & key themes', detail: 'See a quick overview of the session along with the key themes discussed.' },
@@ -256,10 +255,12 @@ export const DemoVideos = () => {
   // Page-load intro animation (timing matches FeaturesHero)
   useEffect(() => {
     const ctx = gsap.context(() => {
+      gsap.set('.dv-page-heading', { opacity: 0, y: 24 });
       gsap.set('.dv-intro', { opacity: 0, y: 24 });
       gsap.set('.dv-sidebar', { opacity: 0, x: -20 });
       const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
       tl.to('.dv-sidebar', { opacity: 1, x: 0, duration: 1, delay: 0.3 })
+        .to('.dv-page-heading', { opacity: 1, y: 0, duration: 1 }, '-=0.6')
         .to(
           '.dv-intro',
           { opacity: 1, y: 0, duration: 1.1, stagger: 0.12 },
@@ -343,11 +344,21 @@ export const DemoVideos = () => {
         {/* Main content */}
         <main className="flex-1 min-w-0">
           <div className="pl-0 lg:pl-10 py-8 md:py-12">
+            {/* Page heading */}
+            <div className="dv-page-heading mb-12">
+              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] text-nodal-blue mb-4">
+                See Nodal in action.
+              </h1>
+              <p className={`${t.body} text-nodal-graphite font-light leading-relaxed max-w-2xl`}>
+                Short walkthroughs of each core feature. Watch in sequence, or jump to what's relevant for your practice.
+              </p>
+            </div>
+
             {/* Feature title */}
             <div className="dv-intro dv-feature mb-8">
-              <h1 className={`${t.heading} font-semibold text-nodal-blue mb-3`}>
+              <h2 className={`${t.heading} font-semibold text-nodal-blue mb-3`}>
                 {activeFeature.title}
-              </h1>
+              </h2>
               <p className={`${t.content} text-nodal-graphite leading-relaxed`}>
                 {activeFeature.description}
               </p>

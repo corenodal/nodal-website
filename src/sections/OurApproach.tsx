@@ -19,7 +19,7 @@ const principles = [
     iconClass: 'text-nodal-green group-hover:text-white',
     wrapperClass: 'group-hover:bg-nodal-green group-hover:border-transparent',
     title: 'Fixing the System, Not Adding Tools',
-    body: 'The problem is not a lack of tools, it is too many disconnected ones. Nodal brings everything into one place.',
+    body: 'Mental health practitioners don\'t need more software. They need fewer systems demanding more from them. Nodal replaces disconnected tools with a single workflow that works the way clinicians think.',
   },
   {
     icon: ShieldCheck,
@@ -74,7 +74,7 @@ export const OurApproach = () => {
             </h2>
           </div>
           <p className={`${type.body} text-nodal-graphite-soft font-light max-w-sm md:max-w-md leading-relaxed`}>
-            Three foundations that distinguish how we build clinical infrastructure.
+            We bring together behavioral science, clinical workflow research, and AI to fix the system that's wearing practitioners down.
           </p>
         </div>
 

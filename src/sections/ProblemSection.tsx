@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Database, MessageSquare, CreditCard, PenTool, Mail, Pill, Clipboard, FileSearch } from 'lucide-react';
@@ -17,16 +17,60 @@ const fragments = [
   { icon: FileSearch, label: 'History', color: 'text-fuchsia-400/60', bg: 'bg-fuchsia-50/80' },
 ];
 
+const featuredQuotes = [
+  'I often have to work weekends to complete notes.',
+  'Notes take 20 to 25 mins each; five notes is 2.5 hours.',
+  'If you didn\'t document it, it didn\'t happen.',
+];
+
+const gridQuotes = [
+  { text: 'Therapists start private practice to escape system fatigue.', accent: 'nodal-violet' as const, span: 'col-span-1' },
+  { text: 'Impacts me being able to see more patients.', accent: 'nodal-green' as const, span: 'col-span-1' },
+  { text: 'System required documentation is exhausting but necessary.', accent: 'nodal-violet' as const, span: 'col-span-2' },
+];
+
 export const ProblemSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const fragmentRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const [activeQuote, setActiveQuote] = useState(0);
+  const quoteTextRef = useRef<HTMLParagraphElement>(null);
+
+  const animateQuoteChange = useCallback((nextIndex: number) => {
+    if (!quoteTextRef.current) return;
+    gsap.to(quoteTextRef.current, {
+      opacity: 0, y: -10, duration: 0.3,
+      onComplete: () => {
+        setActiveQuote(nextIndex);
+        gsap.fromTo(quoteTextRef.current, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 });
+      },
+    });
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      animateQuoteChange((activeQuote + 1) % featuredQuotes.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [activeQuote, animateQuoteChange]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      // Beat 1: Heading fade in
-      gsap.to('.problem-heading', {
-        scrollTrigger: { trigger: '.problem-heading', start: 'top 85%' },
+      // Voices heading + cards
+      gsap.fromTo(
+        '.vf-heading',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.6, scrollTrigger: { trigger: '.voices-section', start: 'top 75%' } }
+      );
+      gsap.fromTo(
+        '.vf-card',
+        { opacity: 0, y: 25 },
+        { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: '.voices-section', start: 'top 65%' } }
+      );
+
+      // Stats heading
+      gsap.to('.stats-heading', {
+        scrollTrigger: { trigger: '.stats-heading', start: 'top 85%' },
         y: 0,
         opacity: 1,
         duration: 0.8,
@@ -52,9 +96,9 @@ export const ProblemSection = () => {
           { x: 0, y: 0, rotate: 0, opacity: 0, scale: 0.6 },
           {
             scrollTrigger: {
-              trigger: sectionRef.current,
-              start: 'top 40%',
-              end: '60% 40%',
+              trigger: '.pain-cards-wrap',
+              start: 'top 70%',
+              end: '80% 50%',
               scrub: 0.5,
             },
             x: scatterPositions[i].x,
@@ -81,6 +125,14 @@ export const ProblemSection = () => {
         ease: 'power3.out',
       });
 
+      // Sources
+      gsap.to('.sources-text', {
+        scrollTrigger: { trigger: '.sources-text', start: 'top 90%' },
+        opacity: 1,
+        duration: 0.6,
+        ease: 'power3.out',
+      });
+
       // Closing statement
       gsap.to('.closing-statement', {
         scrollTrigger: {
@@ -102,19 +154,86 @@ export const ProblemSection = () => {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative z-10 bg-transparent overflow-visible py-12 md:py-16"
+      className="relative z-10 bg-nodal-white overflow-visible py-12 md:py-16"
     >
 
-      {/* ── Beat 1: The Question ── */}
-      <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mb-12">
-        <div className="problem-heading translate-y-12 opacity-0 max-w-5xl">
+      {/* ── Beat 1: Practitioner Quotes (exact VoicesFromTheField layout) ── */}
+      <div className="voices-section py-24 md:py-32 px-6 md:px-24 relative mb-12">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-nodal-blue/[0.03] via-nodal-violet/[0.06] to-nodal-blue/[0.03] rounded-3xl" />
+
+        <div className="max-w-6xl mx-auto relative">
+          <div className="vf-heading opacity-0 text-center mb-14">
+            <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
+              What practitioners <span className="text-nodal-violet italic">told</span> us
+            </h2>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Left — Featured rotating quote */}
+            <div className="vf-card opacity-0 md:w-5/12 p-8 rounded-2xl bg-white/70 backdrop-blur-sm border border-nodal-violet/15 flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <div>
+                <span className="text-5xl font-serif leading-none block mb-6 text-nodal-violet/40">
+                  &ldquo;&ldquo;
+                </span>
+                <p
+                  ref={quoteTextRef}
+                  className={`${type.subheading} text-nodal-blue font-medium leading-relaxed`}
+                >
+                  {featuredQuotes[activeQuote]}
+                </p>
+              </div>
+              <div className="flex items-center gap-3 mt-8">
+                {featuredQuotes.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => animateQuoteChange(i)}
+                    className={`rounded-full transition-all duration-300 ${
+                      i === activeQuote
+                        ? 'w-8 h-2.5 bg-nodal-violet'
+                        : 'w-2.5 h-2.5 bg-nodal-violet/20 hover:bg-nodal-violet/40'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Right — irregular bento grid */}
+            <div className="md:w-7/12 grid grid-cols-2 gap-4">
+              {gridQuotes.map((quote, i) => (
+                <div
+                  key={i}
+                  className={`${quote.span} vf-card opacity-0 p-6 rounded-2xl backdrop-blur-sm border flex flex-col justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] ${
+                    quote.accent === 'nodal-violet'
+                      ? 'bg-nodal-violet/[0.06] border-nodal-violet/15 hover:border-nodal-violet/30 hover:bg-nodal-violet/[0.10]'
+                      : 'bg-nodal-green/[0.06] border-nodal-green/15 hover:border-nodal-green/30 hover:bg-nodal-green/[0.10]'
+                  }`}
+                >
+                  <span className={`text-2xl font-serif leading-none block mb-3 ${
+                    quote.accent === 'nodal-violet' ? 'text-nodal-violet/40' : 'text-nodal-green/40'
+                  }`}>
+                    &ldquo;
+                  </span>
+                  <p className={`${quote.span === 'col-span-2' ? type.subheading : type.body} text-nodal-graphite leading-relaxed`}>
+                    {quote.text}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Beat 2: Stats heading ── */}
+      <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mt-8 md:mt-12 mb-12">
+        <div className="stats-heading translate-y-12 opacity-0 max-w-5xl">
           <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
-            Clinical work today is spread across too many systems.
+            Documentation wasn't designed for mental health work.
           </h2>
         </div>
       </div>
 
-      {/* ── Beat 2+3 merged: Cards over scattered fragments ── */}
+      {/* ── Beat 3: Cards over scattered fragments ── */}
       <div className="problem-content relative px-6 md:px-24 pt-6 md:pt-8 pb-10 md:pb-16">
 
         {/* Background layer: scattering fragments — spans full section, no clipping */}
@@ -139,10 +258,10 @@ export const ProblemSection = () => {
         <div className="pain-cards-wrap relative z-10">
           <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {[
-              { label: 'Decision Fatigue', stat: '102+', sub: 'decisions per day' },
-              { label: 'Error Risk', stat: '>3X', sub: 'higher with scattered systems' },
-              { label: 'Admin Burden', stat: '49%', sub: 'of clinician time' },
-              { label: 'Burnout', stat: '>45%', sub: 'of physicians report it' },
+              { label: 'Lost Capacity', stat: '49%', sub: 'of clinicians could see more patients if documentation demands were reduced.' },
+              { label: 'Exhaustion', stat: '77%', sub: 'of therapists report significant mental exhaustion, the highest rate of any clinical specialty.' },
+              { label: 'Admin Load', stat: '11+', sub: 'hrs/week on non-clinical admin for roughly 40% of mental health clinicians.' },
+              { label: 'Burnout', stat: '1 in 3', sub: 'psychologists reported burnout.' },
             ].map((item, i) => (
               <div
                 key={i}
@@ -154,16 +273,16 @@ export const ProblemSection = () => {
               </div>
             ))}
           </div>
-          <p className={`text-center ${type.ui} text-nodal-graphite-soft font-light mt-6`}>
-            Metrics based on last-decade reports of practicing U.S. physicians
+          <p className="sources-text text-[11px] text-nodal-graphite-soft/60 font-light leading-relaxed text-center mt-6 opacity-0">
+            Sources: ICANotes, AI in Behavioral Health: National Clinician Survey Report (2026); Tebra, 2025 Physician Burnout Survey; American Psychological Association, 2024 Practitioner Pulse Survey.
           </p>
         </div>
 
         {/* Closing statement — on top of fragments */}
-        <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-12 md:pt-16 text-center">
+        <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-6 md:pt-8 text-center">
           <p className={`${type.heading} font-bold leading-tight max-w-3xl mx-auto`}>
             <span className="text-nodal-blue block">This is not a productivity failure.</span>
-            <span className="text-nodal-violet block mt-2">This is a systems failure.</span>
+            <span className="text-nodal-violet block mt-2">This is a systems problem.</span>
           </p>
         </div>
 

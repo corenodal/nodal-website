@@ -68,7 +68,7 @@ export const Navbar = () => {
             )
           )}
           <Link to="/contact" className={`px-6 py-3 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg hover:bg-slate-800 transition-colors`}>
-            Request Access
+            Join the pilot →
           </Link>
         </div>
 
@@ -106,7 +106,7 @@ export const Navbar = () => {
             )
           )}
           <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`w-full py-4 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg text-center`}>
-            Request Access
+            Join the pilot →
           </Link>
         </div>
       )}

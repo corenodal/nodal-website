@@ -8,24 +8,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
-    title: 'Session Prep',
+    title: 'Know exactly where you left off.',
     description:
-      'Nodal helps practitioners prepare for each session by bringing forward relevant patient context and insights from previous visits.',
+      'Before each session, Nodal surfaces what mattered last time: key themes, open action items, and patient history, so you walk in ready.',
     bullets: [
       {
         icon: BookOpen,
-        label: 'Session & patient context',
-        detail: 'Maintains session-level and patient-level context through short summaries of past sessions.',
+        label: 'Full patient context, always current',
+        detail: '',
       },
       {
         icon: IdCard,
-        label: 'Patient flashcards',
-        detail: 'Surfaces key historical information through patient flashcards for quick review.',
+        label: 'Patient cards for quick reference',
+        detail: '',
       },
       {
         icon: TrendingUp,
-        label: 'Progress tracking',
-        detail: 'Helps track patient progress over time.',
+        label: 'Progress over time, at a glance',
+        detail: '',
       },
     ],
     image: '/session_prep.png',
@@ -34,51 +34,51 @@ const features = [
     imageAnchor: 'top-left' as const,
   },
   {
-    title: 'Note Customization',
+    title: 'Notes in the format you already use.',
     description:
-      'Nodal makes it easy to generate and tailor clinical notes based on how you document care.',
+      'Whether you use SOAP, DAP, or your own structure, Nodal generates notes in the format you work in. Bring your existing templates or build new ones.',
     bullets: [
       {
         icon: Sparkles,
-        label: 'Auto-generated notes',
-        detail: 'Generates structured notes directly from patient sessions.',
+        label: 'Notes generated from the session',
+        detail: '',
       },
       {
         icon: Lightbulb,
-        label: 'Flexible formats',
-        detail: 'Supports standard formats as well as custom templates created by clinicians.',
+        label: 'Your templates, or ours',
+        detail: '',
       },
       {
         icon: ListChecks,
-        label: 'Ready to review',
-        detail: 'Produces ready-to-review notes to reduce manual writing.',
+        label: 'Ready to review and sign',
+        detail: '',
       },
     ],
     image: '/note_customization.png',
     accent: 'nodal-green' as const,
     imageFirst: true,
-    imageAnchor: 'top-full' as any, // Specific anchor for full width
+    imageAnchor: 'top-full' as any,
     imageFit: 'cover' as const,
   },
   {
-    title: 'Clinical Insights',
+    title: 'Nothing important gets lost.',
     description:
-      'Nodal highlights what matters most so nothing important is missed after a session.',
+      'Nodal extracts key themes, flags clinically relevant signals, and generates next steps, so a 20 minute debrief after a session becomes a 2 minute review.',
     bullets: [
       {
         icon: Brain,
-        label: 'Key themes extracted',
-        detail: 'Extracts key themes and clinically relevant signals.',
+        label: 'Key themes, automatically surfaced',
+        detail: '',
       },
       {
         icon: MessageCircle,
-        label: 'Discussion highlights',
-        detail: 'Highlights important discussion points.',
+        label: 'Clinically relevant highlights',
+        detail: '',
       },
       {
         icon: ListChecks,
-        label: 'Automatic next steps',
-        detail: 'Generates next steps automatically to support follow-through.',
+        label: 'Tasks generated automatically',
+        detail: '',
       },
     ],
     image: '/clinical_insights.png',
@@ -87,24 +87,24 @@ const features = [
     imageAnchor: 'top-left' as const,
   },
   {
-    title: 'Clinical Assistant',
+    title: 'A clinical thinking partner, not a chatbot.',
     description:
-      'Nodal acts as a customizable assistant that adapts to your workflow and preferences.',
+      'Ask Node anything about a patient, a treatment approach, or a clinical question. Node knows your documentation style, your patient history, and how you work.',
     bullets: [
       {
         icon: Wrench,
-        label: 'Learns your style',
-        detail: 'Learns your workflow, language, and documentation style.',
+        label: 'Adapts to your documentation style',
+        detail: '',
       },
       {
         icon: MessageCircle,
-        label: 'Ask anything',
-        detail: 'Answers questions about patients, treatments, or tasks.',
+        label: 'Patient insights, treatment questions, clinical reference',
+        detail: '',
       },
       {
         icon: PenLine,
-        label: 'Editing support',
-        detail: 'Helps edit notes, letters, and drafts as needed.',
+        label: 'Edit notes, letters, and summaries on request',
+        detail: '',
       },
     ],
     image: '/clinical_assistant.png',
@@ -113,24 +113,24 @@ const features = [
     imageAnchor: 'top-right' as const,
   },
   {
-    title: 'Patient Communication',
+    title: 'Outputs your patients can use, without the extra hour.',
     description:
-      'Nodal helps streamline how you communicate with patients after a session.',
+      'Generate session summaries, homework, and letters your patients can actually understand, reviewed and sent in minutes.',
     bullets: [
       {
         icon: FileText,
-        label: 'Patient-ready outputs',
-        detail: 'Generates patient-ready summaries and letters.',
+        label: 'Summaries and letters, ready to send',
+        detail: '',
       },
       {
         icon: PenLine,
-        label: 'Review before sharing',
-        detail: 'Allows review and edits before sharing.',
+        label: 'You review every output before it reaches a patient',
+        detail: '',
       },
       {
         icon: Download,
         label: 'Copy or download',
-        detail: 'Produces structured outputs that can be copied or downloaded.',
+        detail: '',
       },
     ],
     image: '/patient_communication.png',
@@ -139,24 +139,24 @@ const features = [
     imageAnchor: 'top-left' as const,
   },
   {
-    title: 'Collated Notes',
+    title: 'The full picture, across every session.',
     description:
-      'Nodal brings together information across sessions to support continuity of care.',
+      'Combine insights from multiple sessions into a single document for referrals, supervisors, or your own records across sessions.',
     bullets: [
       {
         icon: Layers,
-        label: 'Combined session view',
-        detail: 'Combines notes from multiple sessions into one view.',
+        label: 'Every session, one view',
+        detail: '',
       },
       {
         icon: ClipboardList,
-        label: 'Consolidated history',
-        detail: 'Helps review patient history in a clear, consolidated format.',
+        label: 'Clear patient history across time',
+        detail: '',
       },
       {
         icon: CheckSquare,
-        label: 'Task tracking',
-        detail: 'Tracks progress along with pending and completed tasks.',
+        label: 'Pending and completed tasks, tracked',
+        detail: '',
       },
     ],
     image: '/collate.png',
@@ -280,9 +280,11 @@ export const FeatureDetails = () => {
                       <p className={`${type.body} font-semibold text-nodal-blue`}>
                         {bullet.label}
                       </p>
-                      <p className={`${type.ui} text-nodal-graphite-soft font-light leading-relaxed`}>
-                        {bullet.detail}
-                      </p>
+                      {bullet.detail && (
+                        <p className={`${type.ui} text-nodal-graphite-soft font-light leading-relaxed`}>
+                          {bullet.detail}
+                        </p>
+                      )}
                     </div>
                   </div>
                 ))}

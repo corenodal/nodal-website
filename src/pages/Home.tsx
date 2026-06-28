@@ -13,7 +13,7 @@ export const Home = ({ isLoading = false }: { isLoading?: boolean }) => {
       <SolutionSection />
       <StorySection />
       <CTASection />
-      <Footer />
+      <Footer dark />
     </>
   );
 };
