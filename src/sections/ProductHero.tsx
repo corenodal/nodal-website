@@ -52,22 +52,22 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
         <div className="relative max-w-screen-2xl mx-auto px-6 md:px-20 pt-6 md:pt-10">
           {/* Title + subtitle */}
           <div ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
-            <h1 className={`${type.display} font-semibold tracking-tight leading-[1.1] text-white`}>
+            <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] text-white">
               <div className="overflow-hidden">
-                <span className="product-hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>The Center of Your Clinical Workflow</span>
+                <span className="product-hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>The center of your clinical workflow.</span>
               </div>
             </h1>
           </div>
           <p
             ref={descRef}
-            className={`${type.subheading} text-white/80 font-light mt-2 md:mt-3`}
+            className={`${type.subheading} text-white/80 font-light leading-relaxed mt-2 md:mt-3`}
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
-            Nodal connects every step of care in one place, so nothing gets lost.
+            Nodal connects every step of care in one place, from the first session to the hundredth, so nothing important gets lost.
           </p>
 
           {/* Image — right-aligned, overflowing purple into white */}
-          <div className="mt-5 md:mt-8 md:ml-[15%] md:max-w-[72%]">
+          <div className="mt-5 md:mt-8 md:ml-[17%] md:max-w-[66%]">
             <div
               ref={imageRef}
               style={{ opacity: 0, transform: 'translateY(40px)' }}

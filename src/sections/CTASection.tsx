@@ -27,19 +27,34 @@ export const CTASection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-12 md:py-16 px-6 md:px-24 bg-transparent relative z-10"
+      className="py-20 md:py-28 px-6 md:px-24 bg-nodal-white relative z-10"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="cta-content translate-y-8 opacity-0 bg-gradient-to-b from-nodal-blue/[0.03] via-nodal-violet/[0.06] to-nodal-blue/[0.03] rounded-3xl p-16 text-center relative overflow-hidden">
-          <h3 className={`${type.heading} font-semibold text-nodal-blue mb-6 relative z-10`}>
-            The Simpler Way to Manage Care
+      <div className="max-w-3xl mx-auto text-center">
+        <div className="cta-content translate-y-8 opacity-0">
+          <h3 className={`${type.heading} font-semibold text-nodal-blue mb-6`}>
+            We're onboarding our first pilot partners now.
           </h3>
-          <p className={`${type.subheading} text-nodal-graphite max-w-3xl mx-auto mb-10 font-light relative z-10 leading-relaxed`}>
-            Join our pilot program to experience a simpler, clearer way to manage clinical work.
+          <p className={`${type.body} text-nodal-graphite font-light leading-relaxed mb-10 max-w-2xl mx-auto`}>
+            We work closely with each practice to configure Nodal around how you document. Pilots are free, and your feedback shapes what we build next.
           </p>
-          <Link to="/contact" className={`px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all relative z-10 hover:-translate-y-0.5`}>
-            Request Access
+          <Link
+            to="/contact"
+            className={`inline-block px-10 py-4 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all hover:-translate-y-0.5 shadow-md hover:shadow-xl`}
+          >
+            Join the pilot →
           </Link>
+          <p className="text-xs text-nodal-graphite-soft font-light tracking-wide mt-6">
+            HIPAA aligned
+            <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+            <Link
+              to="/contact"
+              className="underline decoration-nodal-graphite-soft/30 underline-offset-2 hover:text-nodal-blue transition-colors"
+            >
+              BAA available
+            </Link>
+            <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+            No commitment required
+          </p>
         </div>
       </div>
     </section>

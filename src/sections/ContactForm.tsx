@@ -3,27 +3,24 @@ import emailjs from '@emailjs/browser';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
 import { Send, Loader2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_PUBLIC_KEY } from '../config/emailjs';
 
 interface FormData {
   firstName: string;
-  middleName: string;
   lastName: string;
   email: string;
-  phone: string;
-  company: string;
-  jobRole: string;
+  practiceType: string;
+  role: string;
   message: string;
 }
 
 const initialForm: FormData = {
   firstName: '',
-  middleName: '',
   lastName: '',
   email: '',
-  phone: '',
-  company: '',
-  jobRole: '',
+  practiceType: '',
+  role: '',
   message: '',
 };
 
@@ -52,13 +49,16 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
   const validate = (): boolean => {
     const next: Partial<Record<keyof FormData, string>> = {};
     if (!form.firstName.trim()) next.firstName = 'First name is required';
+    if (!form.lastName.trim()) next.lastName = 'Last name is required';
     if (!form.email.trim()) next.email = 'Email is required';
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) next.email = 'Enter a valid email';
+    if (!form.practiceType) next.practiceType = 'Practice type is required';
+    if (!form.role) next.role = 'Your role is required';
     setErrors(next);
     return Object.keys(next).length === 0;
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
     if (errors[name as keyof FormData]) {
@@ -73,15 +73,15 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
     setSending(true);
     setSendError('');
 
-    const fullName = [form.firstName, form.middleName, form.lastName].filter(Boolean).join(' ');
+    const fullName = [form.firstName, form.lastName].filter(Boolean).join(' ');
 
     try {
       await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
         name: fullName,
         email: form.email,
-        phone: form.phone || 'Not provided',
-        company: form.company || 'Not provided',
-        job_role: form.jobRole || 'Not provided',
+        phone: 'Not provided',
+        company: form.practiceType || 'Not provided',
+        job_role: form.role || 'Not provided',
         message: form.message || 'No message',
         time: new Date().toLocaleString(),
       }, EMAILJS_PUBLIC_KEY);
@@ -100,6 +100,11 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
   const inputNormal = `${inputBase} border-slate-200 focus:border-nodal-blue focus:ring-2 focus:ring-nodal-blue/10`;
   const inputError = `${inputBase} border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/10`;
 
+  const selectBase =
+    'w-full px-4 py-3 rounded-xl border bg-white/80 backdrop-blur-sm text-nodal-graphite font-light transition-all duration-200 outline-none appearance-none';
+  const selectNormal = `${selectBase} border-slate-200 focus:border-nodal-blue focus:ring-2 focus:ring-nodal-blue/10`;
+  const selectError = `${selectBase} border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/10`;
+
   const labelClass = `${type.ui} font-medium text-nodal-graphite mb-1.5 block`;
 
   return (
@@ -112,14 +117,14 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
         <div className="md:sticky md:top-32 md:w-2/5 flex-shrink-0">
           <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nodal-blue mb-6`}>
             <div className="overflow-hidden">
-              <span className="cf-headline block">Get in</span>
+              <span className="cf-headline block">Join the</span>
             </div>
             <div className="overflow-hidden">
-              <span className="cf-headline block">touch</span>
+              <span className="cf-headline block">pilot.</span>
             </div>
           </h1>
           <p className={`cf-subtitle opacity-0 ${type.body} text-nodal-graphite font-light leading-relaxed mb-10`}>
-            Have a question or want to learn more about Nodal? Fill out the form and our team will get back to you.
+            We're working with a small group of therapists, psychologists, and psychiatrists to refine Nodal before broader launch. Pilots are free. We'll set up a 20 minute call to understand how your practice works before you start.
           </p>
 
           <div className="cf-subtitle opacity-0 space-y-6">
@@ -139,9 +144,9 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
               <div className="w-16 h-16 rounded-full bg-nodal-green/10 flex items-center justify-center mx-auto mb-6">
                 <Send className="w-7 h-7 text-nodal-green" />
               </div>
-              <h2 className={`${type.subheading} font-semibold text-nodal-blue mb-3`}>Message sent</h2>
+              <h2 className={`${type.subheading} font-semibold text-nodal-blue mb-3`}>You're in.</h2>
               <p className={`${type.body} text-nodal-graphite font-light`}>
-                Thank you for reaching out. We'll get back to you shortly.
+                Thank you for joining the pilot. We'll follow up within 2 business days.
               </p>
             </div>
           ) : (
@@ -151,7 +156,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
               className="bg-white/70 backdrop-blur-sm border border-slate-100 rounded-2xl p-8 md:p-10 space-y-5"
             >
               {/* Name row */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="firstName" className={labelClass}>
                     First name <span className="text-red-400">*</span>
@@ -168,19 +173,9 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                   {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>}
                 </div>
                 <div>
-                  <label htmlFor="middleName" className={labelClass}>Middle name</label>
-                  <input
-                    id="middleName"
-                    name="middleName"
-                    type="text"
-                    value={form.middleName}
-                    onChange={handleChange}
-                    placeholder="M."
-                    className={inputNormal}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="lastName" className={labelClass}>Last name</label>
+                  <label htmlFor="lastName" className={labelClass}>
+                    Last name <span className="text-red-400">*</span>
+                  </label>
                   <input
                     id="lastName"
                     name="lastName"
@@ -188,80 +183,81 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                     value={form.lastName}
                     onChange={handleChange}
                     placeholder="Doe"
-                    className={inputNormal}
+                    className={errors.lastName ? inputError : inputNormal}
                   />
+                  {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>}
                 </div>
               </div>
 
-              {/* Email & Phone */}
+              {/* Email */}
+              <div>
+                <label htmlFor="email" className={labelClass}>
+                  Email <span className="text-red-400">*</span>
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  value={form.email}
+                  onChange={handleChange}
+                  placeholder="jane@example.com"
+                  className={errors.email ? inputError : inputNormal}
+                />
+                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+              </div>
+
+              {/* Practice type & Role */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="email" className={labelClass}>
-                    Email <span className="text-red-400">*</span>
+                  <label htmlFor="practiceType" className={labelClass}>
+                    Practice type <span className="text-red-400">*</span>
                   </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={form.email}
+                  <select
+                    id="practiceType"
+                    name="practiceType"
+                    value={form.practiceType}
                     onChange={handleChange}
-                    placeholder="jane@example.com"
-                    className={errors.email ? inputError : inputNormal}
-                  />
-                  {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                    className={errors.practiceType ? selectError : selectNormal}
+                  >
+                    <option value="" disabled>Select practice type</option>
+                    <option value="Solo practice">Solo practice</option>
+                    <option value="Group practice">Group practice</option>
+                    <option value="Hospital">Hospital</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {errors.practiceType && <p className="text-red-500 text-xs mt-1">{errors.practiceType}</p>}
                 </div>
                 <div>
-                  <label htmlFor="phone" className={labelClass}>Phone number</label>
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={form.phone}
+                  <label htmlFor="role" className={labelClass}>
+                    Your role <span className="text-red-400">*</span>
+                  </label>
+                  <select
+                    id="role"
+                    name="role"
+                    value={form.role}
                     onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
-                    className={inputNormal}
-                  />
-                </div>
-              </div>
-
-              {/* Company & Role */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="company" className={labelClass}>Company</label>
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    value={form.company}
-                    onChange={handleChange}
-                    placeholder="Acme Health"
-                    className={inputNormal}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="jobRole" className={labelClass}>Job role</label>
-                  <input
-                    id="jobRole"
-                    name="jobRole"
-                    type="text"
-                    value={form.jobRole}
-                    onChange={handleChange}
-                    placeholder="Clinical Director"
-                    className={inputNormal}
-                  />
+                    className={errors.role ? selectError : selectNormal}
+                  >
+                    <option value="" disabled>Select your role</option>
+                    <option value="Therapist">Therapist</option>
+                    <option value="Psychologist">Psychologist</option>
+                    <option value="Psychiatrist">Psychiatrist</option>
+                    <option value="Other">Other</option>
+                  </select>
+                  {errors.role && <p className="text-red-500 text-xs mt-1">{errors.role}</p>}
                 </div>
               </div>
 
               {/* Message */}
               <div>
-                <label htmlFor="message" className={labelClass}>Message</label>
+                <label htmlFor="message" className={labelClass}>Tell us about your practice</label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={5}
+                  rows={4}
                   value={form.message}
                   onChange={handleChange}
-                  placeholder="Tell us how we can help..."
+                  placeholder="How many patients do you see per week? What documentation system do you currently use?"
                   className={`${inputNormal} resize-none`}
                 />
               </div>
@@ -276,7 +272,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                 <button
                   type="submit"
                   disabled={sending}
-                  className="w-full sm:w-auto px-10 py-4 bg-nodal-green text-white rounded-xl font-semibold hover:brightness-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none"
+                  className={`w-full sm:w-auto px-10 py-4 bg-nodal-green text-white ${type.body} rounded-xl font-semibold hover:brightness-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none shadow-md hover:shadow-xl`}
                 >
                   {sending ? (
                     <>
@@ -284,13 +280,24 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                       <Loader2 className="w-4 h-4 animate-spin" />
                     </>
                   ) : (
-                    <>
-                      Send message
-                      <Send className="w-4 h-4" />
-                    </>
+                    'Join the pilot →'
                   )}
                 </button>
               </div>
+
+              {/* Trust line */}
+              <p className="text-xs text-nodal-graphite-soft font-light tracking-wide pt-2">
+                HIPAA aligned
+                <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+                <Link
+                  to="/contact"
+                  className="underline decoration-nodal-graphite-soft/30 underline-offset-2 hover:text-nodal-blue transition-colors"
+                >
+                  BAA available
+                </Link>
+                <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+                We'll follow up within 2 business days.
+              </p>
             </form>
           )}
         </div>

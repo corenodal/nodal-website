@@ -1,4 +1,5 @@
 import { AboutHero } from '../sections/AboutHero';
+import { AboutStory } from '../sections/AboutStory';
 import { TheShift } from '../sections/TheShift';
 import { OurApproach } from '../sections/OurApproach';
 import { OurPerspective } from '../sections/OurPerspective';
@@ -9,11 +10,12 @@ import { Footer } from '../sections/Footer';
 export const About = ({ isLoading }: { isLoading: boolean }) => (
   <>
     <AboutHero isLoading={isLoading} />
+    <AboutStory />
     <TheShift />
     <OurApproach />
     <OurPerspective />
     <WhoWeAre />
     <AboutCTA />
-    <Footer />
+    <Footer dark />
   </>
 );

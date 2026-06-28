@@ -1,31 +1,56 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Mic, FileText, Zap, Layers } from 'lucide-react';
 import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const steps = [
+  {
+    icon: Mic,
+    title: 'Record.',
+    description: 'Start a session recording with one tap. Nodal listens securely in the background, so you stay present with your patient.',
+    iconBg: 'bg-nodal-green/15',
+    iconColor: 'text-nodal-green',
+  },
+  {
+    icon: FileText,
+    title: 'Review.',
+    description: 'Clinical notes are generated in your format, ready to edit in minutes.',
+    iconBg: 'bg-nodal-violet/15',
+    iconColor: 'text-nodal-violet',
+  },
+  {
+    icon: Zap,
+    title: 'Act.',
+    description: 'Action items, patient summaries, and the tasks that come after a session are surfaced automatically.',
+    iconBg: 'bg-nodal-green/15',
+    iconColor: 'text-nodal-green',
+  },
+  {
+    icon: Layers,
+    title: 'Build.',
+    description: 'Every session adds to a patient record that builds across sessions and gets richer over time.',
+    iconBg: 'bg-nodal-violet/15',
+    iconColor: 'text-nodal-violet',
+  },
+];
 
 export const StorySection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.story-intro',
-        { opacity: 0, y: 16 },
-        {
-          opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%' },
-        }
-      );
-      gsap.fromTo(
-        '.story-para',
-        { opacity: 0, y: 24 },
-        {
-          opacity: 1, y: 0, duration: 0.9, stagger: 0.2, ease: 'power3.out',
-          scrollTrigger: { trigger: sectionRef.current, start: 'top 75%' },
-        }
-      );
+      gsap.to('.workflow-heading', {
+        scrollTrigger: { trigger: '.workflow-heading', start: 'top 85%' },
+        y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+      });
+
+      gsap.to('.workflow-step', {
+        scrollTrigger: { trigger: '.workflow-steps', start: 'top 80%' },
+        y: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out',
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -34,42 +59,35 @@ export const StorySection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[75vh] flex items-center bg-nodal-blue relative z-10 overflow-hidden"
+      className="py-20 md:py-28 bg-nodal-blue relative z-10"
     >
-      {/* Decorative background text */}
-      <div
-        aria-hidden
-        className="absolute right-0 top-1/2 -translate-y-1/2 text-white/[0.03] text-[20vw] font-bold leading-none select-none pointer-events-none pr-8"
-      >
-        STORY
-      </div>
+      <div className="max-w-5xl mx-auto px-6 md:px-24">
 
-      <div className="max-w-6xl mx-auto px-6 md:px-24 py-24 md:py-32 w-full">
-        {/* Intro */}
-        <div className="story-intro mb-12 md:mb-14" style={{ opacity: 0 }}>
-          <p className={`${type.ui} font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3`}>
-            Our Story
-          </p>
-          <h2 className={`${type.heading} font-semibold text-white leading-snug`}>
-            How it started.
-          </h2>
+        <h2
+          className="workflow-heading text-3xl md:text-4xl font-semibold text-white mb-14 translate-y-8 opacity-0"
+        >
+          How a session works with Nodal
+        </h2>
+
+        <div className="workflow-steps grid grid-cols-1 md:grid-cols-2 gap-6">
+          {steps.map((step, i) => (
+            <div
+              key={i}
+              className="workflow-step translate-y-6 opacity-0 bg-white/[0.06] border border-white/10 rounded-xl p-7"
+            >
+              <div className={`w-10 h-10 rounded-lg ${step.iconBg} flex items-center justify-center mb-5`}>
+                <step.icon className={`w-5 h-5 ${step.iconColor}`} />
+              </div>
+              <h3 className={`${type.subheading} font-semibold text-white mb-3`}>
+                {step.title}
+              </h3>
+              <p className={`${type.content} text-white/70 font-light leading-relaxed`}>
+                {step.description}
+              </p>
+            </div>
+          ))}
         </div>
 
-        {/* Story paragraphs */}
-        <div className="space-y-6 max-w-3xl">
-          <p className={`story-para ${type.body} text-white/80 font-light leading-relaxed`}>
-            The idea for Nodal began with lived experience. Years on the field meant frequent injuries and regular visits to clinics,each one filled with important advice, recovery instructions, and care plans. But by the time the visit ended, much of it had already begun to fade.
-          </p>
-          <p className={`story-para ${type.body} text-white/80 font-light leading-relaxed`}>
-            Small but critical details were easy to forget,what to avoid, how to recover, even the right questions to ask. It raised a simple question: why should something this important rely on memory alone?
-          </p>
-          <p className={`story-para ${type.body} text-white/80 font-light leading-relaxed`}>
-            That question quickly grew beyond a personal experience. Clinicians are expected to capture, recall, and communicate everything clearly in every session, often across fragmented systems,where important details can slip through.
-          </p>
-          <p className={`story-para ${type.body} text-white font-medium leading-relaxed`}>
-            Nodal was built to bring focus, clarity, and connection back to care,helping clinicians stay present and ensuring nothing important is lost.
-          </p>
-        </div>
       </div>
     </section>
   );

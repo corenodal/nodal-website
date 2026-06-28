@@ -11,7 +11,6 @@ const LiveDashboard = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Animate waveform bars
       barsRef.current.forEach((bar, i) => {
         if (!bar) return;
         gsap.to(bar, {
@@ -24,7 +23,6 @@ const LiveDashboard = () => {
         });
       });
 
-      // Typing effect on note lines
       gsap.fromTo('.note-line', { width: 0 }, {
         width: '100%',
         duration: 1.5,
@@ -34,7 +32,6 @@ const LiveDashboard = () => {
         repeatDelay: 2,
       });
 
-      // Task checkmarks appearing
       gsap.fromTo('.task-check', { scale: 0, opacity: 0 }, {
         scale: 1,
         opacity: 1,
@@ -121,7 +118,7 @@ const LiveDashboard = () => {
                 <span className={`${type.ui} font-semibold text-nodal-blue`}>Follow-up Tasks</span>
               </div>
               <div className="space-y-3">
-                {['Lab order — CBC panel', 'Referral — Cardiology', 'Rx renewal — Metformin'].map((task, i) => (
+                {['Update treatment plan', 'Schedule next session', 'Send homework summary to patient'].map((task, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="task-check w-5 h-5 rounded-md bg-nodal-green flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-white" />
@@ -165,33 +162,33 @@ export const SolutionSection = () => {
   return (
     <section
       id="solution"
-      className="py-10 md:py-14 px-6 md:px-20 bg-transparent relative z-10"
+      className="py-20 md:py-28 px-6 md:px-20 bg-nodal-white relative z-10"
       ref={sectionRef}
     >
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
-        <div className="solution-text translate-y-8 opacity-0 mb-8">
-          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-3`}>
+        <div className="solution-text translate-y-8 opacity-0 mb-4">
+          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-4`}>
             One system. One workflow.
           </h2>
+          <p className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-3xl mb-8`}>
+            From the moment you start recording to the moment you send notes afterward, Nodal handles the documentation layer so you stay present with your patient.
+          </p>
         </div>
 
         {/* Animated Dashboard Card */}
         <div className="solution-card translate-y-8 opacity-0 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden relative">
-          {/* Subtle background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-nodal-green/5 via-transparent to-nodal-violet/5 pointer-events-none" />
-
           <LiveDashboard />
-
         </div>
 
         {/* CTA Link */}
-        <div className="solution-cta translate-y-8 opacity-0 mt-6">
+        <div className="solution-cta translate-y-8 opacity-0 mt-8">
           <Link
             to="/product"
-            className={`inline-flex items-center gap-2 text-nodal-green font-semibold ${type.ui} hover:gap-3 transition-all`}
+            className={`inline-flex items-center gap-2 text-nodal-green font-semibold ${type.body} hover:gap-3 transition-all`}
           >
-            Explore the Product
+            Explore the full product
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
