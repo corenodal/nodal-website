@@ -69,7 +69,7 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
         </div>
 
         <div className={`pt-8 border-t flex flex-col md:flex-row justify-between items-center ${type.ui} font-light ${dark ? 'border-slate-700/50 text-slate-500' : 'border-slate-100 text-nodal-graphite-soft'}`}>
-          <p>© 2026 Nodal Intelligence. All rights reserved. Clinical data processed securely.</p>
+          <p>© 2026 Nodal. All rights reserved. Clinical data processed securely.</p>
         </div>
       </div>
     </footer>

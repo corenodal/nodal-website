@@ -35,7 +35,7 @@ export const CTASection = () => {
             We are onboarding our first pilot partners now.
           </h3>
           <p className={`${type.body} text-nodal-graphite font-light leading-relaxed mb-10 max-w-2xl mx-auto`}>
-            We work closely with each practice to configure Nodal around how you document. Pilots are free, and your feedback shapes what we build next.
+            We work closely with each practice to configure Nodal around how you document. Your feedback shapes what we build next.
           </p>
           <Link
             to="/contact"

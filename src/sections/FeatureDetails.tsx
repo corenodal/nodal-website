@@ -61,9 +61,9 @@ const features = [
     imageFit: 'cover' as const,
   },
   {
-    title: 'Nothing important gets lost.',
+    title: 'Capture what matters from every session.',
     description:
-      'Nodal extracts key themes, flags clinically relevant signals, and generates next steps, so a 20 minute debrief after a session becomes a 2 minute review.',
+      'Nodal extracts key themes and generates next steps.',
     bullets: [
       {
         icon: Brain,
@@ -87,9 +87,9 @@ const features = [
     imageAnchor: 'top-left' as const,
   },
   {
-    title: 'A clinical thinking partner, not a chatbot.',
+    title: 'Built around how you work.',
     description:
-      'Ask Node anything about a patient, a treatment approach, or a clinical question. Node knows your documentation style, your patient history, and how you work.',
+      'Ask Node about a patient\'s history, past sessions, or your documentation. Node knows your documentation style, your patient history, and how you work.',
     bullets: [
       {
         icon: Wrench,
@@ -98,7 +98,7 @@ const features = [
       },
       {
         icon: MessageCircle,
-        label: 'Patient insights, treatment questions, clinical reference',
+        label: 'Session history, patient context, documentation lookup',
         detail: '',
       },
       {
@@ -115,7 +115,7 @@ const features = [
   {
     title: 'Outputs your patients can use, without the extra hour.',
     description:
-      'Generate session summaries, homework, and letters your patients can actually understand, reviewed and sent in minutes.',
+      'Compile session summaries, homework, and letters your patients can actually understand, reviewed and sent in minutes.',
     bullets: [
       {
         icon: FileText,

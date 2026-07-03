@@ -38,7 +38,7 @@ const practices = [
     iconBg: 'bg-nodal-violet/10',
     iconColor: 'text-nodal-violet',
     points: [
-      'Medication context alongside session notes',
+      'Track progress across complex, long-term cases',
       'Structured templates for psychiatric assessment',
       'Full patient history across sessions, in one view',
     ],
