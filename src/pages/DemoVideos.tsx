@@ -201,7 +201,7 @@ const features: Feature[] = [
   {
     id: 'clinical-insights',
     number: '06',
-    title: 'Clinical insights',
+    title: 'Session insights',
     description: 'After each session, Nodal generates a summary, action items, a full template note, and a transcript, all reviewable, editable, and downloadable.',
     loomEmbedId: '7c6f877f2a8546669f5701958b588372',
     bullets: [
@@ -212,7 +212,7 @@ const features: Feature[] = [
     ],
     sections: [
       {
-        title: 'View clinical insights generated after a session',
+        title: 'View insights generated after a session',
         steps: [
           'Go to Patients on the left pane and select a patient.',
           'Select a session of your choice.',

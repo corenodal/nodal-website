@@ -10,7 +10,7 @@ const features = [
   'Customize your AI assistant',
   'Draft and manage patient communication',
   'Edit AI-generated notes',
-  'Get clear, context-based insights',
+  'Get clear, organized session information',
   'Record and transcribe patient sessions',
   'Refine templates and documents with AI',
   'Set reminders and prepare for sessions',
