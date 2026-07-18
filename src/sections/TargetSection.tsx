@@ -7,29 +7,29 @@ gsap.registerPlugin(ScrollTrigger);
 
 /* ── Color maps for Tailwind purge ── */
 const headColors: Record<string, string> = {
-  'nodal-green': 'bg-nodal-green/70',
-  'nodal-violet': 'bg-nodal-violet/70',
-  'nodal-blue': 'bg-nodal-blue/70',
+  'nousna-green': 'bg-nousna-green/70',
+  'nousna-violet': 'bg-nousna-violet/70',
+  'nousna-blue': 'bg-nousna-blue/70',
 };
 const bodyColors: Record<string, string> = {
-  'nodal-green': 'bg-nodal-green/40',
-  'nodal-violet': 'bg-nodal-violet/40',
-  'nodal-blue': 'bg-nodal-blue/40',
+  'nousna-green': 'bg-nousna-green/40',
+  'nousna-violet': 'bg-nousna-violet/40',
+  'nousna-blue': 'bg-nousna-blue/40',
 };
 const accentBar: Record<string, string> = {
-  'nodal-green': 'bg-nodal-green',
-  'nodal-violet': 'bg-nodal-violet',
-  'nodal-blue': 'bg-nodal-blue',
+  'nousna-green': 'bg-nousna-green',
+  'nousna-violet': 'bg-nousna-violet',
+  'nousna-blue': 'bg-nousna-blue',
 };
 
 /* ── Animated Person ── */
-const Person = ({ size = 'md', delay = 0, color = 'nodal-green' }: { size?: 'sm' | 'md' | 'lg'; delay?: number; color?: string }) => {
+const Person = ({ size = 'md', delay = 0, color = 'nousna-green' }: { size?: 'sm' | 'md' | 'lg'; delay?: number; color?: string }) => {
   const dims = { sm: { head: 'w-4 h-4', body: 'w-6 h-8' }, md: { head: 'w-5 h-5', body: 'w-8 h-10' }, lg: { head: 'w-6 h-6', body: 'w-9 h-12' } };
   const d = dims[size];
   return (
     <div className="flex flex-col items-center animate-bounce" style={{ animationDelay: `${delay}s`, animationDuration: '2.5s' }}>
-      <div className={`${d.head} rounded-full ${headColors[color] || headColors['nodal-green']}`} />
-      <div className={`${d.body} rounded-t-lg rounded-b-xl ${bodyColors[color] || bodyColors['nodal-green']} mt-1`} />
+      <div className={`${d.head} rounded-full ${headColors[color] || headColors['nousna-green']}`} />
+      <div className={`${d.body} rounded-t-lg rounded-b-xl ${bodyColors[color] || bodyColors['nousna-green']} mt-1`} />
     </div>
   );
 };
@@ -37,16 +37,16 @@ const Person = ({ size = 'md', delay = 0, color = 'nodal-green' }: { size?: 'sm'
 /* ── People Illustrations ── */
 const SoloPerson = () => (
   <div className="flex items-end justify-center h-32 md:h-40">
-    <Person size="lg" color="nodal-green" />
+    <Person size="lg" color="nousna-green" />
   </div>
 );
 
 const GroupPeople = () => (
   <div className="flex items-end justify-center gap-3 md:gap-5 h-32 md:h-40">
-    <Person size="md" delay={0.2} color="nodal-violet" />
-    <Person size="lg" delay={0} color="nodal-green" />
-    <Person size="md" delay={0.4} color="nodal-violet" />
-    <Person size="sm" delay={0.6} color="nodal-green" />
+    <Person size="md" delay={0.2} color="nousna-violet" />
+    <Person size="lg" delay={0} color="nousna-green" />
+    <Person size="md" delay={0.4} color="nousna-violet" />
+    <Person size="sm" delay={0.6} color="nousna-green" />
   </div>
 );
 
@@ -56,13 +56,13 @@ const cards = [
     title: 'Solo Practitioners',
     desc: 'Simple workflows that help you manage patients, notes, and follow-ups in one place.',
     visual: <SoloPerson />,
-    accent: 'nodal-green',
+    accent: 'nousna-green',
   },
   {
     title: 'Group Practices',
     desc: 'Keep teams aligned with shared insights and coordinated tasks across providers.',
     visual: <GroupPeople />,
-    accent: 'nodal-violet',
+    accent: 'nousna-violet',
   },
 ];
 
@@ -116,7 +116,7 @@ export const TargetSection = () => {
     >
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
-        <h2 className={`target-heading translate-y-8 opacity-0 ${type.heading} font-semibold text-nodal-blue mb-10`}>
+        <h2 className={`target-heading translate-y-8 opacity-0 ${type.heading} font-semibold text-nousna-blue mb-10`}>
           Healthcare Is Complex. Your Workflow Should Not Be.
         </h2>
 
@@ -136,11 +136,11 @@ export const TargetSection = () => {
 
                 {/* Text */}
                 <div>
-                  <div className={`w-10 h-1 rounded-full ${accentBar[card.accent] || accentBar['nodal-green']} mb-3 mx-auto`} />
-                  <h3 className={`${type.subheading} font-bold text-nodal-blue mb-2`}>
+                  <div className={`w-10 h-1 rounded-full ${accentBar[card.accent] || accentBar['nousna-green']} mb-3 mx-auto`} />
+                  <h3 className={`${type.subheading} font-bold text-nousna-blue mb-2`}>
                     {card.title}
                   </h3>
-                  <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
+                  <p className={`${type.body} text-nousna-graphite font-light leading-relaxed`}>
                     {card.desc}
                   </p>
                 </div>

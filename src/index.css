@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&display=swap');
 
 @theme {
-  --color-nodal-blue: #1E3F57;
-  --color-nodal-green: #4EBFA6;
-  --color-nodal-violet: #7B6EF6;
-  --color-nodal-graphite: #4A4F55;
-  --color-nodal-graphite-soft: #8C9298;
-  --color-nodal-grey: #E6E8EB;
-  --color-nodal-white: #F9FAFB;
+  --color-nousna-blue: #1E3F57;
+  --color-nousna-green: #4EBFA6;
+  --color-nousna-violet: #7B6EF6;
+  --color-nousna-graphite: #4A4F55;
+  --color-nousna-graphite-soft: #8C9298;
+  --color-nousna-grey: #E6E8EB;
+  --color-nousna-white: #F9FAFB;
 
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui;
 
@@ -25,16 +25,16 @@ html {
 }
 
 :root {
-  --nodal-blue: #1E3F57;
-  --nodal-green: #4EBFA6;
-  --nodal-white: #F9FAFB;
-  --nodal-graphite: #4A4F55;
+  --nousna-blue: #1E3F57;
+  --nousna-green: #4EBFA6;
+  --nousna-white: #F9FAFB;
+  --nousna-graphite: #4A4F55;
 }
 
 body {
   margin: 0;
-  background-color: var(--nodal-white);
-  color: var(--nodal-graphite);
+  background-color: var(--nousna-white);
+  color: var(--nousna-graphite);
   font-family: 'IBM Plex Sans', sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -46,7 +46,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--nodal-white);
+  background: var(--nousna-white);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -55,7 +55,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--nodal-blue);
+  background: var(--nousna-blue);
 }
 
 .clinical-card {

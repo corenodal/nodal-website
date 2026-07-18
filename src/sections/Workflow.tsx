@@ -9,26 +9,26 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     title: "Record.",
-    desc: "Start a session recording with one tap. Nodal listens securely in the background, so you stay present with your patient.",
-    color: "nodal-violet",
+    desc: "Start a session recording with one tap. Nousna listens securely in the background, so you stay present with your patient.",
+    color: "nousna-violet",
     icon: Activity
   },
   {
     title: "Review.",
     desc: "Clinical notes are generated in your format, ready to edit in minutes.",
-    color: "nodal-green",
+    color: "nousna-green",
     icon: FileText
   },
   {
     title: "Act.",
     desc: "Action items, patient summaries, and the tasks that come after a session are surfaced automatically.",
-    color: "nodal-green",
+    color: "nousna-green",
     icon: Check
   },
   {
     title: "Build.",
     desc: "Every session adds to a patient record that builds across sessions and gets richer over time.",
-    color: "nodal-violet",
+    color: "nousna-violet",
     icon: Network
   }
 ];
@@ -57,7 +57,7 @@ const AudioWaveform = () => {
         <div
           key={i}
           ref={el => { barsRef.current[i] = el; }}
-          className="w-3 md:w-4 rounded-full bg-nodal-violet/80 shadow-[0_0_20px_rgba(123,110,246,0.8)]"
+          className="w-3 md:w-4 rounded-full bg-nousna-violet/80 shadow-[0_0_20px_rgba(123,110,246,0.8)]"
           style={{ height: "20%" }}
         />
       ))}
@@ -69,34 +69,34 @@ const NeuralNodes = () => {
   return (
     <div className="relative w-full h-full flex items-center justify-center scale-100 md:scale-110 origin-center">
       {/* Outer rotating ring */}
-      <div className="absolute w-64 h-64 md:w-80 md:h-80 border border-dashed border-nodal-violet/40 rounded-full animate-[spin_20s_linear_infinite]" />
+      <div className="absolute w-64 h-64 md:w-80 md:h-80 border border-dashed border-nousna-violet/40 rounded-full animate-[spin_20s_linear_infinite]" />
 
       {/* Middle rotating ring */}
-      <div className="absolute w-48 h-48 md:w-60 md:h-60 border border-nodal-violet/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+      <div className="absolute w-48 h-48 md:w-60 md:h-60 border border-nousna-violet/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
 
       {/* Inner rotating dotted ring */}
-      <div className="absolute w-32 h-32 md:w-40 md:h-40 border-2 border-dotted border-nodal-violet/50 rounded-full animate-[spin_10s_linear_infinite]" />
+      <div className="absolute w-32 h-32 md:w-40 md:h-40 border-2 border-dotted border-nousna-violet/50 rounded-full animate-[spin_10s_linear_infinite]" />
 
       {/* Pulsing Core */}
-      <div className="absolute w-14 h-14 md:w-20 md:h-20 bg-nodal-violet rounded-full shadow-[0_0_50px_rgba(123,110,246,0.8)] animate-pulse flex items-center justify-center">
+      <div className="absolute w-14 h-14 md:w-20 md:h-20 bg-nousna-violet rounded-full shadow-[0_0_50px_rgba(123,110,246,0.8)] animate-pulse flex items-center justify-center">
         <div className="w-5 h-5 md:w-8 md:h-8 bg-white rounded-full opacity-90 shadow-inner" />
       </div>
 
       {/* Orbiting data points */}
       <div className="absolute w-64 h-64 md:w-80 md:h-80 animate-[spin_20s_linear_infinite]">
         <div className="absolute -top-2 left-1/2 w-5 h-5 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,1)]" />
-        <div className="absolute top-1/2 -right-2 w-4 h-4 bg-nodal-violet rounded-full shadow-[0_0_20px_rgba(123,110,246,1)]" />
+        <div className="absolute top-1/2 -right-2 w-4 h-4 bg-nousna-violet rounded-full shadow-[0_0_20px_rgba(123,110,246,1)]" />
       </div>
 
       <div className="absolute w-48 h-48 md:w-60 md:h-60 animate-[spin_15s_linear_infinite_reverse]">
         <div className="absolute bottom-0 left-1/4 w-4 h-4 md:w-5 md:h-5 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]" />
-        <div className="absolute top-1/4 -left-1 w-3 h-3 md:w-4 md:h-4 bg-nodal-violet rounded-full shadow-[0_0_15px_rgba(123,110,246,0.8)]" />
+        <div className="absolute top-1/4 -left-1 w-3 h-3 md:w-4 md:h-4 bg-nousna-violet rounded-full shadow-[0_0_15px_rgba(123,110,246,0.8)]" />
       </div>
 
       {/* Abstract clinical tags streaming in */}
-      <div className={`absolute top-8 left-0 md:left-4 bg-white text-nodal-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.2s' }}>Symptoms</div>
-      <div className={`absolute bottom-10 right-0 md:right-4 bg-white text-nodal-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.7s' }}>History</div>
-      <div className={`absolute top-1/4 -right-4 md:right-0 bg-nodal-violet text-white ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.5s' }}>Vitals</div>
+      <div className={`absolute top-8 left-0 md:left-4 bg-white text-nousna-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.2s' }}>Symptoms</div>
+      <div className={`absolute bottom-10 right-0 md:right-4 bg-white text-nousna-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.7s' }}>History</div>
+      <div className={`absolute top-1/4 -right-4 md:right-0 bg-nousna-violet text-white ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.5s' }}>Vitals</div>
     </div>
   );
 };
@@ -105,14 +105,14 @@ const UICard = () => (
   <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 shadow-2xl max-w-sm w-full border border-slate-100 flex flex-col scale-100 md:scale-110 origin-center">
     <div className="h-4 w-1/3 bg-slate-200 rounded mb-6" />
     <div className="space-y-3">
-      <div className="h-2.5 w-full bg-nodal-green/30 rounded" />
-      <div className="h-2.5 w-5/6 bg-nodal-green/30 rounded" />
-      <div className="h-2.5 w-full bg-nodal-green/30 rounded" />
-      <div className="h-2.5 w-4/6 bg-nodal-green/30 rounded" />
+      <div className="h-2.5 w-full bg-nousna-green/30 rounded" />
+      <div className="h-2.5 w-5/6 bg-nousna-green/30 rounded" />
+      <div className="h-2.5 w-full bg-nousna-green/30 rounded" />
+      <div className="h-2.5 w-4/6 bg-nousna-green/30 rounded" />
     </div>
     <div className="mt-6 pt-5 border-t border-slate-100 flex justify-between">
-      <div className="h-8 w-24 bg-nodal-green/10 rounded-lg border border-nodal-green/20" />
-      <div className={`h-8 w-24 bg-nodal-green text-white rounded-lg flex items-center justify-center ${type.ui} font-semibold shadow-sm`}>Review</div>
+      <div className="h-8 w-24 bg-nousna-green/10 rounded-lg border border-nousna-green/20" />
+      <div className={`h-8 w-24 bg-nousna-green text-white rounded-lg flex items-center justify-center ${type.ui} font-semibold shadow-sm`}>Review</div>
     </div>
   </div>
 );
@@ -120,22 +120,22 @@ const UICard = () => (
 const FollowUpCard = () => (
   <div className="w-full max-w-sm space-y-4 scale-100 md:scale-110 origin-center">
     <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105">
-      <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
+      <div className="w-8 h-8 rounded-full bg-nousna-green/10 flex items-center justify-center text-nousna-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className={`${type.ui} font-semibold text-nodal-blue`}>Treatment plan updated</div>
+      <div className={`${type.ui} font-semibold text-nousna-blue`}>Treatment plan updated</div>
     </div>
     <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.1s' }}>
-      <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
+      <div className="w-8 h-8 rounded-full bg-nousna-green/10 flex items-center justify-center text-nousna-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className={`${type.ui} font-semibold text-nodal-blue`}>Session homework sent to patient</div>
+      <div className={`${type.ui} font-semibold text-nousna-blue`}>Session homework sent to patient</div>
     </div>
     <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.2s' }}>
-      <div className="w-8 h-8 rounded-full bg-nodal-green/10 flex items-center justify-center text-nodal-green shrink-0">
+      <div className="w-8 h-8 rounded-full bg-nousna-green/10 flex items-center justify-center text-nousna-green shrink-0">
         <Check className="w-4 h-4" />
       </div>
-      <div className={`${type.ui} font-semibold text-nodal-blue`}>Next session scheduled</div>
+      <div className={`${type.ui} font-semibold text-nousna-blue`}>Next session scheduled</div>
     </div>
   </div>
 );
@@ -229,7 +229,7 @@ export const Workflow = () => {
 
         {/* Left Side: Sticky Text Narrative */}
         <div className="w-full md:w-1/2 flex flex-col justify-center h-[40%] md:h-full pt-16 md:pt-0 z-20">
-          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-8 md:mb-12`}>
+          <h2 className={`${type.heading} font-semibold text-nousna-blue mb-8 md:mb-12`}>
             How a session works
           </h2>
 
@@ -241,15 +241,15 @@ export const Workflow = () => {
                 className="flex items-start"
               >
                 <div className="flex flex-col items-center mr-6 mt-1">
-                  <div className={`w-3 h-3 shrink-0 rounded-full ${step.color === 'nodal-violet' ? 'bg-nodal-violet shadow-[0_0_10px_rgba(123,110,246,0.6)]' : 'bg-nodal-green shadow-[0_0_10px_rgba(78,191,166,0.6)]'}`} />
+                  <div className={`w-3 h-3 shrink-0 rounded-full ${step.color === 'nousna-violet' ? 'bg-nousna-violet shadow-[0_0_10px_rgba(123,110,246,0.6)]' : 'bg-nousna-green shadow-[0_0_10px_rgba(78,191,166,0.6)]'}`} />
                   {index !== steps.length - 1 && (
                     <div className="w-0.5 h-12 md:h-20 bg-slate-200 my-2 rounded-full" />
                   )}
                 </div>
 
                 <div className="pb-3 md:pb-6">
-                  <h3 className={`${type.subheading} font-bold text-nodal-blue mb-1.5`}>{step.title}</h3>
-                  <p className={`${type.body} text-nodal-graphite font-light max-w-sm`}>{step.desc}</p>
+                  <h3 className={`${type.subheading} font-bold text-nousna-blue mb-1.5`}>{step.title}</h3>
+                  <p className={`${type.body} text-nousna-graphite font-light max-w-sm`}>{step.desc}</p>
                 </div>
               </div>
             ))}
@@ -266,7 +266,7 @@ export const Workflow = () => {
             >
               <div className="w-full max-w-[320px] md:max-w-[400px] aspect-square flex items-center justify-center relative">
                 {/* Massive soft ambient glow replacing the hard glass box - blur with translate-z-0 to fix Safari clip bug */}
-                <div className={`absolute inset-0 opacity-20 blur-[50px] rounded-full scale-[1] md:scale-[1.15] transition-colors duration-1000 transform-gpu translate-z-0 ${step.color === 'nodal-violet' ? 'bg-nodal-violet' : 'bg-nodal-green'}`} />
+                <div className={`absolute inset-0 opacity-20 blur-[50px] rounded-full scale-[1] md:scale-[1.15] transition-colors duration-1000 transform-gpu translate-z-0 ${step.color === 'nousna-violet' ? 'bg-nousna-violet' : 'bg-nousna-green'}`} />
 
                 <div className="relative z-10 w-full h-full flex items-center justify-center">
                   {visuals[index]}

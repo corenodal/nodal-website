@@ -10,7 +10,7 @@ const features = [
   {
     title: 'Know exactly where you left off.',
     description:
-      'Before each session, Nodal surfaces what mattered last time: key themes, open action items, and patient history, so you walk in ready.',
+      'Before each session, Nousna surfaces what mattered last time: key themes, open action items, and patient history, so you walk in ready.',
     bullets: [
       {
         icon: BookOpen,
@@ -29,14 +29,14 @@ const features = [
       },
     ],
     image: '/session_prep.png',
-    accent: 'nodal-violet' as const,
+    accent: 'nousna-violet' as const,
     imageFirst: false,
     imageAnchor: 'top-left' as const,
   },
   {
     title: 'Notes in the format you already use.',
     description:
-      'Whether you use SOAP, DAP, or your own structure, Nodal generates notes in the format you work in. Bring your existing templates or build new ones.',
+      'Whether you use SOAP, DAP, or your own structure, Nousna generates notes in the format you work in. Bring your existing templates or build new ones.',
     bullets: [
       {
         icon: Sparkles,
@@ -55,7 +55,7 @@ const features = [
       },
     ],
     image: '/note_customization.png',
-    accent: 'nodal-green' as const,
+    accent: 'nousna-green' as const,
     imageFirst: true,
     imageAnchor: 'top-full' as any,
     imageFit: 'cover' as const,
@@ -63,7 +63,7 @@ const features = [
   {
     title: 'Capture what matters from every session.',
     description:
-      'Nodal extracts key themes and generates next steps.',
+      'Nousna extracts key themes and generates next steps.',
     bullets: [
       {
         icon: Brain,
@@ -82,7 +82,7 @@ const features = [
       },
     ],
     image: '/clinical_insights.png',
-    accent: 'nodal-violet' as const,
+    accent: 'nousna-violet' as const,
     imageFirst: false,
     imageAnchor: 'top-left' as const,
   },
@@ -108,7 +108,7 @@ const features = [
       },
     ],
     image: '/clinical_assistant.png',
-    accent: 'nodal-green' as const,
+    accent: 'nousna-green' as const,
     imageFirst: true,
     imageAnchor: 'top-right' as const,
   },
@@ -134,7 +134,7 @@ const features = [
       },
     ],
     image: '/patient_communication.png',
-    accent: 'nodal-violet' as const,
+    accent: 'nousna-violet' as const,
     imageFirst: false,
     imageAnchor: 'top-left' as const,
   },
@@ -160,7 +160,7 @@ const features = [
       },
     ],
     image: '/collate.png',
-    accent: 'nodal-green' as const,
+    accent: 'nousna-green' as const,
     imageFirst: true,
     imageAnchor: 'top-right-left' as any,
   },
@@ -193,8 +193,8 @@ export const FeatureDetails = () => {
     return () => ctx.revert();
   }, []);
 
-  const accentColor = (accent: 'nodal-violet' | 'nodal-green') =>
-    accent === 'nodal-violet' ? 'bg-nodal-violet/10 text-nodal-violet' : 'bg-nodal-green/10 text-nodal-green';
+  const accentColor = (accent: 'nousna-violet' | 'nousna-green') =>
+    accent === 'nousna-violet' ? 'bg-nousna-violet/10 text-nousna-violet' : 'bg-nousna-green/10 text-nousna-green';
 
   // anchor = the corner where padding is applied (2 sides), image overflows the other 2
   const anchorStyles = (anchor: 'top-left' | 'top-right' | 'top-right-left' | 'bottom-left' | 'bottom-right' | 'top-full') => {
@@ -252,7 +252,7 @@ export const FeatureDetails = () => {
       <div className="max-w-6xl mx-auto w-full flex flex-col gap-40">
         {features.map((feature, i) => {
           const numberAlignClass = feature.imageFirst ? 'right-0 md:-right-10' : 'left-0 md:-left-10';
-          const numberColorClass = feature.accent === 'nodal-violet' ? 'text-nodal-violet/[0.04]' : 'text-nodal-green/[0.05]';
+          const numberColorClass = feature.accent === 'nousna-violet' ? 'text-nousna-violet/[0.04]' : 'text-nousna-green/[0.05]';
 
           const textBlock = (
             <div key={`text-${i}`} className="flex-1 flex flex-col justify-start relative z-0">
@@ -263,10 +263,10 @@ export const FeatureDetails = () => {
                 {String(i + 1).padStart(2, '0')}
               </div>
               
-              <h2 className={`${type.heading} font-semibold text-nodal-blue mb-6`}>
+              <h2 className={`${type.heading} font-semibold text-nousna-blue mb-6`}>
                 {feature.title}
               </h2>
-              <p className={`${type.body} text-nodal-graphite font-light leading-relaxed mb-10`}>
+              <p className={`${type.body} text-nousna-graphite font-light leading-relaxed mb-10`}>
                 {feature.description}
               </p>
 
@@ -277,11 +277,11 @@ export const FeatureDetails = () => {
                       <bullet.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className={`${type.body} font-semibold text-nodal-blue`}>
+                      <p className={`${type.body} font-semibold text-nousna-blue`}>
                         {bullet.label}
                       </p>
                       {bullet.detail && (
-                        <p className={`${type.ui} text-nodal-graphite-soft font-light leading-relaxed`}>
+                        <p className={`${type.ui} text-nousna-graphite-soft font-light leading-relaxed`}>
                           {bullet.detail}
                         </p>
                       )}
@@ -293,9 +293,9 @@ export const FeatureDetails = () => {
           );
 
           const anchor = anchorStyles(feature.imageAnchor);
-          const bgClassName = feature.accent === 'nodal-violet'
-            ? 'bg-gradient-to-br from-nodal-violet/20 via-nodal-violet/5 to-transparent'
-            : 'bg-gradient-to-br from-nodal-green/20 via-nodal-green/5 to-transparent';
+          const bgClassName = feature.accent === 'nousna-violet'
+            ? 'bg-gradient-to-br from-nousna-violet/20 via-nousna-violet/5 to-transparent'
+            : 'bg-gradient-to-br from-nousna-green/20 via-nousna-green/5 to-transparent';
 
           const imageBlock = (
             <div key={`img-${i}`} className="flex-1 flex items-end justify-center mt-8 md:mt-16 group">

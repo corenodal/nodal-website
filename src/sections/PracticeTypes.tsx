@@ -10,9 +10,9 @@ const practices = [
   {
     icon: User,
     title: 'Solo practice',
-    accent: 'nodal-violet',
-    iconBg: 'bg-nodal-violet/10',
-    iconColor: 'text-nodal-violet',
+    accent: 'nousna-violet',
+    iconBg: 'bg-nousna-violet/10',
+    iconColor: 'text-nousna-violet',
     points: [
       'Stop spending evenings on notes',
       'Complete records with less cognitive overhead',
@@ -22,9 +22,9 @@ const practices = [
   {
     icon: Users,
     title: 'Group practice',
-    accent: 'nodal-green',
-    iconBg: 'bg-nodal-green/10',
-    iconColor: 'text-nodal-green',
+    accent: 'nousna-green',
+    iconBg: 'bg-nousna-green/10',
+    iconColor: 'text-nousna-green',
     points: [
       'Consistent documentation across your team',
       'Reduce duplicate work and coordination overhead',
@@ -34,9 +34,9 @@ const practices = [
   {
     icon: Brain,
     title: 'Psychiatry',
-    accent: 'nodal-violet',
-    iconBg: 'bg-nodal-violet/10',
-    iconColor: 'text-nodal-violet',
+    accent: 'nousna-violet',
+    iconBg: 'bg-nousna-violet/10',
+    iconColor: 'text-nousna-violet',
     points: [
       'Track progress across complex, long-term cases',
       'Structured templates for psychiatric assessment',
@@ -67,14 +67,14 @@ export const PracticeTypes = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 md:py-28 bg-nodal-blue relative z-10"
+      className="py-20 md:py-28 bg-nousna-blue relative z-10"
     >
       <div className="max-w-5xl mx-auto px-6 md:px-24">
         <h2 className="pt-heading opacity-0 text-3xl md:text-4xl font-semibold text-white mb-4">
           Built for independent and small group practices.
         </h2>
         <p className="pt-heading opacity-0 text-white/70 font-light leading-relaxed max-w-2xl mb-14">
-          Whether you see patients solo or as part of a team, Nodal adapts to your practice.
+          Whether you see patients solo or as part of a team, Nousna adapts to your practice.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -34,7 +34,7 @@ export const AboutStory = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[75vh] flex items-center bg-nodal-blue relative z-10 overflow-hidden"
+      className="min-h-[75vh] flex items-center bg-nousna-blue relative z-10 overflow-hidden"
     >
       <div
         aria-hidden
@@ -45,7 +45,7 @@ export const AboutStory = () => {
 
       <div className="max-w-6xl mx-auto px-6 md:px-24 py-24 md:py-32 w-full">
         <div className="story-intro mb-12 md:mb-14" style={{ opacity: 0 }}>
-          <p className={`${type.ui} font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3`}>
+          <p className={`${type.ui} font-semibold text-nousna-green uppercase tracking-[0.25em] mb-3`}>
             Our Story
           </p>
           <h2 className={`${type.heading} font-semibold text-white leading-snug`}>
@@ -64,10 +64,10 @@ export const AboutStory = () => {
             We watched practitioners stay late, work weekends, and carry the cognitive weight of notes that never felt like they captured what actually happened in the room.
           </p>
           <p className={`story-para ${type.body} text-white/80 font-light leading-relaxed`}>
-            That gap, between what clinicians experience in session and what the system demands afterward, is where Nodal begins.
+            That gap, between what clinicians experience in session and what the system demands afterward, is where Nousna begins.
           </p>
           <p className={`story-para ${type.body} text-white font-medium leading-relaxed`}>
-            Nodal was built to close that gap. It removes the overhead. The clinical judgment stays with you, so you can be fully present in the session and leave when it is over.
+            Nousna was built to close that gap. It removes the overhead. The clinical judgment stays with you, so you can be fully present in the session and leave when it is over.
           </p>
         </div>
       </div>

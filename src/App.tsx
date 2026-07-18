@@ -16,7 +16,7 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <main className="relative min-h-screen bg-nodal-white text-nodal-graphite overflow-x-hidden font-sans">
+      <main className="relative min-h-screen bg-nousna-white text-nousna-graphite overflow-x-hidden font-sans">
         {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
         <Navbar />

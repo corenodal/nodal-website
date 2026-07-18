@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { type } from '../styles/typography';
-import NodalLogo from '../assets/nodal-logo.svg';
+import NousnaLogo from '../assets/nousna-logo.svg';
 
 export const Footer = ({ dark = false }: { dark?: boolean }) => {
   const location = useLocation();
@@ -11,13 +11,13 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
-  const linkClass = `transition-colors ${dark ? 'hover:text-nodal-green' : 'hover:text-nodal-blue'}`;
+  const linkClass = `transition-colors ${dark ? 'hover:text-nousna-green' : 'hover:text-nousna-blue'}`;
 
   return (
     <footer
       className={`pt-24 pb-12 px-6 md:px-24 border-t relative z-10 ${
         dark
-          ? 'bg-nodal-blue border-white/10'
+          ? 'bg-nousna-blue border-white/10'
           : 'bg-transparent border-slate-100/50'
       }`}
     >
@@ -25,17 +25,17 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
           <div className="col-span-1 md:col-span-1">
             <div className="mb-6">
-              <img src={NodalLogo} alt="Nodal" className={`h-16 ${dark ? 'brightness-0 invert' : ''}`} />
+              <img src={NousnaLogo} alt="Nousna" className={`h-16 ${dark ? 'brightness-0 invert' : ''}`} />
             </div>
-            <p className={`${type.ui} font-light leading-relaxed mb-8 ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
+            <p className={`${type.ui} font-light leading-relaxed mb-8 ${dark ? 'text-slate-400' : 'text-nousna-graphite'}`}>
               Built for the clinicians who carry the most.
             </p>
           </div>
 
           <div className="grid grid-cols-2 col-span-1 md:col-span-2 gap-4 md:gap-6">
             <div>
-              <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nodal-blue'}`}>Product</h4>
-              <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
+              <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nousna-blue'}`}>Product</h4>
+              <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nousna-graphite'}`}>
                 <li>
                   <Link to="/product" onClick={handleNavClick('/product')} className={linkClass}>Overview</Link>
                 </li>
@@ -51,8 +51,8 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
               </ul>
             </div>
             <div>
-              <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nodal-blue'}`}>Company</h4>
-              <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nodal-graphite'}`}>
+              <h4 className={`font-semibold mb-6 ${dark ? 'text-white' : 'text-nousna-blue'}`}>Company</h4>
+              <ul className={`space-y-4 ${type.ui} font-light ${dark ? 'text-slate-400' : 'text-nousna-graphite'}`}>
                 <li>
                   <Link to="/about" onClick={handleNavClick('/about')} className={linkClass}>About Us</Link>
                 </li>
@@ -68,8 +68,8 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
           </div>
         </div>
 
-        <div className={`pt-8 border-t flex flex-col md:flex-row justify-between items-center ${type.ui} font-light ${dark ? 'border-slate-700/50 text-slate-500' : 'border-slate-100 text-nodal-graphite-soft'}`}>
-          <p>© 2026 Nodal. All rights reserved. Clinical data processed securely.</p>
+        <div className={`pt-8 border-t flex flex-col md:flex-row justify-between items-center ${type.ui} font-light ${dark ? 'border-slate-700/50 text-slate-500' : 'border-slate-100 text-nousna-graphite-soft'}`}>
+          <p>© 2026 Nousna. All rights reserved. Clinical data processed securely.</p>
         </div>
       </div>
     </footer>

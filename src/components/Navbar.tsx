@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
 import { type } from '../styles/typography';
-import NodalLogo from '../assets/nodal-logo.svg';
+import NousnaLogo from '../assets/nousna-logo.svg';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,12 +38,12 @@ export const Navbar = () => {
     <nav 
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 md:px-24 py-6",
-        isScrolled ? "bg-nodal-white/90 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm" : "bg-transparent"
+        isScrolled ? "bg-nousna-white/90 backdrop-blur-md border-b border-slate-200 py-4 shadow-sm" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link to="/" onClick={handleLogoClick} className="flex items-center">
-          <img src={NodalLogo} alt="Nodal" className="h-16" />
+          <img src={NousnaLogo} alt="Nousna" className="h-16" />
         </Link>
 
         {/* Desktop Links */}
@@ -53,7 +53,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`${type.body} font-medium text-nodal-graphite hover:text-nodal-blue transition-colors`}
+                className={`${type.body} font-medium text-nousna-graphite hover:text-nousna-blue transition-colors`}
               >
                 {link.name}
               </Link>
@@ -61,20 +61,20 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`${type.body} font-medium text-nodal-graphite hover:text-nodal-blue transition-colors`}
+                className={`${type.body} font-medium text-nousna-graphite hover:text-nousna-blue transition-colors`}
               >
                 {link.name}
               </a>
             )
           )}
-          <Link to="/contact" className={`px-6 py-3 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg hover:bg-slate-800 transition-colors`}>
+          <Link to="/contact" className={`px-6 py-3 bg-nousna-blue text-white ${type.body} font-semibold rounded-lg hover:bg-slate-800 transition-colors`}>
             Join the pilot →
           </Link>
         </div>
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden p-2 text-nodal-graphite"
+          className="md:hidden p-2 text-nousna-graphite"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X /> : <Menu />}
@@ -89,7 +89,7 @@ export const Navbar = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className={`${type.subheading} font-medium text-nodal-graphite`}
+                className={`${type.subheading} font-medium text-nousna-graphite`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
@@ -98,14 +98,14 @@ export const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className={`${type.subheading} font-medium text-nodal-graphite`}
+                className={`${type.subheading} font-medium text-nousna-graphite`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.name}
               </a>
             )
           )}
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`w-full py-4 bg-nodal-blue text-white ${type.body} font-semibold rounded-lg text-center`}>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`w-full py-4 bg-nousna-blue text-white ${type.body} font-semibold rounded-lg text-center`}>
             Join the pilot →
           </Link>
         </div>

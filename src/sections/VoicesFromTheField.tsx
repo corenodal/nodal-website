@@ -12,11 +12,11 @@ const featuredQuotes = [
 ];
 
 const gridQuotes = [
-  { text: 'Notes take 20–25 mins each; five notes = 2.5 hours.', accent: 'nodal-violet' as const, span: 'col-span-1' },
-  { text: 'If you didn\'t document it, it didn\'t happen.', accent: 'nodal-green' as const, span: 'col-span-1' },
-  { text: 'Therapists start private practice to escape system fatigue.', accent: 'nodal-violet' as const, span: 'col-span-2' },
-  { text: 'Impacts me being able to see more patients.', accent: 'nodal-green' as const, span: 'col-span-1' },
-  { text: 'System-required documentation is exhausting but necessary.', accent: 'nodal-violet' as const, span: 'col-span-1' },
+  { text: 'Notes take 20–25 mins each; five notes = 2.5 hours.', accent: 'nousna-violet' as const, span: 'col-span-1' },
+  { text: 'If you didn\'t document it, it didn\'t happen.', accent: 'nousna-green' as const, span: 'col-span-1' },
+  { text: 'Therapists start private practice to escape system fatigue.', accent: 'nousna-violet' as const, span: 'col-span-2' },
+  { text: 'Impacts me being able to see more patients.', accent: 'nousna-green' as const, span: 'col-span-1' },
+  { text: 'System-required documentation is exhausting but necessary.', accent: 'nousna-violet' as const, span: 'col-span-1' },
 ];
 
 export const VoicesFromTheField = () => {
@@ -64,25 +64,25 @@ export const VoicesFromTheField = () => {
       className="py-24 md:py-32 px-6 md:px-24 relative z-10"
     >
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-nodal-blue/[0.03] via-nodal-violet/[0.06] to-nodal-blue/[0.03] rounded-3xl" />
+      <div className="absolute inset-0 bg-gradient-to-b from-nousna-blue/[0.03] via-nousna-violet/[0.06] to-nousna-blue/[0.03] rounded-3xl" />
 
       <div className="max-w-6xl mx-auto relative">
         <div className="vf-heading opacity-0 text-center mb-14">
-          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
-            What we <span className="text-nodal-violet italic">heard</span> from clinicians
+          <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
+            What we <span className="text-nousna-violet italic">heard</span> from clinicians
           </h2>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6">
           {/* Left — Featured rotating quote */}
-          <div className="vf-card opacity-0 md:w-5/12 p-8 rounded-2xl bg-white/70 backdrop-blur-sm border border-nodal-violet/15 flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+          <div className="vf-card opacity-0 md:w-5/12 p-8 rounded-2xl bg-white/70 backdrop-blur-sm border border-nousna-violet/15 flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
             <div>
-              <span className="text-5xl font-serif leading-none block mb-6 text-nodal-violet/40">
+              <span className="text-5xl font-serif leading-none block mb-6 text-nousna-violet/40">
                 &ldquo;&ldquo;
               </span>
               <p
                 ref={quoteTextRef}
-                className={`${type.subheading} text-nodal-blue font-medium leading-relaxed`}
+                className={`${type.subheading} text-nousna-blue font-medium leading-relaxed`}
               >
                 {featuredQuotes[activeQuote]}
               </p>
@@ -94,8 +94,8 @@ export const VoicesFromTheField = () => {
                   onClick={() => animateQuoteChange(i)}
                   className={`rounded-full transition-all duration-300 ${
                     i === activeQuote
-                      ? 'w-8 h-2.5 bg-nodal-violet'
-                      : 'w-2.5 h-2.5 bg-nodal-violet/20 hover:bg-nodal-violet/40'
+                      ? 'w-8 h-2.5 bg-nousna-violet'
+                      : 'w-2.5 h-2.5 bg-nousna-violet/20 hover:bg-nousna-violet/40'
                   }`}
                 />
               ))}
@@ -108,17 +108,17 @@ export const VoicesFromTheField = () => {
               <div
                 key={i}
                 className={`${quote.span} vf-card opacity-0 p-6 rounded-2xl backdrop-blur-sm border flex flex-col justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] ${
-                  quote.accent === 'nodal-violet'
-                    ? 'bg-nodal-violet/[0.06] border-nodal-violet/15 hover:border-nodal-violet/30 hover:bg-nodal-violet/[0.10]'
-                    : 'bg-nodal-green/[0.06] border-nodal-green/15 hover:border-nodal-green/30 hover:bg-nodal-green/[0.10]'
+                  quote.accent === 'nousna-violet'
+                    ? 'bg-nousna-violet/[0.06] border-nousna-violet/15 hover:border-nousna-violet/30 hover:bg-nousna-violet/[0.10]'
+                    : 'bg-nousna-green/[0.06] border-nousna-green/15 hover:border-nousna-green/30 hover:bg-nousna-green/[0.10]'
                 }`}
               >
                 <span className={`text-2xl font-serif leading-none block mb-3 ${
-                  quote.accent === 'nodal-violet' ? 'text-nodal-violet/40' : 'text-nodal-green/40'
+                  quote.accent === 'nousna-violet' ? 'text-nousna-violet/40' : 'text-nousna-green/40'
                 }`}>
                   &ldquo;
                 </span>
-                <p className={`${quote.span === 'col-span-2' ? type.subheading : type.body} text-nodal-graphite leading-relaxed`}>
+                <p className={`${quote.span === 'col-span-2' ? type.subheading : type.body} text-nousna-graphite leading-relaxed`}>
                   {quote.text}
                 </p>
               </div>

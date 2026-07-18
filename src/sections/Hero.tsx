@@ -56,7 +56,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-24 pt-32 pb-20 z-10 text-center bg-nodal-white overflow-hidden"
+      className="relative min-h-screen flex flex-col items-center justify-center px-6 md:px-24 pt-32 pb-20 z-10 text-center bg-nousna-white overflow-hidden"
     >
       {/* Background node logo — large, faint, slowly spinning */}
       <div
@@ -78,18 +78,18 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
       <div className="relative w-full max-w-4xl">
         {/* Eyebrow pill */}
         <div
-          className="hero-pill inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-nodal-green/5 border border-nodal-green/15 mb-10"
+          className="hero-pill inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-nousna-green/5 border border-nousna-green/15 mb-10"
           style={{ opacity: 0 }}
         >
-          <span className="w-2 h-2 rounded-full bg-nodal-green" />
-          <span className={`${type.ui} font-medium text-nodal-green tracking-wide`}>
+          <span className="w-2 h-2 rounded-full bg-nousna-green" />
+          <span className={`${type.ui} font-medium text-nousna-green tracking-wide`}>
             Built for mental health practitioners
           </span>
         </div>
 
         {/* Headline */}
         <h1
-          className="hero-headline text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-8 text-nodal-blue"
+          className="hero-headline text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-8 text-nousna-blue"
           style={{ opacity: 0 }}
         >
           The clinical workflow built around how you actually work.
@@ -97,10 +97,10 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
 
         {/* Subtext */}
         <p
-          className={`hero-subtext ${type.subheading} text-nodal-graphite font-light leading-relaxed mb-12 max-w-3xl mx-auto`}
+          className={`hero-subtext ${type.subheading} text-nousna-graphite font-light leading-relaxed mb-12 max-w-3xl mx-auto`}
           style={{ opacity: 0 }}
         >
-          Nodal captures your sessions, writes your notes, and keeps everything about a patient in one place so you can stop carrying the work home.
+          Nousna captures your sessions, writes your notes, and keeps everything about a patient in one place so you can stop carrying the work home.
         </p>
 
         {/* CTAs */}
@@ -110,7 +110,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
         >
           <Link
             to="/demo-videos"
-            className={`w-full sm:w-auto px-10 py-4 bg-nodal-violet text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
+            className={`w-full sm:w-auto px-10 py-4 bg-nousna-violet text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
           >
             See how it works
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -119,18 +119,18 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
 
         {/* Trust bar */}
         <div className="hero-trust" style={{ opacity: 0 }}>
-          <p className="text-xs text-nodal-graphite-soft font-light tracking-wide">
+          <p className="text-xs text-nousna-graphite-soft font-light tracking-wide">
             HIPAA aligned
-            <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+            <span className="mx-2 text-nousna-graphite-soft/40">·</span>
             <Link
               to="/contact"
-              className="underline decoration-nodal-graphite-soft/30 underline-offset-2 hover:text-nodal-blue transition-colors"
+              className="underline decoration-nousna-graphite-soft/30 underline-offset-2 hover:text-nousna-blue transition-colors"
             >
               BAA available
             </Link>
-            <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+            <span className="mx-2 text-nousna-graphite-soft/40">·</span>
             Your data is never used to train AI models
-            <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+            <span className="mx-2 text-nousna-graphite-soft/40">·</span>
             Outputs reviewed by a clinician
           </p>
         </div>

@@ -48,15 +48,15 @@ export const TrustVerify = () => {
     >
       <div className="max-w-6xl mx-auto">
         <div className="tv-heading opacity-0 text-center mb-4">
-          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
+          <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
             Trust you can verify.
           </h2>
         </div>
-        <p className="tv-heading opacity-0 text-center text-nodal-graphite font-light leading-relaxed max-w-3xl mx-auto mb-14">
+        <p className="tv-heading opacity-0 text-center text-nousna-graphite font-light leading-relaxed max-w-3xl mx-auto mb-14">
           Every output is reviewable before it is used. And compliance is built into the foundation from day one.
         </p>
 
-        <div className="tv-grid max-w-5xl mx-auto bg-nodal-white rounded-2xl border border-slate-100 p-6 md:p-10 shadow-sm">
+        <div className="tv-grid max-w-5xl mx-auto bg-nousna-white rounded-2xl border border-slate-100 p-6 md:p-10 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-0">
             {/* Left column — Trust & compliance */}
             <div className="space-y-0">
@@ -65,10 +65,10 @@ export const TrustVerify = () => {
                   key={i}
                   className="tv-item opacity-0 flex items-center gap-4 py-4 border-b border-slate-100"
                 >
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-nodal-green/10 text-nodal-green">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-nousna-green/10 text-nousna-green">
                     <item.icon className="w-5 h-5" />
                   </div>
-                  <p className={`${type.body} font-semibold text-nodal-blue`}>
+                  <p className={`${type.body} font-semibold text-nousna-blue`}>
                     {item.label}
                   </p>
                 </div>
@@ -82,10 +82,10 @@ export const TrustVerify = () => {
                   key={i}
                   className="tv-item opacity-0 flex items-center gap-4 py-4 border-b border-slate-100"
                 >
-                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-nodal-violet/10 text-nodal-violet">
+                  <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0 bg-nousna-violet/10 text-nousna-violet">
                     <item.icon className="w-5 h-5" />
                   </div>
-                  <p className={`${type.body} font-semibold text-nodal-blue`}>
+                  <p className={`${type.body} font-semibold text-nousna-blue`}>
                     {item.label}
                   </p>
                 </div>
