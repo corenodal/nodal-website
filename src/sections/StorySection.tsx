@@ -10,30 +10,30 @@ const steps = [
   {
     icon: Mic,
     title: 'Record.',
-    description: 'Start a session recording with one tap. Nodal listens securely in the background, so you stay present with your patient.',
-    iconBg: 'bg-nodal-green/15',
-    iconColor: 'text-nodal-green',
+    description: 'Start a session recording with one tap. Nousna listens securely in the background, so you stay present with your patient.',
+    iconBg: 'bg-nousna-green/15',
+    iconColor: 'text-nousna-green',
   },
   {
     icon: FileText,
     title: 'Review.',
     description: 'Clinical notes are generated in your format, ready to edit in minutes.',
-    iconBg: 'bg-nodal-violet/15',
-    iconColor: 'text-nodal-violet',
+    iconBg: 'bg-nousna-violet/15',
+    iconColor: 'text-nousna-violet',
   },
   {
     icon: Zap,
     title: 'Act.',
     description: 'Action items, patient summaries, and the tasks that come after a session are surfaced automatically.',
-    iconBg: 'bg-nodal-green/15',
-    iconColor: 'text-nodal-green',
+    iconBg: 'bg-nousna-green/15',
+    iconColor: 'text-nousna-green',
   },
   {
     icon: Layers,
     title: 'Build.',
     description: 'Every session adds to a patient record that builds across sessions and gets richer over time.',
-    iconBg: 'bg-nodal-violet/15',
-    iconColor: 'text-nodal-violet',
+    iconBg: 'bg-nousna-violet/15',
+    iconColor: 'text-nousna-violet',
   },
 ];
 
@@ -59,14 +59,14 @@ export const StorySection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 md:py-28 bg-nodal-blue relative z-10"
+      className="py-20 md:py-28 bg-nousna-blue relative z-10"
     >
       <div className="max-w-5xl mx-auto px-6 md:px-24">
 
         <h2
           className="workflow-heading text-3xl md:text-4xl font-semibold text-white mb-14 translate-y-8 opacity-0"
         >
-          How a session works with Nodal
+          How a session works with Nousna
         </h2>
 
         <div className="workflow-steps grid grid-cols-1 md:grid-cols-2 gap-6">

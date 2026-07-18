@@ -39,12 +39,12 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
       className="relative min-h-screen flex flex-col justify-center items-center px-6 md:px-24 pt-32 pb-20 z-10"
     >
       <div className="max-w-5xl mx-auto w-full">
-        <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nodal-blue mb-10`}>
+        <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nousna-blue mb-10`}>
           <div className="overflow-hidden pb-2">
             <span className="fh-line block">Every part of the</span>
           </div>
           <div className="overflow-hidden pb-2">
-            <span className="fh-line block text-nodal-violet">clinical workflow.</span>
+            <span className="fh-line block text-nousna-violet">clinical workflow.</span>
           </div>
           <div className="overflow-hidden pb-2">
             <span className="fh-line block">In one place.</span>
@@ -52,29 +52,29 @@ export const FeaturesHero = ({ isLoading = false }: { isLoading?: boolean }) => 
         </h1>
 
         <p
-          className={`fh-sub ${type.subheading} text-nodal-graphite font-light leading-relaxed max-w-3xl`}
+          className={`fh-sub ${type.subheading} text-nousna-graphite font-light leading-relaxed max-w-3xl`}
           style={{ opacity: 0, transform: 'translateY(20px)' }}
         >
-          Nodal holds session context, generates documentation, surfaces insights, and supports patient communication across your practice.
+          Nousna holds session context, generates documentation, surfaces insights, and supports patient communication across your practice.
         </p>
 
         <div className="fh-cta mt-10 flex" style={{ opacity: 0, transform: 'translateY(20px)' }}>
           <Link
             to="/demo-videos"
-            className={`px-10 py-5 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
+            className={`px-10 py-5 bg-nousna-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
           >
             Watch the demos
             <ArrowRight className="ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
 
-        <p className="fh-cta mt-8 text-xs text-nodal-graphite-soft font-light tracking-wide" style={{ opacity: 0, transform: 'translateY(20px)' }}>
+        <p className="fh-cta mt-8 text-xs text-nousna-graphite-soft font-light tracking-wide" style={{ opacity: 0, transform: 'translateY(20px)' }}>
           HIPAA aligned
-          <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+          <span className="mx-2 text-nousna-graphite-soft/40">·</span>
           BAA available
-          <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+          <span className="mx-2 text-nousna-graphite-soft/40">·</span>
           Your data is never used to train AI models
-          <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+          <span className="mx-2 text-nousna-graphite-soft/40">·</span>
           Outputs reviewed by a clinician
         </p>
       </div>

@@ -19,7 +19,7 @@ function NeuralNetwork() {
     const colors = new Float32Array(particleCount * 3);
     const pts = [];
 
-    // Nodal Blue #1E3F57 -> [30/255, 63/255, 87/255]
+    // Nousna Blue #1E3F57 -> [30/255, 63/255, 87/255]
     // Violet #7B6EF6 -> [123/255, 110/255, 246/255]
 
     for (let i = 0; i < particleCount; i++) {
@@ -110,12 +110,12 @@ function NeuralNetwork() {
 
 export const NodesBackground = () => {
   return (
-    <div className="fixed inset-0 z-0 pointer-events-none bg-nodal-white">
+    <div className="fixed inset-0 z-0 pointer-events-none bg-nousna-white">
       <Canvas camera={{ position: [0, 0, 15], fov: 60 }}>
         <fog attach="fog" args={['#F9FAFB', 10, 25]} />
         <NeuralNetwork />
       </Canvas>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-nodal-white/80" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-nousna-white/80" />
     </div>
   );
 };

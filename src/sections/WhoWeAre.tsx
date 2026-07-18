@@ -56,18 +56,18 @@ export const WhoWeAre = () => {
 
         {/* Left — heading + statement */}
         <div className="who-left opacity-0">
-          <p className={`${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-5`}>
+          <p className={`${type.ui} font-semibold text-nousna-violet uppercase tracking-[0.25em] mb-5`}>
             Who We Are
           </p>
-          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight mb-8`}>
+          <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight mb-8`}>
             Built by people who<br />understand the problem.
           </h2>
-          <div className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-sm mb-10 space-y-4`}>
+          <div className={`${type.body} text-nousna-graphite font-light leading-relaxed max-w-sm mb-10 space-y-4`}>
             <p>We bring together backgrounds in behavioral science, system design, and AI, with research experience across international health institutions and a founding team that has spent real time understanding how clinicians work. We build in close collaboration with practitioners, at their pace.</p>
           </div>
-          <div className="inline-flex items-center gap-2.5 border border-nodal-green/30 bg-nodal-green/5 rounded-full px-5 py-2.5">
-            <span className="w-2 h-2 rounded-full bg-nodal-green animate-pulse" />
-            <span className={`${type.ui} font-semibold text-nodal-graphite tracking-wide`}>
+          <div className="inline-flex items-center gap-2.5 border border-nousna-green/30 bg-nousna-green/5 rounded-full px-5 py-2.5">
+            <span className="w-2 h-2 rounded-full bg-nousna-green animate-pulse" />
+            <span className={`${type.ui} font-semibold text-nousna-graphite tracking-wide`}>
               Currently in pilot, onboarding partners
             </span>
           </div>
@@ -81,12 +81,12 @@ export const WhoWeAre = () => {
               className="who-pillar opacity-0 border-b border-slate-200 py-8 group"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-nodal-green group-hover:scale-150 transition-transform" />
-                <span className={`${type.body} font-semibold text-nodal-blue tracking-wide`}>
+                <div className="w-1.5 h-1.5 rounded-full bg-nousna-green group-hover:scale-150 transition-transform" />
+                <span className={`${type.body} font-semibold text-nousna-blue tracking-wide`}>
                   {p.tag}
                 </span>
               </div>
-              <p className={`${type.body} text-nodal-graphite font-light leading-relaxed pl-5`}>
+              <p className={`${type.body} text-nousna-graphite font-light leading-relaxed pl-5`}>
                 {p.desc}
               </p>
             </div>

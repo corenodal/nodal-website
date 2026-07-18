@@ -102,11 +102,11 @@ export const TrustSection = () => {
     >
       <div
         ref={(el) => { checksRef.current[globalIndex] = el; }}
-        className="w-6 h-6 rounded-md bg-nodal-green flex items-center justify-center flex-shrink-0 shadow-sm"
+        className="w-6 h-6 rounded-md bg-nousna-green flex items-center justify-center flex-shrink-0 shadow-sm"
       >
         <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
       </div>
-      <span className={`${type.body} text-nodal-blue font-medium`}>{feature}</span>
+      <span className={`${type.body} text-nousna-blue font-medium`}>{feature}</span>
     </div>
   );
 
@@ -114,16 +114,16 @@ export const TrustSection = () => {
     <section id="trust" className="py-10 md:py-14 px-6 md:px-20 bg-transparent relative z-10">
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
         <div className="text-center mb-10">
-          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-4`}>
+          <h2 className={`${type.heading} font-semibold text-nousna-blue mb-4`}>
             Built for Trust and Transparency
           </h2>
-          <p className={`${type.body} text-nodal-graphite max-w-2xl mx-auto font-light leading-relaxed`}>
-            Healthcare requires clarity at every step. Nodal is designed so everything is visible, reviewable, and easy to verify.
+          <p className={`${type.body} text-nousna-graphite max-w-2xl mx-auto font-light leading-relaxed`}>
+            Healthcare requires clarity at every step. Nousna is designed so everything is visible, reviewable, and easy to verify.
           </p>
         </div>
 
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-0 bg-nodal-white rounded-2xl border border-slate-100 p-6 md:p-10 shadow-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-0 bg-nousna-white rounded-2xl border border-slate-100 p-6 md:p-10 shadow-sm">
             <div className="flex flex-col">
               {leftColumn.map((feature, i) => renderItem(feature, i))}
             </div>

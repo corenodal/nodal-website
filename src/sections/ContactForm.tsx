@@ -96,16 +96,16 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
   };
 
   const inputBase =
-    'w-full px-4 py-3 rounded-xl border bg-white/80 backdrop-blur-sm text-nodal-graphite font-light transition-all duration-200 outline-none placeholder:text-nodal-graphite-soft/60';
-  const inputNormal = `${inputBase} border-slate-200 focus:border-nodal-blue focus:ring-2 focus:ring-nodal-blue/10`;
+    'w-full px-4 py-3 rounded-xl border bg-white/80 backdrop-blur-sm text-nousna-graphite font-light transition-all duration-200 outline-none placeholder:text-nousna-graphite-soft/60';
+  const inputNormal = `${inputBase} border-slate-200 focus:border-nousna-blue focus:ring-2 focus:ring-nousna-blue/10`;
   const inputError = `${inputBase} border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/10`;
 
   const selectBase =
-    'w-full px-4 py-3 rounded-xl border bg-white/80 backdrop-blur-sm text-nodal-graphite font-light transition-all duration-200 outline-none appearance-none';
-  const selectNormal = `${selectBase} border-slate-200 focus:border-nodal-blue focus:ring-2 focus:ring-nodal-blue/10`;
+    'w-full px-4 py-3 rounded-xl border bg-white/80 backdrop-blur-sm text-nousna-graphite font-light transition-all duration-200 outline-none appearance-none';
+  const selectNormal = `${selectBase} border-slate-200 focus:border-nousna-blue focus:ring-2 focus:ring-nousna-blue/10`;
   const selectError = `${selectBase} border-red-400 focus:border-red-500 focus:ring-2 focus:ring-red-500/10`;
 
-  const labelClass = `${type.ui} font-medium text-nodal-graphite mb-1.5 block`;
+  const labelClass = `${type.ui} font-medium text-nousna-graphite mb-1.5 block`;
 
   return (
     <section
@@ -115,7 +115,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
       <div className="max-w-7xl mx-auto w-full flex flex-col md:flex-row md:items-start gap-12 md:gap-20">
         {/* Left — Heading & context */}
         <div className="md:sticky md:top-32 md:w-2/5 flex-shrink-0">
-          <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nodal-blue mb-6`}>
+          <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nousna-blue mb-6`}>
             <div className="overflow-hidden">
               <span className="cf-headline block">Join the</span>
             </div>
@@ -123,15 +123,15 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
               <span className="cf-headline block">pilot.</span>
             </div>
           </h1>
-          <p className={`cf-subtitle opacity-0 ${type.body} text-nodal-graphite font-light leading-relaxed mb-10`}>
-            We are working with a small group of therapists, psychologists, and psychiatrists to refine Nodal before broader launch. We will set up a 20 minute call to understand how your practice works before you start.
+          <p className={`cf-subtitle opacity-0 ${type.body} text-nousna-graphite font-light leading-relaxed mb-10`}>
+            We are working with a small group of therapists, psychologists, and psychiatrists to refine Nousna before broader launch. We will set up a 20 minute call to understand how your practice works before you start.
           </p>
 
           <div className="cf-subtitle opacity-0 space-y-6">
-            <div className="border-l-2 border-nodal-green pl-5">
-              <p className={`${type.ui} font-semibold text-nodal-graphite-soft uppercase tracking-widest mb-1`}>Email</p>
-              <a href="mailto:core.nodal@gmail.com" className={`${type.body} text-nodal-graphite font-light hover:text-nodal-blue transition-colors`}>
-                core.nodal@gmail.com
+            <div className="border-l-2 border-nousna-green pl-5">
+              <p className={`${type.ui} font-semibold text-nousna-graphite-soft uppercase tracking-widest mb-1`}>Email</p>
+              <a href="mailto:team@nousna.com" className={`${type.body} text-nousna-graphite font-light hover:text-nousna-blue transition-colors`}>
+                team@nousna.com
               </a>
             </div>
           </div>
@@ -141,11 +141,11 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
         <div className="cf-card opacity-0 flex-1 min-w-0">
           {submitted ? (
             <div className="bg-white/70 backdrop-blur-sm border border-slate-100 rounded-2xl p-12 text-center">
-              <div className="w-16 h-16 rounded-full bg-nodal-green/10 flex items-center justify-center mx-auto mb-6">
-                <Send className="w-7 h-7 text-nodal-green" />
+              <div className="w-16 h-16 rounded-full bg-nousna-green/10 flex items-center justify-center mx-auto mb-6">
+                <Send className="w-7 h-7 text-nousna-green" />
               </div>
-              <h2 className={`${type.subheading} font-semibold text-nodal-blue mb-3`}>You're in.</h2>
-              <p className={`${type.body} text-nodal-graphite font-light`}>
+              <h2 className={`${type.subheading} font-semibold text-nousna-blue mb-3`}>You're in.</h2>
+              <p className={`${type.body} text-nousna-graphite font-light`}>
                 Thank you for joining the pilot. We'll follow up within 2 business days.
               </p>
             </div>
@@ -272,7 +272,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                 <button
                   type="submit"
                   disabled={sending}
-                  className={`w-full sm:w-auto px-10 py-4 bg-nodal-green text-white ${type.body} rounded-xl font-semibold hover:brightness-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none shadow-md hover:shadow-xl`}
+                  className={`w-full sm:w-auto px-10 py-4 bg-nousna-green text-white ${type.body} rounded-xl font-semibold hover:brightness-105 hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-60 disabled:pointer-events-none shadow-md hover:shadow-xl`}
                 >
                   {sending ? (
                     <>
@@ -286,16 +286,16 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
               </div>
 
               {/* Trust line */}
-              <p className="text-xs text-nodal-graphite-soft font-light tracking-wide pt-2">
+              <p className="text-xs text-nousna-graphite-soft font-light tracking-wide pt-2">
                 HIPAA aligned
-                <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+                <span className="mx-2 text-nousna-graphite-soft/40">·</span>
                 <Link
                   to="/contact"
-                  className="underline decoration-nodal-graphite-soft/30 underline-offset-2 hover:text-nodal-blue transition-colors"
+                  className="underline decoration-nousna-graphite-soft/30 underline-offset-2 hover:text-nousna-blue transition-colors"
                 >
                   BAA available
                 </Link>
-                <span className="mx-2 text-nodal-graphite-soft/40">·</span>
+                <span className="mx-2 text-nousna-graphite-soft/40">·</span>
                 We'll follow up within 2 business days.
               </p>
             </form>

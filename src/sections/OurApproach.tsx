@@ -9,22 +9,22 @@ gsap.registerPlugin(ScrollTrigger);
 const principles = [
   {
     icon: Brain,
-    iconClass: 'text-nodal-violet group-hover:text-white',
-    wrapperClass: 'group-hover:bg-nodal-violet group-hover:border-transparent',
+    iconClass: 'text-nousna-violet group-hover:text-white',
+    wrapperClass: 'group-hover:bg-nousna-violet group-hover:border-transparent',
     title: 'Built Around Human Behavior',
     body: 'We design for how clinicians think, make decisions, and manage mental load.',
   },
   {
     icon: Network,
-    iconClass: 'text-nodal-green group-hover:text-white',
-    wrapperClass: 'group-hover:bg-nodal-green group-hover:border-transparent',
+    iconClass: 'text-nousna-green group-hover:text-white',
+    wrapperClass: 'group-hover:bg-nousna-green group-hover:border-transparent',
     title: 'Fixing the System, Not Adding Tools',
-    body: 'Mental health practitioners do not need more software. They need fewer systems demanding more from them. Nodal replaces disconnected tools with a single workflow that works the way clinicians think.',
+    body: 'Mental health practitioners do not need more software. They need fewer systems demanding more from them. Nousna replaces disconnected tools with a single workflow that works the way clinicians think.',
   },
   {
     icon: ShieldCheck,
-    iconClass: 'text-nodal-blue group-hover:text-white',
-    wrapperClass: 'group-hover:bg-nodal-blue group-hover:border-transparent',
+    iconClass: 'text-nousna-blue group-hover:text-white',
+    wrapperClass: 'group-hover:bg-nousna-blue group-hover:border-transparent',
     title: 'Keeping Clinicians in Control',
     body: 'Every output is reviewed and approved by clinicians. AI augments judgement, it does not replace it.',
   },
@@ -66,14 +66,14 @@ export const OurApproach = () => {
         {/* Heading row */}
         <div className="approach-heading opacity-0 flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
           <div>
-            <p className={`${type.ui} font-semibold text-nodal-violet uppercase tracking-[0.25em] mb-3`}>
+            <p className={`${type.ui} font-semibold text-nousna-violet uppercase tracking-[0.25em] mb-3`}>
               Our Approach
             </p>
-            <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
+            <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
               Designed around research, not convention.
             </h2>
           </div>
-          <p className={`${type.body} text-nodal-graphite-soft font-light max-w-sm md:max-w-md leading-relaxed`}>
+          <p className={`${type.body} text-nousna-graphite-soft font-light max-w-sm md:max-w-md leading-relaxed`}>
             We bring together behavioral science, clinical workflow research, and AI to fix the system that is wearing practitioners down.
           </p>
         </div>
@@ -94,14 +94,14 @@ export const OurApproach = () => {
 
               {/* Title */}
               <div className="col-span-10 sm:col-span-11 md:col-span-6 md:col-start-2">
-                <h3 className={`${type.subheading} font-semibold text-nodal-blue leading-snug`}>
+                <h3 className={`${type.subheading} font-semibold text-nousna-blue leading-snug`}>
                   {p.title}
                 </h3>
               </div>
 
               {/* Body */}
               <div className="col-span-12 md:col-span-5 md:col-start-8">
-                <p className={`${type.body} text-nodal-graphite font-light leading-relaxed`}>
+                <p className={`${type.body} text-nousna-graphite font-light leading-relaxed`}>
                   {p.body}
                 </p>
               </div>

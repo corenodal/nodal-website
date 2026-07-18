@@ -25,7 +25,7 @@ interface Feature {
   bullets: FeatureBullet[];
   sections?: FeatureSection[];
   details?: string[];
-  accent: 'nodal-violet' | 'nodal-green';
+  accent: 'nousna-violet' | 'nousna-green';
 }
 
 const features: Feature[] = [
@@ -50,13 +50,13 @@ const features: Feature[] = [
         ],
       },
     ],
-    accent: 'nodal-violet',
+    accent: 'nousna-violet',
   },
   {
     id: 'edit-ai-generated-insights',
     number: '02',
     title: 'Edit AI-generated insights',
-    description: 'Every output Nodal generates is yours to review and refine, directly in the template, through Node, or by regenerating with a different format.',
+    description: 'Every output Nousna generates is yours to review and refine, directly in the template, through Node, or by regenerating with a different format.',
     loomEmbedId: '9f9809ca8fd144cd98b056a72b0dc652',
     bullets: [
       { icon: PenLine, label: 'Direct edits', detail: 'Edit text and formatting in the patient template with the pencil icon.' },
@@ -96,13 +96,13 @@ const features: Feature[] = [
         ],
       },
     ],
-    accent: 'nodal-green',
+    accent: 'nousna-green',
   },
   {
     id: 'create-custom-templates',
     number: '03',
     title: 'Create custom templates',
-    description: 'Bring your existing documentation structure into Nodal, or build new templates from scratch: Initial Assessment, Follow-up, Discharge, or anything in between.',
+    description: 'Bring your existing documentation structure into Nousna, or build new templates from scratch: Initial Assessment, Follow-up, Discharge, or anything in between.',
     loomEmbedId: 'a35853794a494f6c9330a947fb84fa66',
     bullets: [
       { icon: BookOpen, label: 'Default templates', detail: 'Start from Initial Assessment or Follow-up Review.' },
@@ -122,13 +122,13 @@ const features: Feature[] = [
         ],
       },
     ],
-    accent: 'nodal-violet',
+    accent: 'nousna-violet',
   },
   {
     id: 'audio-and-manual-notes',
     number: '04',
     title: 'Audio and manual notes',
-    description: 'Record session audio directly in Nodal, or add typed notes. Everything stays linked to the right patient and session.',
+    description: 'Record session audio directly in Nousna, or add typed notes. Everything stays linked to the right patient and session.',
     loomEmbedId: '971f61062d454acb8333ecb37e696845',
     bullets: [
       { icon: Mic, label: 'Start Recording', detail: 'Capture session audio from Quick Actions on the Home Page.' },
@@ -167,7 +167,7 @@ const features: Feature[] = [
       'You can also use both of these features by navigating to the Patients page on the left pane and selecting the appropriate patient.',
       'From there, you can either record an audio or add a note for the selected patient under an existing or new session.',
     ],
-    accent: 'nodal-green',
+    accent: 'nousna-green',
   },
   {
     id: 'collate-multiple-insights',
@@ -196,13 +196,13 @@ const features: Feature[] = [
         ],
       },
     ],
-    accent: 'nodal-violet',
+    accent: 'nousna-violet',
   },
   {
     id: 'clinical-insights',
     number: '06',
     title: 'Session insights',
-    description: 'After each session, Nodal generates a summary, action items, a full template note, and a transcript, all reviewable, editable, and downloadable.',
+    description: 'After each session, Nousna generates a summary, action items, a full template note, and a transcript, all reviewable, editable, and downloadable.',
     loomEmbedId: '7c6f877f2a8546669f5701958b588372',
     bullets: [
       { icon: FileText, label: 'Summary & key themes', detail: 'See a quick overview of the session along with the key themes discussed.' },
@@ -236,7 +236,7 @@ const features: Feature[] = [
         ],
       },
     ],
-    accent: 'nodal-green',
+    accent: 'nousna-green',
   },
 ];
 
@@ -288,25 +288,25 @@ export const DemoVideos = () => {
   };
 
   return (
-    <div ref={contentRef} className="min-h-screen pt-20 bg-nodal-white relative z-10">
+    <div ref={contentRef} className="min-h-screen pt-20 bg-nousna-white relative z-10">
       {/* Mobile sidebar toggle */}
       <button
         onClick={() => setSidebarOpen(!sidebarOpen)}
-        className="lg:hidden fixed top-20 left-4 z-50 p-2 bg-white rounded-lg border border-nodal-grey shadow-sm"
+        className="lg:hidden fixed top-20 left-4 z-50 p-2 bg-white rounded-lg border border-nousna-grey shadow-sm"
         aria-label="Toggle sidebar"
       >
-        <ChevronRight className={`w-5 h-5 text-nodal-graphite transition-transform ${sidebarOpen ? 'rotate-180' : ''}`} />
+        <ChevronRight className={`w-5 h-5 text-nousna-graphite transition-transform ${sidebarOpen ? 'rotate-180' : ''}`} />
       </button>
 
       <div className="max-w-7xl mx-auto px-6 md:px-24 flex">
         {/* Sidebar */}
         <aside
-          className={`fixed lg:relative top-20 lg:top-0 left-0 lg:left-auto h-[calc(100vh-5rem)] lg:h-auto lg:min-h-[calc(100vh-5rem)] w-72 lg:w-56 xl:w-60 flex-shrink-0 bg-white/80 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none lg:border-r border-nodal-grey/60 overflow-y-auto z-40 transition-transform lg:translate-x-0 ${
+          className={`fixed lg:relative top-20 lg:top-0 left-0 lg:left-auto h-[calc(100vh-5rem)] lg:h-auto lg:min-h-[calc(100vh-5rem)] w-72 lg:w-56 xl:w-60 flex-shrink-0 bg-white/80 lg:bg-transparent backdrop-blur-md lg:backdrop-blur-none lg:border-r border-nousna-grey/60 overflow-y-auto z-40 transition-transform lg:translate-x-0 ${
             sidebarOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
         >
           <div className="dv-sidebar py-8 pr-6 lg:sticky lg:top-20">
-            <h2 className="text-xs font-semibold uppercase tracking-wider text-nodal-graphite-soft mb-4">
+            <h2 className="text-xs font-semibold uppercase tracking-wider text-nousna-graphite-soft mb-4">
               Demo Videos
             </h2>
             <nav className="flex flex-col gap-1">
@@ -318,11 +318,11 @@ export const DemoVideos = () => {
                     onClick={() => handleFeatureClick(feature.id)}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all text-sm ${
                       isActive
-                        ? 'bg-nodal-blue/8 text-nodal-blue font-medium'
-                        : 'text-nodal-graphite-soft hover:text-nodal-graphite hover:bg-nodal-grey/40'
+                        ? 'bg-nousna-blue/8 text-nousna-blue font-medium'
+                        : 'text-nousna-graphite-soft hover:text-nousna-graphite hover:bg-nousna-grey/40'
                     }`}
                   >
-                    <span className={`text-xs font-mono ${isActive ? 'text-nodal-green' : 'text-nodal-graphite-soft/60'}`}>
+                    <span className={`text-xs font-mono ${isActive ? 'text-nousna-green' : 'text-nousna-graphite-soft/60'}`}>
                       {feature.number}
                     </span>
                     <span>{feature.title}</span>
@@ -346,26 +346,26 @@ export const DemoVideos = () => {
           <div className="pl-0 lg:pl-10 py-8 md:py-12">
             {/* Page heading */}
             <div className="dv-page-heading mb-12">
-              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] text-nodal-blue mb-4">
-                See Nodal in action.
+              <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-[1.1] text-nousna-blue mb-4">
+                See Nousna in action.
               </h1>
-              <p className={`${t.body} text-nodal-graphite font-light leading-relaxed max-w-2xl`}>
+              <p className={`${t.body} text-nousna-graphite font-light leading-relaxed max-w-2xl`}>
                 Short walkthroughs of each core feature. Watch in sequence, or jump to what is relevant for your practice.
               </p>
             </div>
 
             {/* Feature title */}
             <div className="dv-intro dv-feature mb-8">
-              <h2 className={`${t.heading} font-semibold text-nodal-blue mb-3`}>
+              <h2 className={`${t.heading} font-semibold text-nousna-blue mb-3`}>
                 {activeFeature.title}
               </h2>
-              <p className={`${t.content} text-nodal-graphite leading-relaxed`}>
+              <p className={`${t.content} text-nousna-graphite leading-relaxed`}>
                 {activeFeature.description}
               </p>
             </div>
 
             {/* Video embed */}
-            <div className="dv-intro dv-feature mb-12 rounded-xl overflow-hidden border border-nodal-grey/60 shadow-sm bg-black/5">
+            <div className="dv-intro dv-feature mb-12 rounded-xl overflow-hidden border border-nousna-grey/60 shadow-sm bg-black/5">
               <div className="relative w-full" style={{ paddingBottom: '65.06%' }}>
                 <iframe
                   src={`https://www.loom.com/embed/${activeFeature.loomEmbedId}?hide_share=true&hide_title=true&hide_owner=true`}
@@ -382,27 +382,27 @@ export const DemoVideos = () => {
               {/* Overview section */}
               <section>
                 <div className="flex items-center gap-3 mb-6">
-                  <h2 className={`${t.subheading} font-semibold text-nodal-blue`}>
+                  <h2 className={`${t.subheading} font-semibold text-nousna-blue`}>
                     How it works
                   </h2>
                   <div className={`flex-1 h-px ${
-                    activeFeature.accent === 'nodal-violet'
-                      ? 'bg-gradient-to-r from-nodal-violet/40 to-transparent'
-                      : 'bg-gradient-to-r from-nodal-green/40 to-transparent'
+                    activeFeature.accent === 'nousna-violet'
+                      ? 'bg-gradient-to-r from-nousna-violet/40 to-transparent'
+                      : 'bg-gradient-to-r from-nousna-green/40 to-transparent'
                   }`} />
                 </div>
                 <div className="space-y-6">
                   {activeFeature.sections?.map((section, i) => {
-                    const accentBg = activeFeature.accent === 'nodal-violet' ? 'bg-nodal-violet' : 'bg-nodal-green';
-                    const accentBorder = activeFeature.accent === 'nodal-violet' ? 'border-nodal-violet/30' : 'border-nodal-green/30';
-                    const accentSoft = activeFeature.accent === 'nodal-violet' ? 'bg-nodal-violet/5' : 'bg-nodal-green/5';
+                    const accentBg = activeFeature.accent === 'nousna-violet' ? 'bg-nousna-violet' : 'bg-nousna-green';
+                    const accentBorder = activeFeature.accent === 'nousna-violet' ? 'border-nousna-violet/30' : 'border-nousna-green/30';
+                    const accentSoft = activeFeature.accent === 'nousna-violet' ? 'bg-nousna-violet/5' : 'bg-nousna-green/5';
                     return (
                       <div
                         key={i}
                         className={`relative rounded-2xl border-2 ${accentBorder} ${accentSoft} p-6 md:p-8 shadow-sm`}
                       >
                         {section.title && (
-                          <h3 className={`${t.body} font-bold text-nodal-blue mb-6`}>
+                          <h3 className={`${t.body} font-bold text-nousna-blue mb-6`}>
                             {section.title}
                           </h3>
                         )}
@@ -410,7 +410,7 @@ export const DemoVideos = () => {
                           {/* Connecting line */}
                           <div
                             className={`absolute left-[17px] top-8 bottom-8 w-0.5 ${
-                              activeFeature.accent === 'nodal-violet' ? 'bg-nodal-violet/20' : 'bg-nodal-green/20'
+                              activeFeature.accent === 'nousna-violet' ? 'bg-nousna-violet/20' : 'bg-nousna-green/20'
                             }`}
                             aria-hidden
                           />
@@ -419,7 +419,7 @@ export const DemoVideos = () => {
                               <span className={`relative z-10 flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center text-sm font-bold ${accentBg} text-white shadow-md ring-4 ring-white`}>
                                 {j + 1}
                               </span>
-                              <p className={`${t.content} text-nodal-blue leading-relaxed pt-2`}>
+                              <p className={`${t.content} text-nousna-blue leading-relaxed pt-2`}>
                                 {step}
                               </p>
                             </li>
@@ -430,10 +430,10 @@ export const DemoVideos = () => {
                   })}
                   {activeFeature.details && activeFeature.details.length > 0 && (
                     <div className={`rounded-2xl border-l-4 ${
-                      activeFeature.accent === 'nodal-violet' ? 'border-nodal-violet' : 'border-nodal-green'
+                      activeFeature.accent === 'nousna-violet' ? 'border-nousna-violet' : 'border-nousna-green'
                     } bg-white p-6 md:p-8 shadow-sm space-y-3`}>
                       {activeFeature.details.map((detail, i) => (
-                        <p key={i} className={`${t.content} text-nodal-blue leading-relaxed`}>
+                        <p key={i} className={`${t.content} text-nousna-blue leading-relaxed`}>
                           {detail}
                         </p>
                       ))}
@@ -445,13 +445,13 @@ export const DemoVideos = () => {
               {/* Key capabilities */}
               <section>
                 <div className="flex items-center gap-3 mb-6">
-                  <h2 className={`${t.subheading} font-semibold text-nodal-blue`}>
+                  <h2 className={`${t.subheading} font-semibold text-nousna-blue`}>
                     Key Capabilities
                   </h2>
                   <div className={`flex-1 h-px ${
-                    activeFeature.accent === 'nodal-violet'
-                      ? 'bg-gradient-to-r from-nodal-violet/40 to-transparent'
-                      : 'bg-gradient-to-r from-nodal-green/40 to-transparent'
+                    activeFeature.accent === 'nousna-violet'
+                      ? 'bg-gradient-to-r from-nousna-violet/40 to-transparent'
+                      : 'bg-gradient-to-r from-nousna-green/40 to-transparent'
                   }`} />
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
@@ -461,23 +461,23 @@ export const DemoVideos = () => {
                       <div
                         key={i}
                         className={`flex items-start gap-4 p-5 rounded-xl bg-white border-2 transition-all hover:shadow-md ${
-                          activeFeature.accent === 'nodal-violet'
-                            ? 'border-nodal-violet/20 hover:border-nodal-violet/50'
-                            : 'border-nodal-green/20 hover:border-nodal-green/50'
+                          activeFeature.accent === 'nousna-violet'
+                            ? 'border-nousna-violet/20 hover:border-nousna-violet/50'
+                            : 'border-nousna-green/20 hover:border-nousna-green/50'
                         }`}
                       >
                         <div className={`w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm ${
-                          activeFeature.accent === 'nodal-violet'
-                            ? 'bg-nodal-violet text-white'
-                            : 'bg-nodal-green text-white'
+                          activeFeature.accent === 'nousna-violet'
+                            ? 'bg-nousna-violet text-white'
+                            : 'bg-nousna-green text-white'
                         }`}>
                           <Icon className="w-5 h-5" />
                         </div>
                         <div>
-                          <p className={`${t.body} font-bold text-nodal-blue mb-1`}>
+                          <p className={`${t.body} font-bold text-nousna-blue mb-1`}>
                             {bullet.label}
                           </p>
-                          <p className={`${t.ui} text-nodal-graphite leading-relaxed`}>
+                          <p className={`${t.ui} text-nousna-graphite leading-relaxed`}>
                             {bullet.detail}
                           </p>
                         </div>
@@ -488,12 +488,12 @@ export const DemoVideos = () => {
               </section>
 
               {/* Navigation between features */}
-              <section className="pt-8 border-t border-nodal-grey/60">
+              <section className="pt-8 border-t border-nousna-grey/60">
                 <div className="flex justify-between items-center">
                   {features.indexOf(activeFeature) > 0 ? (
                     <button
                       onClick={() => handleFeatureClick(features[features.indexOf(activeFeature) - 1].id)}
-                      className="flex items-center gap-2 text-sm text-nodal-graphite-soft hover:text-nodal-blue transition-colors"
+                      className="flex items-center gap-2 text-sm text-nousna-graphite-soft hover:text-nousna-blue transition-colors"
                     >
                       <ChevronRight className="w-4 h-4 rotate-180" />
                       <span>{features[features.indexOf(activeFeature) - 1].title}</span>
@@ -504,7 +504,7 @@ export const DemoVideos = () => {
                   {features.indexOf(activeFeature) < features.length - 1 ? (
                     <button
                       onClick={() => handleFeatureClick(features[features.indexOf(activeFeature) + 1].id)}
-                      className="flex items-center gap-2 text-sm text-nodal-graphite-soft hover:text-nodal-blue transition-colors"
+                      className="flex items-center gap-2 text-sm text-nousna-graphite-soft hover:text-nousna-blue transition-colors"
                     >
                       <span>{features[features.indexOf(activeFeature) + 1].title}</span>
                       <ChevronRight className="w-4 h-4" />

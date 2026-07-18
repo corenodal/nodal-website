@@ -46,7 +46,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
     <section ref={containerRef} className="relative z-10 pt-16 md:pt-20 min-h-screen">
       <div className="relative">
         {/* Purple background — fixed height so it doesn't shift during animation */}
-        <div className="absolute inset-x-0 top-0 h-[60vh] bg-nodal-violet/90" />
+        <div className="absolute inset-x-0 top-0 h-[60vh] bg-nousna-violet/90" />
 
         {/* Content */}
         <div className="relative max-w-screen-2xl mx-auto px-6 md:px-20 pt-6 md:pt-10">
@@ -63,7 +63,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
             className={`${type.subheading} text-white/80 font-light leading-relaxed mt-2 md:mt-3`}
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
-            Nodal connects every step of care in one place, from the first session to the hundredth, so nothing important gets lost.
+            Nousna connects every step of care in one place, from the first session to the hundredth, so nothing important gets lost.
           </p>
 
           {/* Image — right-aligned, overflowing purple into white */}
@@ -75,7 +75,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
               <div className="rounded-2xl overflow-hidden shadow-[0_25px_60px_-12px_rgba(0,0,0,0.25)] border border-slate-100 bg-white">
                 <img
                   src="/img.png"
-                  alt="Nodal clinical assistant interface"
+                  alt="Nousna clinical assistant interface"
                   className="w-full h-auto block"
                   onError={(e) => {
                     const target = e.currentTarget;
@@ -83,7 +83,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
                     target.parentElement!.innerHTML = `
                       <div class="w-full aspect-[16/10] bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
                         <div class="text-center px-8">
-                          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-nodal-violet/10 flex items-center justify-center">
+                          <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-nousna-violet/10 flex items-center justify-center">
                             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#7B6EF6" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
                           </div>
                           <p class="text-sm text-slate-400 font-medium">Product Screenshot</p>

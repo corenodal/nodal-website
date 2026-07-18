@@ -7,7 +7,7 @@ import { type } from '../styles/typography';
 gsap.registerPlugin(ScrollTrigger);
 
 const fragments = [
-  { icon: Database, label: 'EHR', color: 'text-nodal-violet/60', bg: 'bg-nodal-violet/10' },
+  { icon: Database, label: 'EHR', color: 'text-nousna-violet/60', bg: 'bg-nousna-violet/10' },
   { icon: MessageSquare, label: 'Messages', color: 'text-rose-400/60', bg: 'bg-rose-50/80' },
   { icon: PenTool, label: 'Notes', color: 'text-indigo-400/60', bg: 'bg-indigo-50/80' },
   { icon: CreditCard, label: 'Billing', color: 'text-emerald-400/60', bg: 'bg-emerald-50/80' },
@@ -24,9 +24,9 @@ const featuredQuotes = [
 ];
 
 const gridQuotes = [
-  { text: 'Therapists start private practice to escape system fatigue.', accent: 'nodal-violet' as const, span: 'col-span-1' },
-  { text: 'Impacts me being able to see more patients.', accent: 'nodal-green' as const, span: 'col-span-1' },
-  { text: 'System required documentation is exhausting but necessary.', accent: 'nodal-violet' as const, span: 'col-span-2' },
+  { text: 'Therapists start private practice to escape system fatigue.', accent: 'nousna-violet' as const, span: 'col-span-1' },
+  { text: 'Impacts me being able to see more patients.', accent: 'nousna-green' as const, span: 'col-span-1' },
+  { text: 'System required documentation is exhausting but necessary.', accent: 'nousna-violet' as const, span: 'col-span-2' },
 ];
 
 export const ProblemSection = () => {
@@ -154,31 +154,31 @@ export const ProblemSection = () => {
     <section
       id="problem"
       ref={sectionRef}
-      className="relative z-10 bg-nodal-white overflow-visible py-12 md:py-16"
+      className="relative z-10 bg-nousna-white overflow-visible py-12 md:py-16"
     >
 
       {/* ── Beat 1: Practitioner Quotes (exact VoicesFromTheField layout) ── */}
       <div className="voices-section py-24 md:py-32 px-6 md:px-24 relative mb-12">
         {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-nodal-blue/[0.03] via-nodal-violet/[0.06] to-nodal-blue/[0.03] rounded-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-nousna-blue/[0.03] via-nousna-violet/[0.06] to-nousna-blue/[0.03] rounded-3xl" />
 
         <div className="max-w-6xl mx-auto relative">
           <div className="vf-heading opacity-0 text-center mb-14">
-            <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
-              What practitioners <span className="text-nodal-violet italic">told</span> us
+            <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
+              What practitioners <span className="text-nousna-violet italic">told</span> us
             </h2>
           </div>
 
           <div className="flex flex-col md:flex-row gap-6">
             {/* Left — Featured rotating quote */}
-            <div className="vf-card opacity-0 md:w-5/12 p-8 rounded-2xl bg-white/70 backdrop-blur-sm border border-nodal-violet/15 flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+            <div className="vf-card opacity-0 md:w-5/12 p-8 rounded-2xl bg-white/70 backdrop-blur-sm border border-nousna-violet/15 flex flex-col justify-between shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
               <div>
-                <span className="text-5xl font-serif leading-none block mb-6 text-nodal-violet/40">
+                <span className="text-5xl font-serif leading-none block mb-6 text-nousna-violet/40">
                   &ldquo;&ldquo;
                 </span>
                 <p
                   ref={quoteTextRef}
-                  className={`${type.subheading} text-nodal-blue font-medium leading-relaxed`}
+                  className={`${type.subheading} text-nousna-blue font-medium leading-relaxed`}
                 >
                   {featuredQuotes[activeQuote]}
                 </p>
@@ -190,8 +190,8 @@ export const ProblemSection = () => {
                     onClick={() => animateQuoteChange(i)}
                     className={`rounded-full transition-all duration-300 ${
                       i === activeQuote
-                        ? 'w-8 h-2.5 bg-nodal-violet'
-                        : 'w-2.5 h-2.5 bg-nodal-violet/20 hover:bg-nodal-violet/40'
+                        ? 'w-8 h-2.5 bg-nousna-violet'
+                        : 'w-2.5 h-2.5 bg-nousna-violet/20 hover:bg-nousna-violet/40'
                     }`}
                   />
                 ))}
@@ -204,17 +204,17 @@ export const ProblemSection = () => {
                 <div
                   key={i}
                   className={`${quote.span} vf-card opacity-0 p-6 rounded-2xl backdrop-blur-sm border flex flex-col justify-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:scale-[1.02] ${
-                    quote.accent === 'nodal-violet'
-                      ? 'bg-nodal-violet/[0.06] border-nodal-violet/15 hover:border-nodal-violet/30 hover:bg-nodal-violet/[0.10]'
-                      : 'bg-nodal-green/[0.06] border-nodal-green/15 hover:border-nodal-green/30 hover:bg-nodal-green/[0.10]'
+                    quote.accent === 'nousna-violet'
+                      ? 'bg-nousna-violet/[0.06] border-nousna-violet/15 hover:border-nousna-violet/30 hover:bg-nousna-violet/[0.10]'
+                      : 'bg-nousna-green/[0.06] border-nousna-green/15 hover:border-nousna-green/30 hover:bg-nousna-green/[0.10]'
                   }`}
                 >
                   <span className={`text-2xl font-serif leading-none block mb-3 ${
-                    quote.accent === 'nodal-violet' ? 'text-nodal-violet/40' : 'text-nodal-green/40'
+                    quote.accent === 'nousna-violet' ? 'text-nousna-violet/40' : 'text-nousna-green/40'
                   }`}>
                     &ldquo;
                   </span>
-                  <p className={`${quote.span === 'col-span-2' ? type.subheading : type.body} text-nodal-graphite leading-relaxed`}>
+                  <p className={`${quote.span === 'col-span-2' ? type.subheading : type.body} text-nousna-graphite leading-relaxed`}>
                     {quote.text}
                   </p>
                 </div>
@@ -227,7 +227,7 @@ export const ProblemSection = () => {
       {/* ── Beat 2: Stats heading ── */}
       <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mt-8 md:mt-12 mb-12">
         <div className="stats-heading translate-y-12 opacity-0 max-w-5xl">
-          <h2 className={`${type.heading} font-semibold text-nodal-blue leading-tight`}>
+          <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
             Documentation was not designed for mental health work.
           </h2>
         </div>
@@ -247,7 +247,7 @@ export const ProblemSection = () => {
               >
                 <div className={`${frag.bg} backdrop-blur-[2px] rounded-2xl px-5 py-4 border border-white/40 flex items-center gap-3`}>
                   <frag.icon className={`w-5 h-5 ${frag.color} shrink-0`} />
-                  <span className={`${type.ui} font-medium text-nodal-blue/50 whitespace-nowrap`}>{frag.label}</span>
+                  <span className={`${type.ui} font-medium text-nousna-blue/50 whitespace-nowrap`}>{frag.label}</span>
                 </div>
               </div>
             ))}
@@ -267,13 +267,13 @@ export const ProblemSection = () => {
                 key={i}
                 className="pain-card translate-y-8 opacity-0 scale-95 bg-white/90 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm text-center"
               >
-                <div className={`${type.body} font-semibold text-nodal-blue mb-2`}>{item.label}</div>
+                <div className={`${type.body} font-semibold text-nousna-blue mb-2`}>{item.label}</div>
                 <div className={`${type.heading} font-bold text-rose-500 mb-2`}>{item.stat}</div>
-                <div className={`${type.ui} text-nodal-graphite font-light`}>{item.sub}</div>
+                <div className={`${type.ui} text-nousna-graphite font-light`}>{item.sub}</div>
               </div>
             ))}
           </div>
-          <p className="sources-text text-[11px] text-nodal-graphite-soft/60 font-light leading-relaxed text-center mt-6 opacity-0">
+          <p className="sources-text text-[11px] text-nousna-graphite-soft/60 font-light leading-relaxed text-center mt-6 opacity-0">
             Sources: ICANotes, AI in Behavioral Health: National Clinician Survey Report (2026); Tebra, 2025 Physician Burnout Survey; American Psychological Association, 2024 Practitioner Pulse Survey.
           </p>
         </div>
@@ -281,8 +281,8 @@ export const ProblemSection = () => {
         {/* Closing statement — on top of fragments */}
         <div className="closing-statement translate-y-12 opacity-0 relative z-10 pt-6 md:pt-8 text-center">
           <p className={`${type.heading} font-bold leading-tight max-w-3xl mx-auto`}>
-            <span className="text-nodal-blue block">This is not a productivity failure.</span>
-            <span className="text-nodal-violet block mt-2">This is a systems problem.</span>
+            <span className="text-nousna-blue block">This is not a productivity failure.</span>
+            <span className="text-nousna-violet block mt-2">This is a systems problem.</span>
           </p>
         </div>
 

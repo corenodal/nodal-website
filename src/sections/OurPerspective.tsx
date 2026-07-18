@@ -40,7 +40,7 @@ export const OurPerspective = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-0 bg-nodal-blue relative z-10 overflow-hidden"
+      className="py-0 bg-nousna-blue relative z-10 overflow-hidden"
     >
       {/* Decorative background text */}
       <div
@@ -53,7 +53,7 @@ export const OurPerspective = () => {
       <div className="max-w-6xl mx-auto px-6 md:px-24 py-12 md:py-16">
         {/* Intro */}
         <div className="persp-intro opacity-0 mb-12 md:mb-14">
-          <p className={`${type.ui} font-semibold text-nodal-green uppercase tracking-[0.25em] mb-3`}>
+          <p className={`${type.ui} font-semibold text-nousna-green uppercase tracking-[0.25em] mb-3`}>
             Our Perspective
           </p>
           <h2 className={`${type.heading} font-semibold text-white leading-snug`}>
@@ -68,7 +68,7 @@ export const OurPerspective = () => {
               key={i}
               className="persp-q opacity-0 border-b border-white/10 py-8 md:py-10 group flex items-start gap-6 md:gap-10 cursor-default"
             >
-              <span className={`${type.heading} font-bold text-white/10 leading-none flex-shrink-0 select-none group-hover:text-nodal-green/30 transition-colors duration-300`}>
+              <span className={`${type.heading} font-bold text-white/10 leading-none flex-shrink-0 select-none group-hover:text-nousna-green/30 transition-colors duration-300`}>
                 {String(i + 1).padStart(2, '0')}
               </span>
               <p className={`${type.subheading} font-semibold text-white/80 leading-snug pt-2 group-hover:text-white transition-colors duration-300`}>

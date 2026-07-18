@@ -3,7 +3,7 @@ import { ArrowRight, Mic, FileText, ClipboardCheck, Check, Activity } from 'luci
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
-import NodalIcon from '../assets/nodal-icon.svg';
+import NousnaIcon from '../assets/nousna-icon.svg';
 
 const LiveDashboard = () => {
   const barsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -54,8 +54,8 @@ const LiveDashboard = () => {
         <div className="w-3 h-3 rounded-full bg-amber-400/60" />
         <div className="w-3 h-3 rounded-full bg-green-400/60" />
         <div className="ml-4 flex items-center gap-1.5">
-          <img src={NodalIcon} alt="Nodal" className="h-5" />
-          <span className="text-xs font-bold tracking-tighter text-nodal-blue">NODAL</span>
+          <img src={NousnaIcon} alt="Nousna" className="h-5" />
+          <span className="text-xs font-bold tracking-tighter text-nousna-blue">NOUSNA</span>
         </div>
       </div>
 
@@ -64,12 +64,12 @@ const LiveDashboard = () => {
         <div className="grid grid-cols-12 gap-4 md:gap-6">
 
           {/* Left panel — Live Session */}
-          <div className="col-span-12 md:col-span-5 bg-nodal-white rounded-xl p-5 border border-slate-100">
+          <div className="col-span-12 md:col-span-5 bg-nousna-white rounded-xl p-5 border border-slate-100">
             <div className="flex items-center gap-2 mb-5">
-              <div className="w-8 h-8 rounded-lg bg-nodal-green/10 flex items-center justify-center">
-                <Mic className="w-4 h-4 text-nodal-green" />
+              <div className="w-8 h-8 rounded-lg bg-nousna-green/10 flex items-center justify-center">
+                <Mic className="w-4 h-4 text-nousna-green" />
               </div>
-              <span className={`${type.ui} font-semibold text-nodal-blue`}>Live Session</span>
+              <span className={`${type.ui} font-semibold text-nousna-blue`}>Live Session</span>
               <span className="ml-auto w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
             </div>
             {/* Waveform */}
@@ -78,14 +78,14 @@ const LiveDashboard = () => {
                 <div
                   key={i}
                   ref={el => { barsRef.current[i] = el; }}
-                  className="flex-1 rounded-full bg-gradient-to-t from-nodal-green to-nodal-green/50"
+                  className="flex-1 rounded-full bg-gradient-to-t from-nousna-green to-nousna-green/50"
                   style={{ height: '20%' }}
                 />
               ))}
             </div>
             <div className="mt-4 flex items-center gap-2">
-              <Activity className="w-3.5 h-3.5 text-nodal-green" />
-              <span className={`${type.ui} text-nodal-graphite`}>Patient encounter in progress</span>
+              <Activity className="w-3.5 h-3.5 text-nousna-green" />
+              <span className={`${type.ui} text-nousna-graphite`}>Patient encounter in progress</span>
             </div>
           </div>
 
@@ -93,37 +93,37 @@ const LiveDashboard = () => {
           <div className="col-span-12 md:col-span-7 flex flex-col gap-4 md:gap-6">
 
             {/* Clinical Notes */}
-            <div className="bg-nodal-white rounded-xl p-5 border border-slate-100 flex-1">
+            <div className="bg-nousna-white rounded-xl p-5 border border-slate-100 flex-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-nodal-violet/10 flex items-center justify-center">
-                  <FileText className="w-4 h-4 text-nodal-violet" />
+                <div className="w-8 h-8 rounded-lg bg-nousna-violet/10 flex items-center justify-center">
+                  <FileText className="w-4 h-4 text-nousna-violet" />
                 </div>
-                <span className={`${type.ui} font-semibold text-nodal-blue`}>Clinical Notes</span>
-                <span className={`ml-auto ${type.ui} text-nodal-green font-medium bg-nodal-green/10 px-2 py-0.5 rounded-full`}>Auto-generating</span>
+                <span className={`${type.ui} font-semibold text-nousna-blue`}>Clinical Notes</span>
+                <span className={`ml-auto ${type.ui} text-nousna-green font-medium bg-nousna-green/10 px-2 py-0.5 rounded-full`}>Auto-generating</span>
               </div>
               <div className="space-y-2.5">
-                <div className="note-line h-2.5 bg-nodal-violet/15 rounded-full" />
-                <div className="note-line h-2.5 bg-nodal-violet/10 rounded-full" style={{ maxWidth: '85%' }} />
-                <div className="note-line h-2.5 bg-nodal-violet/15 rounded-full" style={{ maxWidth: '92%' }} />
-                <div className="note-line h-2.5 bg-nodal-violet/10 rounded-full" style={{ maxWidth: '70%' }} />
+                <div className="note-line h-2.5 bg-nousna-violet/15 rounded-full" />
+                <div className="note-line h-2.5 bg-nousna-violet/10 rounded-full" style={{ maxWidth: '85%' }} />
+                <div className="note-line h-2.5 bg-nousna-violet/15 rounded-full" style={{ maxWidth: '92%' }} />
+                <div className="note-line h-2.5 bg-nousna-violet/10 rounded-full" style={{ maxWidth: '70%' }} />
               </div>
             </div>
 
             {/* Follow-up Tasks */}
-            <div className="bg-nodal-white rounded-xl p-5 border border-slate-100 flex-1">
+            <div className="bg-nousna-white rounded-xl p-5 border border-slate-100 flex-1">
               <div className="flex items-center gap-2 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-nodal-green/10 flex items-center justify-center">
-                  <ClipboardCheck className="w-4 h-4 text-nodal-green" />
+                <div className="w-8 h-8 rounded-lg bg-nousna-green/10 flex items-center justify-center">
+                  <ClipboardCheck className="w-4 h-4 text-nousna-green" />
                 </div>
-                <span className={`${type.ui} font-semibold text-nodal-blue`}>Follow-up Tasks</span>
+                <span className={`${type.ui} font-semibold text-nousna-blue`}>Follow-up Tasks</span>
               </div>
               <div className="space-y-3">
                 {['Update treatment plan', 'Schedule next session', 'Send homework summary to patient'].map((task, i) => (
                   <div key={i} className="flex items-center gap-3">
-                    <div className="task-check w-5 h-5 rounded-md bg-nodal-green flex items-center justify-center flex-shrink-0">
+                    <div className="task-check w-5 h-5 rounded-md bg-nousna-green flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className={`${type.ui} text-nodal-graphite`}>{task}</span>
+                    <span className={`${type.ui} text-nousna-graphite`}>{task}</span>
                   </div>
                 ))}
               </div>
@@ -162,23 +162,23 @@ export const SolutionSection = () => {
   return (
     <section
       id="solution"
-      className="py-20 md:py-28 px-6 md:px-20 bg-nodal-white relative z-10"
+      className="py-20 md:py-28 px-6 md:px-20 bg-nousna-white relative z-10"
       ref={sectionRef}
     >
       <div className="max-w-5xl mx-auto">
         {/* Heading */}
         <div className="solution-text translate-y-8 opacity-0 mb-4">
-          <h2 className={`${type.heading} font-semibold text-nodal-blue mb-4`}>
+          <h2 className={`${type.heading} font-semibold text-nousna-blue mb-4`}>
             One system. One workflow.
           </h2>
-          <p className={`${type.body} text-nodal-graphite font-light leading-relaxed max-w-3xl mb-8`}>
-            From the moment you start recording to the moment you send notes afterward, Nodal handles the documentation layer so you stay present with your patient.
+          <p className={`${type.body} text-nousna-graphite font-light leading-relaxed max-w-3xl mb-8`}>
+            From the moment you start recording to the moment you send notes afterward, Nousna handles the documentation layer so you stay present with your patient.
           </p>
         </div>
 
         {/* Animated Dashboard Card */}
         <div className="solution-card translate-y-8 opacity-0 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-nodal-green/5 via-transparent to-nodal-violet/5 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-nousna-green/5 via-transparent to-nousna-violet/5 pointer-events-none" />
           <LiveDashboard />
         </div>
 
@@ -186,7 +186,7 @@ export const SolutionSection = () => {
         <div className="solution-cta translate-y-8 opacity-0 mt-8">
           <Link
             to="/product"
-            className={`inline-flex items-center gap-2 text-nodal-green font-semibold ${type.body} hover:gap-3 transition-all`}
+            className={`inline-flex items-center gap-2 text-nousna-green font-semibold ${type.body} hover:gap-3 transition-all`}
           >
             Explore the full product
             <ArrowRight className="w-5 h-5" />

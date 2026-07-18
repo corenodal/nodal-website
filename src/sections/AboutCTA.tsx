@@ -27,11 +27,11 @@ export const AboutCTA = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 md:py-36 px-6 md:px-24 bg-nodal-white relative overflow-hidden z-10"
+      className="py-24 md:py-36 px-6 md:px-24 bg-nousna-white relative overflow-hidden z-10"
     >
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Left-aligned headline */}
-        <h2 className={`${type.display} font-semibold text-nodal-blue leading-[1.02] tracking-tight max-w-4xl mb-8`}>
+        <h2 className={`${type.display} font-semibold text-nousna-blue leading-[1.02] tracking-tight max-w-4xl mb-8`}>
           <div className="overflow-hidden">
             <span className="acta-line block" style={{ transform: 'translateY(110%)' }}>The future of healthcare</span>
           </div>
@@ -39,15 +39,15 @@ export const AboutCTA = () => {
             <span className="acta-line block" style={{ transform: 'translateY(110%)' }}>needs systems that support</span>
           </div>
           <div className="overflow-hidden">
-            <span className="acta-line block text-nodal-violet" style={{ transform: 'translateY(110%)' }}>focus and presence.</span>
+            <span className="acta-line block text-nousna-violet" style={{ transform: 'translateY(110%)' }}>focus and presence.</span>
           </div>
         </h2>
 
-        <p className={`acta-sub opacity-0 ${type.body} text-nodal-graphite font-light max-w-sm leading-relaxed mb-10`}>
-          Nodal is building that infrastructure. Join us as a pilot partner and help shape what comes next.
+        <p className={`acta-sub opacity-0 ${type.body} text-nousna-graphite font-light max-w-sm leading-relaxed mb-10`}>
+          Nousna is building that infrastructure. Join us as a pilot partner and help shape what comes next.
         </p>
 
-        <Link to="/contact" className={`acta-btn opacity-0 inline-flex items-center gap-3 px-8 py-4 bg-nodal-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all duration-300 group shadow-md hover:shadow-xl`}>
+        <Link to="/contact" className={`acta-btn opacity-0 inline-flex items-center gap-3 px-8 py-4 bg-nousna-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all duration-300 group shadow-md hover:shadow-xl`}>
           Join the pilot →
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
