@@ -63,6 +63,9 @@ export const Footer = ({ dark = false }: { dark?: boolean }) => {
                 <li>
                   <Link to="/contact" onClick={handleNavClick('/contact')} className={linkClass}>Contact</Link>
                 </li>
+                <li>
+                  <Link to="/trust-and-safety" onClick={handleNavClick('/trust-and-safety')} className={linkClass}>Trust &amp; Safety</Link>
+                </li>
               </ul>
             </div>
           </div>
