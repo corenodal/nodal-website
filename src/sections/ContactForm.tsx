@@ -117,10 +117,10 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
         <div className="md:sticky md:top-32 md:w-2/5 flex-shrink-0">
           <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nousna-blue mb-6`}>
             <div className="overflow-hidden">
-              <span className="cf-headline block">Join the</span>
+              <span className="cf-headline block">Request</span>
             </div>
             <div className="overflow-hidden">
-              <span className="cf-headline block">pilot.</span>
+              <span className="cf-headline block">access.</span>
             </div>
           </h1>
           <p className={`cf-subtitle opacity-0 ${type.body} text-nousna-graphite font-light leading-relaxed mb-10`}>
@@ -146,7 +146,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
               </div>
               <h2 className={`${type.subheading} font-semibold text-nousna-blue mb-3`}>You're in.</h2>
               <p className={`${type.body} text-nousna-graphite font-light`}>
-                Thank you for joining the pilot. We'll follow up within 2 business days.
+                Thank you for your interest in the research study. We'll follow up within 2 business days.
               </p>
             </div>
           ) : (
@@ -280,7 +280,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                       <Loader2 className="w-4 h-4 animate-spin" />
                     </>
                   ) : (
-                    'Join the pilot →'
+                    'Request access →'
                   )}
                 </button>
               </div>

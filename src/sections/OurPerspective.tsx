@@ -6,7 +6,7 @@ import { type } from '../styles/typography';
 gsap.registerPlugin(ScrollTrigger);
 
 const questions = [
-  'What would healthcare look like if systems reduced mental strain?',
+  'What would healthcare look like if systems reduced the stress and strain on clinicians?',
   'What if documentation matched how clinicians actually think?',
   'What if technology worked quietly in the background?',
 ];

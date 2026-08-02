@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 const commitments = [
   { lead: 'A signed Business Associate Agreement', rest: 'before we process any protected health information.' },
   { lead: 'Plain-language documentation', rest: 'of our safeguards, available to your team on request.' },
-  { lead: 'A named privacy and security contact', rest: 'you can reach directly during the pilot.' },
+  { lead: 'A named privacy and security contact', rest: 'you can reach directly during the research study.' },
   { lead: 'Advance notice', rest: 'before any material change to the sub-processors that handle your data.' },
-  { lead: 'Your data returned or securely destroyed', rest: 'when the pilot ends, with certification on request.' },
+  { lead: 'Your data returned or securely destroyed', rest: 'when the research study ends, with certification on request.' },
 ];
 
 export const TrustCommitments = () => {
@@ -47,7 +47,7 @@ export const TrustCommitments = () => {
       <div className="max-w-6xl mx-auto relative">
         <div className="max-w-2xl mb-14 md:mb-16">
           <p className={`cm-label opacity-0 ${type.ui} font-semibold text-nousna-green uppercase tracking-[0.25em] mb-3`}>
-            What pilot partners can expect
+            What research partners can expect
           </p>
           <h2 className={`cm-heading opacity-0 ${type.heading} font-semibold text-white leading-tight`}>
             Commitments we put in <span className="text-nousna-green italic">writing</span>.

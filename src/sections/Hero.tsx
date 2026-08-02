@@ -131,7 +131,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
             <span className="mx-2 text-nousna-graphite-soft/40">·</span>
             Your data is never used to train AI models
             <span className="mx-2 text-nousna-graphite-soft/40">·</span>
-            Outputs reviewed by a clinician
+            You review every output before use
           </p>
         </div>
       </div>

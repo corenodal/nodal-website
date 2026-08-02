@@ -29,7 +29,7 @@ const faqs = [
   },
   {
     q: 'What happens to session audio?',
-    a: 'By default, session audio is deleted once the clinician signs the note. Retention follows a most-protective-rule schedule by data type and state, and at the end of a pilot your data is returned or securely destroyed, with certification on request.',
+    a: 'By default, session audio is deleted once the clinician signs the note. Retention follows a most-protective-rule schedule by data type and state, and at the end of the research study your data is returned or securely destroyed, with certification on request.',
   },
   {
     q: 'How would we hear about a breach?',
@@ -81,7 +81,7 @@ export const TrustFAQ = () => {
           </h2>
           <p className={`${type.body} text-nousna-graphite font-light leading-relaxed max-w-sm`}>
             Straight answers to the questions we hear most from privacy, security, and clinical leads
-            evaluating a pilot.
+            evaluating a research study.
           </p>
         </div>
 
