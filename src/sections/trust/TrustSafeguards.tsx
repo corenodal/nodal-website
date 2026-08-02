@@ -105,7 +105,7 @@ const safeguards: Safeguard[] = [
     icon: Network,
     accent: 'violet',
     label: 'Our vendors',
-    title: 'Everyone who touches the system is vetted',
+    title: 'Everyone who touches the system is screened and contract-bound',
     body: 'Every third party in our supply chain is risk-tiered, contract-bound, and reviewed on a set cadence.',
     details: [
       { lead: 'A maintained register.', rest: 'We track each sub-processor, what data it touches, and where.' },

@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const trustItems = [
   { icon: Shield, label: 'HIPAA aligned infrastructure' },
-  { icon: FileText, label: 'BAA available for all pilot partners' },
+  { icon: FileText, label: 'BAA available for all research partners' },
   { icon: Lock, label: 'Your data is never used to train AI models' },
   { icon: UserCheck, label: 'A clinician reviews every AI output before use' },
   { icon: HardDrive, label: 'Secure session recording and storage' },

@@ -68,7 +68,7 @@ export const WhoWeAre = () => {
           <div className="inline-flex items-center gap-2.5 border border-nousna-green/30 bg-nousna-green/5 rounded-full px-5 py-2.5">
             <span className="w-2 h-2 rounded-full bg-nousna-green animate-pulse" />
             <span className={`${type.ui} font-semibold text-nousna-graphite tracking-wide`}>
-              Currently in pilot, onboarding partners
+              Currently in our research study, onboarding partners
             </span>
           </div>
         </div>

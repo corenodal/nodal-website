@@ -25,7 +25,7 @@ const domains = [
   { title: 'Accessibility', desc: 'Built toward WCAG 2.1 AA so the tool works for every clinician.' },
   { title: 'Retention & destruction', desc: 'Most-protective retention; certified destruction at the end.' },
   { title: 'Ongoing monitoring & audit', desc: 'Controls re-verified monthly and refreshed annually.' },
-  { title: 'Pilot-specific governance', desc: 'Explicit oversight, decision rights, and stage gates.' },
+  { title: 'Study-specific governance', desc: 'Explicit oversight, decision rights, and stage gates.' },
 ];
 
 export const TrustProgram = () => {
@@ -69,7 +69,7 @@ export const TrustProgram = () => {
           </h2>
           <p className={`${type.body} text-slate-300 font-light leading-relaxed`}>
             The eight safeguards above sit inside a structured program covering how we are organized, how
-            data is mapped, how systems are built, how the pilot is governed, and how every control is
+            data is mapped, how systems are built, how the study is governed, and how every control is
             re-verified over time. Specifics are available to your diligence team on request.
           </p>
         </div>
@@ -92,7 +92,7 @@ export const TrustProgram = () => {
         <div className="mt-10 inline-flex items-center gap-2.5 border border-white/15 bg-white/[0.04] rounded-full px-5 py-2.5">
           <span className="w-2 h-2 rounded-full bg-nousna-green animate-pulse" />
           <span className="text-sm font-medium text-slate-300 tracking-wide">
-            United States pilot · forward readiness for Canada, the EU, the UK, Australia &amp; New Zealand, and India
+            United States research study · forward readiness for Canada, the EU, the UK, Australia &amp; New Zealand, and India
           </span>
         </div>
       </div>

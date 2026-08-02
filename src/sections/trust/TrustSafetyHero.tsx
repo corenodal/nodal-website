@@ -55,7 +55,7 @@ export const TrustSafetyHero = ({ isLoading = false }: { isLoading?: boolean }) 
           </p>
 
           <ul className="flex flex-wrap gap-3" aria-label="At a glance">
-            {['HIPAA-aligned business associate', 'A BAA with every practice', 'United States pilot'].map((chip) => (
+            {['HIPAA-aligned business associate', 'A BAA with every practice', 'United States research study'].map((chip) => (
               <li
                 key={chip}
                 className={`tsh-chip opacity-0 ${type.ui} font-medium text-nousna-graphite bg-white border border-slate-200 rounded-full px-4 py-2`}

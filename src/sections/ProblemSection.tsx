@@ -228,7 +228,7 @@ export const ProblemSection = () => {
       <div className="flex flex-col items-center justify-center px-6 md:px-24 text-center mt-8 md:mt-12 mb-12">
         <div className="stats-heading translate-y-12 opacity-0 max-w-5xl">
           <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
-            Documentation was not designed for mental health work.
+            Documentation rarely fits the way mental health work actually happens.
           </h2>
         </div>
       </div>

@@ -44,11 +44,11 @@ export const AboutCTA = () => {
         </h2>
 
         <p className={`acta-sub opacity-0 ${type.body} text-nousna-graphite font-light max-w-sm leading-relaxed mb-10`}>
-          Nousna is building that infrastructure. Join us as a pilot partner and help shape what comes next.
+          Nousna is building that infrastructure. Join us as a research partner and help shape what comes next.
         </p>
 
         <Link to="/contact" className={`acta-btn opacity-0 inline-flex items-center gap-3 px-8 py-4 bg-nousna-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all duration-300 group shadow-md hover:shadow-xl`}>
-          Join the pilot →
+          Request access →
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
