@@ -1,11 +1,41 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import { type } from '../styles/typography';
-import { content } from '../content';
 
-export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
+export type HeroCopy = {
+  pill: string;
+  headline: string;
+  subtext: string;
+  cta: { label: string; to: string };
+  trust: ReactNode;
+};
+
+const usCopy: HeroCopy = {
+  pill: 'Built for mental health practitioners',
+  headline: 'The clinical workflow built around how you actually work.',
+  subtext: 'Nousna captures your sessions, writes your notes, and keeps everything about a patient in one place so you can stop carrying the work home.',
+  cta: { label: 'See how it works', to: '/demo-videos' },
+  trust: (
+    <>
+      HIPAA aligned
+      <span className="mx-2 text-nousna-graphite-soft/40">·</span>
+      <Link
+        to="/contact"
+        className="underline decoration-nousna-graphite-soft/30 underline-offset-2 hover:text-nousna-blue transition-colors"
+      >
+        BAA available
+      </Link>
+      <span className="mx-2 text-nousna-graphite-soft/40">·</span>
+      Your data is never used to train AI models
+      <span className="mx-2 text-nousna-graphite-soft/40">·</span>
+      You review every output before use
+    </>
+  ),
+};
+
+export const Hero = ({ isLoading = false, copy = usCopy }: { isLoading?: boolean; copy?: HeroCopy }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -84,7 +114,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
         >
           <span className="w-2 h-2 rounded-full bg-nousna-green" />
           <span className={`${type.ui} font-medium text-nousna-green tracking-wide`}>
-            {content.heroPill}
+            {copy.pill}
           </span>
         </div>
 
@@ -93,7 +123,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
           className="hero-headline text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] mb-8 text-nousna-blue"
           style={{ opacity: 0 }}
         >
-          The clinical workflow built around how you actually work.
+          {copy.headline}
         </h1>
 
         {/* Subtext */}
@@ -101,7 +131,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
           className={`hero-subtext ${type.subheading} text-nousna-graphite font-light leading-relaxed mb-12 max-w-3xl mx-auto`}
           style={{ opacity: 0 }}
         >
-          Nousna captures your sessions, writes your notes, and keeps everything about a patient in one place so you can stop carrying the work home.
+          {copy.subtext}
         </p>
 
         {/* CTAs */}
@@ -110,10 +140,10 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
           style={{ opacity: 0 }}
         >
           <Link
-            to="/demo-videos"
+            to={copy.cta.to}
             className={`w-full sm:w-auto px-10 py-4 bg-nousna-violet text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all flex items-center justify-center group shadow-md hover:shadow-xl hover:-translate-y-0.5`}
           >
-            See how it works
+            {copy.cta.label}
             <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>
@@ -121,18 +151,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
         {/* Trust bar */}
         <div className="hero-trust" style={{ opacity: 0 }}>
           <p className="text-xs text-nousna-graphite-soft font-light tracking-wide">
-            HIPAA aligned
-            <span className="mx-2 text-nousna-graphite-soft/40">·</span>
-            <Link
-              to="/contact"
-              className="underline decoration-nousna-graphite-soft/30 underline-offset-2 hover:text-nousna-blue transition-colors"
-            >
-              BAA available
-            </Link>
-            <span className="mx-2 text-nousna-graphite-soft/40">·</span>
-            Your data is never used to train AI models
-            <span className="mx-2 text-nousna-graphite-soft/40">·</span>
-            You review every output before use
+            {copy.trust}
           </p>
         </div>
       </div>

@@ -2,11 +2,14 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Shield, FileText, Lock, UserCheck, HardDrive, Layers, LayoutTemplate, Settings, PenLine, CheckSquare } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const trustItems = [
+const usTrustItems = [
   { icon: Shield, label: 'HIPAA aligned infrastructure' },
   { icon: FileText, label: 'BAA available for all research partners' },
   { icon: Lock, label: 'Your data is never used to train AI models' },
@@ -14,7 +17,7 @@ const trustItems = [
   { icon: HardDrive, label: 'Secure session recording and storage' },
 ];
 
-const capabilityItems = [
+const usCapabilityItems = [
   { icon: Layers, label: 'Combine notes across sessions' },
   { icon: LayoutTemplate, label: 'Create and save custom templates' },
   { icon: Settings, label: 'Customize your AI assistant' },
@@ -22,7 +25,28 @@ const capabilityItems = [
   { icon: CheckSquare, label: 'Track patient history and task completion' },
 ];
 
-export const TrustVerify = () => {
+type Item = { icon: LucideIcon; label: string };
+
+export type TrustVerifyCopy = {
+  heading: string;
+  lead: string;
+  left: Item[];
+  right: Item[];
+  leftTitle?: string;
+  rightTitle?: string;
+  link?: { label: string; to: string };
+};
+
+const usCopy: TrustVerifyCopy = {
+  heading: 'Trust you can verify.',
+  lead: 'Every output is reviewable before it is used. And compliance is built into the foundation from day one.',
+  left: usTrustItems,
+  right: usCapabilityItems,
+};
+
+const columnTitle = `${type.ui} font-semibold text-nousna-graphite-soft pb-2`;
+
+export const TrustVerify = ({ copy = usCopy }: { copy?: TrustVerifyCopy }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -49,18 +73,19 @@ export const TrustVerify = () => {
       <div className="max-w-6xl mx-auto">
         <div className="tv-heading opacity-0 text-center mb-4">
           <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
-            Trust you can verify.
+            {copy.heading}
           </h2>
         </div>
         <p className="tv-heading opacity-0 text-center text-nousna-graphite font-light leading-relaxed max-w-3xl mx-auto mb-14">
-          Every output is reviewable before it is used. And compliance is built into the foundation from day one.
+          {copy.lead}
         </p>
 
         <div className="tv-grid max-w-5xl mx-auto bg-nousna-white rounded-2xl border border-slate-100 p-6 md:p-10 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-0">
             {/* Left column — Trust & compliance */}
             <div className="space-y-0">
-              {trustItems.map((item, i) => (
+              {copy.leftTitle && <h3 className={columnTitle}>{copy.leftTitle}</h3>}
+              {copy.left.map((item, i) => (
                 <div
                   key={i}
                   className="tv-item opacity-0 flex items-center gap-4 py-4 border-b border-slate-100"
@@ -77,7 +102,8 @@ export const TrustVerify = () => {
 
             {/* Right column — Capabilities */}
             <div className="space-y-0">
-              {capabilityItems.map((item, i) => (
+              {copy.rightTitle && <h3 className={`${columnTitle} mt-8 md:mt-0`}>{copy.rightTitle}</h3>}
+              {copy.right.map((item, i) => (
                 <div
                   key={i}
                   className="tv-item opacity-0 flex items-center gap-4 py-4 border-b border-slate-100"
@@ -93,6 +119,17 @@ export const TrustVerify = () => {
             </div>
           </div>
         </div>
+        {copy.link && (
+          <div className="text-center mt-10">
+            <Link
+              to={copy.link.to}
+              className={`inline-flex items-center gap-2 text-nousna-green font-semibold ${type.body} hover:gap-3 transition-all`}
+            >
+              {copy.link.label}
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   );

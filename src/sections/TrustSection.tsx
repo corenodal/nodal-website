@@ -3,7 +3,7 @@ import { Check } from 'lucide-react';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
 
-const features = [
+const usFeatures = [
   'Analyze reports',
   'Combine notes across sessions',
   'Create custom templates',
@@ -17,7 +17,20 @@ const features = [
   'Track patient history',
 ];
 
-export const TrustSection = () => {
+export type TrustSectionCopy = {
+  heading: string;
+  lead: string;
+  features: string[];
+};
+
+const usCopy: TrustSectionCopy = {
+  heading: 'Built for Trust and Transparency',
+  lead: 'Healthcare requires clarity at every step. Nousna is designed so everything is visible, reviewable, and easy to verify.',
+  features: usFeatures,
+};
+
+export const TrustSection = ({ copy = usCopy }: { copy?: TrustSectionCopy }) => {
+  const { features } = copy;
   const sectionRef = useRef<HTMLDivElement>(null);
   const checksRef = useRef<(HTMLDivElement | null)[]>([]);
   const rowsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -87,7 +100,7 @@ export const TrustSection = () => {
     }, sectionRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [features]);
 
   // Split into 2 columns
   const midpoint = Math.ceil(features.length / 2);
@@ -115,10 +128,10 @@ export const TrustSection = () => {
       <div className="max-w-6xl mx-auto" ref={sectionRef}>
         <div className="text-center mb-10">
           <h2 className={`${type.heading} font-semibold text-nousna-blue mb-4`}>
-            Built for Trust and Transparency
+            {copy.heading}
           </h2>
           <p className={`${type.body} text-nousna-graphite max-w-2xl mx-auto font-light leading-relaxed`}>
-            Healthcare requires clarity at every step. Nousna is designed so everything is visible, reviewable, and easy to verify.
+            {copy.lead}
           </p>
         </div>
 

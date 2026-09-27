@@ -39,7 +39,7 @@ const safeguards: Safeguard[] = [
     details: [
       { lead: 'Encrypted everywhere.', rest: 'Information is encrypted while moving and while stored, with managed keys and modern transport security.' },
       { lead: 'Least-privilege access.', rest: 'Entry requires multi-factor authentication; access is granted by role and reviewed; developer access to production data is restricted and logged.' },
-      { lead: 'No quiet leaks.', rest: 'Patient data is technically prevented from reaching chat, email, support tickets, and test systems — not just discouraged by policy.' },
+      { lead: 'No quiet leaks.', rest: 'Patient data is technically prevented from reaching chat, email, support tickets, and test systems, not just discouraged by policy.' },
     ],
   },
   {
@@ -183,7 +183,7 @@ export const TrustSafeguards = () => {
             </h2>
             <p className={`${type.body} text-nousna-graphite font-light leading-relaxed`}>
               Each safeguard is one node in a wider privacy, security, and clinical-safety program. The
-              full program spans twenty domains &mdash; summarized further down the page.
+              full program spans twenty domains, summarized further down the page.
             </p>
           </div>
 

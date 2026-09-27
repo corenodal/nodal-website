@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'Will you sign a Business Associate Agreement?',
-    a: 'Yes — always, and before any protected health information reaches us. The BAA, together with the pilot agreement, is the document that governs how we handle your data.',
+    a: 'Yes, always, and before any protected health information reaches us. The BAA, together with the pilot agreement, is the document that governs how we handle your data.',
   },
   {
     q: 'Can a patient decline to be recorded?',
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     q: 'How do you handle state-specific rules?',
-    a: 'On top of our base controls, we apply the additional obligations each state imposes where your clinicians practice — for example, recording-consent rules, mental-health-specific consent and disclosure rules, and consumer-health-data rules — defaulting to the most protective standard.',
+    a: 'On top of our base controls, we apply the additional obligations each state imposes where your clinicians practice, for example, recording-consent rules, mental-health-specific consent and disclosure rules, and consumer-health-data rules, defaulting to the most protective standard.',
   },
 ];
 

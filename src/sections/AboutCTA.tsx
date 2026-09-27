@@ -4,7 +4,19 @@ import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import { type } from '../styles/typography';
 
-export const AboutCTA = () => {
+export type AboutCTACopy = {
+  lines: string[];
+  sub: string;
+  cta: { label: string; to: string };
+};
+
+const usCopy: AboutCTACopy = {
+  lines: ['The future of healthcare', 'needs systems that support', 'focus and presence.'],
+  sub: 'Nousna is building that infrastructure. Join us as a research partner and help shape what comes next.',
+  cta: { label: 'Request access →', to: '/contact' },
+};
+
+export const AboutCTA = ({ copy = usCopy }: { copy?: AboutCTACopy }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -32,23 +44,24 @@ export const AboutCTA = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Left-aligned headline */}
         <h2 className={`${type.display} font-semibold text-nousna-blue leading-[1.02] tracking-tight max-w-4xl mb-8`}>
-          <div className="overflow-hidden">
-            <span className="acta-line block" style={{ transform: 'translateY(110%)' }}>The future of healthcare</span>
-          </div>
-          <div className="overflow-hidden">
-            <span className="acta-line block" style={{ transform: 'translateY(110%)' }}>needs systems that support</span>
-          </div>
-          <div className="overflow-hidden">
-            <span className="acta-line block text-nousna-violet" style={{ transform: 'translateY(110%)' }}>focus and presence.</span>
-          </div>
+          {copy.lines.map((line, i) => (
+            <div key={line} className="overflow-hidden">
+              <span
+                className={`acta-line block ${i === copy.lines.length - 1 ? 'text-nousna-violet' : ''}`}
+                style={{ transform: 'translateY(110%)' }}
+              >
+                {line}
+              </span>
+            </div>
+          ))}
         </h2>
 
         <p className={`acta-sub opacity-0 ${type.body} text-nousna-graphite font-light max-w-sm leading-relaxed mb-10`}>
-          Nousna is building that infrastructure. Join us as a research partner and help shape what comes next.
+          {copy.sub}
         </p>
 
-        <Link to="/contact" className={`acta-btn opacity-0 inline-flex items-center gap-3 px-8 py-4 bg-nousna-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all duration-300 group shadow-md hover:shadow-xl`}>
-          Request access →
+        <Link to={copy.cta.to} className={`acta-btn opacity-0 inline-flex items-center gap-3 px-8 py-4 bg-nousna-green text-white ${type.body} font-semibold rounded-xl hover:brightness-105 transition-all duration-300 group shadow-md hover:shadow-xl`}>
+          {copy.cta.label}
           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>

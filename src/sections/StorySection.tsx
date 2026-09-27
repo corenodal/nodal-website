@@ -2,11 +2,12 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mic, FileText, Zap, Layers } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const steps = [
+const usSteps = [
   {
     icon: Mic,
     title: 'Record.',
@@ -37,7 +38,14 @@ const steps = [
   },
 ];
 
-export const StorySection = () => {
+export type StoryCopy = {
+  heading: string;
+  steps: { title: string; description: string; icon?: LucideIcon }[];
+};
+
+const usCopy: StoryCopy = { heading: 'How a session works with Nousna', steps: usSteps };
+
+export const StorySection = ({ copy = usCopy }: { copy?: StoryCopy }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -66,11 +74,13 @@ export const StorySection = () => {
         <h2
           className="workflow-heading text-3xl md:text-4xl font-semibold text-white mb-14 translate-y-8 opacity-0"
         >
-          How a session works with Nousna
+          {copy.heading}
         </h2>
 
         <div className="workflow-steps grid grid-cols-1 md:grid-cols-2 gap-6">
-          {steps.map((step, i) => (
+          {copy.steps.map((text, i) => {
+            const step = { ...usSteps[i % usSteps.length], ...text };
+            return (
             <div
               key={i}
               className="workflow-step translate-y-6 opacity-0 bg-white/[0.06] border border-white/10 rounded-xl p-7"
@@ -85,7 +95,8 @@ export const StorySection = () => {
                 {step.description}
               </p>
             </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

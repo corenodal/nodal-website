@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { type } from '../styles/typography';
 import NousnaLogo from '../assets/nousna-logo.svg';
 
-export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
+export const LoadingScreen = ({ onComplete, label = 'Initializing Clinical System' }: { onComplete: () => void; label?: string }) => {
   useEffect(() => {
     const tl = gsap.timeline();
     
@@ -32,7 +32,7 @@ export const LoadingScreen = ({ onComplete }: { onComplete: () => void }) => {
         </div>
         
         <p className={`${type.ui} font-semibold text-nousna-blue/40 tracking-widest uppercase`}>
-          Initializing Clinical System
+          {label}
         </p>
       </div>
     </div>
