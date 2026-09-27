@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ArrowRight } from 'lucide-react';
 import { type } from '../styles/typography';
+import { content } from '../content';
 
 export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -83,7 +84,7 @@ export const Hero = ({ isLoading = false }: { isLoading?: boolean }) => {
         >
           <span className="w-2 h-2 rounded-full bg-nousna-green" />
           <span className={`${type.ui} font-medium text-nousna-green tracking-wide`}>
-            Built for mental health practitioners
+            {content.heroPill}
           </span>
         </div>
 
