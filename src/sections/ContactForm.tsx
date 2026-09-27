@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type ReactNode } from 'react';
 import emailjs from '@emailjs/browser';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
@@ -24,7 +24,44 @@ const initialForm: FormData = {
   message: '',
 };
 
-export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
+export type ContactCopy = {
+  headline: string[];
+  subtitle: string;
+  email: string;
+  practiceTypes: string[];
+  roles: string[];
+  submitLabel: string;
+  successTitle: string;
+  successBody: string;
+  trust: ReactNode;
+};
+
+const usCopy: ContactCopy = {
+  headline: ['Request', 'access.'],
+  subtitle: 'We are working with a small group of therapists, psychologists, and psychiatrists to refine Nousna before broader launch. We will set up a 20 minute call to understand how your practice works before you start.',
+  email: 'team@nousna.com',
+  practiceTypes: ['Solo practice', 'Group practice', 'Hospital', 'Other'],
+  roles: ['Therapist', 'Psychologist', 'Psychiatrist', 'Other'],
+  submitLabel: 'Request access →',
+  successTitle: "You're in.",
+  successBody: "Thank you for your interest in the research study. We'll follow up within 2 business days.",
+  trust: (
+    <>
+      HIPAA aligned
+      <span className="mx-2 text-nousna-graphite-soft/40">·</span>
+      <Link
+        to="/contact"
+        className="underline decoration-nousna-graphite-soft/30 underline-offset-2 hover:text-nousna-blue transition-colors"
+      >
+        BAA available
+      </Link>
+      <span className="mx-2 text-nousna-graphite-soft/40">·</span>
+      We'll follow up within 2 business days.
+    </>
+  ),
+};
+
+export const ContactForm = ({ isLoading = false, copy = usCopy }: { isLoading?: boolean; copy?: ContactCopy }) => {
   const [form, setForm] = useState<FormData>(initialForm);
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
@@ -116,22 +153,21 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
         {/* Left — Heading & context */}
         <div className="md:sticky md:top-32 md:w-2/5 flex-shrink-0">
           <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nousna-blue mb-6`}>
-            <div className="overflow-hidden">
-              <span className="cf-headline block">Request</span>
-            </div>
-            <div className="overflow-hidden">
-              <span className="cf-headline block">access.</span>
-            </div>
+            {copy.headline.map((line) => (
+              <div key={line} className="overflow-hidden">
+                <span className="cf-headline block">{line}</span>
+              </div>
+            ))}
           </h1>
           <p className={`cf-subtitle opacity-0 ${type.body} text-nousna-graphite font-light leading-relaxed mb-10`}>
-            We are working with a small group of therapists, psychologists, and psychiatrists to refine Nousna before broader launch. We will set up a 20 minute call to understand how your practice works before you start.
+            {copy.subtitle}
           </p>
 
           <div className="cf-subtitle opacity-0 space-y-6">
             <div className="border-l-2 border-nousna-green pl-5">
               <p className={`${type.ui} font-semibold text-nousna-graphite-soft uppercase tracking-widest mb-1`}>Email</p>
-              <a href="mailto:team@nousna.com" className={`${type.body} text-nousna-graphite font-light hover:text-nousna-blue transition-colors`}>
-                team@nousna.com
+              <a href={`mailto:${copy.email}`} className={`${type.body} text-nousna-graphite font-light hover:text-nousna-blue transition-colors`}>
+                {copy.email}
               </a>
             </div>
           </div>
@@ -144,9 +180,9 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
               <div className="w-16 h-16 rounded-full bg-nousna-green/10 flex items-center justify-center mx-auto mb-6">
                 <Send className="w-7 h-7 text-nousna-green" />
               </div>
-              <h2 className={`${type.subheading} font-semibold text-nousna-blue mb-3`}>You're in.</h2>
+              <h2 className={`${type.subheading} font-semibold text-nousna-blue mb-3`}>{copy.successTitle}</h2>
               <p className={`${type.body} text-nousna-graphite font-light`}>
-                Thank you for your interest in the research study. We'll follow up within 2 business days.
+                {copy.successBody}
               </p>
             </div>
           ) : (
@@ -220,10 +256,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                     className={errors.practiceType ? selectError : selectNormal}
                   >
                     <option value="" disabled>Select practice type</option>
-                    <option value="Solo practice">Solo practice</option>
-                    <option value="Group practice">Group practice</option>
-                    <option value="Hospital">Hospital</option>
-                    <option value="Other">Other</option>
+                    {copy.practiceTypes.map((o) => <option key={o} value={o}>{o}</option>)}
                   </select>
                   {errors.practiceType && <p className="text-red-500 text-xs mt-1">{errors.practiceType}</p>}
                 </div>
@@ -239,10 +272,7 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                     className={errors.role ? selectError : selectNormal}
                   >
                     <option value="" disabled>Select your role</option>
-                    <option value="Therapist">Therapist</option>
-                    <option value="Psychologist">Psychologist</option>
-                    <option value="Psychiatrist">Psychiatrist</option>
-                    <option value="Other">Other</option>
+                    {copy.roles.map((o) => <option key={o} value={o}>{o}</option>)}
                   </select>
                   {errors.role && <p className="text-red-500 text-xs mt-1">{errors.role}</p>}
                 </div>
@@ -280,23 +310,14 @@ export const ContactForm = ({ isLoading = false }: { isLoading?: boolean }) => {
                       <Loader2 className="w-4 h-4 animate-spin" />
                     </>
                   ) : (
-                    'Request access →'
+                    copy.submitLabel
                   )}
                 </button>
               </div>
 
               {/* Trust line */}
               <p className="text-xs text-nousna-graphite-soft font-light tracking-wide pt-2">
-                HIPAA aligned
-                <span className="mx-2 text-nousna-graphite-soft/40">·</span>
-                <Link
-                  to="/contact"
-                  className="underline decoration-nousna-graphite-soft/30 underline-offset-2 hover:text-nousna-blue transition-colors"
-                >
-                  BAA available
-                </Link>
-                <span className="mx-2 text-nousna-graphite-soft/40">·</span>
-                We'll follow up within 2 business days.
+                {copy.trust}
               </p>
             </form>
           )}

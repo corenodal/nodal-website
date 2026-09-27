@@ -86,7 +86,7 @@ export const TrustClose = () => {
           practice. Capabilities described here reflect our current program and may change as the product
           and the law evolve.
           <span className="block mt-4 text-xs uppercase tracking-wider text-nousna-graphite-soft/80">
-            Informational — not a certification or warranty · Last updated April 2026
+            Informational, not a certification or warranty · Last updated April 2026
           </span>
         </p>
       </div>

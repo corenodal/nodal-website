@@ -10,6 +10,8 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { DemoVideos } from './pages/DemoVideos';
 import { TrustSafety } from './pages/TrustSafety';
+import { UKRoutes } from './uk/routes';
+import { isUK } from './config/region';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -17,12 +19,13 @@ function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <main className="relative min-h-screen bg-nousna-white text-nousna-graphite overflow-x-hidden font-sans">
-        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      <main className="relative min-h-screen bg-nousna-white text-nousna-graphite overflow-x-clip font-sans">
+        {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} {...(isUK && { label: 'Loading' })} />}
 
         <Navbar />
 
         <div className="relative">
+          {isUK ? <UKRoutes isLoading={isLoading} /> : (
           <Routes>
             <Route path="/" element={<Home isLoading={isLoading} />} />
             <Route path="/features" element={<Features isLoading={isLoading} />} />
@@ -32,6 +35,7 @@ function App() {
             <Route path="/demo-videos" element={<DemoVideos />} />
             <Route path="/trust-and-safety" element={<TrustSafety isLoading={isLoading} />} />
           </Routes>
+          )}
         </div>
       </main>
     </BrowserRouter>

@@ -5,7 +5,25 @@ import gsap from 'gsap';
 import { type } from '../styles/typography';
 import NousnaIcon from '../assets/nousna-icon.svg';
 
-const LiveDashboard = () => {
+export type SolutionCopy = {
+  heading: string;
+  body: string;
+  link: { label: string; to: string };
+  session: { label: string; status: string };
+  notes: { label: string; badge: string };
+  tasks: { label: string; items: string[] };
+};
+
+const usCopy: SolutionCopy = {
+  heading: 'One system. One workflow.',
+  body: 'From the moment you start recording to the moment you send notes afterward, Nousna handles the documentation layer so you stay present with your patient.',
+  link: { label: 'Explore the full product', to: '/product' },
+  session: { label: 'Live Session', status: 'Patient encounter in progress' },
+  notes: { label: 'Clinical Notes', badge: 'Auto-generating' },
+  tasks: { label: 'Follow-up Tasks', items: ['Update treatment plan', 'Schedule next session', 'Send homework summary to patient'] },
+};
+
+const LiveDashboard = ({ copy }: { copy: SolutionCopy }) => {
   const barsRef = useRef<(HTMLDivElement | null)[]>([]);
   const dashRef = useRef<HTMLDivElement>(null);
 
@@ -69,7 +87,7 @@ const LiveDashboard = () => {
               <div className="w-8 h-8 rounded-lg bg-nousna-green/10 flex items-center justify-center">
                 <Mic className="w-4 h-4 text-nousna-green" />
               </div>
-              <span className={`${type.ui} font-semibold text-nousna-blue`}>Live Session</span>
+              <span className={`${type.ui} font-semibold text-nousna-blue`}>{copy.session.label}</span>
               <span className="ml-auto w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
             </div>
             {/* Waveform */}
@@ -85,7 +103,7 @@ const LiveDashboard = () => {
             </div>
             <div className="mt-4 flex items-center gap-2">
               <Activity className="w-3.5 h-3.5 text-nousna-green" />
-              <span className={`${type.ui} text-nousna-graphite`}>Patient encounter in progress</span>
+              <span className={`${type.ui} text-nousna-graphite`}>{copy.session.status}</span>
             </div>
           </div>
 
@@ -98,8 +116,8 @@ const LiveDashboard = () => {
                 <div className="w-8 h-8 rounded-lg bg-nousna-violet/10 flex items-center justify-center">
                   <FileText className="w-4 h-4 text-nousna-violet" />
                 </div>
-                <span className={`${type.ui} font-semibold text-nousna-blue`}>Clinical Notes</span>
-                <span className={`ml-auto ${type.ui} text-nousna-green font-medium bg-nousna-green/10 px-2 py-0.5 rounded-full`}>Auto-generating</span>
+                <span className={`${type.ui} font-semibold text-nousna-blue`}>{copy.notes.label}</span>
+                <span className={`ml-auto ${type.ui} text-nousna-green font-medium bg-nousna-green/10 px-2 py-0.5 rounded-full`}>{copy.notes.badge}</span>
               </div>
               <div className="space-y-2.5">
                 <div className="note-line h-2.5 bg-nousna-violet/15 rounded-full" />
@@ -115,10 +133,10 @@ const LiveDashboard = () => {
                 <div className="w-8 h-8 rounded-lg bg-nousna-green/10 flex items-center justify-center">
                   <ClipboardCheck className="w-4 h-4 text-nousna-green" />
                 </div>
-                <span className={`${type.ui} font-semibold text-nousna-blue`}>Follow-up Tasks</span>
+                <span className={`${type.ui} font-semibold text-nousna-blue`}>{copy.tasks.label}</span>
               </div>
               <div className="space-y-3">
-                {['Update treatment plan', 'Schedule next session', 'Send homework summary to patient'].map((task, i) => (
+                {copy.tasks.items.map((task, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="task-check w-5 h-5 rounded-md bg-nousna-green flex items-center justify-center flex-shrink-0">
                       <Check className="w-3 h-3 text-white" />
@@ -135,7 +153,7 @@ const LiveDashboard = () => {
   );
 };
 
-export const SolutionSection = () => {
+export const SolutionSection = ({ copy = usCopy }: { copy?: SolutionCopy }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -169,26 +187,26 @@ export const SolutionSection = () => {
         {/* Heading */}
         <div className="solution-text translate-y-8 opacity-0 mb-4">
           <h2 className={`${type.heading} font-semibold text-nousna-blue mb-4`}>
-            One system. One workflow.
+            {copy.heading}
           </h2>
           <p className={`${type.body} text-nousna-graphite font-light leading-relaxed max-w-3xl mb-8`}>
-            From the moment you start recording to the moment you send notes afterward, Nousna handles the documentation layer so you stay present with your patient.
+            {copy.body}
           </p>
         </div>
 
         {/* Animated Dashboard Card */}
         <div className="solution-card translate-y-8 opacity-0 bg-white rounded-2xl shadow-xl border border-slate-100 overflow-hidden relative">
           <div className="absolute inset-0 bg-gradient-to-br from-nousna-green/5 via-transparent to-nousna-violet/5 pointer-events-none" />
-          <LiveDashboard />
+          <LiveDashboard copy={copy} />
         </div>
 
         {/* CTA Link */}
         <div className="solution-cta translate-y-8 opacity-0 mt-8">
           <Link
-            to="/product"
+            to={copy.link.to}
             className={`inline-flex items-center gap-2 text-nousna-green font-semibold ${type.body} hover:gap-3 transition-all`}
           >
-            Explore the full product
+            {copy.link.label}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

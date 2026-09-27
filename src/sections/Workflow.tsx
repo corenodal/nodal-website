@@ -6,7 +6,7 @@ import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const steps = [
+const usSteps = [
   {
     title: "Record.",
     desc: "Start a session recording with one tap. Nousna listens securely in the background, so you stay present with your patient.",
@@ -65,7 +65,7 @@ const AudioWaveform = () => {
   );
 };
 
-const NeuralNodes = () => {
+const NeuralNodes = ({ tags }: { tags: string[] }) => {
   return (
     <div className="relative w-full h-full flex items-center justify-center scale-100 md:scale-110 origin-center">
       {/* Outer rotating ring */}
@@ -94,9 +94,9 @@ const NeuralNodes = () => {
       </div>
 
       {/* Abstract clinical tags streaming in */}
-      <div className={`absolute top-8 left-0 md:left-4 bg-white text-nousna-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.2s' }}>Symptoms</div>
-      <div className={`absolute bottom-10 right-0 md:right-4 bg-white text-nousna-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.7s' }}>History</div>
-      <div className={`absolute top-1/4 -right-4 md:right-0 bg-nousna-violet text-white ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.5s' }}>Vitals</div>
+      <div className={`absolute top-8 left-0 md:left-4 bg-white text-nousna-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.2s' }}>{tags[0]}</div>
+      <div className={`absolute bottom-10 right-0 md:right-4 bg-white text-nousna-blue ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.7s' }}>{tags[1]}</div>
+      <div className={`absolute top-1/4 -right-4 md:right-0 bg-nousna-violet text-white ${type.ui} font-bold px-4 py-2 rounded-full shadow-lg animate-pulse`} style={{ animationDelay: '0.5s' }}>{tags[2]}</div>
     </div>
   );
 };
@@ -117,30 +117,40 @@ const UICard = () => (
   </div>
 );
 
-const FollowUpCard = () => (
+const FollowUpCard = ({ items }: { items: string[] }) => (
   <div className="w-full max-w-sm space-y-4 scale-100 md:scale-110 origin-center">
-    <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105">
-      <div className="w-8 h-8 rounded-full bg-nousna-green/10 flex items-center justify-center text-nousna-green shrink-0">
-        <Check className="w-4 h-4" />
+    {items.map((item, i) => (
+      <div
+        key={item}
+        className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105"
+        style={{ transitionDelay: `${i * 0.1}s` }}
+      >
+        <div className="w-8 h-8 rounded-full bg-nousna-green/10 flex items-center justify-center text-nousna-green shrink-0">
+          <Check className="w-4 h-4" />
+        </div>
+        <div className={`${type.ui} font-semibold text-nousna-blue`}>{item}</div>
       </div>
-      <div className={`${type.ui} font-semibold text-nousna-blue`}>Treatment plan updated</div>
-    </div>
-    <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.1s' }}>
-      <div className="w-8 h-8 rounded-full bg-nousna-green/10 flex items-center justify-center text-nousna-green shrink-0">
-        <Check className="w-4 h-4" />
-      </div>
-      <div className={`${type.ui} font-semibold text-nousna-blue`}>Session homework sent to patient</div>
-    </div>
-    <div className="flex items-center space-x-4 p-4 rounded-xl bg-white shadow-lg border border-slate-100 transition-all hover:scale-105" style={{ transitionDelay: '0.2s' }}>
-      <div className="w-8 h-8 rounded-full bg-nousna-green/10 flex items-center justify-center text-nousna-green shrink-0">
-        <Check className="w-4 h-4" />
-      </div>
-      <div className={`${type.ui} font-semibold text-nousna-blue`}>Next session scheduled</div>
-    </div>
+    ))}
   </div>
 );
 
-export const Workflow = () => {
+export type WorkflowCopy = {
+  heading: string;
+  steps: { title: string; desc: string }[];
+  followUps: string[];
+  tags: string[];
+};
+
+const usCopy: WorkflowCopy = {
+  heading: 'How a session works',
+  steps: usSteps,
+  followUps: ['Treatment plan updated', 'Session homework sent to patient', 'Next session scheduled'],
+  tags: ['Symptoms', 'History', 'Vitals'],
+};
+
+export const Workflow = ({ copy = usCopy }: { copy?: WorkflowCopy }) => {
+  const steps = copy.steps.map((text, i) => ({ ...usSteps[i % usSteps.length], ...text }));
+  const stepCount = steps.length;
   const containerRef = useRef<HTMLDivElement>(null);
   const textItemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const visualItemsRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -148,7 +158,7 @@ export const Workflow = () => {
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // 1. Setup initial states
-      steps.forEach((_, i) => {
+      Array.from({ length: stepCount }).forEach((_, i) => {
         if (i !== 0) {
           gsap.set(textItemsRef.current[i], { opacity: 0.3 });
           gsap.set(visualItemsRef.current[i], { opacity: 0, y: 50 });
@@ -169,11 +179,11 @@ export const Workflow = () => {
       });
 
       // 2. Sequencing crossfades with holds
-      steps.forEach((_, i) => {
+      Array.from({ length: stepCount }).forEach((_, i) => {
         // Hold the current step so the user can read it before it fades
         tl.to({}, { duration: 1 });
 
-        if (i < steps.length - 1) {
+        if (i < stepCount - 1) {
           const transitionLabel = `step${i}_transition`;
 
           // Fade out current text
@@ -210,13 +220,13 @@ export const Workflow = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [stepCount]);
 
   const visuals = [
     <AudioWaveform />,
     <UICard />,
-    <FollowUpCard />,
-    <NeuralNodes />
+    <FollowUpCard items={copy.followUps} />,
+    <NeuralNodes tags={copy.tags} />
   ];
 
   return (
@@ -230,7 +240,7 @@ export const Workflow = () => {
         {/* Left Side: Sticky Text Narrative */}
         <div className="w-full md:w-1/2 flex flex-col justify-center h-[40%] md:h-full pt-16 md:pt-0 z-20">
           <h2 className={`${type.heading} font-semibold text-nousna-blue mb-8 md:mb-12`}>
-            How a session works
+            {copy.heading}
           </h2>
 
           <div className="flex flex-col">

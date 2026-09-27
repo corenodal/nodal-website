@@ -6,7 +6,7 @@ import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const principles = [
+const usPrinciples = [
   {
     icon: Brain,
     iconClass: 'text-nousna-violet group-hover:text-white',
@@ -30,7 +30,22 @@ const principles = [
   },
 ];
 
-export const OurApproach = () => {
+export type OurApproachCopy = {
+  eyebrow: string;
+  heading: string;
+  lead: string;
+  principles: { title: string; body: string }[];
+};
+
+const usCopy: OurApproachCopy = {
+  eyebrow: 'Our Approach',
+  heading: 'Designed around research, not convention.',
+  lead: 'We bring together behavioral science, clinical workflow research, and AI to fix the system that is wearing practitioners down.',
+  principles: usPrinciples,
+};
+
+export const OurApproach = ({ copy = usCopy }: { copy?: OurApproachCopy }) => {
+  const principles = copy.principles.map((text, i) => ({ ...usPrinciples[i % usPrinciples.length], ...text }));
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -67,14 +82,14 @@ export const OurApproach = () => {
         <div className="approach-heading opacity-0 flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10 md:mb-12">
           <div>
             <p className={`${type.ui} font-semibold text-nousna-violet uppercase tracking-[0.25em] mb-3`}>
-              Our Approach
+              {copy.eyebrow}
             </p>
             <h2 className={`${type.heading} font-semibold text-nousna-blue leading-tight`}>
-              Designed around research, not convention.
+              {copy.heading}
             </h2>
           </div>
           <p className={`${type.body} text-nousna-graphite-soft font-light max-w-sm md:max-w-md leading-relaxed`}>
-            We bring together behavioral science, clinical workflow research, and AI to fix the system that is wearing practitioners down.
+            {copy.lead}
           </p>
         </div>
 

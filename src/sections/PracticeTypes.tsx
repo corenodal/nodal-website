@@ -6,7 +6,7 @@ import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const practices = [
+const usPractices = [
   {
     icon: User,
     title: 'Solo practice',
@@ -45,7 +45,20 @@ const practices = [
   },
 ];
 
-export const PracticeTypes = () => {
+export type PracticeTypesCopy = {
+  heading: string;
+  lead: string;
+  practices: { title: string; points: string[] }[];
+};
+
+const usCopy: PracticeTypesCopy = {
+  heading: 'Built for independent and small group practices.',
+  lead: 'Whether you see patients solo or as part of a team, Nousna adapts to your practice.',
+  practices: usPractices,
+};
+
+export const PracticeTypes = ({ copy = usCopy }: { copy?: PracticeTypesCopy }) => {
+  const practices = copy.practices.map((text, i) => ({ ...usPractices[i % usPractices.length], ...text }));
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -71,10 +84,10 @@ export const PracticeTypes = () => {
     >
       <div className="max-w-5xl mx-auto px-6 md:px-24">
         <h2 className="pt-heading opacity-0 text-3xl md:text-4xl font-semibold text-white mb-4">
-          Built for independent and small group practices.
+          {copy.heading}
         </h2>
         <p className="pt-heading opacity-0 text-white/70 font-light leading-relaxed max-w-2xl mb-14">
-          Whether you see patients solo or as part of a team, Nousna adapts to your practice.
+          {copy.lead}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

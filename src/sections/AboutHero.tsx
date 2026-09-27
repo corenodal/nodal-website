@@ -2,7 +2,25 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
 
-export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
+export type AboutHeroCopy = {
+  lines: string[];
+  accentLine: number;
+  blocks: { label: string; text: string }[];
+};
+
+const usCopy: AboutHeroCopy = {
+  lines: ['We exist', 'to remove', 'invisible', 'strain.'],
+  accentLine: 2,
+  blocks: [
+    { label: 'Mission', text: 'Help clinicians deliver high-quality care in a way that is sustainable.' },
+    { label: 'Belief', text: 'Healthcare cannot scale sustainably if systems demand more than they give back.' },
+    { label: 'Approach', text: 'We design around how clinicians think, not how systems were built.' },
+  ],
+};
+
+const blockBorders = ['border-nousna-green', 'border-nousna-violet/40', 'border-nousna-blue/30'];
+
+export const AboutHero = ({ isLoading = false, copy = usCopy }: { isLoading?: boolean; copy?: AboutHeroCopy }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -28,41 +46,22 @@ export const AboutHero = ({ isLoading = false }: { isLoading?: boolean }) => {
         {/* Left — Giant heading */}
         <div className="flex-1 max-w-3xl">
           <h1 className={`${type.display} font-semibold tracking-tight leading-[1.02] text-nousna-blue`}>
-            <div className="overflow-hidden">
-              <span className="ah-line block">We exist</span>
-            </div>
-            <div className="overflow-hidden">
-              <span className="ah-line block">to remove</span>
-            </div>
-            <div className="overflow-hidden">
-              <span className="ah-line block text-nousna-violet">invisible</span>
-            </div>
-            <div className="overflow-hidden">
-              <span className="ah-line block">strain.</span>
-            </div>
+            {copy.lines.map((line, i) => (
+              <div key={line} className="overflow-hidden">
+                <span className={`ah-line block ${i === copy.accentLine ? 'text-nousna-violet' : ''}`}>{line}</span>
+              </div>
+            ))}
           </h1>
         </div>
 
         {/* Right — stacked context blocks */}
         <div className="ah-right opacity-0 flex flex-col gap-8 max-w-xs">
-          <div className="border-l-2 border-nousna-green pl-5">
-            <p className={`${type.ui} font-semibold text-nousna-graphite-soft uppercase tracking-widest mb-1`}>Mission</p>
-            <p className={`${type.body} text-nousna-graphite font-light leading-relaxed`}>
-              Help clinicians deliver high-quality care in a way that is sustainable.
-            </p>
-          </div>
-          <div className="border-l-2 border-nousna-violet/40 pl-5">
-            <p className={`${type.ui} font-semibold text-nousna-graphite-soft uppercase tracking-widest mb-1`}>Belief</p>
-            <p className={`${type.body} text-nousna-graphite font-light leading-relaxed`}>
-              Healthcare cannot scale sustainably if systems demand more than they give back.
-            </p>
-          </div>
-          <div className="border-l-2 border-nousna-blue/30 pl-5">
-            <p className={`${type.ui} font-semibold text-nousna-graphite-soft uppercase tracking-widest mb-1`}>Approach</p>
-            <p className={`${type.body} text-nousna-graphite font-light leading-relaxed`}>
-              We design around how clinicians think, not how systems were built.
-            </p>
-          </div>
+          {copy.blocks.map((block, i) => (
+            <div key={block.label} className={`border-l-2 pl-5 ${blockBorders[i % blockBorders.length]}`}>
+              <p className={`${type.ui} font-semibold text-nousna-graphite-soft uppercase tracking-widest mb-1`}>{block.label}</p>
+              <p className={`${type.body} text-nousna-graphite font-light leading-relaxed`}>{block.text}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

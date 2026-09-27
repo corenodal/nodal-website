@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
+import type { LucideIcon } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { BookOpen, IdCard, TrendingUp, Sparkles, Lightbulb, ListChecks, Brain, MessageCircle, Wrench, FileText, PenLine, Download, Layers, ClipboardList, CheckSquare } from 'lucide-react';
@@ -6,7 +7,19 @@ import { type } from '../styles/typography';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const features = [
+export type FeatureRow = {
+  title: string;
+  description: string;
+  bullets: { icon: LucideIcon; label: string; detail: string }[];
+  image?: string;
+  visual?: ReactNode;
+  accent: 'nousna-violet' | 'nousna-green';
+  imageFirst: boolean;
+  imageAnchor: 'top-left' | 'top-right' | 'top-right-left' | 'bottom-left' | 'bottom-right' | 'top-full';
+  imageFit?: 'cover' | 'contain';
+};
+
+const usFeatures: FeatureRow[] = [
   {
     title: 'Know exactly where you left off.',
     description:
@@ -57,7 +70,7 @@ const features = [
     image: '/note_customization.png',
     accent: 'nousna-green' as const,
     imageFirst: true,
-    imageAnchor: 'top-full' as any,
+    imageAnchor: 'top-full' as const,
     imageFit: 'cover' as const,
   },
   {
@@ -162,11 +175,11 @@ const features = [
     image: '/collate.png',
     accent: 'nousna-green' as const,
     imageFirst: true,
-    imageAnchor: 'top-right-left' as any,
+    imageAnchor: 'top-right-left' as const,
   },
 ];
 
-export const FeatureDetails = () => {
+export const FeatureDetails = ({ features = usFeatures }: { features?: FeatureRow[] }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -191,7 +204,7 @@ export const FeatureDetails = () => {
     }, containerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [features]);
 
   const accentColor = (accent: 'nousna-violet' | 'nousna-green') =>
     accent === 'nousna-violet' ? 'bg-nousna-violet/10 text-nousna-violet' : 'bg-nousna-green/10 text-nousna-green';
@@ -300,14 +313,14 @@ export const FeatureDetails = () => {
           const imageBlock = (
             <div key={`img-${i}`} className="flex-1 flex items-end justify-center mt-8 md:mt-16 group">
               <div
-                className={`rounded-3xl w-full aspect-[4/3] ${anchor.pad} overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 ${bgClassName} transition-all duration-300`}
+                className={`rounded-3xl w-full ${feature.visual ? 'min-h-[400px] flex' : 'aspect-[4/3]'} ${anchor.pad} overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-black/5 ${bgClassName} transition-all duration-300`}
               >
-                <div className={`w-full h-full overflow-hidden ${anchor.rounded} ring-1 ring-white/40 ring-inset bg-black/5`}>
-                  <img
+                <div className={`w-full overflow-hidden ${feature.visual ? 'flex' : 'h-full'} ${anchor.rounded} ring-1 ring-white/40 ring-inset bg-black/5`}>
+                  {feature.visual ?? <img
                     src={feature.image}
                     alt={feature.title}
-                    className={`w-full h-full ${(feature as any).imageFit === 'contain' ? 'object-contain' : 'object-cover'} ${anchor.objectPos} transition-transform duration-700 ease-out group-hover:scale-105`}
-                  />
+                    className={`w-full h-full ${feature.imageFit === 'contain' ? 'object-contain' : 'object-cover'} ${anchor.objectPos} transition-transform duration-700 ease-out group-hover:scale-105`}
+                  />}
                 </div>
               </div>
             </div>

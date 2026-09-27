@@ -4,6 +4,20 @@ import { Link, useLocation } from 'react-router-dom';
 import { cn } from '../lib/utils';
 import { type } from '../styles/typography';
 import NousnaLogo from '../assets/nousna-logo.svg';
+import { isUK } from '../config/region';
+import { ukNav } from '../uk/copy/nav';
+
+const usNav = {
+  links: [
+    { name: 'Features', href: '/features', isRoute: true },
+    { name: 'Product', href: '/product', isRoute: true },
+    { name: 'Demo Videos', href: '/demo-videos', isRoute: true },
+    { name: 'About', href: '/about', isRoute: true },
+  ],
+  cta: 'Request access →',
+};
+
+const nav = isUK ? ukNav : usNav;
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,12 +41,7 @@ export const Navbar = () => {
     // When on other pages, let the <Link to="/"> handle navigation naturally
   };
 
-  const navLinks = [
-    { name: 'Features', href: '/features', isRoute: true },
-    { name: 'Product', href: '/product', isRoute: true },
-    { name: 'Demo Videos', href: '/demo-videos', isRoute: true },
-    { name: 'About', href: '/about', isRoute: true },
-  ];
+  const navLinks = nav.links;
 
   return (
     <nav 
@@ -68,7 +77,7 @@ export const Navbar = () => {
             )
           )}
           <Link to="/contact" className={`px-6 py-3 bg-nousna-blue text-white ${type.body} font-semibold rounded-lg hover:bg-slate-800 transition-colors`}>
-            Request access →
+            {nav.cta}
           </Link>
         </div>
 
@@ -106,7 +115,7 @@ export const Navbar = () => {
             )
           )}
           <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`w-full py-4 bg-nousna-blue text-white ${type.body} font-semibold rounded-lg text-center`}>
-            Request access →
+            {nav.cta}
           </Link>
         </div>
       )}

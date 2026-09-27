@@ -1,8 +1,19 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import gsap from 'gsap';
 import { type } from '../styles/typography';
 
-export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
+export type ProductHeroCopy = {
+  title: string;
+  description: string;
+  visual?: ReactNode;
+};
+
+const usCopy: ProductHeroCopy = {
+  title: 'The center of your clinical workflow.',
+  description: 'Nousna connects every step of care in one place, from the first session to the hundredth, so nothing important gets lost.',
+};
+
+export const ProductHero = ({ isLoading = false, copy = usCopy }: { isLoading?: boolean; copy?: ProductHeroCopy }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -43,7 +54,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
   }, [isLoading]);
 
   return (
-    <section ref={containerRef} className="relative z-10 pt-16 md:pt-20 min-h-screen">
+    <section ref={containerRef} className="relative z-10 pt-20 md:pt-24 min-h-screen">
       <div className="relative">
         {/* Purple background — fixed height so it doesn't shift during animation */}
         <div className="absolute inset-x-0 top-0 h-[60vh] bg-nousna-violet/90" />
@@ -54,7 +65,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
           <div ref={titleRef} style={{ opacity: 0, transform: 'translateY(20px)' }}>
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight leading-[1.1] text-white">
               <div className="overflow-hidden">
-                <span className="product-hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>The center of your clinical workflow.</span>
+                <span className="product-hero-word block" style={{ opacity: 0, transform: 'translateY(100%)' }}>{copy.title}</span>
               </div>
             </h1>
           </div>
@@ -63,7 +74,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
             className={`${type.subheading} text-white/80 font-light leading-relaxed mt-2 md:mt-3`}
             style={{ opacity: 0, transform: 'translateY(20px)' }}
           >
-            Nousna connects every step of care in one place, from the first session to the hundredth, so nothing important gets lost.
+            {copy.description}
           </p>
 
           {/* Image — right-aligned, overflowing purple into white */}
@@ -72,6 +83,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
               ref={imageRef}
               style={{ opacity: 0, transform: 'translateY(40px)' }}
             >
+              {copy.visual ?? (
               <div className="rounded-2xl overflow-hidden shadow-[0_25px_60px_-12px_rgba(0,0,0,0.25)] border border-slate-100 bg-white">
                 <img
                   src="/img.png"
@@ -93,6 +105,7 @@ export const ProductHero = ({ isLoading = false }: { isLoading?: boolean }) => {
                   }}
                 />
               </div>
+              )}
             </div>
           </div>
         </div>
