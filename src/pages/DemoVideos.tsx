@@ -16,7 +16,7 @@ interface FeatureSection {
   steps: string[];
 }
 
-interface Feature {
+export interface DemoFeature {
   id: string;
   number: string;
   title: string;
@@ -28,7 +28,7 @@ interface Feature {
   accent: 'nousna-violet' | 'nousna-green';
 }
 
-const features: Feature[] = [
+const usFeatures: DemoFeature[] = [
   {
     id: 'personalise-your-ai-assistant',
     number: '01',
@@ -240,7 +240,7 @@ const features: Feature[] = [
   },
 ];
 
-export const DemoVideos = () => {
+export const DemoVideos = ({ features = usFeatures }: { features?: DemoFeature[] }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const activeId = searchParams.get('feature') || features[0].id;
   const [sidebarOpen, setSidebarOpen] = useState(false);

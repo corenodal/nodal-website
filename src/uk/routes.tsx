@@ -8,6 +8,8 @@ import { ForUkUsers } from './pages/ForUkUsers';
 import { IntendedPurpose } from './pages/IntendedPurpose';
 import { FAQs } from './pages/FAQs';
 import { Legal } from './pages/Legal';
+import { DemoVideos } from '../pages/DemoVideos';
+import { ukDemoFeatures } from './copy/demoVideos';
 import { privacy, cookies, subProcessors } from './copy/legal';
 
 export const UKRoutes = ({ isLoading }: { isLoading: boolean }) => (
@@ -17,6 +19,7 @@ export const UKRoutes = ({ isLoading }: { isLoading: boolean }) => (
     <Route path="/product" element={<Product isLoading={isLoading} />} />
     <Route path="/about" element={<About isLoading={isLoading} />} />
     <Route path="/contact" element={<Contact isLoading={isLoading} />} />
+    <Route path="/demo-videos" element={<DemoVideos features={ukDemoFeatures} />} />
     <Route path="/for-uk-users" element={<ForUkUsers isLoading={isLoading} />} />
     <Route path="/intended-purpose" element={<IntendedPurpose isLoading={isLoading} />} />
     <Route path="/faqs" element={<FAQs isLoading={isLoading} />} />

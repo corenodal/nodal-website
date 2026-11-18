@@ -5,7 +5,7 @@ import { legalFootnote, disclaimer } from '../copy/footnote';
 import { ukInfo } from '../copy/placeholders';
 
 const columns = [
-  { title: 'Product', links: [['Overview', '/product'], ['Features', '/features'], ['Intended purpose', '/intended-purpose']] },
+  { title: 'Product', links: [['Overview', '/product'], ['Features', '/features'], ['Demo videos', '/demo-videos'], ['Intended purpose', '/intended-purpose']] },
   { title: 'Company', links: [['About', '/about'], ['Contact', '/contact'], ['For UK users', '/for-uk-users'], ['FAQs', '/faqs']] },
   { title: 'Legal', links: [['Privacy', '/privacy'], ['Cookies', '/cookies'], ['Sub-processors', '/sub-processors']] },
 ];
